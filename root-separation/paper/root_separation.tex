@@ -1,98 +1,214 @@
-\documentclass[11pt]{article}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs}
-\usepackage[margin=27mm]{geometry}
-\usepackage[hidelinks]{hyperref}
-\usepackage{enumitem}
-\setlist{nosep}
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Corollary}
-\newcommand{\ind}{\mathbf 1}
-\newcommand{\E}{\mathbb E}
-\newcommand{\card}[1]{\lvert #1\rvert}
-\newcommand{\floor}[1]{\lfloor #1\rfloor}
-\newcommand{\ceil}[1]{\lceil #1\rceil}
-\title{A Root-Separation Barrier for Tensor-Interpolation SAT Algorithms}
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  % Use the default Latin Modern fonts.
+
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=24mm]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{microtype}
+\usepackage{xurl}
+
+
+
+\setlength{\emergencystretch}{3em}
+\widowpenalty=10000
+\clubpenalty=10000
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={A Root-Separation Barrier for Tensor-Interpolation SAT Algorithms},
+  pdfauthor={},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{A Root-Separation Barrier for Tensor-Interpolation SAT
+Algorithms}
 \author{}
 \date{26 November 2026}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\floor}[1]{\lfloor #1\rfloor}
+\newcommand{\ceil}[1]{\lceil #1\rceil}
 \begin{document}
 \maketitle
+
+
 \begin{abstract}
-Consider a fixed signed sum of local products that recovers the model count
-of a pinned cubic expander modulo a nontrivial residue ring. At each term the
-coordinate, local functions and coefficient may differ. We prove a lower
-bound of \(2^{\Omega_\gamma(N/\sqrt{\log N})}\) on the number of terms under a
-collision certificate on the port labels, where \(N\) is the vertex count
-and \(\gamma>0\) is the edge expansion. For products over all symbol groups
-the bound is uniform over alphabet sizes \(r\ge 27\) and requires only a
-nonempty set of retained coordinates. A second result allows a different
-balanced union of symbols per term, with constants depending on the alphabet
-and balance. The proof selects a single oriented induced matching on which
-every eligible term has a rank deficit. The resulting cost bound applies to
-traces that materialize every term. We give the finite inequalities and the
-scope of their Lean proofs.
+We study final-output representations for a family of connected, fixed-density
+Boolean formulas. Pin the variables of a cubic expander and impose its positive
+edge clauses. The count is the SAT decision bit. Suppose that a fixed signed
+sum of group-local products recovers this bit in a nontrivial residue ring.
+Under a collision certificate on a layout of the pins, its length is at least
+\(2^{\Omega_\gamma(N/\sqrt{\log N})}\), where \(N\) is the vertex count and
+\(\gamma>0\) is the expansion. The full-group bound is uniform over alphabets
+of size at least 27. At the source coordinate budget a term can instead use
+either side of any eligible balanced coordinate cut, with constants depending
+on the alphabet and the balance. Factors can perform arbitrary local
+calculations. A common oriented induced matching gives a rank deficit for
+all terms on the same matrix. We derive finite bounds, the cost of a trace
+covering the representation, and weighted variants for overlapping views and
+local query trees. A global zero test computes the same witnesses from a short
+sum. Two appendices give the bounded-majorant and edge-correlation proofs.
 \end{abstract}
 
-\section{The output and the layout}
+\subsection{1. Exact interface and main
+theorem}\label{exact-interface-and-main-theorem}
 
-The fixed-density counting algorithm of OpenAI~\cite{source} motivates a
-question about the expression at its root. If the same output admits many
-decompositions into products of group-local functions, how short can such
-a decomposition be? We study this question as an extremal problem with
-an explicit output contract.
+For the concrete integral-lift example write \(\mathcal O\) for the
+local coefficient ring of the motivating interpolation scheme and \(\mathcal K\)
+for its fraction field. The argument needs the following algebraic data:
+a commutative ring \(R\), an injective unital homomorphism \(e:R\to K\) to
+a field, and a unital homomorphism \(\pi:R\to S\) to a nontrivial
+commutative ring. These specialize to inclusion and reduction modulo two in
+the example. The general statement permits any characteristic for \(K\).
+The geometric input is a nonempty finite loopless cubic graph with edges oriented once each
+and a rational expansion lower bound \(0<\gamma\le1\). For the witness
+family we take connected simple graphs.
 
-Balanced products, induced matchings and matrix rank also appear in the
-structured arithmetic-circuit lower bounds of de Colnet and Mengel~\cite{dm}.
-Here the terms may choose different coordinate cuts, so the rank estimate
-requires one matching and orientation that work for all eligible cuts.
+In the source example \(\mathcal O=\mathbb Z_{(2)}[U]/(f)\) with
+\(f\) monic and irreducible modulo two. For the application one embeds
+this ring in its fraction field and reduces to \(\mathcal O/(2)\).
+Writing the proof in terms of the two maps makes clear which operation
+uses injectivity and which uses reduction. In particular, all matrix
+entries to be reduced belong to \(R\) after summation.
 
-Take a nonempty finite vertex set \(V\), \(\card V=N\), and a loopless cubic
-graph with a fixed orientation of its edges \(E\). Assume that for every
-\(S\subseteq V\),
+Let \(H_N\) be a fixed connected simple cubic expander on \(N\)
+vertices. Use variables \(x_v\), a unary clause requiring
+\(x_v=\sigma_v\) at each vertex, and a fixed positive clause
+\(x_v\lor x_w\) on each graph edge. The \(N\) sign bits \(\sigma_v\) are
+independently variable inputs. The formula's exact count and its
+decision bit are both
+
 \[
-   |\partial S|\ \ge\ \gamma\min\{|S|,N-|S|\},\qquad 0<\gamma\le 1,
+C_N(\sigma)=\prod_{vw\in E(H_N)}(\sigma_v\lor\sigma_w).
+\tag{A}
 \]
-with rational \(\gamma\). For each sign vector \(\sigma\in\{0,1\}^V\), impose
-one unit clause \(x_v=\sigma_v\) per vertex and one positive clause
-\(x_v\lor x_w\) per edge. The model count is the Boolean number
+
+The topology and all fixed tables are the same for every sign vector.
+The motivating parameters in the \href{https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026}{25 October 2026 source} are \(s=7N/2\), initial precision \(p=N+1\),
+auxiliary order one, and exactly \(M=10N\) physical wires. The count of
+wires is verified in Section 2.
+
+A root layout labels all vertices by \([r]^a\). For each ordered pair of
+full labels let \(X_c\) count its real wires, and put \(Q=r^{2a}\). The
+numerical certificate and feasibility assumptions are
+
 \[
-    C(\sigma)=\prod_{(v,w)\in E}(\sigma_v\lor\sigma_w).
+\sum_c(X_c-M/Q)^2\le2M\Delta,\qquad M\ge2Q^2\Delta,
+\tag{B}
 \]
-All signs vary independently. We work on each supplied expanding graph.
-Infinite families of cubic bipartite expanders provide familiar examples
-of this hypothesis~\cite{mss}.
 
-Let \(A\) be a finite nonempty alphabet, \(r=|A|\), \(I\) the full coordinate
-set, and \(I_0\subseteq I\) the retained coordinates. A layout consists of
-\(M=10N\) ports, an injection from \(V\) into the ports, and a map from ports
-to pairs of labels in \(A^I\times A^I\). Write \(L(v)\) for the first label
-of the port of \(v\), restricted to \(I_0\). If \(X_c\) counts ports in cell
-\(c\) and \(Q=r^{2|I|}\), the certificate is
-\begin{equation}\label{eq:certificate}
-  \sum_c(X_c-M/Q)^2\le 2M\Delta,\qquad 2Q^2\Delta\le M .
-\end{equation}
-The factor ten has a concrete origin. In the motivating reduction a variable
-appears four times. A three-valent equality tree contributes one internal edge
-to its four clause incidences. Subdividing these edges gives \(10N\) wires.
-The theorems below take the layout and certificate as inputs.
+with the source's maximum-degree parameter \(\Delta\). The published
+root uses \(r=64\), \(u=\lfloor\varepsilon\lceil\log_2s\rceil\rfloor\),
+\(a=2u\), and \(\varepsilon=1/131072\). Only coordinates
+\(0,\ldots,u-1\) are used for its group separations. A layout, candidate
+cuts and scalar program are fixed independently of the signs;
+graph-dependent preprocessing is permitted.
 
-Let \(R,S\) be commutative rings, \(S\) nontrivial, and \(K\) a field. Fix an
-injective unital homomorphism \(e:R\to K\) and a unital homomorphism
-\(\pi:R\to S\). The output is \(B:\{0,1\}^V\to R\), with
-\(\pi B(\sigma)=C(\sigma)\) in \(S\) for every \(\sigma\). This formulation
-allows cancellation of nonintegral summands in \(K\).
-In a full-group representation each term \(z\) has coefficient \(c_z\in K\),
-one coordinate \(i_z\in I_0\), and one arbitrary \(K\)-valued function per
-symbol. Thus
-\begin{equation}\label{eq:full}
+A cut is \textbf{quarter-balanced in sign mass} if it places between
+\(N/4\) and \(3N/4\) of the independently variable unary signs on one
+side. It is obtained by choosing a coordinate and a union of its
+symbols. Balance here is not a count of symbols, physical wires, or
+fixed auxiliary tensors. These distinctions are necessary.
+
+A separated output representation is
+
+\[
+B(\sigma)=\sum_{j=1}^{h}c_j F_j(\sigma_{P_j})G_j(\sigma_{\overline P_j}),
+\qquad c_j\in\mathcal K,
+\tag{C}
+\]
+
+where every \(P_j\) is an allowed quarter-balanced coordinate cut. The
+functions and cuts can differ between terms. The factors may be
+arbitrary functions into \(\mathcal K\); no restriction is put on their
+internal calculations. The only output contract is that
+\(B(\sigma)\in\mathcal O\) for every input and
+\(B(\sigma)\equiv C_N(\sigma)\pmod2\). Individual summands need not be
+integral. This is an integral-lift and residue contract, not an
+assertion that the characteristic-zero sum equals the integer count
+exactly.
+
+The associated \textbf{fixed scalar computation class} permits arbitrary
+calculations confined to each factor's own sign inputs, followed by
+separated scalar entrances and a fixed linear network over
+\(\mathcal K\). One-sided functions fitting an allowed cut can enter
+directly with complementary factor one. Distinct entrances may be
+reused, including across interpolation centers. Collecting coefficients
+along all linear paths counts each distinct entrance once. Scope may not
+be discarded merely because a mixed scalar was stored in one machine
+word. Full-scope nonlinear operations and unrestricted input-dependent
+choices of the outer program are additional capabilities and are treated
+separately below.
+
+For the full-group representation write \(I_0\) for the \(k\) retained
+coordinates of the full label and \(L(v)\) for the restricted first label
+of the port of pin \(v\). Here a port has a pair of full labels, one from each endpoint of its wire, and the pin label comes from the first endpoint. We assume that pins inject into the \(10N\)
+ports. If \(A\) is the alphabet, \(r=|A|\), the full-group sum has the form
+\[
  eB(\sigma)=\sum_{z\in T}c_z\prod_{a\in A}
-       F_{z,a}\bigl(\sigma|_{\{v:L(v)_{i_z}=a\}}\bigr).
-\end{equation}
-The index set, coordinates, coefficients and functions are fixed for the
-whole input family. Let \(h=|T|\).
+ F_{z,a}\bigl(\sigma|_{\{v:L(v)_{i_z}=a\}}\bigr),\qquad h=|T|.
+ \tag{D}
+\]
+Each coefficient and each function is fixed across sign assignments;
+only the final sum must come from an integral output \(B\) with
+\(\pi B(\sigma)=C_N(\sigma)\) in \(S\). Here and below a balanced-menu
+term is a product on the two sides, as in (C), with all coefficients
+absorbed into one of the factors. In Theorem 2 the certificate, graph
+and maps are the same as in Theorem 1; the alphabet and retained
+coordinates obey the conditions stated for the menu.
 
-\section{Finite lower bounds}
+
 
 Set \(\lambda=\floor{\log_2 N}\),
 \(t(\gamma,\eta)=2^{-36}\gamma^2\eta^2/32\), and
@@ -104,11 +220,11 @@ These large cutoffs make the finite statements uniform and keep the
 integer rounding explicit.
 
 \begin{theorem}[Full-group representation]\label{thm:full}
-Assume \eqref{eq:certificate}, \(r\ge27\), and \(I_0\ne\varnothing\).
+Assume (B), \(r\ge27\), and \(I_0\ne\varnothing\).
 Put \(t=t(\gamma,1/4)=2^{-45}\gamma^2\).
 If \(N\ge\mathcal C(\mathcal M(1,80,t),0)\), every representation
-\eqref{eq:full} admits an integer \(d\ge0\) such that
-\begin{equation}\label{eq:main}
+(D) admits an integer \(d\ge0\) such that
+\begin{equation}\tag{D1}\label{eq:main}
       (tN)^2\le 320\lambda d^2,\qquad 2^d\le h .
 \end{equation}
 In particular \(\log_2 h\ge tN/\sqrt{320\lambda}\).
@@ -124,7 +240,7 @@ scalar coefficient absorbed into one function. Each term may choose
 its own entry. Balance counts independently variable pins.
 
 \begin{theorem}[Balanced menu]\label{thm:menu}
-Assume the same graph, output contract and certificate. Put
+Assume the same graph, output contract and certificate (B). The alphabet is nonempty and finite. Put
 \(s=\floor{7N/2}\), \(u=\floor{\ceil{\log_2 s}/131072}\),
 \(b_r=80\cdot2^{2r}\) and \(t=t(\gamma,\eta)\). Suppose
 \(|I_0|\le 2u\) and \(N\ge\mathcal C(\mathcal M(2^r,b_r,t),3)\).
@@ -149,148 +265,685 @@ charge exceed \(N^p\) once also
 \]
 \end{corollary}
 
-\section{A common rank test}
 
-We give the counting and rank arguments for both theorems. The accompanying
-Lean development proves the finite estimates with the constants above.
 
-\paragraph{Density of the actual pins.}
-Every cell has \(X_c\le M/Q+\sqrt{2M\Delta}\le2M/Q\) by
-\eqref{eq:certificate}. Summing over the unused first-label coordinates and
-over the second label shows that the law \(\mu\) of \(L(v)\) for a uniform
-vertex is at most \(20\) times the uniform product law on \(A^{I_0}\).
-Indeed the injection selects \(N\) ports out of \(10N\), and every
-projected label has the same number of full-cell preimages.
-In particular a single symbol owns at most \(20N/r\) pins. For \(r\ge27\)
-this is at most \(3N/4\). If one group has at least \(N/4\) pins it supplies
-a balanced side; otherwise accumulate groups until their total first reaches
-\(N/4\), at which point it is less than \(N/2\).
-Fix one such union per coordinate in \eqref{eq:full} and multiply the
-factors on each side. An occupied cell also gives \(1\le2M/Q\).
-Since \(I_0\ne\varnothing\) and \(r\ge27\), we have
-\(20\cdot2^{|I|}\le r^{2|I|}\le20N\), hence \(|I_0|\le\lambda\).
+\subsection{2. Genuine formulas and the matrix
+test}\label{genuine-formulas-and-the-matrix-test}
 
-\paragraph{A simultaneous imbalance.}
-Write \(k=|I_0|\), \(J\) for the menu, and \(R_i\) for its number of
-entries at coordinate \(i\). Give its centered cut indicators arbitrary
-signs. Under the uniform product law the variance of the signed sum is at
-most \(\sum_i R_i^2\), by independence across coordinates. Centering first
-at the uniform mean and using density domination bounds the variance on
-actual vertices by \(20\sum_i R_i^2\). A common integer scale \(H\ge1\)
-can be taken with \(H^2\le80k\) in the one-cut-per-coordinate case and
-\(H^2\le b_r k\) for a distinct menu, since \(R_i\le 2^r\).
+There are \(N+3N/2=5N/2\) clauses in (A), no unused variables, and no
+repeated or tautological clauses. Each variable occurs four times. The
+source's trivalent equality tree for four occurrences has two internal
+vertices and one internal edge. Before subdivision there are \(4N\)
+clause incidences and \(N\) equality-tree internal edges. Subdividing
+each edge produces \(M=10N\) wires. All tensors have bounded arity. The graph of this construction is the same for every choice of signs. A preprocessing rule that substitutes the
+unary assignments changes this interface and solves the instances
+directly.
 
-For each cut take the difference of its indicator between the two endpoints
-of an oriented edge. Expansion gives an absolute first moment at least
-\(2\gamma\eta/3\) under the uniform edge law. Cubic regularity and
-\((x-y)^2\le2x^2+2y^2\) bound the second moment of every signed sum of
-these differences by \(4H^2\).
-The simultaneous correlation step is a finite form of the sign-maximization
-argument of Nazarov~\cite{nazarov}. For clarity, its Huber potential is
-quadratic on \([-4,4]\) and extends by its tangent lines outside. Choose
-signs maximizing its expected value on the signed sum divided by \(2H/p_0\), where \(p_0=2\gamma\eta/3\).
-The derivative divided by four gives edge weights in \([-1,1]\). Comparing
-the maximizer with each single-sign flip gives a correlation for every
-cut. To see the quantitative estimate, let \(f\) be the edge difference
-for that cut and \(w\) the scaled maximizing sum. Then
-\(\mathbb E f^2\ge p_0\), \(|f|\le1\), and \(\mathbb E w^2\le p_0\).
-The event \(|w|>2\) has probability at most \(p_0/4\), leaving central
-energy \(\mathbb E[f^2\ind_{\{|w|\le2\}}]\ge3p_0/4\).
-A single flip moves \(w\) by at most two. On the central event the whole
-move lies in the quadratic part, and elsewhere the supporting tangent
-still gives a lower bound. For \(b\) equal to the derivative divided by four,
-maximality gives \(|\mathbb E[b f]|\ge 3p_0^2/(32H)\). As there are
-\(3N/2\) edges, the unnormalized correlation is at least
-\(\gamma^2\eta^2 N/(16H)\) for every cut at once.
+An infinite sequence of the required cubic expanders is provided by the
+regular bipartite Ramanujan families of Marcus, Spielman and Srivastava.
+Their nontrivial positive adjacency eigenvalues are at most
+\(2\sqrt2<3\). Applying \(3I-A\) to a centered indicator of a vertex set
+gives a constant \(\gamma>0\) such that
 
-Mark edges independently and keep a marked edge only when its entire
-conflict neighborhood contains no other marked edge. Conflicts include
-both a shared endpoint and an edge between endpoints. The retained edges
-therefore form an induced matching. Thin the orientations with independent
-biased signs calibrated to each edge's own retention probability. The
-expected signed contribution of edge \(e\) is \(2^{-36}b_e\): if its
-retention probability is \(\pi_e\), use an independent orientation of mean
-\(2^{-36}b_e/\pi_e\). The cubic conflict block has size at most 36, so
-\(\pi_e\ge2^{-36}\). The absolute expected imbalance for each cut is at
-least \(2tN/H\). Disjoint mark neighborhoods give independent contributions;
-counting potentially dependent ordered pairs bounds the variance by
-\(4|E|\,36^2=7776N\). Chebyshev's inequality and a union bound
-yield one matching and one
-orientation for which the endpoint imbalance of every cut is at least
-\(\floor{tN/H}\), provided
 \[
-                 7776 |J| H^2/t^2<N .
+|\partial S|\ge\gamma\min(|S|,N-|S|).
 \]
-The formal derivation is in \texttt{CommonMatchingSelection},
-\texttt{ExpanderBarrier} and \texttt{FiniteGrowth}. The same size condition
-ensures \(tN/H\ge2\). Thus rounding reduces the margin by at most a factor
-of two. For Theorem~\ref{thm:full}, \(|J|=k\le\lambda\). For
-Theorem~\ref{thm:menu}, \(|J|\le2^r k\) and \(k\le\lambda+3\).
-The displayed cutoffs ensure the required strict inequality.
 
-\paragraph{Rank on the selected matching.}
-Fix all pins outside the endpoints to one. Separate the two endpoint
-classes of the oriented matching into row and column bits. If the matching
-has \(m\) edges, the matrix of the target count is, up to ordering,
-the tensor power of the OR matrix
+This is the only expander property used here.
+\href{https://annals.math.princeton.edu/2015/182-1/p07}{MSS, Interlacing
+families I}
+
+Let \(I\) be an induced matching of \(m\) edges in this graph. Fix every
+sign outside its endpoints to one. Because the matching is induced, (A)
+becomes a product of \(m\) copies of
+
 \[
-             \begin{pmatrix}0&1\\1&1\end{pmatrix}^{\otimes m}.
+J=\begin{pmatrix}0&1\\1&1\end{pmatrix},\qquad\det J=-1.
 \]
-Its determinant is a unit in every nontrivial residue ring. The determinant
-of the corresponding matrix of \(B\) therefore has nonzero image under
-\(\pi\); injectivity of \(e\) transfers nonvanishing to \(K\). Its field
-rank is \(2^m\). On a given cut, let \(a\) and \(b\) count the row and
-column endpoints on its first side. A separated product has rank at most
+
+Choose one endpoint of every matched edge for a set \(A\) and the other
+for \(D\). The restricted target matrix on assignments to \(A\) versus
+\(D\) is a permuted tensor product \(J^{\otimes m}\). The inverse of \(J\) is
+\(\left(\begin{smallmatrix}-1&1\\1&0\end{smallmatrix}\right)\); multiplying the
+tensor powers gives the identity, including in characteristic two.
+Its determinant is a unit over every nontrivial residue ring. Therefore every
+integral matrix congruent to it modulo two has full rank \(2^m\) over
+\(\mathcal K\).
+
+A separated term on a cut \(P\) has, after independent row and column
+permutations, a tensor product of a matrix on its \(P\) inputs and a
+matrix on its complement. If \(a=|A\cap P|\) and \(b=|D\cap P|\), its
+rank is at most
+
 \[
- 2^{\min(a,b)+\min(m-a,m-b)}=2^{m-|a-b|}.
+2^{\min(a,b)+\min(m-a,m-b)}=2^{m-|a-b|}.
+\tag{E}
 \]
-The two side matrices act on disjoint row and column coordinates, so their
-ranks multiply in this upper bound. Every menu term is tested on the
-\emph{same} matrix. Rank subadditivity now gives \(2^m\le h2^{m-d}\),
-where \(d=\floor{tN/H}\). The bounds on \(H\) and rounding give the
-two theorems. Each distinct term index requires an event in a covering
-trace, which gives the cost assertion. The polynomial comparison with its
-explicit cutoff is proved in \texttt{PowerCost}.
 
-\section{What the model measures}
+To see the exponent directly, arrange a row first by its bits in
+\(A\cap P\), then by those outside \(P\), and order columns in the same
+fashion using \(D\). The two side matrices have sizes \(2^a\times2^b\)
+and \(2^{m-a}\times2^{m-b}\). A rank decomposition of each into
+outer products gives a decomposition of their tensor product by taking
+all pairs of outer products. The exponent in (E) is \(b+m-a\) when
+\(a\ge b\), and \(a+m-b\) in the other case. Scalar weights and
+permutations preserve this upper estimate. Each term may require its
+own reordering to prove (E); its rank is then measured back in the same
+global row and column space.
 
-A simple computation on the same inputs illustrates the role of the output
-contract. Count the edges violated by the pins,
+Consequently a single induced matching and orientation with
+\(|a-b|\ge d\) for \textbf{every} allowed cut force \(h\ge2^d\) by
+matrix-rank subadditivity. This uses the array of values on genuine
+signed formulas; it does not claim that an evaluator outputs the array.
+No nonlinear function or circuit is transported through a linear change
+of basis. The remaining work constructs that one common matching and
+orientation for the entire cut family.
+
+\subsection{3. A simultaneous-correlation
+lemma}\label{a-simultaneous-correlation-lemma}
+
+The sign-maximization argument originates in F. Nazarov's
+\emph{The ``Bang solution'' of the coefficient problem}, Part 2, extending
+Bang's method. We need a finite form that works with the actual
+distribution of pin labels. Appendix A gives a rational proof with the
+piecewise-quadratic potential. Appendix B carries out the variant on
+edges, where some differences vanish.
+
+Let \(\mu\) be a probability measure on the finite product \([r]^k\).
+Assume \(\mu\le C U\) pointwise for product-uniform \(U\) and \(C\ge1\).
+Consider a list of events \(S_j\), each depending on just one coordinate
+and having \(\eta\le p_j=\mu(S_j)\le1-\eta\), \(0<\eta\le1/2\). For
+coordinate \(i\), let \(R_i\) be the number of events using it. Put \[
+         f_j=\mathbf1_{S_j}-p_j,\qquad H_0^2=C\sum_i R_i^2.
+\] Suppose the list is nonempty, and choose a rational \(H\ge1\) with \(H^2\ge H_0^2\). For the finite application the measure, \(C\), and the balance parameter are rational.
+
+\textbf{Lemma 1.} A single function \(b:[r]^k\to[-1,1]\) satisfies \[
+             |\mathbb E_\mu b f_j|\ \ge\
+                 \frac{3\eta^2}{16H}
+                       \qquad\text{for every }j .
+ \tag{1}
+\]
+
+\emph{Proof.} For any signs \(\epsilon_j\) let
+\(Y=\sum_j\epsilon_j f_j\). Its \(\mu\)-mean is zero. Its
+uniform-variance bound transfers to the centered \(\mu\)-sum by \[
+ \mathbb E_\mu Y^2
+   =\min_c\mathbb E_\mu(Y-c)^2
+   \le \mathbb E_\mu(Y-\mathbb E_UY)^2
+   \le C\operatorname{Var}_U(Y)
+   \le C\sum_i R_i^2\le H^2 .
+\] The final inequality follows by grouping the centered indicators by
+coordinate. Under \(U\) the coordinate functions are independent, and
+the oscillation of the sum of \(R_i\) signed indicators is at most
+\(R_i\), so its variance is at most \(R_i^2\). No independence is
+imposed on \(\mu\).
+
+It remains to turn this one estimate for every signed sum into correlations
+with a \emph{single} bounded function. Since \(p_j\in[\eta,1-\eta]\), each
+\(f_j\) has \(\eta\le |f_j|\le1\) pointwise. Choose the signs maximizing
+the expected Huber potential of \(Y/H\). On the central event where
+\(|Y/H|\le2\), one sign flip stays in the quadratic portion of the potential.
+This event has mass at least \(3/4\). Comparing the maximizing vector with
+each of its neighbors gives (1) with the same bounded slope function for all
+\(j\). Appendix A computes the gain including the factor \(3/16\).
+\(\square\)
+
+\paragraph{The original smooth proof for balanced vertex tests.}
+For comparison, the same centered indicators admit the original manuscript's
+smooth-potential derivation. Its constant
+\(3/(4\,17^{3/2})\) is smaller than \(3/16\), so its conclusion follows
+also from (1). Keeping the sign comparison explicit explains which part
+of the argument changes when a test can vanish on an edge. The Lean
+proof of (1) uses the rational potential in Appendix A.
+
+Write \(w=Y/H\), \(\rho(v)=\sqrt{1+v^2}\). Choose the finite sign vector
+maximizing \(\mathbb E_\mu\rho(w)\), and set
+\(b=\rho'(w)=w/\sqrt{1+w^2}\). Flipping its \(j\)-th sign replaces \(w\)
+by \(w-h_j\), \(h_j=2\epsilon_j f_j/H\). Taylor's theorem with integral
+remainder gives the pointwise bound \[
+        \rho(w-h_j)-\rho(w)\ \ge\
+        -h_j b+\frac{h_j^2}{2}
+          \inf_{|v-w|\le 2/H}(1+v^2)^{-3/2}.
+\] The expectation of its left side is nonpositive by maximality. On
+\(|w|\le2\), an event of probability at least \(3/4\) by the
+second-moment bound, the displayed infimum is at least \(17^{-3/2}\).
+The curvature is nonnegative everywhere. Also \(|f_j|\ge\eta\) on the
+entire sample space, since the indicator takes only the values zero and
+one. Rearranging the expected inequality gives
+\(\epsilon_j\mathbb E_\mu bf_j\ge3\eta^2/(4\,17^{3/2}H)\). This proves
+the weaker estimate. \(\square\)
+
+\subsection{4. Common edge weights, matching and the lower
+bound}\label{flow-matching-and-the-lower-bound}
+
+Suppose that the distribution of the \(k\)-coordinate label of a
+uniformly selected pin clause of \(H_N\) is \(\mu\). Write \(K_0=\sum_i R_i\) for the number of cuts, to distinguish it from the field \(K\).
+Let the graph have edge expansion \(\gamma\le1\), fixed independently of
+\(N\).
+
+\textbf{Common-matching bound.} If \(K_0 H^2=o(N)\), every fixed separated
+representation using these balanced cuts and recovering the final
+residue on all signed inputs satisfies \[
+                      \log_2 h\ge c_{\eta,\gamma}\,N/H .
+ \tag{2}
+\] The same conclusion holds when \(K_0 H^2/N\) is sufficiently small in
+terms of \(\eta,\gamma\) and the maximum graph degree. It includes
+arbitrary signed characteristic-zero factors, nonintegral summands, and
+fixed linear combinations whose output is integral and has the correct
+residue.
+
+\emph{Proof.} The original vertex-space interpretation is useful here.
+If \(b\) is the function from (1), assigning \(g(v)=\gamma
+(b(L(v))-\mathbb E_\mu b)/2\) gives total divergence zero,
+\(|g(v)|\le\gamma\), and a cut sum of magnitude
+\(\Omega_{\gamma,\eta}(N/H)\) on every menu cut. For every other
+\(D\subseteq V\) the absolute sum is at most
+\(\gamma\min(|D|,N-|D|)\le|\partial D|\). These are the unit-capacity
+cut conditions of the classical max-flow/min-cut theorem. The construction
+used for the finite bounds below obtains the edge weights directly, with
+explicit constants, so it needs no flow oracle.
+
+Fix a provisional orientation and let \(d_j(e)\) be the difference of
+cut indicators at the tail and head of \(e\). Its square is the indicator
+that the edge crosses the cut. Cubic regularity and expansion give
+\(\mathbb E_E d_j^2\ge p_0=2\gamma\eta/3\). For every choice of signs,
+\(\mathbb E_E(\sum_j\epsilon_jd_j)^2\le4H^2\); the proof is in
+Appendix B. Equations (B1)--(B2) there yield a \emph{single} rational
+edge weight \(F_e\in[-1,1]\) with
 \[
-                 W(\sigma)=\sum_{(v,w)\in E}(1-\sigma_v)(1-\sigma_w).
+       \left|\sum_e F_e d_j(e)\right|
+       \ge \gamma^2\eta^2 N/(16H)
+       \qquad\text{for every cut }j .
 \]
-An edge term separates across any fixed cut, including when both endpoints
-lie on the same side. The count \(C(\sigma)\) equals the indicator of
-\(W(\sigma)=0\). Computing that indicator uses a global zero test after the
-sum. This example is formalized in \texttt{PinnedCNF}. Applying the cost
-theorem to a specific SAT program would require a correspondence between
-its operations and the charged events of Corollary~\ref{cor:cost}.
-The verified results here concern representation length and this stated
-execution model.
+This estimate includes the zero differences on edges internal to either side of the cut.
 
-\paragraph{Proof sources.}
-The theorem index and build records accompany this paper. The entry points
-are \texttt{RetunedLayout.modular\_output\_barrier},
-\texttt{MenuBounds.source\_distinct\_menu\_barrier}, and the two
-\texttt{RetunedLayout} theorems on superpolynomial representation and cost.
-The project uses Lean 4.24.0 and a pinned Mathlib checkout. The research
-question and release were directed by the project initiator. AI assistants
-contributed to the mathematical development, review, formal proofs and
-preparation of this manuscript.
+Freeze a provisional orientation on the graph. Mark its edges
+independently with fair coins. Retain a marked edge if every other edge
+at line-graph distance at most two is unmarked. The resulting set \(I\)
+is an induced matching. The individual retention probabilities \(\pi_e\)
+are bounded below by a fixed \(\pi_*=2^{-36}\), since the graph is cubic.
+Independently prepare a sign coin \(B_e\) at each edge with mean
+\(\pi_*F_e/\pi_e\). This mean is in \([-1,1]\), including at edges whose
+retention probabilities differ. Let \(Y_e=B_e\) if that edge is retained
+and \(Y_e=0\) otherwise. Then \(\mathbb E Y_e=\pi_*F_e\).
 
-\begin{thebibliography}{9}
-\bibitem{source} OpenAI. \emph{The Exponential Time Hypothesis is False}.
-25 October 2026 revision, quantitative reduction and contraction.
-\href{https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026}{Source and manuscript}.
-\bibitem{nazarov} F. Nazarov. \emph{The ``Bang solution'' of the
-coefficient problem}. Part 2, 1997.
-\href{https://www.mathnet.ru/eng/aa774}{Publication record}.
-\bibitem{mss} A. W. Marcus, D. A. Spielman and N. Srivastava.
-\emph{Interlacing families I: Bipartite Ramanujan graphs of all degrees}.
-Annals of Mathematics 182 (2015), 307--325.
-\href{https://doi.org/10.4007/annals.2015.182.1.7}{doi:10.4007/annals.2015.182.1.7}.
-\bibitem{dm} A. de Colnet and S. Mengel.
-\emph{A Compilation of Succinctness Results for Arithmetic Circuits}.
-\href{https://arxiv.org/abs/2110.13014}{arXiv:2110.13014}.
-\end{thebibliography}
+For cut \(j\) set
+\(d_{je}=\mathbf1_{S_j}(\operatorname{tail}e)-\mathbf1_{S_j}(\operatorname{head}e)\).
+The signed sum \(\sum_e d_{je}Y_e\) has mean
+\(\pi_*\sum_e F_e d_{je}\), of absolute value at least a constant
+times \(N/H\). Its variance is \(O(N)\), since edge variables at
+line-graph distance greater than four are independent and all edge
+variables are bounded. Chebyshev's inequality gives a probability
+\(O_{\eta,\gamma}(H^2/N)\) that this signed sum differs from its mean by
+at least half the absolute mean. A union bound over all \(K_0\) events
+supplies one retained induced matching and endpoint orientation such
+that every cut has absolute endpoint imbalance
+\(\Omega_{\eta,\gamma}(N/H)\).
+
+Pin every other variable to one. The correctly returned terminal bit on
+this input restriction is the product of the two-bit Boolean OR matrices
+on the induced matching. For \(m=|I|\), its matrix across the common
+transversal is unimodular of dimension \(2^m\). The integral
+characteristic-zero lift of the output thus has full rank over the
+fraction field. A single allowed term has rank at most \(2^{m-|d_j|}\)
+on precisely the same matrix, where \(d_j\) is its cut's signed endpoint
+imbalance. Summing the ranks proves (2). This is a proof restriction on
+a family of genuine inputs; the construction charges no flow calculation
+or random selection to the algorithm.
+
+For the finite constants, the conflict block of a cubic edge has at most
+36 members including itself: a conflicting edge touches an endpoint or
+has an endpoint adjacent to one. Fair marks therefore give
+\(\pi_e=2^{-|{\cal B}_e|}\ge2^{-36}\). Two retained oriented contributions
+are independent if their blocks are disjoint. For each edge at most \(36^2\)
+blocks meet its block, by symmetry of conflict. More explicitly, an
+edge that can affect both tests belongs to their block intersection;
+there are at most 36 choices for it and at most 36 blocks containing
+that choice. Orientation coins belonging to distinct edges are
+independent and independent of all the mark bits. For disjoint blocks
+the two signed contributions are functions of disjoint independent
+variables, so their covariance is zero. Bounding each covariance in
+absolute value by four gives
+\[
+ \operatorname{Var}\!\left(\sum_e d_{je}Y_e\right)
+ \le4|E|36^2=7776N .
+\]
+Put \(t=2^{-36}\gamma^2\eta^2/32\). The magnitude of the mean for each
+cut is at least \(2tN/H\). Chebyshev and a union bound show that a single
+outcome has imbalance at least \(d=\floor{tN/H}\) at every cut whenever
+\[
+                    7776K_0 H^2/t^2<N.                 \tag{J}
+\]
+For a nonempty list this condition gives \(tN/H\ge2\), so
+\(d\ge tN/(2H)\). Each orientation is chosen once for all terms.
+Thus \(2^m\le h2^{m-d}\), which proves the asserted lower bound,
+with all integer rounding accounted for.
+
+
+\subsection{5. Native parameters and joint
+retuning}\label{native-parameters-and-joint-retuning}
+
+In the source family \(M=10N\). Write \(Q=r^{2a}\) and assume the
+published certificate \(\sum_c(X_c-M/Q)^2\le2M\Delta\) and feasibility
+\(M\ge2Q^2\Delta\). Each joint edge-label cell then has \(X_c\le2M/Q\).
+The one-port unary clauses form a subset of a single bipartite side. Sum
+the cell bounds over the other side's labels and all unused coordinates.
+Dividing by their number \(N\) proves \(\mu\le(2M/N)U=20U\) for any
+\(k\) coordinates.
+
+In detail, for one full cell the deviation from the mean is at most
+\(\sqrt{2M\Delta}\le M/Q\). A prescribed first label on \(k\) retained
+coordinates has exactly \(r^{a-k}r^a\) full-cell preimages. Its pin count
+is bounded by the port count on those cells, at most
+\(2M r^{a-k}r^a/Q=2M/r^k\). Dividing by \(N\) proves the domination
+used in Section 3. This argument allows arbitrary dependences among the
+pin labels.
+
+\paragraph{Balanced menus at a fixed alphabet.}
+For each coordinate, distinct pairs of a coordinate and a symbol subset
+give \(R_i\le2^r\). Thus \(K_0\le2^r k\), and
+\(s_0=20\sum_iR_i^2\le20\,2^{2r}k\). With
+\(H=\floor{\sqrt{s_0}}+1\), the nonempty integer budget gives
+\(s_0\le H^2\le4s_0\). Hence \(H^2\le b_r k\). At the original
+\(r=64\) one may take all the eligible unions on all \(u\) active
+coordinates. The factor \(2^{64}\) is fixed. The sets of pins,
+their balance, and the list of possible pairs are determined before the
+signs are assigned; the terms may use different cuts in this list.
+
+\paragraph{Full products with a variable alphabet.}
+Every individual symbol group contains at most \(20N/r\) pins. For
+\(r\ge27\) this is at most \(3N/4\). If a group already has at least
+\(N/4\) members it supplies a balanced union. Otherwise add groups until
+their total reaches \(N/4\); at the first such step it is below \(N/2\).
+Choose one such union per retained coordinate. Multiplying local factors
+within its two sides expresses the whole product as a separated term with
+the same value at every input. Here \(K_0=k\) and \(H^2\le80k\). The
+inequality for one occupied cell gives \(r^{2a}=Q\le 2M=20N\).
+Since \(a\ge1\) and \(r\ge27\), \(20\cdot2^a\le r^{2a}\);
+thus \(k\le a\le\floor{\log_2N}=\lambda\). Neither this argument nor
+the bound on \(H\) fixes the alphabet size.
+
+\paragraph{Closing the finite bounds.}
+For \(N\ge{\cal C}(B,a_0)\) we have \(\lambda\ge\max(10,a_0,4B+1)\).
+Induction from 10 gives \(\lambda^3\le 2^\lambda\). Consequently
+\[
+ B(\lambda+a_0)^2\le4B\lambda^2<\lambda^3\le 2^\lambda\le N .
+\]
+In the menu case \(s=\floor{7N/2}\le4N\), whence
+\(\ceil{\log_2 s}\le\lambda+3\); dividing by 131072 and doubling
+still gives \(2u\le\lambda+3\). Apply the displayed inequality with
+\(B={\cal M}(2^r,b_r,t)\), \(a_0=3\), or
+\(B={\cal M}(1,80,t)\), \(a_0=0\) for full products. In both cases it
+implies (J). Squaring \(tN/(2H)\le d\) gives respectively
+\((tN)^2\le4 b_r(\lambda+3)d^2\) and \((tN)^2\le320\lambda d^2\).
+This proves Theorems 1 and 2. Constants in the asymptotic statements
+require a fixed positive lower bound for expansion along the graph family.
+Balance always refers to the independently varied pins; the number of
+alphabet symbols on a side does not enter the expansion inequality.
+
+\subsection{6. Finite precision, recursion and the actual
+output}\label{finite-precision-recursion-and-the-actual-output}
+
+A layout-fixed interpolation formula can combine probe values whose
+individual coefficients are fractional. Here is the finite precision
+argument in a form that identifies exactly what must be checked for a
+choice of nodes and precisions. In the notation of Section 1 take an
+element \(\varpi\in R\) with \(\pi(\varpi)=0\) and a target precision
+\(p\ge1\). For each probe \(t\) let \(a_t,\widetilde a_t\in R\)
+be its exact and replacement values, and \(c_t\in K\) its coefficient.
+At any input assume that
+\[
+ \widetilde a_t=a_t+\varpi^{q_t}e_t,\qquad
+ c_t e(\varpi^{q_t})=e(\varpi^p b_t),\qquad
+ \sum_t c_t e(a_t)=e(A)
+\]
+with \(b_t,e_t,A\in R\). Then distributivity and the homomorphism law give
+\[
+ \sum_t c_t e(\widetilde a_t)
+   =e(A)+\sum_t c_t e(\varpi^{q_t})e(e_t)
+   =e\!\left(A+\varpi^p\sum_t b_t e_t\right).
+\]
+The quantity in parentheses is integral and has residue \(\pi(A)\).
+The choice of representatives may be nonlinear, and the individual
+weighted probes need not be integral. If the replacements expand into
+local products and \(\pi(A)=C_N\) at every input, we now have exactly
+the output contract of (C). On restricting to a matching, reduction
+commutes with determinants. A unit determinant of the reduced target
+therefore forces the lifted determinant in \(R\) to be nonzero.
+Injectivity of \(e\) preserves it in \(K\). This proves the full-rank
+step independently of the valuations of individual summands.
+
+\paragraph{A truncated jet.}
+For a ring map \(f:R\to S\), evaluation at \(x\in S\) annihilates the
+ideal \((X^h)\) whenever \(x^h=0\). Indeed, if
+\(P-Q=X^h U\), the difference of their evaluations is \(x^hU(x)=0\).
+Division by the monic \(X^h\) then proves
+\((P\bmod X^h)(x)=P(x)\). In particular if \(\varpi^p=0\) in the
+precision ring and \(bh\ge p\), take \(x=\varpi^b\) and use
+\(x^h=\varpi^{bh}=0\). This gives a criterion for replacing a probe
+by the evaluation of its truncated jet. Applying it to a concrete
+Hermite schedule requires its node orders, precision and the coefficient
+identities displayed above. The criterion determines the evaluated
+value; identifying a hard nonzero probe or Taylor coefficient for a
+particular schedule is a separate question.
+
+\paragraph{Recursion and reuse.}
+For the interpolation that motivates this model, the child contraction
+is indexed by one symbol together with graph data, a center, a lift and
+a precision. Once these choices are fixed independently of the varied
+signs, all calculations reading only that group's signs fit into its
+factor. Repeated appearances of the same entrance under fixed linear
+recombination may be collected into a single coefficient before applying
+the rank inequality. Any program-specific application must identify the
+local views and verify the same final residue for all sign assignments.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-contraction.tex}{Source contraction and interpolation formulas}.
+
+\subsection{7. Overlap, adaptivity, and exact escape
+routes}\label{overlap-adaptivity-and-exact-escape-routes}
+
+The rank calculation provides a quantitative extension, provided the
+declared scopes of the computation are retained. Work on the same
+restricted matching and transversal. A term can start with an allowed
+cut \(P\mid P^c\) and leak some input bits into both views. There may be
+arbitrarily many factors within either enlarged view, arbitrary local
+nonlinear computation, and caching. Relabel the views so that
+\(d_P=|A\cap P|-|D\cap P|\ge0\). If \(O_P\subseteq P\) is additionally
+read by the other view and \(O_{P^c}\subseteq P^c\) by the first, define
+
+\[
+\ell_P=|A\cap O_P|+|D\cap O_{P^c}|.
+\]
+
+In the bipartite graph connecting opposite transversal bits that
+co-occur in a factor, the set
+
+\[
+(D\cap P)\cup(A\cap P^c)\cup(A\cap O_P)\cup(D\cap O_{P^c})
+\]
+
+is a vertex cover of size \(m-d_P+\ell_P\). Conditioning those bits
+separates every remaining factor into one side. Thus the term rank is at
+most \(2^{\min(m,m-d_P+\ell_P)}\), and correctness of the sum forces
+
+\[
+\sum_j2^{-\max(0,d_{P_j}-\ell_{P_j})}\ge1.
+\tag{F}
+\]
+
+For clarity, condition on the cover assignment. In the first view all
+of its column inputs are fixed and the remaining factor depends only
+on the row; in the second view all of its row inputs are fixed and the
+remaining factor depends only on the column. Attach the row and column
+parts of the condition to these two functions as indicators. Their outer
+product gives exactly the term restricted to that assignment. Summing
+these matrices over the assignments reconstructs the term and bounds
+its rank by the number of assignments. The full matrix itself has only
+\(2^m\) rows. Taking the smaller bound and dividing the sum of the
+individual ranks by \(2^m\) gives (F), also when leakage exhausts the
+whole deficit.
+
+The other directions of duplicated bits need not be charged. For fixed
+leakage budget \(\ell\) and \(h\) distinct terms, the sharp common
+matching gives
+
+\[
+\log_2h+\ell\ge cN/\sqrt{\log N}.
+\tag{G}
+\]
+
+For an adaptive decision tree, multiply the factors at each leaf by its
+actual transcript predicates, with their input scopes included. The sum
+of the capacities of all augmented leaf terms must still be at least
+\(2^m\). If a run has at most \(b\) binary public branch bits and each
+leaf has at most \(h\) terms satisfying the same leakage condition, then
+
+\[
+b+\log_2h+\ell\ge cN/\sqrt{\log N}.
+\tag{H}
+\]
+
+This does not prove exponential elapsed time for adaptive programs: an
+exponential number of possible transcripts need not all be visited in
+one run. A branch predicate reading the whole input can also destroy the
+separator deficit.
+
+Precisely, for each term at a leaf, every signed path predicate must be
+realizable as a test on one of its two declared views. Multiply the tests
+on each view into its local factor. Their product is one exactly on the
+inputs that reach that leaf, so summing all masked leaf terms reconstructs
+the full target matrix. A binary tree of depth \(b\) has at most \(2^b\)
+leaves (induct on the tree). If the selected common matching guarantees
+excess at least \(d\), the rank budget applied to all leaf terms gives
+\(2^d\le 2^{b+\ell}h\), including the case \(\ell\ge d\).
+This proves (H). In particular a term may read different sets from
+another term at the same leaf, but each must support the actual signed
+tests on that path. A bound on the leaf count alone would omit this
+condition.
+
+Two short algorithms show why these qualifications matter. The first
+reads all pins and checks every edge of the expander. It takes \(O(N)\)
+indexed-word operations and polynomial bit time. More pointedly, for
+\textbf{any one} fixed balanced cut, the integer
+
+\[
+V(\sigma)=\sum_{vw\in E(H_N)}(1-\sigma_v)(1-\sigma_w)
+\]
+
+is a sum of \(3N/2\) separated products: a crossing edge contributes one
+factor from each side and an internal edge is a side function. The
+correct answer is \([V=0]\). One global zero test therefore converts a
+small separated mixed statistic into the final bit. Its arithmetic
+parity is not that bit before the test, so it fails exactly the output
+contract in (C).
+
+There is also a polynomial-size rational arithmetic calculation with
+overlapping full-scope products:
+
+\[
+C_N(\sigma)=\prod_{j=1}^{3N/2}\left(1-\frac{V(\sigma)}j\right).
+\tag{I}
+\]
+
+Indeed \(V\) is an integer between zero and \(3N/2\). The product is one
+at zero and has a zero factor at each other possible value. Its common
+denominator divides \((3N/2)!\), with \(O(N\log N)\) bits, so this is a
+polynomial bit algorithm as well. Thus even this explicit same-input
+test prevents any inference from the lower bound to general scalar
+arithmetic complexity.
+
+\subsection{8. From representation length to a cost bound}
+For a fixed representation indexed by \(T\), let a finite execution be
+a list of events tagged by one member of \(T\) or untagged. Suppose every
+member occurs at least once. Selecting the first occurrence of each
+member injects \(T\) into the list positions. With a positive integer
+charge per event, total charge is at least the list length, hence at
+least \(|T|\ge2^d\). This gives the first assertion of Corollary 3,
+also when some entrances are reused.
+
+To see the polynomial comparison explicitly, let
+\(B=\ceil{320(p+1)^2/t^2}\) and \(N\ge{\cal C}(B,1)\). Then
+\(320(p+1)^2(\lambda+1)^2<t^2 N\). Combining this with
+\((tN)^2\le320\lambda d^2\) and \(\lambda\le N\) gives
+\(((p+1)(\lambda+1))^2<d^2\). As \(N<2^{\lambda+1}\), it follows
+that \(N^p<2^d\), also for \(p=0\). This proves the second assertion
+of Corollary 3.
+
+A claim about the running time of a specific implementation would
+additionally have to identify the events in its actual execution,
+establish coverage on the inputs in question and justify their charges.
+Similarly a matching upper bound for the minimum representation length
+would require exhibiting and counting terms for a particular reconstruction
+schedule. The lower bounds proved here hold at the fixed alphabet and
+under the full-group retuning conditions of Section 5. The direct scan
+and the global statistic of Section 7 show why other computation models
+can behave differently on the same formulas.
+
+\subsection{9. Prior tools and
+verification}\label{prior-tools-and-verification}
+
+The classical ingredients include matrix-rank subadditivity, product
+distributions, convex maximization, max-flow/min-cut, bounded-degree
+expanders and the second-moment method. In particular, the
+bounded-majorant principle and its maximization-over-signs proof are
+already in Fedor Nazarov's \emph{The ``Bang solution'' of the
+coefficient problem} (1997), Part 2. The smooth and Huber arguments here
+are finite specializations of that method. The general correlation
+principle, its sign-flip proof and the older quadratic Bang argument are
+not claimed as new. \href{https://www.mathnet.ru/eng/aa774}{Nazarov,
+primary publication}
+
+Expander positive 2-CNF witnesses and support-cover lower bounds occur
+in Bova, Capelli, Mengel and Slivovsky. For signed arithmetic circuits,
+de Colnet and Mengel's \emph{A Compilation of Succinctness Results for
+Arithmetic Circuits}, Theorem 2 and Lemmas 13-15, already combine
+decomposition into balanced products, induced matchings and matrix rank.
+Their structured case uses one shared factor partition; its displayed
+target has edge determinant minus two. The present proof instead
+verifies a common transversal for the source-restricted menu of many
+partitions and uses the OR determinant minus one to retain full rank at
+the final residue. This comparison identifies the source-specific
+application without asserting that the general method is novel.
+\href{https://arxiv.org/abs/1411.1995}{BCMS} ·
+\href{https://arxiv.org/abs/2110.13014}{de Colnet and Mengel} ·
+\href{https://ijcai.org/proceedings/2016/147}{Multi-partition
+communication}
+
+The graph existence result used in Section 2 is external. The finite
+theorems take the graph and its expansion inequality as input. The
+formal development proves the rational Huber and edge arguments,
+matching selection, modular rank transfer, overlap and query-tree
+bounds, and full-materialization cost in the model of Section 8.
+Section 6 gives the reconstruction and jet identities at their actual
+hypotheses. The constants for the graph argument in Appendix B use the
+rational edge theorem. The external real-variable arctangent comparison
+is due to Nazarov.
+
+The public project pins Lean 4.24.0 and its Mathlib revision. Its
+theorem index links these arguments to source files; its verification
+directory records the build, declaration inventory, and axiom reports.
+The five finite test suites supply additional examples. The research
+question and publication were directed by the project initiator; AI
+assistants contributed to the derivations, formalization, review and
+preparation of the paper. Publication priority and independent human
+peer review remain open.
+
+\clearpage
+\subsection{Appendix A. A piecewise-quadratic
+proof}\label{appendix-a.-a-piecewise-quadratic-proof}
+
+This is a finite rational variant of the classical Bang-Nazarov
+bounded-majorant proof, not a new simultaneous-correlation principle.
+Its piecewise-quadratic inequalities are useful for the accompanying
+Lean certificates. See F. Nazarov, \emph{The ``Bang solution'' of the
+coefficient problem} (1997), Part 2, and the attribution discussion in
+the main manuscript.
+
+Use the notation of the sharp cut theorem. The functions \(f_j\) are
+centered balanced event indicators, so \(|f_j|\le1\) and
+\(|f_j|\ge\eta\) pointwise. Assume \(H\ge1\) and
+\(\mathbb E_\mu(\sum_j\epsilon_j f_j/H)^2\le1\) for every vector of
+signs. A single function \(b\) with \(|b|\le1\) then satisfies, for every
+\(j\), \[
+                 |\mathbb E_\mu b f_j|\ge\frac{3\eta^2}{16H}.
+\]
+
+Define the convex Huber function \[
+   \rho(x)=
+      \begin{cases}
+       x^2/2,&|x|\le4,\\
+       4|x|-8,&|x|>4 ,
+      \end{cases}
+   \qquad d(x)=\max(-4,\min(x,4)).
+\] Its derivative is \(d(x)\), a continuous nondecreasing function,
+including at both endpoints. Consequently
+\(\rho(y)-\rho(x)\ge d(x)(y-x)\) for all \(x,y\); this also follows by
+the quadratic identity in the inner interval and the matching tangent
+lines on its exterior. When \(|x|\le2\) and \(|y-x|\le2\), both
+arguments belong to \([-4,4]\) and the exact difference contains the
+additional term \((y-x)^2/2\).
+
+Choose signs maximizing the expectation of \(\rho(w)\) for
+\(w=\sum_j\epsilon_j f_j/H\), and set \(b=d(w)/4\). Flipping sign \(j\)
+replaces \(w\) by \(w-h\), where \(h=2\epsilon_j f_j/H\) has absolute
+value at most two. The pointwise difference obeys \[
+ \rho(w-h)-\rho(w)\ge -4bh + \frac{h^2}{2}\mathbf1_{\{|w|\le2\}} .
+\] Its expectation is nonpositive by maximality. With
+\(\mu(|w|\le2)\ge3/4\) by the second-moment bound, multiplication by
+\(H/8>0\) yields \[
+ \epsilon_j\,\mathbb E_\mu bf_j
+       \ \ge\ \frac1{4H}\mathbb E_\mu
+                         [f_j^2\mathbf1_{\{|w|\le2\}}]
+       \ \ge\ \frac{3\eta^2}{16H}.
+\] The same maximizing signs work for the entire list of events. For rational input data, an integer ceiling for \(H\) makes
+every quantity in this proof rational. The finite verification maximizes
+the exact objective on two nonuniform label fixtures and checks all
+signed inequalities without approximating any square root.
+
+\clearpage
+\subsection{Appendix B. The classical majorant and a direct edge
+proof}\label{appendix-b.-the-classical-majorant-and-a-direct-edge-proof}
+
+Nazarov's bounded-majorant argument chooses a single sign maximizer
+for all tests. In its classical smooth form the potential has derivative
+\(\arctan x\) and curvature \((1+x^2)^{-1}\).
+\href{https://www.mathnet.ru/eng/aa774}{Nazarov, Part 2}.
+For the rational edge proof we retain the common maximizer, and use
+the piecewise-quadratic potential of Appendix A. This requires a separate
+argument: an edge can have both endpoints on the same side, so the
+pointwise lower bound \(|f_j|\ge\eta\) of Appendix A fails.
+
+Let the weights form a rational probability distribution and suppose
+\(|v_j|\le1\), \(\mathbb E v_j^2\ge p_0>0\). Suppose that for every choice
+of signs \(\mathbb E(\sum_j\epsilon_jv_j)^2\le p_0 H_e^2\), with rational
+\(H_e\ge1\). Choose signs maximizing \(\mathbb E\rho(w)\) for
+\(w=(\sum_j\epsilon_jv_j)/H_e\). Then \(\mathbb E w^2\le p_0\).
+Consequently the event \(|w|>2\) has probability at most \(p_0/4\).
+As \(v_j^2\le1\), deleting this event loses at most \(p_0/4\) of the
+second moment of each test. The single-flip inequality of Appendix A
+with \(b=d(w)/4\) now gives
+\[
+ \epsilon_j\mathbb E[bv_j]\ge
+ \frac{\mathbb E[v_j^2{\bf1}_{|w|\le2}]}{4H_e}
+ \ge\frac{3p_0}{16H_e}\qquad\text{for all }j. \tag{B1}
+\]
+The central event is chosen once and works even if the support of the
+test changes with \(j\).
+
+There is also a direct edge-space proof of Section 4, which avoids a
+prescribed divergence. Give each graph edge a provisional orientation.
+For the uniform vertex and edge measures, put
+\(f_j(v)=1_{S_j}(v)-|S_j|/N\) and
+\(d_j(e)=f_j(\operatorname{tail}e)-f_j(\operatorname{head}e)\).
+Expansion and cubic regularity give
+
+\[
+\|d_j\|_{1,E}=\frac{|\partial S_j|}{3N/2}\ge\frac{2\gamma\eta}{3}.
+\]
+
+For \(Y=\sum_j\epsilon_jf_j\), the vertex bound
+\(\mathbb E_VY^2\le H^2\) gives
+
+\[
+\left\|\sum_j\epsilon_jd_j\right\|_{2,E}^2
+\le\frac{2}{|E|}\sum_{vw\in E}(Y(v)^2+Y(w)^2)
+=4\|Y\|_{2,V}^2\le4H^2.
+\]
+
+Take \(p_0=2\gamma\eta/3\), \(v_j=d_j\) and \(H_e=2H/p_0\).
+Here \(0<p_0\le1\), \(d_j^2=|d_j|\), and
+\(4H^2\le p_0 H_e^2\). Hence (B1) yields
+\[
+ |\mathbb E_E[b\,d_j]|\ge \frac{3p_0^2}{32H},\qquad
+ \left|\sum_e b_e d_j(e)\right|\ge
+       \frac{\gamma^2\eta^2}{16}\frac{N}{H}.                 \tag{B2}
+\]
+The unnormalized inequality uses \(|E|=3N/2\). The edge
+weights are rational and bounded by one. In Section 4 the orientation
+coin at edge \(e\) has mean \(\pi_* b_e/\pi_e\); thus the signed retained
+contribution has expectation \(\pi_* b_e\). The bounded-dependence
+variance estimate and the common union bound apply with this same
+choice of weights. This produces the discrete matching and orientation
+used for all matrices in the proof. The signed weights enter only the
+existence argument; the rank comparison is for the original integral output.
+
 \end{document}

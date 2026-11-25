@@ -4,7 +4,7 @@ How many local products are needed to recover the final model count of a pinned 
 
 [Paper (PDF)](paper/root_separation.pdf) · [LaTeX source](paper/root_separation.tex) · [Theorem index](THEOREMS.md) · [Lean verification record](verification/result.txt)
 
-For the full-group bound the alphabet has at least 27 symbols. The layout has a nonempty set of retained coordinates and satisfies the collision and feasibility inequalities in the paper. The balanced-menu bound separately quantifies over eligible cuts. The execution theorem assumes a trace covering every term. Connecting this trace to the original SAT program, or obtaining a matching upper bound for that program, requires additional results. This public edition presents the lower bounds covered by the accompanying Lean project.
+For the full-group bound the alphabet has at least 27 symbols. The layout has a nonempty set of retained coordinates and satisfies the collision and feasibility inequalities in the paper. The balanced-menu bound separately quantifies over eligible cuts. The execution theorem assumes a trace covering every term. Connecting this trace to the original SAT program, or obtaining a matching upper bound for that program, requires additional results. The paper develops the common-matching rank proof, the integral precision transfer, and the overlap and query-tree bounds. Its two appendices derive the rational Huber estimate and its edge-space version. The theorem index identifies the checked route and the classical comparisons.
 
 ## Reproduce the proofs
 

@@ -666,6 +666,26 @@ Both (26) and (27) apply to arbitrary rational measurement matrices, including \
 
 To obtain (4), use \(m/2^q\le q^{-\gamma}\) in (26). The calculation in Sections 5.3--5.4 gives the lower limit bound \(2\gamma-1\) for \(\eta^{\mathbb Q}_{q,\gamma}\). The symmetric ternary construction of Theorem B gives the matching upper limit bound for all three minima in Theorem C. Next apply (27) with \(r=q-d-1\) and the same cutoff \(K\) as in Section 6.2. The left side equals the binomial sum in (23), so the reflection and tail estimates there give the lower endpoint of (5) for \(\eta^{\mathbb Q}_{q,\gamma}\). Theorem B supplies the upper endpoint. The order of the minima in Section 1 gives the same interval for unrestricted ternary measurements. \(\square\)
 
+\section{8. The original budget and remaining questions}
+Setting \(\gamma=10\) gives \(c=2\gamma-1=19\). By Theorem B,
+\[
+ \frac{d_{q,10}^2}{q}=19\ln q+\ln(8/\pi)+o(1).
+\]
+For each \(b\) in \(\{\delta,\eta,\eta^{\mathbb Q}\}\), Theorem C gives
+\(b_{q,10}\sim\sqrt{19q\ln q}\). Substitution into (5), including
+\(c^2=361\) in the logarithmic constant, yields
+\[
+ 19\ln q-2\ln\ln q+\ln\frac{2}{361\pi}+o(1)
+ \ \le\ \frac{b_{q,10}^2}{q}
+ \ \le\ 19\ln q+\ln\frac8\pi+o(1).
+\]
+Thus the same explicit interval applies when every row and every rational
+measurement coefficient can be chosen freely. Determining the second-order
+optimum in each of these larger classes remains open. The gap is on the
+scale of \(\ln\ln q\) in squared degree divided by dimension. A further
+question is whether the lower-bound argument transfers to the two-sequence
+coordinate-swap problem underlying the motivating construction.
+
 \section*{Formal verification and provenance}
 The repository accompanying this paper contains Lean 4 proofs of Theorems A, B and C and the two-sided bound (5). The integer-budget version of Theorem A permits any nonnegative integer budget. Its real-budget specialization uses the exact floor of the shared-measurement bound. The asymptotic assertions quantify over every fixed real \(\gamma>1/2\).
 The definitions of all four minimum degrees use the matrix conditions of Section 1.

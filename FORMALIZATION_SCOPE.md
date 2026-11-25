@@ -1,6 +1,6 @@
 # Theorem index
 
-All declarations below are in the namespace `LocalReconstruction`. Sections 1–6 retain the original equation numbering. Section 7 gives the unrestricted matrix proof. The arguments of the polynomial matrix in the original problem have labels 1 through q, and all matrix coefficients are rational.
+All declarations below are in the namespace `LocalReconstruction`. Sections 1–6 retain the original equation numbering. Section 7 gives the unrestricted matrix proof. Section 8 specializes Theorems B, C and (5) to the original budget exponent 10. The arguments of the polynomial matrix in the original problem have labels 1 through q, and all matrix coefficients are rational.
 
 | Paper result | Lean declaration | Source |
 |---|---|---|
