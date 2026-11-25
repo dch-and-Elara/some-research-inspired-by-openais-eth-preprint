@@ -1,0 +1,77 @@
+{
+  "walsh": {
+    "alphabet": 64,
+    "coordinates": 3,
+    "density_cap": 8,
+    "one_coordinate_energy": "1",
+    "two_coordinate_energy": "4",
+    "nonconstant_contrast_choices": 250047,
+    "choices_passing_quarter_covariance_defect_test": 245826
+  },
+  "graph": {
+    "vertices": 64,
+    "edges": 96,
+    "source_wires_if_reduced": 640,
+    "cut_count": 3,
+    "exact_expected_cut_imbalances": [
+      "13841287201/103079215104",
+      "13841287201/103079215104",
+      "13841287201/103079215104"
+    ],
+    "matched_edges": [
+      [
+        23,
+        35
+      ],
+      [
+        2,
+        39
+      ],
+      [
+        28,
+        63
+      ],
+      [
+        18,
+        40
+      ],
+      [
+        9,
+        55
+      ],
+      [
+        21,
+        36
+      ]
+    ],
+    "orientation": [
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    "realized_positive_cut_imbalances": [
+      3,
+      3,
+      3
+    ],
+    "restricted_assignments_checked": 4096,
+    "identity_matrix_dimension": 64
+  },
+  "transfer_and_code": {
+    "top_shift_valuations_a1_through_a8": [
+      5,
+      17,
+      49,
+      129,
+      321,
+      769,
+      1793,
+      4097
+    ],
+    "simplex_code_three_group_partitions": 630,
+    "largest_restricted_diagonal_side": 2
+  }
+}

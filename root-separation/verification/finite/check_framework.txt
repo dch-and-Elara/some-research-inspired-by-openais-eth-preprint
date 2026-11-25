@@ -1,0 +1,82 @@
+{
+  "genuine_cnf": {
+    "enumerated_signed_cnfs": 80,
+    "induced_matching_assignments": 64,
+    "physical_wires_per_vertex": 10
+  },
+  "flattenings": {
+    "invertible_or_tensor_sizes": [
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "tested_separated_terms": 257
+  },
+  "common_orientation": [
+    {
+      "symbols": 2,
+      "coordinates": 4,
+      "ordered_edges": 256,
+      "minimum_imbalance": 70
+    },
+    {
+      "symbols": 3,
+      "coordinates": 3,
+      "ordered_edges": 729,
+      "minimum_imbalance": 106
+    },
+    {
+      "symbols": 4,
+      "coordinates": 3,
+      "ordered_edges": 4096,
+      "minimum_imbalance": 356
+    },
+    {
+      "symbols": 5,
+      "coordinates": 2,
+      "ordered_edges": 625,
+      "minimum_imbalance": 42
+    }
+  ],
+  "bang": {
+    "palettes_checked_at_sign_maximum": 84
+  },
+  "smooth_common_correlations": [
+    {
+      "symbols": 4,
+      "coordinates": 2,
+      "balanced_events": 8,
+      "distinct_labels": 16,
+      "total_label_mass": 29,
+      "domination_C": "64/29",
+      "integer_H": 9,
+      "minimum_observed_correlation": "41/5046",
+      "certified_lower_bound": "49/40368"
+    },
+    {
+      "symbols": 3,
+      "coordinates": 3,
+      "balanced_events": 9,
+      "distinct_labels": 27,
+      "total_label_mass": 54,
+      "domination_C": "2",
+      "integer_H": 8,
+      "minimum_observed_correlation": "1/144",
+      "certified_lower_bound": "1/384"
+    }
+  ],
+  "direct_jets": {
+    "nonunit_shift": 64,
+    "precision": 117,
+    "jet_length": 20,
+    "true_grid_kernel_congruences": 36,
+    "inverse_cauchy_bit_identities": 144
+  },
+  "even_center_recovery": {
+    "source_shape_capacity_checks": 12,
+    "loss_equalities": 36,
+    "full_vs_even_exact_polynomial_recoveries": 8
+  }
+}

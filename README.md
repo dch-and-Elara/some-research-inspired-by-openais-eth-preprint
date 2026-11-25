@@ -1,12 +1,13 @@
 # Some Research Inspired by OpenAI’s ETH Preprint
 
-These three papers study reconstruction from shared linear measurements. The starting point is the interpolation method in OpenAI’s [preprint on the Exponential Time Hypothesis](https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026).
+These four papers study local polynomial reconstruction, shared measurements, and the cost of representing a SAT count by products of local functions. The starting point is the interpolation method in OpenAI’s [preprint on the Exponential Time Hypothesis](https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026).
 
 | Paper | Lean verification |
 | --- | --- |
 | [Optimal Degrees for Local Polynomial Reconstruction on the Boolean Cube](paper/paper.pdf) | [Theorem index](FORMALIZATION_SCOPE.md) · [Verification record](VERIFICATION.md) |
 | [Rank lower bounds for node-dependent polynomial reconstruction in SAT counting](reconstruction-studies/papers/paper_polynomial_recovery.pdf) | [Theorem index](reconstruction-studies/THEOREMS.md#rank-lower-bounds-for-node-dependent-polynomial-reconstruction) · [Verification record](reconstruction-studies/verification/result.txt) |
 | [Ternary Measurements for Paired Local Recovery](reconstruction-studies/papers/paper_ternary_codes.pdf) | [Theorem index](reconstruction-studies/THEOREMS.md#ternary-measurements-for-paired-local-recovery) · [Verification record](reconstruction-studies/verification/result.txt) |
+| [A Root-Separation Barrier for Tensor-Interpolation SAT Algorithms](root-separation/paper/root_separation.pdf) | [Theorem index](root-separation/THEOREMS.md) · [Verification record](root-separation/verification/result.txt) |
 
 ## Optimal Degrees for Local Polynomial Reconstruction on the Boolean Cube
 

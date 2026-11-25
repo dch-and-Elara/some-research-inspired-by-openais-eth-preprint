@@ -1,0 +1,3 @@
+Mixed domains: 4096 cuts, separator capacity 8, explicit matrix rank 7.
+Quadratic extension: 3504 unit coefficients with truncation thresholds; 292 zero-lift coefficients.
+Public equality fingerprints: all 30 ordered unequal labels collide on 8 of the 16 seeds.

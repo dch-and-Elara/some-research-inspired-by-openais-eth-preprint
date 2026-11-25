@@ -1,0 +1,296 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs}
+\usepackage[margin=27mm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist{nosep}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\E}{\mathbb E}
+\newcommand{\card}[1]{\lvert #1\rvert}
+\newcommand{\floor}[1]{\lfloor #1\rfloor}
+\newcommand{\ceil}[1]{\lceil #1\rceil}
+\title{A Root-Separation Barrier for Tensor-Interpolation SAT Algorithms}
+\author{}
+\date{26 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Consider a fixed signed sum of local products that recovers the model count
+of a pinned cubic expander modulo a nontrivial residue ring. At each term the
+coordinate, local functions and coefficient may differ. We prove a lower
+bound of \(2^{\Omega_\gamma(N/\sqrt{\log N})}\) on the number of terms under a
+collision certificate on the port labels, where \(N\) is the vertex count
+and \(\gamma>0\) is the edge expansion. For products over all symbol groups
+the bound is uniform over alphabet sizes \(r\ge 27\) and requires only a
+nonempty set of retained coordinates. A second result allows a different
+balanced union of symbols per term, with constants depending on the alphabet
+and balance. The proof selects a single oriented induced matching on which
+every eligible term has a rank deficit. The resulting cost bound applies to
+traces that materialize every term. We give the finite inequalities and the
+scope of their Lean proofs.
+\end{abstract}
+
+\section{The output and the layout}
+
+The fixed-density counting algorithm of OpenAI~\cite{source} motivates a
+question about the expression at its root. If the same output admits many
+decompositions into products of group-local functions, how short can such
+a decomposition be? We study this question as an extremal problem with
+an explicit output contract.
+
+Balanced products, induced matchings and matrix rank also appear in the
+structured arithmetic-circuit lower bounds of de Colnet and Mengel~\cite{dm}.
+Here the terms may choose different coordinate cuts, so the rank estimate
+requires one matching and orientation that work for all eligible cuts.
+
+Take a nonempty finite vertex set \(V\), \(\card V=N\), and a loopless cubic
+graph with a fixed orientation of its edges \(E\). Assume that for every
+\(S\subseteq V\),
+\[
+   |\partial S|\ \ge\ \gamma\min\{|S|,N-|S|\},\qquad 0<\gamma\le 1,
+\]
+with rational \(\gamma\). For each sign vector \(\sigma\in\{0,1\}^V\), impose
+one unit clause \(x_v=\sigma_v\) per vertex and one positive clause
+\(x_v\lor x_w\) per edge. The model count is the Boolean number
+\[
+    C(\sigma)=\prod_{(v,w)\in E}(\sigma_v\lor\sigma_w).
+\]
+All signs vary independently. We work on each supplied expanding graph.
+Infinite families of cubic bipartite expanders provide familiar examples
+of this hypothesis~\cite{mss}.
+
+Let \(A\) be a finite nonempty alphabet, \(r=|A|\), \(I\) the full coordinate
+set, and \(I_0\subseteq I\) the retained coordinates. A layout consists of
+\(M=10N\) ports, an injection from \(V\) into the ports, and a map from ports
+to pairs of labels in \(A^I\times A^I\). Write \(L(v)\) for the first label
+of the port of \(v\), restricted to \(I_0\). If \(X_c\) counts ports in cell
+\(c\) and \(Q=r^{2|I|}\), the certificate is
+\begin{equation}\label{eq:certificate}
+  \sum_c(X_c-M/Q)^2\le 2M\Delta,\qquad 2Q^2\Delta\le M .
+\end{equation}
+The factor ten has a concrete origin. In the motivating reduction a variable
+appears four times. A three-valent equality tree contributes one internal edge
+to its four clause incidences. Subdividing these edges gives \(10N\) wires.
+The theorems below take the layout and certificate as inputs.
+
+Let \(R,S\) be commutative rings, \(S\) nontrivial, and \(K\) a field. Fix an
+injective unital homomorphism \(e:R\to K\) and a unital homomorphism
+\(\pi:R\to S\). The output is \(B:\{0,1\}^V\to R\), with
+\(\pi B(\sigma)=C(\sigma)\) in \(S\) for every \(\sigma\). This formulation
+allows cancellation of nonintegral summands in \(K\).
+In a full-group representation each term \(z\) has coefficient \(c_z\in K\),
+one coordinate \(i_z\in I_0\), and one arbitrary \(K\)-valued function per
+symbol. Thus
+\begin{equation}\label{eq:full}
+ eB(\sigma)=\sum_{z\in T}c_z\prod_{a\in A}
+       F_{z,a}\bigl(\sigma|_{\{v:L(v)_{i_z}=a\}}\bigr).
+\end{equation}
+The index set, coordinates, coefficients and functions are fixed for the
+whole input family. Let \(h=|T|\).
+
+\section{Finite lower bounds}
+
+Set \(\lambda=\floor{\log_2 N}\),
+\(t(\gamma,\eta)=2^{-36}\gamma^2\eta^2/32\), and
+\[
+ \mathcal C(B,a)=2^{\max\{10,a,4B+1\}},\qquad
+ \mathcal M(k,b,t)=\ceil{7776kb/t^2}.
+\]
+These large cutoffs make the finite statements uniform and keep the
+integer rounding explicit.
+
+\begin{theorem}[Full-group representation]\label{thm:full}
+Assume \eqref{eq:certificate}, \(r\ge27\), and \(I_0\ne\varnothing\).
+Put \(t=t(\gamma,1/4)=2^{-45}\gamma^2\).
+If \(N\ge\mathcal C(\mathcal M(1,80,t),0)\), every representation
+\eqref{eq:full} admits an integer \(d\ge0\) such that
+\begin{equation}\label{eq:main}
+      (tN)^2\le 320\lambda d^2,\qquad 2^d\le h .
+\end{equation}
+In particular \(\log_2 h\ge tN/\sqrt{320\lambda}\).
+\end{theorem}
+
+There is a second representation class. A menu entry consists of
+\(i\in I_0\) and \(U\subseteq A\), giving the cut
+\(P=\{v:L(v)_i\in U\}\). The nonempty menu contains distinct pairs
+\((i,U)\). Assume both sides of every cut contain at least \(\eta N\)
+vertices, with rational \(0<\eta\le1/2\). A term assigned to this entry is
+the product of arbitrary field-valued functions of the two sides, with a
+scalar coefficient absorbed into one function. Each term may choose
+its own entry. Balance counts independently variable pins.
+
+\begin{theorem}[Balanced menu]\label{thm:menu}
+Assume the same graph, output contract and certificate. Put
+\(s=\floor{7N/2}\), \(u=\floor{\ceil{\log_2 s}/131072}\),
+\(b_r=80\cdot2^{2r}\) and \(t=t(\gamma,\eta)\). Suppose
+\(|I_0|\le 2u\) and \(N\ge\mathcal C(\mathcal M(2^r,b_r,t),3)\).
+For a sum of \(h\) menu terms there exists an integer \(d\ge0\) with
+\[
+      (tN)^2\le 4 b_r(\lambda+3)d^2,\qquad 2^d\le h .
+\]
+For fixed \(r,\eta,\gamma\), this gives the stated exponential order as
+a lower bound for any eligible menu, including the menu of all eligible
+balanced symbol unions.
+\end{theorem}
+
+\begin{corollary}[Complete materialization]\label{cor:cost}
+Under the hypotheses of Theorem~\ref{thm:full}, consider a finite trace
+whose events are either tagged by one term \(z\in T\) or untagged. Every
+term occurs at least once and every event appearing in the trace has a
+positive integer charge. Its total charge is at least \(2^d\) for a \(d\)
+satisfying \eqref{eq:main}. For every integer \(p\ge0\), both \(h\) and this
+charge exceed \(N^p\) once also
+\[
+     N\ge\mathcal C\bigl(\ceil{320(p+1)^2/t^2},1\bigr).
+\]
+\end{corollary}
+
+\section{A common rank test}
+
+We give the counting and rank arguments for both theorems. The accompanying
+Lean development proves the finite estimates with the constants above.
+
+\paragraph{Density of the actual pins.}
+Every cell has \(X_c\le M/Q+\sqrt{2M\Delta}\le2M/Q\) by
+\eqref{eq:certificate}. Summing over the unused first-label coordinates and
+over the second label shows that the law \(\mu\) of \(L(v)\) for a uniform
+vertex is at most \(20\) times the uniform product law on \(A^{I_0}\).
+Indeed the injection selects \(N\) ports out of \(10N\), and every
+projected label has the same number of full-cell preimages.
+In particular a single symbol owns at most \(20N/r\) pins. For \(r\ge27\)
+this is at most \(3N/4\). If one group has at least \(N/4\) pins it supplies
+a balanced side; otherwise accumulate groups until their total first reaches
+\(N/4\), at which point it is less than \(N/2\).
+Fix one such union per coordinate in \eqref{eq:full} and multiply the
+factors on each side. An occupied cell also gives \(1\le2M/Q\).
+Since \(I_0\ne\varnothing\) and \(r\ge27\), we have
+\(20\cdot2^{|I|}\le r^{2|I|}\le20N\), hence \(|I_0|\le\lambda\).
+
+\paragraph{A simultaneous imbalance.}
+Write \(k=|I_0|\), \(J\) for the menu, and \(R_i\) for its number of
+entries at coordinate \(i\). Give its centered cut indicators arbitrary
+signs. Under the uniform product law the variance of the signed sum is at
+most \(\sum_i R_i^2\), by independence across coordinates. Centering first
+at the uniform mean and using density domination bounds the variance on
+actual vertices by \(20\sum_i R_i^2\). A common integer scale \(H\ge1\)
+can be taken with \(H^2\le80k\) in the one-cut-per-coordinate case and
+\(H^2\le b_r k\) for a distinct menu, since \(R_i\le 2^r\).
+
+For each cut take the difference of its indicator between the two endpoints
+of an oriented edge. Expansion gives an absolute first moment at least
+\(2\gamma\eta/3\) under the uniform edge law. Cubic regularity and
+\((x-y)^2\le2x^2+2y^2\) bound the second moment of every signed sum of
+these differences by \(4H^2\).
+The simultaneous correlation step is a finite form of the sign-maximization
+argument of Nazarov~\cite{nazarov}. For clarity, its Huber potential is
+quadratic on \([-4,4]\) and extends by its tangent lines outside. Choose
+signs maximizing its expected value on the signed sum divided by \(2H/p_0\), where \(p_0=2\gamma\eta/3\).
+The derivative divided by four gives edge weights in \([-1,1]\). Comparing
+the maximizer with each single-sign flip gives a correlation for every
+cut. To see the quantitative estimate, let \(f\) be the edge difference
+for that cut and \(w\) the scaled maximizing sum. Then
+\(\mathbb E f^2\ge p_0\), \(|f|\le1\), and \(\mathbb E w^2\le p_0\).
+The event \(|w|>2\) has probability at most \(p_0/4\), leaving central
+energy \(\mathbb E[f^2\ind_{\{|w|\le2\}}]\ge3p_0/4\).
+A single flip moves \(w\) by at most two. On the central event the whole
+move lies in the quadratic part, and elsewhere the supporting tangent
+still gives a lower bound. For \(b\) equal to the derivative divided by four,
+maximality gives \(|\mathbb E[b f]|\ge 3p_0^2/(32H)\). As there are
+\(3N/2\) edges, the unnormalized correlation is at least
+\(\gamma^2\eta^2 N/(16H)\) for every cut at once.
+
+Mark edges independently and keep a marked edge only when its entire
+conflict neighborhood contains no other marked edge. Conflicts include
+both a shared endpoint and an edge between endpoints. The retained edges
+therefore form an induced matching. Thin the orientations with independent
+biased signs calibrated to each edge's own retention probability. The
+expected signed contribution of edge \(e\) is \(2^{-36}b_e\): if its
+retention probability is \(\pi_e\), use an independent orientation of mean
+\(2^{-36}b_e/\pi_e\). The cubic conflict block has size at most 36, so
+\(\pi_e\ge2^{-36}\). The absolute expected imbalance for each cut is at
+least \(2tN/H\). Disjoint mark neighborhoods give independent contributions;
+counting potentially dependent ordered pairs bounds the variance by
+\(4|E|\,36^2=7776N\). Chebyshev's inequality and a union bound
+yield one matching and one
+orientation for which the endpoint imbalance of every cut is at least
+\(\floor{tN/H}\), provided
+\[
+                 7776 |J| H^2/t^2<N .
+\]
+The formal derivation is in \texttt{CommonMatchingSelection},
+\texttt{ExpanderBarrier} and \texttt{FiniteGrowth}. The same size condition
+ensures \(tN/H\ge2\). Thus rounding reduces the margin by at most a factor
+of two. For Theorem~\ref{thm:full}, \(|J|=k\le\lambda\). For
+Theorem~\ref{thm:menu}, \(|J|\le2^r k\) and \(k\le\lambda+3\).
+The displayed cutoffs ensure the required strict inequality.
+
+\paragraph{Rank on the selected matching.}
+Fix all pins outside the endpoints to one. Separate the two endpoint
+classes of the oriented matching into row and column bits. If the matching
+has \(m\) edges, the matrix of the target count is, up to ordering,
+the tensor power of the OR matrix
+\[
+             \begin{pmatrix}0&1\\1&1\end{pmatrix}^{\otimes m}.
+\]
+Its determinant is a unit in every nontrivial residue ring. The determinant
+of the corresponding matrix of \(B\) therefore has nonzero image under
+\(\pi\); injectivity of \(e\) transfers nonvanishing to \(K\). Its field
+rank is \(2^m\). On a given cut, let \(a\) and \(b\) count the row and
+column endpoints on its first side. A separated product has rank at most
+\[
+ 2^{\min(a,b)+\min(m-a,m-b)}=2^{m-|a-b|}.
+\]
+The two side matrices act on disjoint row and column coordinates, so their
+ranks multiply in this upper bound. Every menu term is tested on the
+\emph{same} matrix. Rank subadditivity now gives \(2^m\le h2^{m-d}\),
+where \(d=\floor{tN/H}\). The bounds on \(H\) and rounding give the
+two theorems. Each distinct term index requires an event in a covering
+trace, which gives the cost assertion. The polynomial comparison with its
+explicit cutoff is proved in \texttt{PowerCost}.
+
+\section{What the model measures}
+
+A simple computation on the same inputs illustrates the role of the output
+contract. Count the edges violated by the pins,
+\[
+                 W(\sigma)=\sum_{(v,w)\in E}(1-\sigma_v)(1-\sigma_w).
+\]
+An edge term separates across any fixed cut, including when both endpoints
+lie on the same side. The count \(C(\sigma)\) equals the indicator of
+\(W(\sigma)=0\). Computing that indicator uses a global zero test after the
+sum. This example is formalized in \texttt{PinnedCNF}. Applying the cost
+theorem to a specific SAT program would require a correspondence between
+its operations and the charged events of Corollary~\ref{cor:cost}.
+The verified results here concern representation length and this stated
+execution model.
+
+\paragraph{Proof sources.}
+The theorem index and build records accompany this paper. The entry points
+are \texttt{RetunedLayout.modular\_output\_barrier},
+\texttt{MenuBounds.source\_distinct\_menu\_barrier}, and the two
+\texttt{RetunedLayout} theorems on superpolynomial representation and cost.
+The project uses Lean 4.24.0 and a pinned Mathlib checkout. The research
+question and release were directed by the project initiator. AI assistants
+contributed to the mathematical development, review, formal proofs and
+preparation of this manuscript.
+
+\begin{thebibliography}{9}
+\bibitem{source} OpenAI. \emph{The Exponential Time Hypothesis is False}.
+25 October 2026 revision, quantitative reduction and contraction.
+\href{https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026}{Source and manuscript}.
+\bibitem{nazarov} F. Nazarov. \emph{The ``Bang solution'' of the
+coefficient problem}. Part 2, 1997.
+\href{https://www.mathnet.ru/eng/aa774}{Publication record}.
+\bibitem{mss} A. W. Marcus, D. A. Spielman and N. Srivastava.
+\emph{Interlacing families I: Bipartite Ramanujan graphs of all degrees}.
+Annals of Mathematics 182 (2015), 307--325.
+\href{https://doi.org/10.4007/annals.2015.182.1.7}{doi:10.4007/annals.2015.182.1.7}.
+\bibitem{dm} A. de Colnet and S. Mengel.
+\emph{A Compilation of Succinctness Results for Arithmetic Circuits}.
+\href{https://arxiv.org/abs/2110.13014}{arXiv:2110.13014}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,72 @@
+{
+  "companion_packing": [
+    {
+      "common_ordered_load": 4,
+      "components": 18,
+      "coordinates": 1,
+      "packet_pairs": 9,
+      "symbols": 3
+    },
+    {
+      "common_ordered_load": 8,
+      "components": 324,
+      "coordinates": 2,
+      "packet_pairs": 81,
+      "symbols": 3
+    },
+    {
+      "common_ordered_load": 16,
+      "components": 512,
+      "coordinates": 3,
+      "packet_pairs": 64,
+      "symbols": 2
+    }
+  ],
+  "latent_route": {
+    "min_vertex_capacity_histogram": {
+      "0": 9,
+      "1": 70,
+      "2": 41
+    },
+    "mixed_one_and_two_bit_domain_trials": 120
+  },
+  "native_masks": {
+    "antichain_alphabet": 6,
+    "max_sound_diagonal": 1,
+    "positive_inputs": 216,
+    "raw_group_count": 3,
+    "raw_half_edge_inputs": 46656,
+    "sound_pairs": 1884,
+    "valuations_per_side_pairs_checked": 15625
+  },
+  "native_transfers": {
+    "arbitrary_table_companion_literal_sums": 70,
+    "arbitrary_table_two_interval_global_column_sums": 32,
+    "incorrect_repeated_first_matrix": 32,
+    "unequal_transfer_matrices": 32
+  },
+  "scope_capacity": {
+    "binary_bipartite_graphs": 512,
+    "matching_histogram": {
+      "0": 1,
+      "1": 33,
+      "2": 231,
+      "3": 247
+    },
+    "two_view_base_and_overlap_pairs": 4096
+  },
+  "true_cnf": {
+    "cubic_cube_variables": 8,
+    "integral_OR_transversal_rank_mod_2": 4,
+    "retained_matching": [
+      [
+        0,
+        1
+      ],
+      [
+        6,
+        7
+      ]
+    ]
+  }
+}

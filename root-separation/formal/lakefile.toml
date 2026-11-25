@@ -1,0 +1,51 @@
+name = "root_separation"
+version = "0.2.0"
+defaultTargets = ["RootSeparation"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
+
+[[lean_lib]]
+name = "RootSeparation"
+roots = [
+  "BalancedUnion",
+  "BangCore",
+  "CertifiedBarrier",
+  "CommonMatchingSelection",
+  "ConcreteRankAudit",
+  "edge_certificate",
+  "EmpiricalCutMoments",
+  "ExpanderBarrier",
+  "FiniteGrowth",
+  "FiniteMoments",
+  "FiniteSelection",
+  "FixedSchedule",
+  "FullGroupBarrier",
+  "GraphCutMoments",
+  "GroupProducts",
+  "GuardedBarrier",
+  "HuberCorrelation",
+  "HuberEdgeCorrelation",
+  "HuberPotential",
+  "IndependentThinning",
+  "IntegralOutputTransfer",
+  "LocalVariance",
+  "LogarithmicBudget",
+  "MatchingCore",
+  "MatchingThinning",
+  "MenuBounds",
+  "NativeJetEvaluation",
+  "OverlappingRank",
+  "PinnedCNF",
+  "PowerCost",
+  "ProductVariance",
+  "ProjectionDiagonal",
+  "RetunedLayout",
+  "SeparatedRank",
+  "SourceBarrier",
+  "SourceCoordinates",
+  "SourceDensity",
+  "ThinningBlockBounds",
+]
