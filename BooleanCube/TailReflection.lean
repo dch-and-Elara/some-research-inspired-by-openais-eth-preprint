@@ -1,4 +1,4 @@
-import BooleanCube.Asymmetric
+import BooleanCube.Unrestricted
 import BooleanCube.WeightedTail
 
 namespace LocalReconstruction
@@ -27,6 +27,25 @@ private theorem weightedTail_prefix (q k : ℕ) :
   | zero => simp [weightedTail, layerPrefix]
   | succ k ih => rw [weightedTail_succ, ih, sum_range_succ (layerPrefix q) (k+1)]
 
+/-- The integer row-count bound from the square certificate, also obtained
+by taking a triangular half of the bilinear bound. -/
+theorem matrix_square_budget {q m d k : ℕ} {a : Fin q → ℚ} (ha : Function.Injective a)
+    (hn : ∀ i, a i ≠ 0) {M : Matrix (Fin m) (Cube q) ℚ} {P}
+    (hp : matrixCondition a M d P) (hd : d+2*k < q) :
+    (∑ j ∈ range (k+1), (k+1-j) * q.choose j) ≤ (k+1)*m := by
+  have hb := matrix_bilinear_budget (K := k) ha hn hp hd (by omega)
+  have realBound : (∑ j ∈ range (k+1), layerPrefix q (min j (2*k-j))) ≤
+      (((k+1)*m : ℕ) : ℝ) := by unfold layerPrefix; exact_mod_cast hb
+  have e : (∑ j ∈ range (k+1), layerPrefix q (min j (2*k-j))) = weightedTail q k := by
+    rw [weightedTail_prefix]
+    apply sum_congr rfl
+    intro j hj
+    have := mem_range.mp hj
+    rw [show min j (2*k-j) = j by omega]
+  rw [e] at realBound
+  unfold weightedTail at realBound
+  exact_mod_cast realBound
+
 private theorem weightedTail_add (q k L : ℕ) :
     weightedTail q (k+L) = weightedTail q k +
       ∑ j ∈ range L, layerPrefix q (k+1+j) := by
@@ -37,11 +56,11 @@ private theorem weightedTail_add (q k L : ℕ) :
 
 /-- Reflecting the last L terms of the finite bilinear sum gives a second
 copy of the weighted tail, with its endpoint and a lower prefix removed. -/
-theorem asymmetric_reflected_budget {q d k L : ℕ} {γ : ℝ}
-    (h : realAsymmetricScheme q d γ) (hr : d + 2*k < q) (hL : L < k) :
+theorem unrestricted_reflected_budget {ternaryOnly : Bool} {q d k L : ℕ} {γ : ℝ}
+    (h : unrestrictedScheme ternaryOnly q d γ) (hr : d + 2*k < q) (hL : L < k) :
     weightedTail q k + weightedTail q (k-1) - weightedTail q (k-L-1) ≤
       ((k+L+1 : ℕ) : ℝ) * measurementBudget q γ := by
-  have hb := asymmetric_bilinear_budget (r := 2*k) (K := k+L) h hr (by omega)
+  have hb := unrestricted_bilinear_budget (r := 2*k) (K := k+L) h hr (by omega)
   change (∑ j ∈ range (k+L+1), layerPrefix q (min j (2*k-j))) ≤ _ at hb
   have hsplit : (∑ j ∈ range (k+L+1), layerPrefix q (min j (2*k-j))) =
       weightedTail q k + ∑ j ∈ range L, layerPrefix q (k-1-j) := by
@@ -69,6 +88,11 @@ theorem asymmetric_reflected_budget {q d k L : ℕ} {γ : ℝ}
   rw [hs] at he
   linarith
 
+theorem asymmetric_reflected_budget {q d k L : ℕ} {γ : ℝ}
+    (h : realAsymmetricScheme q d γ) (hr : d + 2*k < q) (hL : L < k) :
+    weightedTail q k + weightedTail q (k-1) - weightedTail q (k-L-1) ≤
+      ((k+L+1 : ℕ) : ℝ) * measurementBudget q γ :=
+  unrestricted_reflected_budget (h.unrestricted true) hr hL
+
 end
 end LocalReconstruction
-

@@ -19,26 +19,26 @@ private theorem degreeSquared_le_symmetric (q : ℕ) (γ : ℝ) :
     exact_mod_cast (asymmetricDegree_le_symmetricDegree q γ)
   exact pow_le_pow_left₀ (Nat.cast_nonneg _) h 2
 
-/-- The two second-order bounds in (5), with separate vanishing errors. -/
-theorem asymmetric_second_order_bounds (γ : ℝ) (hγ : 1/2 < γ) :
-    ∃ eLower eUpper : ℕ → ℝ, Tendsto eLower atTop (𝓝 0) ∧
-      Tendsto eUpper atTop (𝓝 0) ∧ ∀ q,
-        asymmetricLowerEndpoint γ q + eLower q ≤ asymmetricDegreeSquared γ q ∧
-        asymmetricDegreeSquared γ q ≤
-          (2*γ-1)*Real.log q + Real.log (8/Real.pi) + eUpper q := by
-  obtain ⟨e, he, hle⟩ := asymmetric_second_order_lower_error hγ
+private theorem two_sided_of_lower_error (γ : ℝ) (hγ : 1/2 < γ) (D : ℕ → ℕ)
+    (hu : ∀ q, (D q : ℝ)^2/q ≤ (symmetricDegree q γ : ℝ)^2/q)
+    (hLower : ∃ e : ℕ → ℝ, Tendsto e atTop (𝓝 0) ∧
+      ∀ q, asymmetricLowerEndpoint γ q + e q ≤ (D q : ℝ)^2/q) :
+    ∃ eLower eUpper : ℕ → ℝ, Tendsto eLower atTop (𝓝 0) ∧ Tendsto eUpper atTop (𝓝 0) ∧
+      ∀ q, asymmetricLowerEndpoint γ q + eLower q ≤ (D q : ℝ)^2/q ∧
+        (D q : ℝ)^2/q ≤ (2*γ-1)*Real.log q + Real.log (8/Real.pi) + eUpper q := by
+  obtain ⟨e,he,hle⟩ := hLower
   let eUpper : ℕ → ℝ := fun q => (symmetricDegree q γ : ℝ)^2/q -
     (2*γ-1)*Real.log q - Real.log (8/Real.pi)
   have hUpper : Tendsto eUpper atTop (𝓝 0) := by
     simpa only [sub_self] using
       (symmetric_degree_asymptotic γ hγ).sub_const (Real.log (8/Real.pi))
   refine ⟨e, eUpper, he, hUpper, fun q => ⟨hle q, ?_⟩⟩
-  exact (degreeSquared_le_symmetric q γ).trans_eq (by dsimp [eUpper]; ring)
+  exact (hu q).trans_eq (by dsimp [eUpper]; ring)
 
-/-- Theorem C, the leading-order optimum with bit-flip invariance alone. -/
-theorem asymmetric_degree_asymptotic (γ : ℝ) (hγ : 1/2 < γ) :
-    Tendsto (fun q : ℕ => (asymmetricDegree q γ : ℝ)^2 / ((q : ℝ)*Real.log q))
-      atTop (𝓝 (2*γ-1)) := by
+private theorem leading_of_bounds (γ : ℝ) (hγ : 1/2 < γ) (D : ℕ → ℕ)
+    (hu : ∀ q, (D q : ℝ)^2/q ≤ (symmetricDegree q γ : ℝ)^2/q)
+    (hLower : ∀ᶠ q : ℕ in atTop, asymmetricLowerEndpoint γ q - 1 ≤ (D q : ℝ)^2/q) :
+    Tendsto (fun q : ℕ => (D q : ℝ)^2 / ((q : ℝ)*Real.log q)) atTop (𝓝 (2*γ-1)) := by
   let c : ℝ := 2*γ-1
   let sym : ℕ → ℝ := fun q => (symmetricDegree q γ : ℝ)^2/q
   have lower := asymmetric_endpoint_ratio γ 1
@@ -52,14 +52,48 @@ theorem asymmetric_degree_asymptotic (γ : ℝ) (hγ : 1/2 < γ) :
     change c + (sym q - c*Real.log q) * (Real.log q)⁻¹ = _
     field_simp; ring
   apply tendsto_of_tendsto_of_tendsto_of_le_of_le' lower upper
-  · filter_upwards [asymmetric_second_order_lower hγ (show (0:ℝ) < 1 by norm_num),
+  · filter_upwards [hLower,
       cube_log_atTop.eventually_gt_atTop 0] with q hq hl
     rw [← div_div]
     exact div_le_div_of_nonneg_right hq hl.le
   · filter_upwards [cube_log_atTop.eventually_gt_atTop 0] with q hl
     rw [← div_div]
-    exact div_le_div_of_nonneg_right (degreeSquared_le_symmetric q γ) hl.le
+    exact div_le_div_of_nonneg_right (hu q) hl.le
+
+
+/-- The two second-order bounds in (5), with separate vanishing errors. -/
+theorem unrestricted_second_order_bounds (ternaryOnly : Bool) (γ : ℝ) (hγ : 1/2 < γ) :
+    ∃ eLower eUpper : ℕ → ℝ, Tendsto eLower atTop (𝓝 0) ∧
+      Tendsto eUpper atTop (𝓝 0) ∧ ∀ q,
+        asymmetricLowerEndpoint γ q + eLower q ≤ (unrestrictedDegree ternaryOnly q γ : ℝ)^2/q ∧
+        (unrestrictedDegree ternaryOnly q γ : ℝ)^2/q ≤
+          (2*γ-1)*Real.log q + Real.log (8/Real.pi) + eUpper q :=
+  two_sided_of_lower_error γ hγ _ (fun q => (unrestricted_sq_le_asymmetric ternaryOnly q γ).trans (degreeSquared_le_symmetric q γ))
+    (unrestricted_second_order_lower_error ternaryOnly hγ)
+
+/-- Theorem C, the leading-order optimum with unrestricted measurement row spaces. -/
+theorem unrestricted_degree_asymptotic (ternaryOnly : Bool) (γ : ℝ) (hγ : 1/2 < γ) :
+    Tendsto (fun q : ℕ => (unrestrictedDegree ternaryOnly q γ : ℝ)^2 / ((q : ℝ)*Real.log q))
+      atTop (𝓝 (2*γ-1)) :=
+  leading_of_bounds γ hγ _ (fun q => (unrestricted_sq_le_asymmetric ternaryOnly q γ).trans (degreeSquared_le_symmetric q γ))
+    (unrestricted_second_order_lower ternaryOnly hγ (by norm_num))
+
+/-- The two second-order bounds in (5), with separate vanishing errors. -/
+theorem asymmetric_second_order_bounds (γ : ℝ) (hγ : 1/2 < γ) :
+    ∃ eLower eUpper : ℕ → ℝ, Tendsto eLower atTop (𝓝 0) ∧
+      Tendsto eUpper atTop (𝓝 0) ∧ ∀ q,
+        asymmetricLowerEndpoint γ q + eLower q ≤ asymmetricDegreeSquared γ q ∧
+        asymmetricDegreeSquared γ q ≤
+          (2*γ-1)*Real.log q + Real.log (8/Real.pi) + eUpper q :=
+  two_sided_of_lower_error γ hγ _ (fun q => degreeSquared_le_symmetric q γ)
+    (asymmetric_second_order_lower_error hγ)
+
+/-- Theorem C, the leading-order optimum with bit-flip invariance alone. -/
+theorem asymmetric_degree_asymptotic (γ : ℝ) (hγ : 1/2 < γ) :
+    Tendsto (fun q : ℕ => (asymmetricDegree q γ : ℝ)^2 / ((q : ℝ)*Real.log q))
+      atTop (𝓝 (2*γ-1)) :=
+  leading_of_bounds γ hγ _ (fun q => degreeSquared_le_symmetric q γ)
+    (asymmetric_second_order_lower hγ (by norm_num))
 
 end
 end LocalReconstruction
-

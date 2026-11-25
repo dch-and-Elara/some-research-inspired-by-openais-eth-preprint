@@ -299,8 +299,8 @@ private theorem far_budgetTail {γ ε : ℝ} (hγ : 1/2 < γ) {k : ℕ → ℕ}
     congr 1
     ring
 
-private theorem normalized_reflected_budget {q d k L : ℕ} {γ : ℝ} (hq : 0 < (q:ℝ))
-    (hf : realAsymmetricScheme q d γ) (hr : d+2*k < q) (hL : L < k) :
+private theorem normalized_reflected_budget {ternaryOnly : Bool} {q d k L : ℕ} {γ : ℝ} (hq : 0 < (q:ℝ))
+    (hf : unrestrictedScheme ternaryOnly q d γ) (hr : d+2*k < q) (hL : L < k) :
     budgetTail q k γ * (((k:ℝ)+1)/q) +
       budgetTail q (k-1) γ * ((((k-1:ℕ):ℝ)+1)/q) -
       budgetTail q (k-L-1) γ * ((((k-L-1:ℕ):ℝ)+1)/q) ≤
@@ -312,7 +312,7 @@ private theorem normalized_reflected_budget {q d k L : ℕ} {γ : ℝ} (hq : 0 <
     field_simp
   rw [e, e, e, ← add_mul, ← sub_mul]
   have hf' : 0 ≤ factor := by dsimp [factor]; positivity
-  have hb := mul_le_mul_of_nonneg_right (asymmetric_reflected_budget hf hr hL) hf'
+  have hb := mul_le_mul_of_nonneg_right (unrestricted_reflected_budget hf hr hL) hf'
   refine hb.trans_eq ?_
   push_cast
   unfold measurementBudget factor
@@ -324,9 +324,9 @@ def asymmetricDegreeSquared (γ : ℝ) (q : ℕ) : ℝ :=
   (asymmetricDegree q γ : ℝ)^2/q
 
 /-- The lower bound in (5), in its equivalent fixed-ε eventual form.
-It uses only the bit-flip model and the finite bilinear budget. -/
-theorem asymmetric_second_order_lower {γ : ℝ} (hγ : 1/2 < γ) {ε : ℝ} (hε : 0 < ε) :
-    ∀ᶠ q : ℕ in atTop, asymmetricLowerEndpoint γ q - ε ≤ asymmetricDegreeSquared γ q := by
+The measurements have no row-space invariance assumption. -/
+theorem unrestricted_second_order_lower (ternaryOnly : Bool) {γ : ℝ} (hγ : 1/2 < γ) {ε : ℝ} (hε : 0 < ε) :
+    ∀ᶠ q : ℕ in atTop, asymmetricLowerEndpoint γ q - ε ≤ (unrestrictedDegree ternaryOnly q γ : ℝ)^2/q := by
   let k := thresholdIndex γ ε
   let L := reflectLength
   let p := fun q : ℕ => k q-1
@@ -351,20 +351,20 @@ theorem asymmetric_second_order_lower {γ : ℝ} (hγ : 1/2 < γ) {ε : ℝ} (h�
   filter_upwards [total.eventually (Ioi_mem_nhds hpos), cutoff_data γ ε,
     eventually_dim_pos] with q ht hc hq
   by_contra! bad
-  have hdeg : (asymmetricDegree q γ : ℝ) ≤ thresholdRoot γ ε q := by
+  have hdeg : (unrestrictedDegree ternaryOnly q γ : ℝ) ≤ thresholdRoot γ ε q := by
     unfold thresholdRoot
     apply le_of_sq_le_sq _ (Real.sqrt_nonneg _)
     have he := (div_lt_iff₀ hq).mp bad
     have hn : 0 ≤ (q:ℝ)*threshold γ ε q := by
-      change (asymmetricDegree q γ : ℝ)^2 < threshold γ ε q * q at he
-      nlinarith [sq_nonneg (asymmetricDegree q γ : ℝ)]
+      change (unrestrictedDegree ternaryOnly q γ : ℝ)^2 < threshold γ ε q * q at he
+      nlinarith [sq_nonneg (unrestrictedDegree ternaryOnly q γ : ℝ)]
     rw [Real.sq_sqrt hn]
-    change (asymmetricDegree q γ : ℝ)^2 < threshold γ ε q * q at he
+    change (unrestrictedDegree ternaryOnly q γ : ℝ)^2 < threshold γ ε q * q at he
     linarith
-  have hd : asymmetricDegree q γ ≤ ⌊thresholdRoot γ ε q⌋₊ := Nat.le_floor hdeg
+  have hd : unrestrictedDegree ternaryOnly q γ ≤ ⌊thresholdRoot γ ε q⌋₊ := Nat.le_floor hdeg
   change ⌊thresholdRoot γ ε q⌋₊ + 2*k q < q ∧ L q < k q ∧ _ at hc
-  have hr : asymmetricDegree q γ + 2*k q < q := by omega
-  have hb := normalized_reflected_budget hq (asymmetricDegree_feasible q γ) hr hc.2.1
+  have hr : unrestrictedDegree ternaryOnly q γ + 2*k q < q := by omega
+  have hb := normalized_reflected_budget hq (unrestrictedDegree_feasible ternaryOnly q γ) hr hc.2.1
   change 0 < budgetTail q (k q) γ * (((k q:ℝ)+1)/q) +
     budgetTail q (p q) γ * (((p q:ℝ)+1)/q) -
     budgetTail q (m q) γ * (((m q:ℝ)+1)/q) -
@@ -378,20 +378,35 @@ theorem asymmetric_second_order_lower {γ : ℝ} (hγ : 1/2 < γ) {ε : ℝ} (h�
 
 
 /-- A vanishing error witnessing the lower inequality in (5). -/
-theorem asymmetric_second_order_lower_error {γ : ℝ} (hγ : 1/2 < γ) :
+theorem unrestricted_second_order_lower_error (ternaryOnly : Bool) {γ : ℝ} (hγ : 1/2 < γ) :
     ∃ e : ℕ → ℝ, Tendsto e atTop (𝓝 0) ∧
-      ∀ q, asymmetricLowerEndpoint γ q + e q ≤ asymmetricDegreeSquared γ q := by
-  let e : ℕ → ℝ := fun q => min 0 (asymmetricDegreeSquared γ q - asymmetricLowerEndpoint γ q)
+      ∀ q, asymmetricLowerEndpoint γ q + e q ≤ (unrestrictedDegree ternaryOnly q γ : ℝ)^2/q := by
+  let e : ℕ → ℝ := fun q => min 0 ((unrestrictedDegree ternaryOnly q γ : ℝ)^2/q - asymmetricLowerEndpoint γ q)
   refine ⟨e, ?_, fun q => ?_⟩
   · rw [Metric.tendsto_nhds]
     intro ε hε
-    filter_upwards [asymmetric_second_order_lower hγ (half_pos hε)] with q hq
+    filter_upwards [unrestricted_second_order_lower ternaryOnly hγ (half_pos hε)] with q hq
     rw [Real.dist_eq, sub_zero, abs_lt]
     change -ε < min 0 _ ∧ min 0 _ < ε
     exact ⟨lt_min (by linarith) (by linarith), (min_le_left ..).trans_lt hε⟩
-  · have h := min_le_right (0:ℝ) (asymmetricDegreeSquared γ q - asymmetricLowerEndpoint γ q)
+  · have h := min_le_right (0:ℝ) ((unrestrictedDegree ternaryOnly q γ : ℝ)^2/q - asymmetricLowerEndpoint γ q)
     change asymmetricLowerEndpoint γ q + min 0 _ ≤ _
     linarith
+
+theorem unrestricted_sq_le_asymmetric (t : Bool) (q : ℕ) (γ : ℝ) :
+    (unrestrictedDegree t q γ : ℝ)^2/q ≤ asymmetricDegreeSquared γ q := by
+  apply div_le_div_of_nonneg_right _ (Nat.cast_nonneg q)
+  exact pow_le_pow_left₀ (Nat.cast_nonneg _) (Nat.cast_le.mpr (unrestrictedDegree_le_asymmetric t q γ)) 2
+
+theorem asymmetric_second_order_lower {γ : ℝ} (hγ : 1/2 < γ) {ε : ℝ} (hε : 0 < ε) :
+    ∀ᶠ q : ℕ in atTop, asymmetricLowerEndpoint γ q - ε ≤ asymmetricDegreeSquared γ q :=
+  (unrestricted_second_order_lower true hγ hε).mono fun q h => h.trans (unrestricted_sq_le_asymmetric true q γ)
+
+theorem asymmetric_second_order_lower_error {γ : ℝ} (hγ : 1/2 < γ) :
+    ∃ e : ℕ → ℝ, Tendsto e atTop (𝓝 0) ∧
+      ∀ q, asymmetricLowerEndpoint γ q + e q ≤ asymmetricDegreeSquared γ q := by
+  obtain ⟨e,he,h⟩ := unrestricted_second_order_lower_error true hγ
+  exact ⟨e,he,fun q => (h q).trans (unrestricted_sq_le_asymmetric true q γ)⟩
 
 end
 end LocalReconstruction

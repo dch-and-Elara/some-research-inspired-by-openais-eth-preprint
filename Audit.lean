@@ -65,3 +65,14 @@ import BooleanCube
 #print axioms LocalReconstruction.asymmetricDegree_le_symmetricDegree
 #print axioms LocalReconstruction.asymmetric_second_order_bounds
 #print axioms LocalReconstruction.asymmetric_degree_asymptotic
+#print axioms LocalReconstruction.matrix_bilinear_certificate
+#print axioms LocalReconstruction.matrix_square_obstruction
+#print axioms LocalReconstruction.matrix_square_budget
+#print axioms LocalReconstruction.matrix_bilinear_budget
+#print axioms LocalReconstruction.unrestrictedDegree_feasible
+#print axioms LocalReconstruction.unrestrictedDegree_le_asymmetric
+#print axioms LocalReconstruction.unrestricted_bilinear_budget
+#print axioms LocalReconstruction.unrestricted_reflected_budget
+#print axioms LocalReconstruction.unrestricted_second_order_lower
+#print axioms LocalReconstruction.unrestricted_second_order_bounds
+#print axioms LocalReconstruction.unrestricted_degree_asymptotic

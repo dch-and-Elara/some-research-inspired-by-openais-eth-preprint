@@ -63,7 +63,7 @@
 
 \section{Abstract}\label{abstract}
 
-We study polynomial reconstruction on the Boolean cube with a restricted set of shared linear measurements. The reconstruction matrix equals the identity at zero, and at each of \(q\) prescribed nonzero arguments each output can be determined using the shared measurements and a specified half-cube of the input. For a fixed budget exponent \(\gamma>1/2\), at most \(2^q/q^\gamma\) shared measurements are allowed. Under bit-flip and coordinate-permutation invariance of the measurement row space, we obtain an exact finite-dimensional characterization as a weighted integer-layer deletion problem and establish the sharp expansion \(d_{q,\gamma}^2/q=(2\gamma-1)\ln q+\ln(8/\pi)+o(1)\). If coordinate-permutation invariance is dropped but bit-flip invariance is retained, we prove that the leading asymptotic constant is unchanged. The universal lower bound uses an auxiliary polynomial space on an edge-labelled cube and a degree obstruction obtained from a sum-of-squares certificate. A bilinear refinement yields a second-order interval whose width is \(O(\ln\ln q)\). The exact second-order optimum in the non-permutation-invariant model is left open.
+We study polynomial reconstruction on the Boolean cube with a restricted set of shared linear measurements. The reconstruction matrix equals the identity at zero, and at each of \(q\) prescribed nonzero arguments each output can be determined using the shared measurements and a specified half-cube of the input. For a fixed budget exponent \(\gamma>1/2\), at most \(2^q/q^\gamma\) shared measurements are allowed. Under bit-flip and coordinate-permutation invariance of the measurement row space, we obtain an exact finite-dimensional characterization as a weighted integer-layer deletion problem and establish the sharp expansion \(d_{q,\gamma}^2/q=(2\gamma-1)\ln q+\ln(8/\pi)+o(1)\). We also determine the leading constant \(2\gamma-1\) for arbitrary rational shared linear measurements. The lower bound follows directly from the half-cube support condition in the input coordinates. A bilinear refinement bounds the squared degree divided by \(q\) to within an interval of width \(2\ln\ln q+O_\gamma(1)\). The exact second-order term without measurement symmetry remains open.
 
 \section{1. Problem and main results}\label{problem-and-main-results}
 
@@ -88,12 +88,12 @@ For each \(u\in\Omega\), \(t\in[q]\), and \(h\in\mathbb Q^\Omega\), require
 
 This is equivalent to the original formulation using two input vectors with identical shared measurements and identical coordinates on the complementary half-cube, by taking their difference.
 
-Let \(d_{q,\gamma}\) be the minimum degree of such a scheme when \(\operatorname{Row}_{\mathbb Q}(C)\) is invariant under every single-coordinate bit flip and every coordinate permutation. Let \(\delta_{q,\gamma}\) be the minimum degree when only bit-flip invariance is imposed. The polynomial matrix itself is not assumed to be symmetric in either model.
+Let \(d_{q,\gamma}\) be the minimum degree of such a scheme when \(\operatorname{Row}_{\mathbb Q}(C)\) is invariant under every single-coordinate bit flip and every coordinate permutation. Let \(\delta_{q,\gamma}\) be the minimum degree when only bit-flip invariance is imposed. With no invariance imposed, write \(\eta_{q,\gamma}\) for the minimum with ternary measurements and \(\eta^{\mathbb Q}_{q,\gamma}\) for the minimum with arbitrary \(C\in\mathbb Q^{m\times D}\). All four models use the same polynomial matrices and condition (1).
 
-Both minima exist: take \(m=0\) and \(P(X)=I_D\prod_{t=1}^q(1-X/t)\). In particular,
+All four minima exist. Take \(m=0\) and \(P(X)=I_D\prod_{t=1}^q(1-X/t)\). In particular,
 
 \[
- 0\le\delta_{q,\gamma}\le d_{q,\gamma}\le q.
+ 0\le\eta^{\mathbb Q}_{q,\gamma}\le\eta_{q,\gamma}\le\delta_{q,\gamma}\le d_{q,\gamma}\le q.
 \]
 
 \textbf{Theorem A (exact symmetric optimum).} For \(K\subseteq\{0,\ldots,q\}\) let \(M(K)\) be the largest endpoint difference \(U-L\) of a nonempty consecutive integer interval \([L,U]\cap\mathbb Z\) contained in \(\{0,\ldots,q\}\mathbin{\backslash} K\). Then
@@ -113,23 +113,23 @@ Equivalently, if \(K=\{k_1<\cdots<k_s\}\) and \(k_0=-1,\ k_{s+1}=q+1\), then \(M
  =(2\gamma-1)\ln q+\ln(8/\pi)+o(1).}\tag{3}
 \]
 
-\textbf{Theorem C (universal leading-order optimum).} Even without coordinate-permutation invariance,
+\textbf{Theorem C (universal leading-order optimum).} Let \(b_{q,\gamma}\) denote any of \(\delta_{q,\gamma},\eta_{q,\gamma},\eta^{\mathbb Q}_{q,\gamma}\). Then
 
 \[
- \boxed{\lim_{q\to\infty}\frac{\delta_{q,\gamma}^2}{q\ln q}=2\gamma-1.}\tag{4}
+ \boxed{\lim_{q\to\infty}\frac{b_{q,\gamma}^2}{q\ln q}=2\gamma-1.}\tag{4}
 \]
 
-Thus permutation symmetry does not affect the leading asymptotic constant in this model. The qualifier ``in this model'' matters: bit-flip invariance is still required.
+The symmetric ternary construction attains the optimal leading constant even among arbitrary rational shared measurements. Sections 5 and 6 give the Fourier-coordinate argument for the bit-flip model. Section 7 proves the unrestricted result directly from (1).
 
-A supplementary consequence proved in Section 6 is the following second-order bound. With \(c=2\gamma-1\),
+Each choice of \(b_{q,\gamma}\) also satisfies the following second-order bound. With \(c=2\gamma-1\),
 
 \[
  c\ln q-2\ln\ln q+\ln\frac{2}{\pi c^2}+o(1)
- \ \le\ \frac{\delta_{q,\gamma}^2}{q}
+ \ \le\ \frac{b_{q,\gamma}^2}{q}
  \ \le\ c\ln q+\ln\frac8\pi+o(1).\tag{5}
 \]
 
-The two error terms in this inequality need not be the same. No equality of second-order expansions between the two models is asserted.
+The upper and lower errors may differ. Matching the endpoints through the constant term remains open for each of the three minima in Theorem C.
 
 \section{2. An exact Fourier reduction}\label{an-exact-fourier-reduction}
 
@@ -408,7 +408,7 @@ Because \(a+b=O(\sqrt{q\ln q})\), replacing \(a+b\) by \(a+b-2\) changes its squ
 
 The construction is fully explicit: use the deletion set (11), the corresponding Walsh rows, and the interpolation polynomials (9) in the matrix formula (8).
 
-\section{5. Proof of Theorem C}\label{proof-of-theorem-c}
+\section{5. The bit-flip case of Theorem C}\label{proof-of-theorem-c}
 
 We now permit an arbitrary deleted family \(\mathcal A\subseteq2^{[q]}\), subject only to the budget. The goal is a lower bound independent of its shape.
 
@@ -549,11 +549,11 @@ The ratio of the right side to the budget \(q^{-\gamma}\) tends to infinity, con
  \liminf_{q\to\infty}\frac{\delta_{q,\gamma}^2}{q\ln q}\ge c.
 \]
 
-The permutation-invariant construction remains admissible in the more general model, so \(\delta_{q,\gamma}\le d_{q,\gamma}\). Theorem B gives the matching limsup bound. This establishes (4). \(\square\)
+The permutation-invariant construction remains admissible in the more general model, so \(\delta_{q,\gamma}\le d_{q,\gamma}\). Theorem B gives the matching limsup bound. This establishes (4) for the bit-flip model. \(\square\)
 
-\section{6. Supplementary result: a bilinear refinement and second-order bounds}\label{supplementary-result-a-bilinear-refinement-and-second-order-bounds}
+\section{6. Bilinear refinement in the bit-flip model}\label{supplementary-result-a-bilinear-refinement-and-second-order-bounds}
 
-This section is not needed for the three main theorems, but narrows the remaining open problem. It provides a fully written general-\(\gamma\) version of the earlier bilinear estimate.
+We derive the finite bilinear inequality for measured Walsh vertices, then estimate its two binomial tails. Section 7 reuses the tail calculation for unrestricted measurements.
 
 \subsection{6.1. Finite bilinear bound}\label{finite-bilinear-bound}
 
@@ -622,10 +622,56 @@ Taking logarithms,
 Since \(s\sim c\ln q\), we have \(\ln s=\ln\ln q+\ln c+o(1)\). Substitution proves the lower bound in (5). Its upper bound is Theorem B together with \(\delta_{q,\gamma}\le d_{q,\gamma}\). \(\square\)
 
 
+\section{7. Arbitrary shared linear measurements}
+
+Fix \(C\in\mathbb Q^{m\times D}\) and \(P\) satisfying (1) with entry degrees at most \(d\) and \(P(0)=I_D\).
+Write \(|v|=\sum_t v_t\), and let \(e_v\) be the coordinate unit vector in the original input space. Put
+\[
+ Q_v(X)=\prod_{t:v_t=1}(1-X/t),\qquad
+ H_j=\{h\in(\mathbb Q[X]_{\le j})^\Omega: Q_v\mid h_v \text{ for every }v\}.
+\]
+A component at \(v\) has \(\max(j-|v|+1,0)\) free coefficients. Thus \(\dim H_j=N_q(j)\) from (17).
+For every \(t\), each \(h(t)\) is supported on the half-cube \(v_t=0\). The finite argument also applies to distinct nonzero rational labels \(a_t\), using factors \(1-X/a_t\) and evaluating at \(a_t\).
+
+\subsection{7.1. Square and bilinear certificates in input coordinates}
+
+Take \(h\in H_j\) with \(Ch(X)\equiv0\), and \(g\in H_\ell\). Form
+\[
+ F(X)=g(X)^{\mathsf T}P(X)h(X).
+\]
+At label \(t\), condition (1) applied to \(h(t)\) gives \([P(t)h(t)]_u=0\) for every \(u_t=0\). For every \(u_t=1\), the factor \(g_u(t)\) vanishes. Hence \(F(t)=0\). If \(d+j+\ell<q\), root counting gives \(F\equiv0\). Evaluating at zero yields
+\[
+ \sum_{v\in\Omega}g_v(0)h_v(0)=0. \tag{25}
+\]
+Only the right input \(h\) must satisfy the measurement equations.
+
+For \(d+2k<q\), suppose a nonzero \(h\in H_k\) satisfies \(Ch\equiv0\).
+Divide all components by their common maximal power of \(X\). This preserves \(Ch\equiv0\), and \(Q_v(0)=1\) ensures that every \(Q_v\) still divides its component. Now \(h(0)\ne0\), and (25) with \(g=h\) contradicts positivity of the sum of squares. The measurement map from \(H_k\) to \(m\) polynomials of degree at most \(k\) is therefore injective, giving
+\[
+ N_q(k)\le (k+1)m. \tag{26}
+\]
+
+\subsection{7.2. Finite bilinear bound and asymptotics}
+
+For nonnegative integers \(d+r<q\) and \(K\le r\), put \(B_i=\sum_{s=0}^i\binom qs\).
+For \(0\le j\le K\) and \(|v|\le\min(j,r-j)\), form the input vectors
+\[
+ X^{K-j} Q_v(X)e_v\in H_K.
+\]
+Their measured images are linearly independent. Indeed, in a nontrivial rational relation among these images, choose the largest \(J\) with a nonzero coefficient \(c_{J,w}\). Divide the input combination by \(X^{K-J}\) and call the resulting vector \(h\). Each summand now has degree at most \(J\), and \(Ch\equiv0\) by cancellation of the common power of \(X\). At zero \(h_w(0)=c_{J,w}\). The test \(g=Q_w e_w\) has degree at most \(r-J\) and \(g(0)=e_w\), so (25) gives \(c_{J,w}=0\), a contradiction. Counting these independent images gives
+\[
+ \sum_{j=0}^K B_{\min(j,r-j)}\le(K+1)m. \tag{27}
+\]
+Both (26) and (27) apply to arbitrary rational measurement matrices, including \(m=0\).
+
+To obtain (4), use \(m/2^q\le q^{-\gamma}\) in (26). The calculation in Sections 5.3--5.4 gives the lower limit bound \(2\gamma-1\) for \(\eta^{\mathbb Q}_{q,\gamma}\). The symmetric ternary construction of Theorem B gives the matching upper limit bound for all three minima in Theorem C. Next apply (27) with \(r=q-d-1\) and the same cutoff \(K\) as in Section 6.2. The left side equals the binomial sum in (23), so the reflection and tail estimates there give the lower endpoint of (5) for \(\eta^{\mathbb Q}_{q,\gamma}\). Theorem B supplies the upper endpoint. The order of the minima in Section 1 gives the same interval for unrestricted ternary measurements. \(\square\)
+
 \section*{Formal verification and provenance}
 The repository accompanying this paper contains Lean 4 proofs of Theorems A, B and C and the two-sided bound (5). The integer-budget version of Theorem A permits any nonnegative integer budget. Its real-budget specialization uses the exact floor of the shared-measurement bound. The asymptotic assertions quantify over every fixed real \(\gamma>1/2\).
-The definitions of both minimum degrees use the matrix conditions of Section 1.
+The definitions of all four minimum degrees use the matrix conditions of Section 1.
 The power of \(q\) in the budget is fixed before taking the limit as \(q\) tends to infinity.
+
+The auxiliary space in Section 5.1 is the bounded-degree part of the generalized graph splines of Gilbert, Tymoczko and Viel, with edge ideal \((X-t)\) in direction \(t\) (\href{https://doi.org/10.2140/pjm.2016.281.333}{\emph{Pacific J. Math.} 281 (2016), 333--364}). The input-coordinate certificate in Section 7 was proposed in the project owner's review of the earlier bit-flip theorem.
 
 The manuscript and formalization were developed with substantial AI assistance in problem formulation, proof discovery, review and Lean implementation. The original project outline cites OpenAI's \emph{The Exponential Time Hypothesis is False} (\href{https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026}{25 October 2026 revision}) as motivation for studying local reconstruction. The formal results in this paper concern the Boolean-cube model defined in Section 1.
 
