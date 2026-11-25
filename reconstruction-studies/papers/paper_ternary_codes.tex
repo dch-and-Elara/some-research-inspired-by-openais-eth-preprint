@@ -1,0 +1,650 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  10pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  % Use the default Latin Modern fonts supplied with TeX.
+
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=24mm]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{microtype}
+\setlength{\emergencystretch}{3em}
+\widowpenalty=10000
+\clubpenalty=10000
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Ternary Measurements for Paired Local Recovery},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Ternary Measurements for Paired Local Recovery}
+\author{}
+\date{25 November 2026}
+
+\begin{document}
+\maketitle
+
+\subsection{Abstract}\label{abstract}
+
+An input to paired local recovery has one scalar for each ordered pair
+of length-\(q\) words over an \(r\)-letter alphabet. At the \(t\)-th
+evaluation point, an output can read the inputs whose first word has the
+prescribed letter at position \(t\). All outputs share a single linear
+measurement matrix. We determine its minimum rank at two degree bounds
+for the binary indexing alphabet. At degree zero over the rationals the
+answer is \((4^q-1)/3\). A three-color tensor code with ternary rows
+attains the converse of Woolsey, Chen and Ji for the centralized version
+of their hypercuboid assignment. An adjacent interchange proves the
+optimality of their proposed receiver order for unequal alphabet sizes
+and gives the generalized independence number. For every fixed even
+\(r\), a construction from perfect matchings attains their limiting
+measurement fraction \((r-1)/(2r-1)\). At degree \(q-2\), the binary
+minimum is \(q+\lceil q/2\rceil+2\) over every field with \(q\) distinct
+nonzero evaluation points. A binary-valued measurement matrix attains
+the minimum. The lower bound uses a degree-one interpolation dual and a
+count of exceptional incidences on cube edges. At both binary endpoints,
+imposing a direct sum over the coordinate-swap orbits strictly increases
+the rank for \(q\ge2\), even when the measurements inside each orbit are
+unrestricted.
+
+\subsection{1. The model and the two binary
+endpoints}\label{the-model-and-the-two-binary-endpoints}
+
+Let \([r]=\{0,\ldots,r-1\}\) and let \(\Omega=[r]^q\times[r]^q\), with
+\(D=r^{2q}\). Take a field \(F\) and distinct nonzero evaluation points
+\(\lambda_1,\ldots,\lambda_q\in F\). Write \(v=(a_v,b_v)\) for a pair of
+words. For \(u\in\Omega\), the side information at slot \(t\) consists
+of the input coordinates in \[
+G_{u,t}=\{v\in\Omega:a_v(t)=b_u(t)\}.
+\] The sender knows the whole input \(z\in F^\Omega\). It broadcasts
+\(Cz\) for a fixed matrix \(C\) with \(D\) columns. A feasible
+degree-\(d\) scheme has a matrix \(P\in F[X]^{D\times D}\) of entrywise
+degree at most \(d\) and \(P(0)=I_D\). For every \(u,t\) the value
+\([P(\lambda_t)z]_u\) must be recoverable from \(Cz\) and
+\(z|_{G_{u,t}}\) for every \(z\in F^\Omega\). Neither \(C\) nor \(P\) is
+required to respect any permutation of \(\Omega\). Over \(\mathbb Q\) a
+ternary matrix has entries in \(\{-1,0,1\}\). An independent subset of
+its rows preserves everything the broadcast reveals, so its rank is the
+minimum number of rows needed to transmit that row space.
+
+We write \(m_F(q,r,d)\) for the minimum rank with arbitrary entries in
+\(C\) and \(m_{\rm ter}(q,r,d)\) for the minimum using ternary rows over
+\(\mathbb Q\). The labels are fixed in these quantities. The formulas
+below hold for every allowed choice. A linear functional is recoverable
+precisely when it vanishes on the common kernel of the broadcast and the
+side information. Consequently each row of \(P(\lambda_t)\) lies in the
+sum of \(\operatorname{Row}(C)\) and the span of the coordinate
+functionals indexed by \(G_{u,t}\). This equivalence also allows
+arbitrary decoding functions.
+
+The paired label array, coordinate swaps and polynomial replacement rows
+arise in the common auxiliary construction of {[}1, §4.1{]}. At degree
+zero we have \(P=I_D\), and the receiver \((t,b)\) knows all inputs with
+first letter \(b\) at \(t\) and demands all inputs with second letter
+\(b\) there. These are the file and function assignments of Woolsey,
+Chen and Ji {[}2, §III-B{]}, with a single scalar per file-function
+pair. Their communication protocol further requires each sender to form
+its transmissions from locally available data. Our sender can combine
+inputs anywhere in the array. Receiver-order converses for such
+groupcast problems also appear in {[}3, §5{]}. The moment obstruction
+for a fixed common space in the polynomial model appears in {[}4,
+§5.1{]}. We use its elementary interpolation form at degree \(q-2\).
+
+\textbf{Theorem 1.} Over \(\mathbb Q\) the binary indexing alphabet
+satisfies \[
+\begin{aligned}
+ m_{\mathbb Q}(q,2,0)=m_{\rm ter}(q,2,0)
+   &=\frac{4^q-1}{3} &&(q\ge1),\\
+ m_{\mathbb Q}(q,2,q-2)=m_{\rm ter}(q,2,q-2)
+   &=q+\left\lceil\frac q2\right\rceil+2 &&(q\ge2).
+\end{aligned}
+\] The second formula holds for \(m_F\) over every field containing the
+required labels. Its attaining measurement matrix has entries \(0,1\).
+The requirement on the labels rules out the field \(\mathbf F_2\) itself
+when \(q\ge2\). Fields of characteristic two with sufficiently many
+elements are included.
+
+\textbf{Theorem 2.} If \(r\ge2\) is fixed and even, then \[
+ \lim_{q\to\infty}\frac{m_{\mathbb Q}(q,r,0)}{r^{2q}}
+ =\lim_{q\to\infty}\frac{m_{\rm ter}(q,r,0)}{r^{2q}}
+ =\frac{r-1}{2r-1}.
+\] For all \(q\ge1\) there are explicit ternary codes of rank at most \[
+ \begin{cases}
+ \dfrac{r-1}{2r-1}\left(r^{2q}-(r/2)^q\right),
+       &r\text{ even},\\[3pt]
+ \dfrac{r}{2r+1}\left(r^{2q}-((r+1)/2)^q\right),
+       &r\text{ odd}.
+ \end{cases}
+\]
+
+The two assertions of Theorem 1 coincide at \(q=2\), where five
+measurements suffice. At \(q=3\) their ranks are \(21\) and \(7\). The
+saving against orbit-by-orbit measurement has a different cause at the
+two degrees. At degree zero, sums indexed by a color in a tensor basis
+can serve all slots simultaneously. At degree \(q-2\), the
+two-dimensional space of affine polynomials permits two different slots
+to share one measurement direction.
+
+\subsection{2. A published converse for degree
+zero}\label{a-published-converse-for-degree-zero}
+
+We give the receiver-order count of Woolsey, Chen and Ji {[}2, Theorem
+2, equation (12) and Appendix C{]} to show its applicability to a
+central sender and to specify its finite value. Order the \(rq\)
+receivers \((t,c)\) first by increasing letter \(c\), then by increasing
+slot \(t\). Select the message \((a,b)\) if the earliest receiver
+demanding it precedes the earliest receiver holding it. If a kernel
+vector of \(C\) is supported on the selected messages, visit the
+receivers in increasing order. At the first demand for a selected
+message, every selected message in this receiver's side information has
+an earlier first demand. By induction all its side information vanishes.
+The zero broadcast then forces all of its demanded coordinates to
+vanish. Thus all selected columns of \(C\) are independent. The
+analogous recovery with the complementary inputs revealed is the usual
+information-theoretic permutation argument.
+
+Fix the earliest receiver \((t,c)\) demanding a selected message and put
+\(j=r-c\). Among the \(b\)-words, the first \(t-1\) positions must use
+larger letters than \(c\), position \(t\) is fixed to \(c\), and the
+later positions may also use \(c\). There are \((j-1)^{t-1}j^{q-t}\)
+choices. The \(a\)-word must avoid holding receivers through \((t,c)\)
+itself, giving \((j-1)^t j^{q-t}\) choices. The number of selected
+messages is therefore \[
+ B(q,r)=
+ \sum_{j=2}^r\sum_{t=1}^q(j-1)^{2t-1}j^{2(q-t)}
+ =
+ \sum_{j=2}^r\frac{j-1}{2j-1}
+       \left(j^{2q}-(j-1)^{2q}\right).
+ \tag{1}
+\] Using the difference between successive coefficients
+\((j-1)/(2j-1)\), equation (1) yields \[
+ \frac{m_F(q,r,0)}{r^{2q}}\ge
+ \frac{r-1}{2r-1}
+   -\sum_{j=1}^{r-1}\frac{(j/r)^{2q}}{4j^2-1}.
+ \tag{2}
+\] For \(r=2\) this gives the unnormalized lower bound \((4^q-1)/3\).
+For fixed \(r\) the limiting lower bound is \((r-1)/(2r-1)\).
+
+\textbf{Proposition 2.1 (optimal receiver order).} Allow slot \(i\) to
+have \(r_i\) letters. Among all permutations of the receivers, a rule
+that always chooses a slot with the most unvisited letters maximizes the
+number of selected messages. With \(S(j)=\prod_i\min(r_i,j)^2\), the
+maximum is \[
+       \sum_{j=2}^{\max_i r_i}\frac{j-1}{2j-1}\bigl(S(j)-S(j-1)\bigr).
+\] This proves the optimality suggested by simulations in {[}2, Remark
+5{]} for the ordering rule used for \(L_{P2}\) in their Appendix
+D.\footnote{In arXiv:2008.00581v1, equations (15) and (30) print the
+  outside factor as \(\prod_{j<i}x_j^2\) for nonincreasing side lengths
+  \(x_1,\ldots,x_q\). When the first \(i\) slots decrease together, the
+  untouched slots give \(\prod_{j>i}x_j^2\). For \((x_1,x_2)=(2,2)\) the
+  printed equation (15) gives \(5/4\), while its stated ordering rule
+  and the homogeneous equation (12) give the normalized score \(5/16\).}
+By {[}3, Theorem 5, equation (43){]}, the maximum is also the
+generalized independence number of this unit-message groupcast instance,
+after removing demands already available to their requesting receivers.
+
+\emph{Proof.} Suppose \(s_i\) letters of slot \(i\) remain. Selecting a
+receiver in slot \(t\) contributes \((s_t-1)\prod_{i\ne t}s_i^2\).
+Indeed its demand letter is fixed, its holder letter must be different,
+and all other letter pairs are free among the unvisited letters. For
+consecutive choices in distinct slots \(t,u\), put \(x=s_t\) and
+\(y=s_u\). Later contributions agree in either order. The score for
+order \(t,u\) minus the score for \(u,t\) is
+\(\prod_{i\notin\{t,u\}}s_i^2\) times \[
+ (x-1)y^2+(y-1)(x-1)^2-(y-1)x^2-(x-1)(y-1)^2=x-y .
+\] Tag each step by its slot's count just before that choice. Within a
+slot the tags strictly decrease. Any adjacent inversion therefore uses
+distinct slots. Swapping it leaves the tags unchanged and does not
+decrease the score. Sorting all tags into nonincreasing order gives the
+claimed rule. At tag \(j\) the slots with \(r_i\ge j\) decrease from
+\(j\) to \(j-1\) in turn. Summing their contributions as a geometric
+series, as in (1), gives \((j-1)(S(j)-S(j-1))/(2j-1)\). Summing over
+\(j\) proves the formula. \(\square\)
+
+\subsection{3. Centralized tensor
+encoders}\label{centralized-tensor-encoders}
+
+Write \(V\) for the one-slot dual space with coordinate basis
+\(e_{ab}\), \(a,b\in[r]\), and put
+\(K_b=\operatorname{span}\{e_{bc}:c\in[r]\}\). A subspace
+\(U\subseteq V\) suffices in one slot if \(e_{ab}\in U+K_b\) for every
+\(a,b\).
+
+\textbf{Lemma 3 (selection by total color).} Partition a basis of \(V\)
+into classes \((\mathcal B_g)_{g\in G}\) indexed by a finite abelian
+group. Suppose \(A\subseteq G\) has the property that the classes with
+colors in \(A+h\) span a sufficient space for every \(h\in G\).
+Transmitting all tensor basis rows in \(V^{\otimes q}\) whose total
+color is in a fixed translate \(A+h_0\) gives a degree-zero code. Its
+rank is the sum over \(A+h_0\) of the \(q\)-fold convolution of
+\(g\mapsto |\mathcal B_g|\). The tensor rows are ternary when the
+one-slot basis is ternary.
+
+\emph{Proof.} Fix receiver \((t,b)\) and a basis tensor on the other
+slots of total color \(h\). At the remaining slot write \(e_{ab}\) as a
+sum of a vector in the span of the colors \(A+h_0-h\) and a vector in
+\(K_b\). After inserting these vectors at slot \(t\), the first part is
+a linear combination of broadcast rows and the second uses only entries
+known to the receiver. Expanding standard coordinate vectors on the
+other slots in the tensor basis proves recovery. Every transmitted
+vector belongs to one basis, so the row count gives its rank. Products
+of entries preserve ternarity. \(\square\)
+
+For the binary case take \(G=\mathbb Z/3\mathbb Z\) and the following
+four vectors, grouped by color: \[
+ \mathcal B_0=\{e_{00}+e_{10},\ e_{01}+e_{11}\},\qquad
+ \mathcal B_1=\{e_{01}+e_{10}\},\qquad
+ \mathcal B_2=\{e_{01}-e_{10}\}.
+\] The last two vectors span the off-diagonal coordinates, and the first
+two vectors project to independent diagonal coordinates. With side
+information \(K_1\), each of \(e_{01}+e_{11}\), \(e_{01}+e_{10}\) and
+\(e_{01}-e_{10}\) gives \(e_{01}\). With \(K_0\), use \(e_{00}+e_{10}\),
+\(e_{01}+e_{10}\) and \(-(e_{01}-e_{10})\) to obtain \(e_{10}\). Each
+self-matching coordinate is in its own side information. Thus every
+color alone suffices. Transmit the tensor rows of total color one. The
+single-slot multiplicities satisfy \((2,1,1)=\mathbf1+\delta_0\) on
+\(G\). Convolving \(q\) times gives \((4^q-1)/3\) at each nonzero color
+for every \(q\ge1\). Indeed,
+\((\mathbf1+\delta_0)^{*q}=((4^q-1)/3)\mathbf1+\delta_0\). Together with
+(1) this proves the degree-zero binary formula.
+
+This binary indexing construction also gives the unrestricted minimum
+over any field of size greater than two. Use \(e_{01}+\theta e_{10}\) in
+place of the last vector for \(\theta\ne0,1\). Each color still suffices
+and the four local rows are independent. Over the rationals the original
+choice \(\theta=-1\) supplies ternary rows. Without polynomial labels
+this central communication code works for arbitrary \(q\) over such a
+field. If the polynomial model is retained, its assumption on label
+availability still applies.
+
+\subsubsection{3.1 Matchings for every
+alphabet}\label{matchings-for-every-alphabet}
+
+Put \(k=r-1\) for even \(r\) and \(k=r\) for odd \(r\), and set
+\(p=2k+1\). Partition the edges of the complete graph on \(r\) letters
+into \(k\) matchings. For even \(r\), use vertices
+\(\{\infty\}\cup\mathbb Z/(r-1)\mathbb Z\). The matching with index
+\(j\) consists of \(\{\infty,j\}\) and \(\{j+i,j-i\}\) for
+\(1\le i\le(r-2)/2\). Each finite edge has a unique midpoint because
+\(r-1\) is odd. For odd \(r\), take the perfect matchings for \(r+1\)
+vertices and remove the extra vertex. Denote their common size by
+\(m=\lfloor r/2\rfloor\).
+
+There are \(k\) cyclic intervals of length \(k\) containing zero in
+\(G=\mathbb Z/p\mathbb Z\). Assign a different interval to each
+matching. For an edge \(\{a,b\}\) of the matching assigned
+\(I=[j,j+k-1]\), give its rows \(e_{ab}+e_{ba}\) and \(e_{ab}-e_{ba}\)
+colors \(j-1\) and \(j+k\), respectively, ordering \(a<b\). Give color
+zero to each column sum \(H_b=\sum_a e_{ab}\). The edge rows span all
+off-diagonal coordinates, and the column sums have independent diagonal
+parts, so these rows form a ternary basis.
+
+We check that \emph{every} cyclic interval of length \(k\) spans a
+sufficient space. The complement of the two colors \(j-1,j+k\) consists
+of paths on \(k\) and \(k-1\) residues. Accordingly \(I\) is the unique
+interval missing both colors of the assigned edge. An interval omitting
+zero sees at least one row of every edge. At receiver \(b\), either row
+gives \(e_{ab}\) since \(e_{ba}\in K_b\). An interval containing zero
+can miss only the edges in its assigned matching. At most one such edge
+meets \(b\). Subtracting \(e_{bb}\) and all the already recovered
+coordinates in column \(b\) from \(H_b\) recovers the missing
+coordinate.
+
+Take \(j=-k+1,\ldots,0\) for the interval starts. The left endpoints
+outside the intervals exhaust \(-k,\ldots,-1\) and the right endpoints
+exhaust \(1,\ldots,k\). Zero therefore has \(r\) basis rows and each
+nonzero color has \(m\). The color multiplicity vector is
+\(m\mathbf1+(r-m)\delta_0\), of total mass \(r^2\). Its \(q\)-fold
+convolution has value \([r^{2q}-(r-m)^q]/p\) at each nonzero color.
+Applying Lemma 3 with an interval of length \(k\) omitting zero gives
+the finite ranks in Theorem 2. When \(r\) is even, dividing by
+\(r^{2q}\) and using (2) proves the claimed exact limit. For odd
+\(r\ge3\) this construction leaves a separation of \(1/(4r^2-1)\)
+between the lower and upper limiting fractions.
+
+\subsection{\texorpdfstring{4. Affine duality at degree
+\(q-2\)}{4. Affine duality at degree q-2}}\label{affine-duality-at-degree-q-2}
+
+For the rest of this section the indexing alphabet is binary, \(q\ge2\),
+and \(F\) has the required labels. Let \(E=F[X]_{\le1}\). We first
+justify the fixed-matrix criterion used on both sides of the rank bound.
+
+\textbf{Lemma 4.} A matrix \(C\) admits a reconstruction matrix of
+degree at most \(q-2\) if and only if the following holds for every
+output \(u\). Each \(h\in F^\Omega\otimes E\) with \(Ch(X)=0\) and
+\(h_v(\lambda_t)=0\) for \(v\in G_{u,t}\) satisfies \(h_u(0)=0\).
+
+\emph{Proof.} Write \(K_t\) for the input subspace killed by \(C\) and
+zero on \(G_{u,t}\). The proposed row
+\(e_u^\top+\sum_{i=1}^{q-2}X^i p_i^\top\) must vanish on \(K_t\) at
+\(\lambda_t\). The dual of this finite linear system says that
+\(e_u^\top\sum_t z_t=0\) for every \(z_t\in K_t\) satisfying
+\(\sum_t\lambda_t^i z_t=0\) for \(1\le i\le q-2\). Let
+\(L(X)=\prod_t(X-\lambda_t)\) and interpolate the polynomial \(h\) with
+\(\deg h<q\) and \(h(\lambda_t)=\lambda_tL'(\lambda_t)z_t\). For
+\(\deg f<q\), the leading-coefficient formula from Lagrange
+interpolation is \[
+ [X^{q-1}] f=\sum_t f(\lambda_t)/L'(\lambda_t).
+\] Applied to \(h\) this kills its top coefficient by the first moment.
+As successive coefficients vanish, apply the formula to
+\(Xh,X^2h,\ldots\). The \(q-2\) moments are equivalent to
+\(\deg h\le1\). Conversely the same formula gives each moment from the
+degree bound. The polynomial \(Ch\) has degree less than \(q\) and
+vanishes at all \(q\) nodes, hence is zero. The interpolation formula at
+zero gives \(h(0)=-L(0)\sum_t z_t\). The transformation is invertible on
+the specified families and \(L(0)\ne0\). For \(q=2\) the moment list is
+empty and \(\deg h<2\) already gives the claim. The output rows may be
+solved independently. \(\square\)
+
+A message with at least two matching positions between its first and
+second words has \(h_u=0\) in Lemma 4 since its affine coordinate has
+two distinct roots. We call the other messages \emph{hard} in this
+section. For a lower bound we may test polynomials supported only on
+hard columns of an arbitrary \(C\). In the upper construction all other
+columns are zero.
+
+Write \(\bar a\) for the bitwise complement of \(a\) and \(a\oplus e_t\)
+for flipping slot \(t\). Let \(v_a\) be the physical column of \(C\)
+indexed by \((a,\bar a)\) and let \(c_{a,s}\) be its column indexed by
+\((a,\bar a\oplus e_s)\). Put \(H=\operatorname{im} C\), \(m=\dim H\)
+and \[
+ N_a=\langle c_{a,1},\ldots,c_{a,q}\rangle,\qquad
+ W_a=N_a+\langle v_a\rangle,\qquad \ell_t=1-X/\lambda_t.
+\] Distinct \(\ell_t\) are linearly independent in pairs.
+
+All outputs with second word \(\bar a\) have the same known sets. Their
+affine test coordinates can be arbitrary in \(E\) on first word \(a\),
+multiples of \(\ell_t\) on first word \(y=a\oplus e_t\), and zero on any
+other first word. Thus the coefficient matrix of \(Ch(X)\) has columns
+\(z\otimes1\) and \(z\otimes X\) for every hard physical column \(z\) at
+\(a\), together with \(z\otimes\ell_t\) for every hard physical column
+\(z\) at \(a\oplus e_t\). Since \(\ell_t(0)=1\), the coefficients tested
+by Lemma 4 belong to the \(q+1\) columns \[
+           v_a\otimes1,\qquad
+           c_{a\oplus e_t,t}\otimes\ell_t\quad(1\le t\le q).
+ \tag{3}
+\] For feasibility, these columns must be independent modulo the span of
+all other columns in the coefficient matrix. Indeed a relation with any
+nonzero designated coefficient violates the corresponding output test.
+For the construction supported on hard columns, this property is also
+sufficient, since zero columns cannot cancel nonzero columns.
+
+For each \(a\), the defining \(q+1\) vectors of \(W_a\) are independent.
+A relation supported on first word \(a\) can be made a constant test for
+center \(a\), forcing its \(v_a\) coefficient to be zero. For each
+\(s\), multiply the same relation by \(\ell_s\) and apply the test for
+center \(a\oplus e_s\) to force its \(c_{a,s}\) coefficient to be zero.
+Hence \(\dim N_a=q\) and \(\dim W_a=q+1\).
+
+\subsubsection{4.1 The lower bound and exceptional cube
+edges}\label{the-lower-bound-and-exceptional-cube-edges}
+
+The \(q\) neighbor columns in (3) remain independent modulo
+\(W_a\otimes E\), because this latter subspace is spanned by the center
+columns including the independent designated center column. The quotient
+has dimension \(2(m-q-1)\), giving \(m\ge q+1+k\) for
+\(k=\lceil q/2\rceil\).
+
+Assume \(m=q+1+k\). For each center \(a\), divide \(H\otimes E\) by \[
+             J_a=N_a\otimes E+\langle v_a\otimes X\rangle.
+\] This removes only nondesignated center columns and has dimension
+\(2q+1\). The designated columns remain independent modulo the
+nondesignated neighbor columns. The images of all the latter therefore
+span a space of dimension at most \[
+             2m-(2q+1)-(q+1)=2k-q.
+ \tag{4}
+\] The value in (4) is zero for even \(q\) and one for odd \(q\).
+
+At neighbor \(y=a\oplus e_t\) consider a nondesignated vector
+\(z\in\{v_y\}\cup\{c_{y,s}:s\ne t\}\). If \(z\in W_a\mathbin{\backslash}N_a\),
+then the class of \(z\otimes\ell_t\) modulo \(J_a\) is a nonzero
+multiple of the designated center class \(v_a\otimes1\), an
+impossibility. If \(z\notin W_a\), its image in the further quotient
+\((H/W_a)\otimes E\) is a nonzero member of
+\((H/W_a)\otimes\langle\ell_t\rangle\). For distinct \(t,t'\) the latter
+subspaces intersect trivially. In view of (4), at most \(2k-q\)
+directions at \(a\) can have a nondesignated neighbor vector outside
+\(N_a\).
+
+Call an incidence of a vertex \(a\) with an edge in direction \(t\)
+exceptional when such a vector exists. At an incidence that is not
+exceptional the \(q\) independent vectors \(v_y,c_{y,s}\) for \(s\ne t\)
+all lie in \(N_a\), and they span it. If neither endpoint of an edge
+were exceptional, we would have \(v_y\in N_a\subseteq W_y\) and
+\(v_a\in N_y\subseteq W_a\). This would give \(W_a=N_a+N_y=W_y\). The
+designated neighbor column would then belong to \(W_a\otimes E\),
+contradicting its independence modulo that subspace. Each cube edge must
+therefore have at least one exceptional incidence. The cube has
+\(q2^{q-1}\) edges. For even \(q\) there are no exceptional incidences.
+For odd \(q\ge3\) there are at most \(2^q<q2^{q-1}\). This contradiction
+excludes \(m=q+1+k\) and proves \(m\ge q+k+2\).
+
+\subsubsection{4.2 A binary-valued optimum
+encoder}\label{a-binary-valued-optimum-encoder}
+
+Use measurement coordinates \(e_1,\ldots,e_q\), \(f_1,\ldots,f_k\),
+\(g_0,g_1\) and define the columns by \[
+        c_{a,t}=e_t+a_t f_{\lceil t/2\rceil},
+        \qquad
+        v_a=g_{|a|\bmod2}.
+ \tag{5}
+\] All remaining physical columns are zero. The vectors at \(a=0\)
+include the \(e_t\). Flipping the appropriate bit produces every \(f_i\)
+by subtraction, and both word parities occur. This gives rank \(q+k+2\).
+
+Fix center \(a\). In the span of the \(e\)- and \(f\)-coordinates the
+\(f_i\) are independent modulo \(N_a\), by inspection of the \(e_t\)
+coordinates. Project the affine coefficient matrix onto that quotient
+tensored with \(E\). All center columns vanish. At neighbor
+\(y=a\oplus e_t\) the vectors \(c_{y,s}\) for \(s\ne t\) agree with
+\(c_{a,s}\). The surviving column has image \[
+        (1-2a_t)\,\overline f_{\lceil t/2\rceil}\otimes\ell_t.
+\] Each \(f_i\) occurs at most twice and the two associated polynomials
+are independent. The scalar \(1-2a_t\) is either \(1\) or \(-1\), and
+stays nonzero in characteristic two. Thus all \(q\) designated neighbor
+coefficients vanish in any relation. On the separate \(g\)-coordinates,
+every neighbor has parity opposite to \(a\). The coefficient of
+\(g_{|a|\bmod2}\otimes1\) forces the designated center coefficient to
+vanish. This proves (3) and completes the proof of Theorem 1.
+
+For rational labels, the measurements in (5) also determine \(P\)
+algorithmically. For a given output row, fix its constant term and
+introduce unknowns for its remaining polynomial coefficients and the
+combinations of the rows of \(C\) at each node. At every unavailable
+input coordinate impose equality between the polynomial value and the
+measurement combination. Lemma 4 and the preceding verification
+guarantee that these rational linear systems are consistent. Gaussian
+elimination constructs \(P\) in deterministic time polynomial in \(D\),
+\(q\) and the bit length of the labels. After denominators are cleared,
+the sizes of the minors bound the bit length needed by fraction-free
+elimination.
+The Lean sources also give a direct construction for this encoder. It
+generates the coefficient computations from the slot count, evaluates
+them on binary encodings of the rational labels, and writes every
+coefficient of the resulting matrix within a polynomial bit budget.
+
+\subsection{5. The exact cost of keeping the swap orbits
+separate}\label{the-exact-cost-of-keeping-the-swap-orbits-separate}
+
+The coordinate swaps exchange \(a_t\) and \(b_t\) independently. Their
+orbits are specified by the unordered pair of letters at every slot. An
+orbit with \(h\) unequal pairs is a Boolean cube of dimension \(h\). At
+an active slot, the locally accessible points have the opposite
+orientation to the output. At an inactive slot the entire orbit is
+known. Call \(C\) an orbitwise direct sum if its row space is a direct
+sum of subspaces each supported on one orbit. No constraint is placed on
+those subspaces or on the coupling in \(P\).
+
+\textbf{Proposition 5.} Over \(\mathbb Q\), for every \(r\ge2\) the
+least orbitwise rank at degree zero is \((r^{2q}-r^q)/2\). For \(r=2\)
+and \(q\ge2\), the least orbitwise rank at degree \(q-2\) is \(2q+2\).
+
+\emph{Proof at degree zero.} In any nontrivial orbit, fix one active
+slot and one orientation. Every input supported on this orientation has
+zero side information for outputs on that orientation. Those outputs
+must recover all \(2^{h-1}\) coordinates, forcing rank at least
+\(2^{h-1}\) on the orbit. Pairing a point with its antipode and
+transmitting each pair sum attains that rank. At any active slot the
+partner can be read, and the point itself is available at each inactive
+slot. The \(r^q\) singleton orbits contribute zero. Adding ranks proves
+the first formula.
+
+\emph{Lower bound at degree \(q-2\).} For \(r=2\), there are \(2q\)
+orbits with exactly one inactive position and one all-active orbit. Each
+of the former requires at least one measurement, since the polynomial on
+a diagonal entry with no local measurement would otherwise have \(q-1\)
+roots and intercept one. On the all-active orbit a zero measurement
+column would similarly force \(q\) roots. If its rank were one and every
+column nonzero, two adjacent physical points would give a relation
+between their columns with both coefficients nonzero. Take an input
+supported on these two points as prescribed by the relation. Its side
+information is zero for one of the two outputs at their \(q-1\) common
+orientations. The output row applied to the input would have those
+\(q-1\) roots and nonzero intercept. This is impossible at degree
+\(q-2\). Since an orbitwise direct sum charges the distinct orbits
+separately, at least \(2q+2\) rows are necessary.
+
+\emph{Attainment at degree \(q-2\).} On an orbit of dimension
+\(h\le q-2\), take the identity on the orbit times
+\(\prod_{t\text{ active}}(1-X/\lambda_t)\). For \(h=q-1\) measure the
+constant Walsh row. For \(h=q\) measure the constant and full-parity
+Walsh rows. To verify the resulting degree directly, index the
+characters by subsets \(S\) of the active slots. The retained weights
+form the interval \([L,U]=[1,h]\) or \([1,h-1]\), respectively.
+Interpolate \(R(j)=(-1)^j\) on that interval by a polynomial of degree
+\(U-L\). Give a retained character the multiplier \[
+        p_S(X)=(-1)^{|S|}
+          R\left(\sum_{i\in S}(1-X/\lambda_i)\right),
+\] and use multiplier one on the measured characters. This
+Walsh-diagonal matrix has constant term \(I\) and degree at most
+\(q-2\). At an active slot \(t\), the multipliers of two retained
+characters indexed by \(S\) and \(S\mathbin{\triangle}\{t\}\) have
+opposite values at \(X=\lambda_t\). For a kernel input supported on the
+unknown orientation, the two Fourier coefficients differ by the same
+sign that relates the two characters at the output. Their contributions
+cancel. If one character in a pair is measured, the two coefficients
+both vanish. This verifies recovery on the unknown orientation, and
+hence from the known orientation and the measurements. Inactive slots
+already reveal the full orbit. This interpolation is the
+retained-interval method from {[}1, 4{]}. The stated ranks follow.
+\(\square\)
+
+For \(r=2\) the orbitwise-to-unrestricted ratio at degree zero is
+\(3\cdot2^q/[2(2^q+1)]\), tending to \(3/2\). At degree \(q-2\) it is
+\((2q+2)/(q+\lceil q/2\rceil+2)\), tending to \(4/3\). These strict
+inequalities for \(q\ge2\) show precisely where an optimal encoder must
+couple different unordered-pair orbits.
+
+\subsection{6. Verification, scope and open
+cases}\label{verification-scope-and-open-cases}
+
+Exact rational elimination checked the total-color construction at every
+receiver on the full binary arrays for \(q=1,2,3\), with ranks
+\(1,5,21\). It also checked all one-slot interval decoders for
+\(2\le r\le8\). For (5), two calculations used the full arrays at
+\(q=2,3,4\), with labels \(2,5,8,11\) truncated to the required number
+of nodes. One eliminated the entrywise polynomial unknowns in the
+original row equations. The other formed the divisibility matrix in
+Lemma 4. Both certified all output rows at ranks \(5,7,8\). Removing a
+row made half of the second-word blocks infeasible in each case.
+Lowering the degree also made the tested constructions at \(q=3,4\)
+fail. The accompanying Lean development formalizes the binary endpoints,
+the general alphabet construction and its even-alphabet limit, the
+receiver-order result, and the comparison with orbitwise encoders.
+The repository includes a theorem index and verification logs.
+
+The sender in these results observes the complete label array.
+Determining the cost under distributed-sender restrictions requires
+specifying which transmitted rows each sender can compute. The rank here
+also concerns the full auxiliary model before physical variable
+identification. Theorems 1 and 2 make no assertion about a SAT running
+time. Two open cases are the limiting degree-zero cost for a fixed odd
+alphabet larger than two and the optimum at general positive degree.
+
+\textbf{Contribution and disclosure.} The paired polynomial recovery
+model, the order-based zero-degree converse, standard matching
+decompositions, and the moment and interval interpolation tools have the
+antecedents identified above. The contributions developed here are the
+proof of optimality of the proposed receiver order, the central
+total-color encoders with their finite and limiting consequences, and
+the exact degree-\(q-2\) rank with the cube-edge lower bound and the
+binary-valued encoder. The project initiator supplied the research
+program and earlier conjectures. An AI assistant and collaborating
+research agents produced the derivations, manuscript and exact
+computational tests in this round. Other research agents independently
+checked the proofs within the same project. Human peer review and a
+determination of public priority remain open.
+
+\subsection{References}\label{references}
+
+{[}1{]} OpenAI. \emph{The Exponential Time Hypothesis is False}.
+Revision of 25 October 2026, §4.1, Lemmas 4.1--4.3.
+\href{https://raw.githubusercontent.com/openai/math/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex}{Primary
+text}.
+
+{[}2{]} Nicholas Woolsey, Rong-Rong Chen and Mingyue Ji. \emph{A
+Combinatorial Design for Cascaded Coded Distributed Computing on General
+Networks}. IEEE Transactions on Communications \textbf{69} (2021),
+5686--5700. Theorems 2--3, Remark 5 and Appendices C--D.
+\href{https://arxiv.org/pdf/2008.00581}{Author manuscript}.
+
+{[}3{]} Prasad Krishnan, Lakshmi Natarajan and V. Lalitha. \emph{An
+Umbrella Converse for Data Exchange: Applied to Caching, Computing, and
+Shuffling}. Entropy \textbf{23} (2021), 985, §5.
+\href{https://doi.org/10.3390/e23080985}{Journal article}.
+
+{[}4{]} Vaibhav Tulsyan. \emph{What the ETH refutations do not give:
+barriers for the counting engines, with machine-checked lemmas}.
+November 2026, with companion note on the parity barrier, §§5.1--5.2.
+\href{https://hexagonmath.org/pdf/2611.00149v1}{Paper} and
+\href{https://github.com/xennygrimmato/eth-hamiltonicity/blob/946c49993b78aa163fcac3f8cb78ce351dd5dcc6/research/permanent/parity-barrier.md}{versioned
+companion}.
+
+\end{document}

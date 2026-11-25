@@ -1,3 +1,925 @@
+'AffineCompile.agreeAt.eq_1' does not depend on any axioms
+'AffineCompile.allList.eq_1' does not depend on any axioms
+'AffineCompile.allList.eq_2' does not depend on any axioms
+'AffineCompile.allList_steps' depends on axioms: [propext, Quot.sound]
+'AffineCompile.allList_value' depends on axioms: [propext]
+'AffineCompile.appendList.eq_1' does not depend on any axioms
+'AffineCompile.appendList.eq_2' does not depend on any axioms
+'AffineCompile.appendList_steps' depends on axioms: [propext, Quot.sound]
+'AffineCompile.appendList_value' depends on axioms: [propext]
+'AffineCompile.bitCellWords.eq_1' does not depend on any axioms
+'AffineCompile.bitCellWords.eq_2' does not depend on any axioms
+'AffineCompile.bitCellWords_decode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.bitCellWords_length' depends on axioms: [propext]
+'AffineCompile.bitCellWords_steps' depends on axioms: [propext, Quot.sound]
+'AffineCompile.bucketEqRun.eq_1' does not depend on any axioms
+'AffineCompile.bucketEqRun_steps' depends on axioms: [propext, Quot.sound]
+'AffineCompile.bucketEqRun_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.cellWords.eq_1' does not depend on any axioms
+'AffineCompile.cellWords_decode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.cellWords_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.cellWords_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.coefficientCells.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.coefficientCells_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.coefficientCells_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.coefficientGenerationBound.eq_1' depends on axioms: [propext]
+'AffineCompile.compile.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.compileDescriptor.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.compileDescriptor_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.compileDescriptor_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.compile_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.compile_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.compile_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.decodeBits.eq_1' does not depend on any axioms
+'AffineCompile.decodeBits_cons' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.decodeTask.eq_1' does not depend on any axioms
+'AffineCompile.decodeWord.eq_1' does not depend on any axioms
+'AffineCompile.descriptorGenerationBound.eq_1' depends on axioms: [propext]
+'AffineCompile.emit.eq_1' does not depend on any axioms
+'AffineCompile.equalAt.eq_1' does not depend on any axioms
+'AffineCompile.equalCells.eq_1' does not depend on any axioms
+'AffineCompile.equalCells_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.equalCells_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.exceptRun.eq_1' does not depend on any axioms
+'AffineCompile.exceptRun_length' depends on axioms: [propext]
+'AffineCompile.exceptRun_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.exceptRun_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.filterList.eq_1' does not depend on any axioms
+'AffineCompile.filterList.eq_2' does not depend on any axioms
+'AffineCompile.filterList_steps' depends on axioms: [propext, Quot.sound]
+'AffineCompile.filterList_value' depends on axioms: [propext]
+'AffineCompile.generationBound.eq_1' depends on axioms: [propext]
+'AffineCompile.indexEq.eq_1' does not depend on any axioms
+'AffineCompile.indexEq.eq_2' does not depend on any axioms
+'AffineCompile.indexEq.eq_3' does not depend on any axioms
+'AffineCompile.indexEq.eq_4' does not depend on any axioms
+'AffineCompile.indexEq_steps' depends on axioms: [propext, Quot.sound]
+'AffineCompile.indexEq_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.indexHalf.eq_1' does not depend on any axioms
+'AffineCompile.indexHalf.eq_2' does not depend on any axioms
+'AffineCompile.indexHalf.eq_3' does not depend on any axioms
+'AffineCompile.indexHalf_steps' depends on axioms: [propext, Quot.sound]
+'AffineCompile.indexHalf_value' depends on axioms: [propext, Quot.sound]
+'AffineCompile.indexList.eq_1' depends on axioms: [propext]
+'AffineCompile.indexList.eq_2' depends on axioms: [propext]
+'AffineCompile.indexList_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.indexList_value' depends on axioms: [propext, Quot.sound]
+'AffineCompile.indexLt.eq_1' does not depend on any axioms
+'AffineCompile.indexLt.eq_2' does not depend on any axioms
+'AffineCompile.indexLt.eq_3' does not depend on any axioms
+'AffineCompile.indexLt_steps' depends on axioms: [propext, Quot.sound]
+'AffineCompile.indexLt_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.localCells.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.localCells_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.localCells_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.mapList.eq_1' does not depend on any axioms
+'AffineCompile.mapList.eq_2' does not depend on any axioms
+'AffineCompile.mapList_steps' depends on axioms: [propext, Quot.sound]
+'AffineCompile.mapList_value' depends on axioms: [propext]
+'AffineCompile.materialize.eq_1' does not depend on any axioms
+'AffineCompile.materialize.eq_2' does not depend on any axioms
+'AffineCompile.materialize.eq_3' does not depend on any axioms
+'AffineCompile.materialize.eq_4' does not depend on any axioms
+'AffineCompile.materialize.eq_5' does not depend on any axioms
+'AffineCompile.materialize.eq_6' does not depend on any axioms
+'AffineCompile.materialize_steps' depends on axioms: [propext, Quot.sound]
+'AffineCompile.materialize_value' depends on axioms: [propext]
+'AffineCompile.negProductRun.eq_1' does not depend on any axioms
+'AffineCompile.negProductRun.eq_2' does not depend on any axioms
+'AffineCompile.negProductRun_steps' depends on axioms: [propext, Quot.sound]
+'AffineCompile.negProductRun_value' depends on axioms: [propext]
+'AffineCompile.nodeCoeffRun.eq_1' does not depend on any axioms
+'AffineCompile.nodeCoeffRun.eq_2' does not depend on any axioms
+'AffineCompile.nodeCoeffRun.eq_3' does not depend on any axioms
+'AffineCompile.nodeCoeffRun.eq_4' does not depend on any axioms
+'AffineCompile.nodeCoeffRun_steps' depends on axioms: [propext, Quot.sound]
+'AffineCompile.nodeCoeffRun_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.packedSchedule_decode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.packedSchedule_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.packedSchedule_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.pairCells.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.pairCells_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.pairCells_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.parityCells.eq_1' does not depend on any axioms
+'AffineCompile.parityCells_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.parityCells_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.partnerRun.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.partnerRun_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.partnerRun_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.productList.eq_1' does not depend on any axioms
+'AffineCompile.productList.eq_2' does not depend on any axioms
+'AffineCompile.productList_steps' depends on axioms: [propext, Quot.sound]
+'AffineCompile.productList_value' depends on axioms: [propext]
+'AffineCompile.readCell.eq_1' does not depend on any axioms
+'AffineCompile.readCell.eq_2' does not depend on any axioms
+'AffineCompile.readCell.eq_3' does not depend on any axioms
+'AffineCompile.readCell_steps' depends on axioms: [propext, Quot.sound]
+'AffineCompile.readCell_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.scaleCells.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.scaleCells_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.scaleCells_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.scanCells.eq_1' does not depend on any axioms
+'AffineCompile.scanCells_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.scanCells_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.sumBuild.eq_1' does not depend on any axioms
+'AffineCompile.sumBuild.eq_2' does not depend on any axioms
+'AffineCompile.sumBuild_steps' depends on axioms: [propext, Quot.sound]
+'AffineCompile.sumBuild_value' depends on axioms: [propext]
+'AffineCompile.termRun.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.termRun_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCompile.termRun_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.add.eq_1' does not depend on any axioms
+'AffineCost.Bit.Fraction.add_rat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.add_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.add_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.add_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.den_size' depends on axioms: [propext]
+'AffineCost.Bit.Fraction.inv.eq_1' does not depend on any axioms
+'AffineCost.Bit.Fraction.inv_rat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.inv_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.inv_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.inv_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.mk.inj' does not depend on any axioms
+'AffineCost.Bit.Fraction.mk.injEq' depends on axioms: [propext]
+'AffineCost.Bit.Fraction.mk.sizeOf_spec' does not depend on any axioms
+'AffineCost.Bit.Fraction.mul.eq_1' does not depend on any axioms
+'AffineCost.Bit.Fraction.mul_rat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.mul_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.mul_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.mul_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.neg.eq_1' does not depend on any axioms
+'AffineCost.Bit.Fraction.neg_rat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.neg_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.neg_valid' does not depend on any axioms
+'AffineCost.Bit.Fraction.num_size' depends on axioms: [propext]
+'AffineCost.Bit.Fraction.ofBool.eq_1' does not depend on any axioms
+'AffineCost.Bit.Fraction.ofBool_rat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.ofBool_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.ofBool_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.rat.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Fraction.size.eq_1' does not depend on any axioms
+'AffineCost.Bit.Fraction.valid.eq_1' does not depend on any axioms
+'AffineCost.Bit.Run.mk.inj' does not depend on any axioms
+'AffineCost.Bit.Run.mk.injEq' depends on axioms: [propext]
+'AffineCost.Bit.Run.mk.sizeOf_spec' does not depend on any axioms
+'AffineCost.Bit.Signed.add.eq_1' does not depend on any axioms
+'AffineCost.Bit.Signed.add_number' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Signed.add_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Signed.add_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Signed.isZero.eq_1' does not depend on any axioms
+'AffineCost.Bit.Signed.isZero_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Signed.isZero_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Signed.mk.inj' does not depend on any axioms
+'AffineCost.Bit.Signed.mk.injEq' depends on axioms: [propext]
+'AffineCost.Bit.Signed.mk.sizeOf_spec' does not depend on any axioms
+'AffineCost.Bit.Signed.mul.eq_1' does not depend on any axioms
+'AffineCost.Bit.Signed.mul_number' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Signed.mul_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Signed.mul_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Signed.neg.eq_1' does not depend on any axioms
+'AffineCost.Bit.Signed.neg_number' depends on axioms: [propext, Quot.sound]
+'AffineCost.Bit.Signed.neg_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.Signed.number.eq_1' does not depend on any axioms
+'AffineCost.Bit.Signed.ofBool_number' does not depend on any axioms
+'AffineCost.Bit.Signed.ofBool_size' does not depend on any axioms
+'AffineCost.Bit.Signed.size.eq_1' does not depend on any axioms
+'AffineCost.Bit.Tight.eq_1' depends on axioms: [propext]
+'AffineCost.Bit.add.eq_1' does not depend on any axioms
+'AffineCost.Bit.add_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.add_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.add_tight' depends on axioms: [propext, Quot.sound]
+'AffineCost.Bit.add_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.compare.eq_1' does not depend on any axioms
+'AffineCost.Bit.compare.eq_2' does not depend on any axioms
+'AffineCost.Bit.compare.eq_3' does not depend on any axioms
+'AffineCost.Bit.compare.eq_4' does not depend on any axioms
+'AffineCost.Bit.compare_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.compare_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.cons_tight_of_cons' depends on axioms: [propext, Quot.sound]
+'AffineCost.Bit.digit.eq_1' does not depend on any axioms
+'AffineCost.Bit.digit_le' does not depend on any axioms
+'AffineCost.Bit.emitFraction.eq_1' does not depend on any axioms
+'AffineCost.Bit.emitFraction_steps' depends on axioms: [propext, Quot.sound]
+'AffineCost.Bit.emitWord.eq_1' does not depend on any axioms
+'AffineCost.Bit.emitWord.eq_2' does not depend on any axioms
+'AffineCost.Bit.emitWord_length' depends on axioms: [propext]
+'AffineCost.Bit.emitWord_steps' depends on axioms: [propext]
+'AffineCost.Bit.equal.eq_1' does not depend on any axioms
+'AffineCost.Bit.equal_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.equal_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.fuel.eq_1' does not depend on any axioms
+'AffineCost.Bit.fuel.eq_2' does not depend on any axioms
+'AffineCost.Bit.fuel_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.full_adder' does not depend on any axioms
+'AffineCost.Bit.length_le_of_tight' depends on axioms: [propext, Quot.sound]
+'AffineCost.Bit.mul.eq_1' does not depend on any axioms
+'AffineCost.Bit.mul.eq_2' does not depend on any axioms
+'AffineCost.Bit.mul_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.mul_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.mul_tight' depends on axioms: [propext, Quot.sound]
+'AffineCost.Bit.mul_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.readFraction.eq_1' does not depend on any axioms
+'AffineCost.Bit.readFraction_emit' depends on axioms: [propext, Quot.sound]
+'AffineCost.Bit.readFraction_emitted' depends on axioms: [propext, Quot.sound]
+'AffineCost.Bit.readWord.eq_1' does not depend on any axioms
+'AffineCost.Bit.readWord.eq_2' does not depend on any axioms
+'AffineCost.Bit.readWord.eq_3' does not depend on any axioms
+'AffineCost.Bit.readWord_emit' depends on axioms: [propext]
+'AffineCost.Bit.ripple.eq_1' does not depend on any axioms
+'AffineCost.Bit.ripple.eq_2' does not depend on any axioms
+'AffineCost.Bit.ripple_length' depends on axioms: [propext]
+'AffineCost.Bit.ripple_steps' depends on axioms: [propext, Quot.sound]
+'AffineCost.Bit.ripple_value' depends on axioms: [propext, Quot.sound]
+'AffineCost.Bit.shift.eq_1' does not depend on any axioms
+'AffineCost.Bit.shift_length' depends on axioms: [propext]
+'AffineCost.Bit.shift_tight' depends on axioms: [propext, Quot.sound]
+'AffineCost.Bit.shift_value' depends on axioms: [propext]
+'AffineCost.Bit.trim.eq_1' does not depend on any axioms
+'AffineCost.Bit.trim.eq_2' does not depend on any axioms
+'AffineCost.Bit.trim_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.trim_steps' depends on axioms: [propext]
+'AffineCost.Bit.trim_tight' depends on axioms: [propext, Quot.sound]
+'AffineCost.Bit.trim_value' depends on axioms: [propext]
+'AffineCost.Bit.value_cons' does not depend on any axioms
+'AffineCost.Bit.value_inj_same' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Bit.value_lt' depends on axioms: [propext, Quot.sound]
+'AffineCost.Bit.value_nil' does not depend on any axioms
+'AffineCost.Bit.value_take' depends on axioms: [propext]
+'AffineCost.Expr.add.inj' does not depend on any axioms
+'AffineCost.Expr.add.injEq' depends on axioms: [propext]
+'AffineCost.Expr.add.sizeOf_spec' does not depend on any axioms
+'AffineCost.Expr.bit.inj' does not depend on any axioms
+'AffineCost.Expr.bit.injEq' depends on axioms: [propext]
+'AffineCost.Expr.bit.sizeOf_spec' does not depend on any axioms
+'AffineCost.Expr.eval.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Expr.eval.eq_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Expr.eval.eq_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Expr.eval.eq_4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Expr.eval.eq_5' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Expr.eval.eq_6' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Expr.eval_ite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Expr.eval_negLabelProduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Expr.eval_nodeCoeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Expr.eval_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Expr.execute.eq_1' does not depend on any axioms
+'AffineCost.Expr.execute.eq_2' does not depend on any axioms
+'AffineCost.Expr.execute.eq_3' does not depend on any axioms
+'AffineCost.Expr.execute.eq_4' does not depend on any axioms
+'AffineCost.Expr.execute.eq_5' does not depend on any axioms
+'AffineCost.Expr.execute.eq_6' does not depend on any axioms
+'AffineCost.Expr.execute_rat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Expr.execute_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Expr.execute_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Expr.execute_steps_aux' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Expr.execute_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Expr.inv.inj' does not depend on any axioms
+'AffineCost.Expr.inv.injEq' depends on axioms: [propext]
+'AffineCost.Expr.inv.sizeOf_spec' does not depend on any axioms
+'AffineCost.Expr.mul.inj' does not depend on any axioms
+'AffineCost.Expr.mul.injEq' depends on axioms: [propext]
+'AffineCost.Expr.mul.sizeOf_spec' does not depend on any axioms
+'AffineCost.Expr.neg.inj' does not depend on any axioms
+'AffineCost.Expr.neg.injEq' depends on axioms: [propext]
+'AffineCost.Expr.neg.sizeOf_spec' does not depend on any axioms
+'AffineCost.Expr.negLabelProduct.eq_1' does not depend on any axioms
+'AffineCost.Expr.negLabelProduct.eq_2' does not depend on any axioms
+'AffineCost.Expr.negLabelProduct_nodes' depends on axioms: [propext, Quot.sound]
+'AffineCost.Expr.nodeCoeff.eq_1' does not depend on any axioms
+'AffineCost.Expr.nodeCoeff.eq_2' does not depend on any axioms
+'AffineCost.Expr.nodeCoeff.eq_3' does not depend on any axioms
+'AffineCost.Expr.nodeCoeff_nodes' depends on axioms: [propext, Quot.sound]
+'AffineCost.Expr.nodes.eq_1' does not depend on any axioms
+'AffineCost.Expr.nodes.eq_2' does not depend on any axioms
+'AffineCost.Expr.nodes.eq_3' does not depend on any axioms
+'AffineCost.Expr.nodes.eq_4' does not depend on any axioms
+'AffineCost.Expr.nodes.eq_5' does not depend on any axioms
+'AffineCost.Expr.nodes.eq_6' does not depend on any axioms
+'AffineCost.Expr.nodes_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.Expr.site.inj' does not depend on any axioms
+'AffineCost.Expr.site.injEq' depends on axioms: [propext]
+'AffineCost.Expr.site.sizeOf_spec' does not depend on any axioms
+'AffineCost.Expr.sub.eq_1' does not depend on any axioms
+'AffineCost.Expr.sum.eq_1' does not depend on any axioms
+'AffineCost.Expr.sum.eq_2' does not depend on any axioms
+'AffineCost.Expr.sum_nodes' depends on axioms: [propext, Quot.sound]
+'AffineCost.Match.one.inj' does not depend on any axioms
+'AffineCost.Match.one.injEq' depends on axioms: [propext]
+'AffineCost.Match.one.sizeOf_spec' does not depend on any axioms
+'AffineCost.Match.two.inj' does not depend on any axioms
+'AffineCost.Match.two.injEq' depends on axioms: [propext]
+'AffineCost.Match.two.sizeOf_spec' does not depend on any axioms
+'AffineCost.Match.zero.sizeOf_spec' does not depend on any axioms
+'AffineCost.bitDiff.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.bitDiff_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.bitWords.eq_1' depends on axioms: [propext]
+'AffineCost.bitWords.eq_2' depends on axioms: [propext]
+'AffineCost.bitWords_length' depends on axioms: [propext]
+'AffineCost.bucketWeight.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.bucketWeight.eq_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.bucketWeight.eq_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.coeffPair.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.coefficientExpr.eq_1' depends on axioms: [propext, Quot.sound]
+'AffineCost.coefficientExpr_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.coefficientExpr_nodes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.coefficientRun_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.coefficientRun_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.column_scan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.compl_invol' depends on axioms: [propext, Quot.sound]
+'AffineCost.decoder_bit_complexity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.decoder_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.decoder_output_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.eq_compl_of_ne' depends on axioms: [propext]
+'AffineCost.exceptList.eq_1' does not depend on any axioms
+'AffineCost.exceptList_length' depends on axioms: [propext]
+'AffineCost.exceptList_toFinset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.explicit_rowSystem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.first_of_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.first_of_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.hard_not_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.hard_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.hard_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.labelAt.eq_1' does not depend on any axioms
+'AffineCost.labelAt.eq_2' does not depend on any axioms
+'AffineCost.labelAt.eq_3' does not depend on any axioms
+'AffineCost.labelAt_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.labelAt_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.labelAt_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.labelAt_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.localExpr.eq_1' depends on axioms: [propext, Quot.sound]
+'AffineCost.localExpr_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.localExpr_nodes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.localWeight.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.mapRun.eq_1' does not depend on any axioms
+'AffineCost.mapRun.eq_2' does not depend on any axioms
+'AffineCost.mapRun_steps' depends on axioms: [propext, Quot.sound]
+'AffineCost.mapRun_value' depends on axioms: [propext]
+'AffineCost.matrixRun.eq_1' depends on axioms: [propext, Quot.sound]
+'AffineCost.matrixRun_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.matrixRun_step_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.matrixRun_value' depends on axioms: [propext, Quot.sound]
+'AffineCost.mem_bitWords' depends on axioms: [propext, Quot.sound]
+'AffineCost.mem_tasks' depends on axioms: [propext, Quot.sound]
+'AffineCost.mem_words' depends on axioms: [propext, Quot.sound]
+'AffineCost.pairExpr.eq_1' depends on axioms: [propext, Quot.sound]
+'AffineCost.pairExpr_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.pairExpr_nodes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.parityBits.eq_1' depends on axioms: [propext]
+'AffineCost.parityBits_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.partner.eq_1' does not depend on any axioms
+'AffineCost.partner_ne' depends on axioms: [propext, Quot.sound]
+'AffineCost.partner_of_bucket' depends on axioms: [propext, Quot.sound]
+'AffineCost.rowPolynomial_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.runCompiled.eq_1' does not depend on any axioms
+'AffineCost.runCompiledOutput.eq_1' does not depend on any axioms
+'AffineCost.runCompiledOutput_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.runCompiledOutput_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.runCompiledOutput_eq' depends on axioms: [propext]
+'AffineCost.runCompiledOutput_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.runCompiled_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.runCompiled_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.runCompiled_eq' depends on axioms: [propext, Quot.sound]
+'AffineCost.scale.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.scaleExpr.eq_1' does not depend on any axioms
+'AffineCost.scaleExpr_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.scale_partner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.scale_selected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.scan.eq_1' does not depend on any axioms
+'AffineCost.scan_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.selector.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.taskExpr.eq_1' depends on axioms: [propext, Quot.sound]
+'AffineCost.taskExpr_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.tasks_length' depends on axioms: [propext]
+'AffineCost.weights.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.weights_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineCost.wordEqual.eq_1' does not depend on any axioms
+'AffineCost.wordEqual_spec' depends on axioms: [propext, Quot.sound]
+'AffineCost.words_length' depends on axioms: [propext]
+'AffineEdge.CenterCondition.dimension_exceptional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.CenterCondition.dimension_extra' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.CenterCondition.dimension_two_exceptional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.CenterCondition.exceptional_edge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.CenterCondition.independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.CenterCondition.independent_extra' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.CenterCondition.neighbor_mem_near' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.CenterCondition.restrict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.Representative.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.boundaryEncoder.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.boundaryEncoder.eq_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.boundaryEncoder_attains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.boundaryEncoder_orbitwise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.boundaryWord.eq_1' does not depend on any axioms
+'AffineEdge.Orbit.boundaryWord.eq_2' does not depend on any axioms
+'AffineEdge.Orbit.boundaryWord_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.boundary_encoder_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.boundary_optimal_needs_coupling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.boundary_rank_strict' depends on axioms: [propext, Quot.sound]
+'AffineEdge.Orbit.boundary_ratio_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.eval_of_degree_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.first_eq_of_key_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.fullKey.eq_1' does not depend on any axioms
+'AffineEdge.Orbit.independent_physical_columns' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.kernel_project' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.key.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.key_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.key_hardWord_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.key_hardWord_near' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.key_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.nearKey.eq_1' does not depend on any axioms
+'AffineEdge.Orbit.orbitwise_boundary_rank_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.orbitwise_iff_supported_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.orbitwise_of_supported_rows' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.orbitwise_zero_rank_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.pivot.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.pivot_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.project.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.rank_le_of_independent_columns' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.rep_nondiag' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.representative_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.representative_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.swap.eq_1' does not depend on any axioms
+'AffineEdge.Orbit.swap_swap' does not depend on any axioms
+'AffineEdge.Orbit.zeroEncoder.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.zeroEncoder_attains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.zeroEncoder_orbitwise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.zeroEncoder_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.zero_encoder_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.zero_optimal_needs_coupling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.zero_rank_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.zero_rank_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.Orbit.zero_ratio_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.affineCondition_iff_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.affineVector.eq_1' depends on axioms: [propext]
+'AffineEdge.affine_of_centerCondition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.affine_slope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.affine_test_of_paired' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.affine_zero_two_sites' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.binaryEncoder_attains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.binaryEncoder_binary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.binaryEncoder_hardWord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.binaryEncoder_zero_other' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.bitScalar.eq_1' does not depend on any axioms
+'AffineEdge.bucket.eq_1' depends on axioms: [propext, Quot.sound]
+'AffineEdge.centerCondition_of_paired' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.centerQuotient.eq_1' depends on axioms: [propext, Quot.sound]
+'AffineEdge.centerQuotient_affineVector' depends on axioms: [propext, Quot.sound]
+'AffineEdge.centerQuotient_centerVector' depends on axioms: [propext, Quot.sound]
+'AffineEdge.centerVector.eq_1' depends on axioms: [propext]
+'AffineEdge.col_mem_centerSpan' depends on axioms: [propext, Quot.sound]
+'AffineEdge.collect.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.collect_target' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.complement.eq_1' does not depend on any axioms
+'AffineEdge.edge_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.encoderColumn.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.encoderColumn.eq_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.encoderColumn.eq_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.encoderColumn.eq_4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.flip.eq_1' does not depend on any axioms
+'AffineEdge.flip_complement' depends on axioms: [propext, Quot.sound]
+'AffineEdge.flip_flip' depends on axioms: [propext, Quot.sound]
+'AffineEdge.flip_other' depends on axioms: [propext]
+'AffineEdge.flip_same' depends on axioms: [propext]
+'AffineEdge.gradient.eq_1' does not depend on any axioms
+'AffineEdge.gradient.eq_2' does not depend on any axioms
+'AffineEdge.gradient.eq_3' does not depend on any axioms
+'AffineEdge.hardWord.eq_1' does not depend on any axioms
+'AffineEdge.intercept.eq_1' does not depend on any axioms
+'AffineEdge.intercept.eq_2' does not depend on any axioms
+'AffineEdge.intercept.eq_3' does not depend on any axioms
+'AffineEdge.nearSpan.eq_1' depends on axioms: [propext, Quot.sound]
+'AffineEdge.nearSpan_le_centerSpan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.paired_iff_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.paired_iff_polynomial_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.paired_of_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.paired_rank_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.parity.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.parity_flip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.placement.eq_1' does not depend on any axioms
+'AffineEdge.placement.eq_2' does not depend on any axioms
+'AffineEdge.rank_lower_of_centerCondition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.reconstructEntry.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.reconstructEntry_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.reconstructEntry_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.reconstructEntry_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.reconstruct_matrix_of_rowSystems' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.rowSystem_of_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.slotColumn.eq_1' depends on axioms: [propext]
+'AffineEdge.slotColumn_center' depends on axioms: [propext]
+'AffineEdge.slotColumn_neighbor' depends on axioms: [propext]
+'AffineEdge.step.eq_1' does not depend on any axioms
+'AffineEdge.step.eq_2' does not depend on any axioms
+'AffineEdge.step_injective' depends on axioms: [propext]
+'AffineEdge.sum_centerVector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.sum_collect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AffineEdge.targetSlot.eq_1' does not depend on any axioms
+'AffineEdge.targetSlot.eq_2' does not depend on any axioms
+'AffineEdge.wordAt.eq_1' does not depend on any axioms
+'AffineEdge.wordAt_injective' depends on axioms: [propext]
+'AffineEdge.word_cases' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.RatHeight.eq_1' depends on axioms: [propext]
+'BareissHeight.augment.eq_1' depends on axioms: [propext, Quot.sound]
+'BareissHeight.clearRows.congr_simp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.clearRows.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.clearRows_cast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.clearRows_minor_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.clearRows_natAbs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.clearRows_system_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.constantEntry.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.decodeSolution.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.denseEncoderInt.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.denseEncoder_consistent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.denseEncoder_entry_bits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.denseEncoder_entry_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.denseEncoder_family_entry_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.denseEncoder_family_payload_bits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.denseEncoder_height' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.denseEncoder_minor_bits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.denseEncoder_system_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.encoderAt_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.encoderInt.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.encoderInt_cast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.encoderInt_consistent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.encoderInt_height' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.encoderInt_minor_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.encoderInt_system_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.encoderMatrix.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.encoderMatrix_system_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.encoderRhs.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.equationCount.eq_1' depends on axioms: [propext]
+'BareissHeight.measurementCount.eq_1' does not depend on any axioms
+'BareissHeight.minor_lt_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.minor_natAbs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.minor_size_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.paired_of_denseEncoder_solutions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.paired_of_encoderInt_solutions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.ratHeight_one' depends on axioms: [propext, Classical.choice]
+'BareissHeight.ratHeight_zero' depends on axioms: [propext]
+'BareissHeight.rowDenominator.eq_1' depends on axioms: [propext, Quot.sound]
+'BareissHeight.rowDenominator_pos' depends on axioms: [propext, Quot.sound]
+'BareissHeight.solutionPolynomial.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BareissHeight.unknownCount.eq_1' depends on axioms: [propext]
+'BareissHeight.wordCount.eq_1' depends on axioms: [propext]
+'Matrix.row.eq_1' does not depend on any axioms
+'Reconstruction.BareissArithmetic.bareissUpdate.eq_1' does not depend on any axioms
+'Reconstruction.BareissArithmetic.bareissUpdate_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.bareissUpdate_steps_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.bareissUpdate_steps_of_height' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.BareissArithmetic.bareissUpdate_success_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.canonical_size_of_natAbs_lt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.BareissArithmetic.exactDivWord.eq_1' does not depend on any axioms
+'Reconstruction.BareissArithmetic.exactDivWord_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.exactDivWord_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.exactDivWord_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.exactDiv_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.exactDiv_result' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.exactDiv_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.exactDiv_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.exactDiv_success_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.exists_canonical_signed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.normalize.eq_1' does not depend on any axioms
+'Reconstruction.BareissArithmetic.normalize_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.normalize_number' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.normalize_size_of_natAbs_lt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.BareissArithmetic.normalize_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.subtract.eq_1' does not depend on any axioms
+'Reconstruction.BareissArithmetic.subtract_number' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.subtract_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.subtract_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.tight_eq_nil_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.trialSub.eq_1' does not depend on any axioms
+'Reconstruction.BareissArithmetic.trialSub_borrow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.trialSub_noBorrow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.trialSub_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissArithmetic.trialSub_tight' depends on axioms: [propext, Quot.sound]
+'Reconstruction.BareissPaper.buildEntry.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.buildEntry_cast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.buildEntry_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.buildEntry_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.buildTable.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.buildTable_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.buildTable_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.cellBudget.eq_1' depends on axioms: [propext]
+'Reconstruction.BareissPaper.cellRun.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.cellRun_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.cellRun_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.columnSlot.eq_1' depends on axioms: [propext]
+'Reconstruction.BareissPaper.constructionCharge_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.emitCoefficient.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.emitCoefficient_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.emitCoefficient_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.emitMatrix.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.emitMatrix_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.encoderBit_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.entryBudget.eq_1' depends on axioms: [propext]
+'Reconstruction.BareissPaper.gaussian_reconstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.generatedInt.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.generatedInt_height' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.generated_consistent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.generated_system_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.interpretCoefficient.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.outputBudget.eq_1' depends on axioms: [propext]
+'Reconstruction.BareissPaper.paired_of_generated_solutions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.paperOutput.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.paperOutput_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.physicalLabels.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.readMagnitude.eq_1' does not depend on any axioms
+'Reconstruction.BareissPaper.readMagnitude.eq_2' does not depend on any axioms
+'Reconstruction.BareissPaper.readMagnitude_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.readMagnitude_value' depends on axioms: [propext]
+'Reconstruction.BareissPaper.readSigned.eq_1' does not depend on any axioms
+'Reconstruction.BareissPaper.readSigned_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.readSigned_value' depends on axioms: [propext]
+'Reconstruction.BareissPaper.scalarBudget.eq_1' depends on axioms: [propext]
+'Reconstruction.BareissPaper.scalarProgram.eq_1' does not depend on any axioms
+'Reconstruction.BareissPaper.scalarProgram.eq_2' does not depend on any axioms
+'Reconstruction.BareissPaper.scalarProgram.eq_3' does not depend on any axioms
+'Reconstruction.BareissPaper.scalarProgram.eq_4' does not depend on any axioms
+'Reconstruction.BareissPaper.scalarProgram.eq_5' does not depend on any axioms
+'Reconstruction.BareissPaper.scalarProgram_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.scalarProgram_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.scalarValue.eq_1' does not depend on any axioms
+'Reconstruction.BareissPaper.scalarValue.eq_2' does not depend on any axioms
+'Reconstruction.BareissPaper.scalarValue.eq_3' does not depend on any axioms
+'Reconstruction.BareissPaper.scalarValue.eq_4' does not depend on any axioms
+'Reconstruction.BareissPaper.scalarValue.eq_5' does not depend on any axioms
+'Reconstruction.BareissPaper.scale.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.signedPower.eq_1' does not depend on any axioms
+'Reconstruction.BareissPaper.signedPower.eq_2' does not depend on any axioms
+'Reconstruction.BareissPaper.signedPower_number' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.signedPower_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.signedPower_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.signed_natAbs_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.solveAll.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.solveAll_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.solveRow_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.solveRow_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.solverBitCharge_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.solverTrace_bit_realizes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.writeFraction.eq_1' does not depend on any axioms
+'Reconstruction.BareissPaper.writeFraction_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.writeFraction_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.writeMagnitude.eq_1' does not depend on any axioms
+'Reconstruction.BareissPaper.writeMagnitude.eq_2' does not depend on any axioms
+'Reconstruction.BareissPaper.writeMagnitude_length' depends on axioms: [propext]
+'Reconstruction.BareissPaper.writeMagnitude_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.writeMagnitude_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.writeSigned.eq_1' does not depend on any axioms
+'Reconstruction.BareissPaper.writeSigned_number' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.writeSigned_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissPaper.writeSigned_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.HasMinor.cast_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.HasMinor.lt_height' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.MinorFrame.cramer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.MinorFrame.denominator_minor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.MinorFrame.denominator_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.MinorFrame.entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.MinorFrame.initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.MinorFrame.minor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.MinorFrame.step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.PivotPath.brecOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.PivotPath.dimensions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.PivotPath.minorFrame' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.Represents.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.Run.mk.inj' does not depend on any axioms
+'Reconstruction.BareissSolver.Run.mk.injEq' depends on axioms: [propext]
+'Reconstruction.BareissSolver.Run.mk.sizeOf_spec' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.DivisionExact.eq_1' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.DivisionExact.eq_2' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.Within.eq_1' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.add.inj' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.add.injEq' depends on axioms: [propext]
+'Reconstruction.BareissSolver.ScalarOp.add.sizeOf_spec' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.exactDiv.inj' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.exactDiv.injEq' depends on axioms: [propext]
+'Reconstruction.BareissSolver.ScalarOp.exactDiv.sizeOf_spec' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.mul.inj' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.mul.injEq' depends on axioms: [propext]
+'Reconstruction.BareissSolver.ScalarOp.mul.sizeOf_spec' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.operands.eq_1' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.operands.eq_2' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.operands.eq_3' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.operands.eq_4' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.operands.eq_5' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.sub.inj' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.sub.injEq' depends on axioms: [propext]
+'Reconstruction.BareissSolver.ScalarOp.sub.sizeOf_spec' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.testZero.inj' does not depend on any axioms
+'Reconstruction.BareissSolver.ScalarOp.testZero.injEq' depends on axioms: [propext]
+'Reconstruction.BareissSolver.ScalarOp.testZero.sizeOf_spec' does not depend on any axioms
+'Reconstruction.BareissSolver.ScaledSolution.mk.inj' does not depend on any axioms
+'Reconstruction.BareissSolver.ScaledSolution.mk.injEq' depends on axioms: [propext]
+'Reconstruction.BareissSolver.ScaledSolution.mk.sizeOf_spec' does not depend on any axioms
+'Reconstruction.BareissSolver.ScaledSolution.rational.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.ScaledSolution.rational_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.Scan.mk.inj' does not depend on any axioms
+'Reconstruction.BareissSolver.Scan.mk.injEq' depends on axioms: [propext]
+'Reconstruction.BareissSolver.Scan.mk.sizeOf_spec' does not depend on any axioms
+'Reconstruction.BareissSolver.Solves.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.ValidResult.basis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.ValidResult.minors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.ValidResult.nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.ValidResult.solves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.arithmeticTrace.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.arithmeticTrace.eq_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.arithmeticTrace.eq_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.arithmeticTrace_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.augmented_integer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.augmented_none' depends on axioms: [propext, Quot.sound]
+'Reconstruction.BareissSolver.augmented_some' depends on axioms: [propext, Quot.sound]
+'Reconstruction.BareissSolver.augmented_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.backwardDividend.eq_1' does not depend on any axioms
+'Reconstruction.BareissSolver.backwardDividend_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.backwardStep.eq_1' depends on axioms: [propext]
+'Reconstruction.BareissSolver.backwardStep_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.backwardTrace.eq_1' does not depend on any axioms
+'Reconstruction.BareissSolver.backwardTrace_length' depends on axioms: [propext, Quot.sound]
+'Reconstruction.BareissSolver.candidates.eq_1' does not depend on any axioms
+'Reconstruction.BareissSolver.candidates_length' depends on axioms: [propext, Quot.sound]
+'Reconstruction.BareissSolver.clear_entry_height' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.columns.eq_1' does not depend on any axioms
+'Reconstruction.BareissSolver.denseAugment.eq_1' depends on axioms: [propext, Quot.sound]
+'Reconstruction.BareissSolver.denseAugment_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.denseColumn.eq_1' depends on axioms: [propext]
+'Reconstruction.BareissSolver.denseColumn_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.denseIntColumn.eq_1' depends on axioms: [propext]
+'Reconstruction.BareissSolver.denseIntColumn_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.denseMatrix.eq_1' depends on axioms: [propext, Quot.sound]
+'Reconstruction.BareissSolver.denseMatrix_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.det_bordered_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.det_insertPick' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.det_of_first_pivot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.dotTrace.eq_1' does not depend on any axioms
+'Reconstruction.BareissSolver.dotTrace.eq_2' does not depend on any axioms
+'Reconstruction.BareissSolver.dotTrace_length' depends on axioms: [propext, Quot.sound]
+'Reconstruction.BareissSolver.firstPivot_ne_zero' depends on axioms: [propext]
+'Reconstruction.BareissSolver.firstPivot_none' depends on axioms: [propext, Quot.sound]
+'Reconstruction.BareissSolver.fold_add_eq_sum' depends on axioms: [propext]
+'Reconstruction.BareissSolver.forwardCellTrace.eq_1' does not depend on any axioms
+'Reconstruction.BareissSolver.forwardDividend.eq_1' does not depend on any axioms
+'Reconstruction.BareissSolver.forwardStep.eq_1' depends on axioms: [propext, Quot.sound]
+'Reconstruction.BareissSolver.forwardStep_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.forwardTrace.eq_1' does not depend on any axioms
+'Reconstruction.BareissSolver.forwardTrace_length' depends on axioms: [propext, Quot.sound]
+'Reconstruction.BareissSolver.insertPick.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.insertPick_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.insertPick_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.integerCoefficients.eq_1' depends on axioms: [propext, Quot.sound]
+'Reconstruction.BareissSolver.integerCoefficients_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.integerPivot_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.integerRhs.eq_1' depends on axioms: [propext]
+'Reconstruction.BareissSolver.integerRhs_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.mem_candidates' depends on axioms: [propext, Quot.sound]
+'Reconstruction.BareissSolver.multiplier.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.pivotScan.eq_1' does not depend on any axioms
+'Reconstruction.BareissSolver.pivotScan_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.pivotTrace.eq_1' does not depend on any axioms
+'Reconstruction.BareissSolver.represents_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.restore.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.restore_other' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.restore_pivot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.restore_supported' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.rhsScan.eq_1' does not depend on any axioms
+'Reconstruction.BareissSolver.rhsScan_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.rhsScan_none' depends on axioms: [propext, Quot.sound]
+'Reconstruction.BareissSolver.runInt.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.runInt.eq_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.runInt.eq_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.runInt_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.runInt_operations' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.scanNonzero.eq_1' does not depend on any axioms
+'Reconstruction.BareissSolver.scanNonzero.eq_2' does not depend on any axioms
+'Reconstruction.BareissSolver.scanNonzero_found' depends on axioms: [propext, Quot.sound]
+'Reconstruction.BareissSolver.scanNonzero_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solve.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solveCore.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solveCore.eq_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solveCore.eq_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solveCore_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solveIntScaled_operations' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solveIntScaled_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solveIntTrace_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solveInt_output_height' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solveInt_refines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solveInt_trace_height' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solve_exists_of_consistent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solve_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solve_trace_height' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solves_clear_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solves_iff_mulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solves_restore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.solves_step_of_solves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.stageBudget.eq_1' does not depend on any axioms
+'Reconstruction.BareissSolver.stageBudget_mono' depends on axioms: [propext, Quot.sound]
+'Reconstruction.BareissSolver.stepMatrix.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.stepMatrix_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.stepRhs.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.stepRhs_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.zeroAnswer.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.zeroSolution.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.BareissSolver.zeroTrace.eq_1' does not depend on any axioms
+'Reconstruction.ColorAlphabet.Available.eq_1' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ColorAlphabet.CompleteOrder.eq_1' does not depend on any axioms
+'Reconstruction.ColorAlphabet.Demands.eq_1' does not depend on any axioms
+'Reconstruction.ColorAlphabet.FeasibleZero.congr_simp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.Holds.eq_1' does not depend on any axioms
+'Reconstruction.ColorAlphabet.InInterval.eq_1' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ColorAlphabet.LargestFirst.congr_simp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.SelectedBy.eq_1' does not depend on any axioms
+'Reconstruction.ColorAlphabet.SelectedBy.eq_2' does not depend on any axioms
+'Reconstruction.ColorAlphabet.alphabetSize.eq_1' does not depend on any axioms
+'Reconstruction.ColorAlphabet.binary_converse_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.binary_field_rank_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.binary_field_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.clippedVolume.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.color_fiber_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.color_rows_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.complete_order_score' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.delta.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.edgeRound.eq_1' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ColorAlphabet.edgeRound_symm' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ColorAlphabet.edgeRound_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.edges_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.exact_binary_field_minimum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.exists_scalar_ne_zero_ne_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.feasibleZero_exists_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.feasibleZero_recovers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.generalizedIndependent_iff_order' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ColorAlphabet.generalizedIndependent_of_order' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ColorAlphabet.generalizedIndependent_rank_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.greedy_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.heterogeneous_receiver_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.leftColor_val' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ColorAlphabet.letterIndex_injective' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ColorAlphabet.letters_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.localColor.eq_1' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ColorAlphabet.localColor_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.localEntry.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.local_decodes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.local_expands' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.lowerFraction.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.lowerFraction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.matchingStart.eq_1' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ColorAlphabet.matchingStart_injective' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ColorAlphabet.mem_selectedColumns' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.mem_selectedNow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.mem_selectedWithin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.minimumRank_attained' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.nonzero_color_boundary' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ColorAlphabet.odd_alphabet_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.odd_alphabet_gap_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.offset.eq_1' does not depend on any axioms
+'Reconstruction.ColorAlphabet.omitted_boundaries_force_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.one_interval_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.orderPotential.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.orderPotential.eq_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.orders_bound_iff_generalizedIndependence_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ColorAlphabet.potential_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.rate.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.receiver_order_maximum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.removeLetter.congr_simp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.removeLetter.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.rightColor.eq_1' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ColorAlphabet.rightColor_val' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ColorAlphabet.roundEncoder_recovers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.roundEncoder_rows' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.roundEncoder_ternary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.selectedColumns.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.selectedNow.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.selectedNow_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.selectedWithin.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.selectedWithin_card_cons' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.selectedWithin_card_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.selectedWithin_cons' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.selectedWithin_univ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.tensorRows_recovers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.ternary_finite_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.theorem2_even_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.theorem2_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.theorem2_ternary_construction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.totalColor.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.uniformConverse.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.uniform_converse_double_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.uniform_converse_telescoped' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.uniform_potential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.uniform_rank_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.uniform_rank_lower_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.upperDenominator.eq_1' does not depend on any axioms
+'Reconstruction.ColorAlphabet.upperFraction.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.upperFraction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ColorAlphabet.upperNumerator.eq_1' does not depend on any axioms
+'Reconstruction.ColorAlphabet.zero_in_matchingInterval' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ColorAlphabet.zero_not_mem_one_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Reconstruction.ExpansionGraph.Metered.mk.inj' does not depend on any axioms
 'Reconstruction.ExpansionGraph.Metered.mk.injEq' depends on axioms: [propext]
 'Reconstruction.ExpansionGraph.Metered.mk.sizeOf_spec' does not depend on any axioms
@@ -159,6 +1081,118 @@
 'Reconstruction.LayoutMoments.walk_flip' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Reconstruction.LayoutMoments.walk_positive_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Reconstruction.LayoutMoments.walk_square_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.AffineInterpolation.denominator_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.AffineInterpolation.derivative_at_node' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.AffineInterpolation.interpolate.eq_1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.AffineInterpolation.interpolate_degree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.AffineInterpolation.interpolate_eval' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.AffineInterpolation.leading_coefficient_formula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.AffineInterpolation.nodeDenominator.eq_1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.AffineInterpolation.nodePolynomial.eq_1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.AffineInterpolation.nodePolynomial_zero_ne' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.AffineInterpolation.nodeQuotient.eq_1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.AffineInterpolation.scaledInterpolate.eq_1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.AffineInterpolation.scaled_affine_iff_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.AffineInterpolation.scaled_at_node' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.AffineInterpolation.scaled_at_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.AffineInterpolation.scaled_common_kernel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.AffineInterpolation.scaled_samples_recover' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.Walsh.character.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.Walsh.coefficient.congr_simp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.Walsh.coefficient.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.Walsh.diagonalGate.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.Walsh.diagonalGate_properties' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.Walsh.multiplier.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.Walsh.multiplier_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.Walsh.multiplier_toggle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.Walsh.multiplier_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.Walsh.signs.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.Walsh.toggle.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.Walsh.totalAt.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.Walsh.walshMatrix.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.Walsh.walshMatrix_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.Walsh.walshMatrix_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.Walsh.walshMatrix_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.arbitraryDecoder_iff_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.binary_paper_endpoint_values' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.boundary_colors_omitted_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.boundary_exact_minimum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.colorMass.congr_simp' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ReleaseColor.colorMass.eq_1' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ReleaseColor.convolutionPower.congr_simp' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ReleaseColor.convolutionPower.eq_1' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ReleaseColor.convolutionPower.eq_2' depends on axioms: [propext, Quot.sound]
+'Reconstruction.ReleaseColor.convolutionPower_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.coordinateRow.congr_simp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.coordinateRow.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.encoder_rank_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.encoder_recovers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.encoder_ternary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.groupcast_broadcast_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.groupcast_injective_on_independent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.independent_broadcast_rows' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.intervals_containing_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.kernel_iff_observation_span' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.matchingStart_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.no_two_nonzero_sites_in_F2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.receiver_exchange_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.roundBasis_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.roundEncoder_exact_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.rowForm.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.rowForm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.selected_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.selection_by_total_color' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.ReleaseColor.selection_by_total_color_ternary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Reconstruction.ReleaseColor.tensor_basis_rank_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.TernaryCode.binary_count_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.TernaryCode.coloredRows_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.TernaryCode.encoder.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.TernaryCode.encoder_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.TernaryCode.encoder_recovers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.TernaryCode.encoder_ternary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.TernaryCode.exact_minimum_ranks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.TernaryCode.exact_zero_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.TernaryCode.feasibleZero_exists_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.TernaryCode.feasibleZero_recovers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.TernaryCode.rank_lower_of_feasibleZero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.TernaryCode.rank_lower_of_recovers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.TernaryCode.totalColor.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Reconstruction.VisitRuntime.CandidateFactors.corollaryFive' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Reconstruction.VisitRuntime.CandidateFactors.corollaryTwo' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Reconstruction.VisitRuntime.CandidateFactors.incident' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -260,8 +1294,28 @@
  Quot.sound]
 'Reconstruction.VisitRuntime.theorems3_and6_signed_graphs' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Reconstruction.VisitRuntime.unbalanced_from_candidates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.auxiliary_kernel_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.bilinear_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.boolean_measurement_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.contract.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.contract_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.contract_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.contract_eval_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.contract_vanishes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.cube_feature_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Reconstruction.det_degree_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Reconstruction.det_dvd_of_zero_rows' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Reconstruction.determinant_nullity_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.featureMeasurements.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Reconstruction.normalized_nullity_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Reconstruction.nullity_factor_dvd_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.square_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.vectorPoly.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.vectorPoly_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.vectorPoly_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.vectorPoly_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.vectorPoly_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.weightedPoly.eq_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.weightedPoly_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Reconstruction.weighted_feature_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'instFactPrimeOfNatNat_affineEdgeChecks' depends on axioms: [propext, Classical.choice, Quot.sound]

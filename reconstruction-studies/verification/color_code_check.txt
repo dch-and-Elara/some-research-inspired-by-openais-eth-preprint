@@ -1,0 +1,10 @@
+receiver-order converse: 16 fully enumerated arrays
+one-slot rational membership: 2553 tests (r = 2,...,8)
+cyclic coefficient counts: 897 tests (q = 1,...,13)
+full physical matrix r=2 q=1: rank=1, direct demands=4
+full physical matrix r=2 q=2: rank=5, direct demands=32
+full physical matrix r=2 q=3: rank=21, direct demands=192
+full physical matrix r=3 q=1: rank=3, direct demands=9
+full physical matrix r=3 q=2: rank=33, direct demands=162
+full physical matrix r=4 q=1: rank=6, direct demands=16
+full rational membership: 415 receiver/demand checks

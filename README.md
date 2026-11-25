@@ -4,7 +4,7 @@ How much can arbitrary shared linear measurements reduce the degree needed to re
 
 [Read the paper (PDF)](paper/paper.pdf) · [LaTeX source](paper/paper.tex) · [Theorem index](FORMALIZATION_SCOPE.md)
 
-A companion preprint proves [rank lower bounds for node-dependent reconstruction in SAT counting](reconstruction-studies/README.md).
+Two companion preprints cover [node-dependent reconstruction and ternary recovery codes](reconstruction-studies/README.md), with their own Lean project and theorem index.
 
 For a cube of dimension $q$, the budget is $2^q/q^\gamma$ shared measurements. Write $d_{q,\gamma}$ for the minimum under bit flips and coordinate permutations, $\delta_{q,\gamma}$ under bit flips alone, and $\eta_{q,\gamma}$ with unrestricted ternary measurements. Write $\eta^{\mathbb Q}_{q,\gamma}$ when arbitrary rational entries are allowed.
 

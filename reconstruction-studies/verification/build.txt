@@ -1,36 +1,286 @@
-✔ [3119/3148] Built VisitRuntimeDegree (8.1s)
-ℹ [3120/3148] Built DeterminantBudget (9.7s)
+⚠ [1721/2120] Replayed AffineCompilePrimitives
+warning: AffineCompilePrimitives.lean:229:16: This simp argument is unused:
+  h'
+
+Hint: Omit it from the simp argument list.
+  simp [h,̵h̵'̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [1723/2120] Replayed AffineCostCoefficients
+warning: AffineCostCoefficients.lean:177:84: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: AffineCostCoefficients.lean:182:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1724/2120] Replayed AffineCompileExpr
+warning: AffineCompileExpr.lean:228:56: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [1731/2120] Replayed AffineCostAudit
+info: AffineCostAudit.lean:40:0: (512, true, 46483048)
+info: AffineCostAudit.lean:50:0: 'AffineCost.decoder_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineCostAudit.lean:51:0: 'AffineCost.decoder_bit_complexity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineCostAudit.lean:52:0: 'AffineCost.decoder_output_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1732/2120] Replayed AffineCostChecks
+info: AffineCostChecks.lean:13:0: (512, true, 44600160)
+info: AffineCostChecks.lean:19:0: true
+info: AffineCostChecks.lean:22:0: [mkRat 1 1, mkRat (-13) 24, mkRat 0 1]
+info: AffineCostChecks.lean:30:0: 'AffineCost.explicit_rowSystem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineCostChecks.lean:31:0: 'AffineCost.coefficientExpr_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineCostChecks.lean:32:0: 'AffineCost.Bit.add_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineCostChecks.lean:33:0: 'AffineCost.Bit.mul_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineCostChecks.lean:34:0: 'AffineCost.Expr.execute_rat' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineCostChecks.lean:35:0: 'AffineCost.Expr.execute_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineCostChecks.lean:36:0: 'AffineCost.Bit.readFraction_emit' depends on axioms: [propext, Quot.sound]
+info: AffineCostChecks.lean:37:0: 'AffineCost.matrixRun_step_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineCostChecks.lean:38:0: 'AffineCost.runCompiled_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineCostChecks.lean:39:0: 'AffineCost.runCompiled_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineCostChecks.lean:40:0: 'AffineCost.runCompiledOutput_eq' depends on axioms: [propext]
+info: AffineCostChecks.lean:41:0: 'AffineCost.runCompiledOutput_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineCostChecks.lean:42:0: 'AffineCost.runCompiledOutput_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineCostChecks.lean:43:0: 'AffineCost.runCompiledOutput_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2102/2120] Replayed AffineEdgeChecks
+info: AffineEdgeChecks.lean:62:0: 'AffineEdge.affine_test_of_paired' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineEdgeChecks.lean:63:0: 'AffineEdge.centerCondition_of_paired' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineEdgeChecks.lean:64:0: 'AffineEdge.edge_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineEdgeChecks.lean:65:0: 'AffineEdge.rank_lower_of_centerCondition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineEdgeChecks.lean:66:0: 'AffineEdge.paired_rank_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineEdgeChecks.lean:67:0: 'AffineEdge.paired_iff_polynomial_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineEdgeChecks.lean:68:0: 'AffineEdge.rowSystem_of_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineEdgeChecks.lean:69:0: 'AffineEdge.reconstruct_matrix_of_rowSystems' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineEdgeChecks.lean:70:0: 'AffineEdge.binaryEncoder_binary' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineEdgeChecks.lean:71:0: 'AffineEdge.binaryEncoder_attains' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineEdgeChecks.lean:72:0: 'AffineEdge.Orbit.orbitwise_zero_rank_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineEdgeChecks.lean:73:0: 'AffineEdge.Orbit.zeroEncoder_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineEdgeChecks.lean:74:0: 'AffineEdge.Orbit.orbitwise_boundary_rank_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineEdgeChecks.lean:75:0: 'AffineEdge.Orbit.boundaryEncoder_attains' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineEdgeChecks.lean:76:0: 'AffineEdge.Orbit.zero_rank_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AffineEdgeChecks.lean:77:0: 'AffineEdge.Orbit.boundary_ratio_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3141/3226] Replayed ColorAlphabetModel
+warning: ColorAlphabetModel.lean:57:0: automatically included section variable(s) unused in theorem `Reconstruction.ColorAlphabet.feasibleZero_exists_iff`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3142/3226] Replayed ColorAlphabetTensor
+warning: ColorAlphabetTensor.lean:42:0: automatically included section variable(s) unused in theorem `Reconstruction.ColorAlphabet.tensorRows_recovers`:
+  [DecidableEq R]
+  [DecidableEq G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq R] [DecidableEq G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3143/3226] Replayed ColorAlphabetCount
+warning: ColorAlphabetCount.lean:33:8: automatically included section variable(s) unused in theorem `_private.ColorAlphabetCount.0.Reconstruction.ColorAlphabet.convolution_succ`:
+  [DecidableEq R]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq R] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ColorAlphabetCount.lean:74:48: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3145/3226] Replayed ColorAlphabetMatching
+warning: ColorAlphabetMatching.lean:125:60: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3150/3226] Replayed ReceiverOrderScore
+warning: ReceiverOrderScore.lean:22:8: automatically included section variable(s) unused in theorem `_private.ReceiverOrderScore.0.Reconstruction.ColorAlphabet.available_remove`:
+  [Fintype T]
+  [(t : T) → Fintype (A t)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype T] [(t : T) → Fintype (A t)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ReceiverOrderScore.lean:48:8: automatically included section variable(s) unused in theorem `Reconstruction.ColorAlphabet.mem_selectedWithin`:
+  [(t : T) → DecidableEq (A t)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(t : T) → DecidableEq (A t)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ReceiverOrderScore.lean:53:8: automatically included section variable(s) unused in theorem `Reconstruction.ColorAlphabet.mem_selectedNow`:
+  [(t : T) → DecidableEq (A t)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(t : T) → DecidableEq (A t)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ReceiverOrderScore.lean:87:8: automatically included section variable(s) unused in theorem `_private.ReceiverOrderScore.0.Reconstruction.ColorAlphabet.stepPairs_iff`:
+  [Fintype T]
+  [(t : T) → Fintype (A t)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype T] [(t : T) → Fintype (A t)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3151/3226] Replayed ReceiverOrderPotential
+warning: ReceiverOrderPotential.lean:149:25: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ReceiverOrderPotential.lean:149:25: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ReceiverOrderPotential.lean:154:0: automatically included section variable(s) unused in theorem `Reconstruction.ColorAlphabet.potential_sum`:
+  [DecidableEq T]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq T] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3152/3226] Replayed ReceiverOrderOptimal
+warning: ReceiverOrderOptimal.lean:17:16: automatically included section variable(s) unused in theorem `_private.ReceiverOrderOptimal.0.Reconstruction.ColorAlphabet.mem_remaining`:
+  [DecidableEq T]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq T] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ReceiverOrderOptimal.lean:28:24: This simp argument is unused:
+  Function.update_of_ne h
+
+Hint: Omit it from the simp argument list.
+  simp [removeLetter, F̵u̵n̵c̵t̵i̵o̵n̵.̵u̵p̵d̵a̵t̵e̵_̵o̵f̵_̵n̵e̵ ̵h̵,̵ ̵h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ReceiverOrderOptimal.lean:50:28: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ReceiverOrderOptimal.lean:57:8: automatically included section variable(s) unused in theorem `_private.ReceiverOrderOptimal.0.Reconstruction.ColorAlphabet.counts_remove`:
+  [Fintype T]
+  [(t : T) → Fintype (A t)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype T] [(t : T) → Fintype (A t)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3153/3226] Replayed ColorAlphabetLower
+warning: ColorAlphabetLower.lean:44:37: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ColorAlphabetLower.lean:61:34: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ColorAlphabetLower.lean:104:50: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3155/3226] Replayed ColorAlphabetTheorem2
+warning: ColorAlphabetTheorem2.lean:165:36: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ColorAlphabetTheorem2.lean:220:39: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ColorAlphabetTheorem2.lean:223:37: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [3156/3226] Replayed DeterminantBudget
 info: DeterminantBudget.lean:157:0: 'Reconstruction.det_degree_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: DeterminantBudget.lean:158:0: 'Reconstruction.det_dvd_of_zero_rows' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: DeterminantBudget.lean:159:0: 'Reconstruction.nullity_factor_dvd_det' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: DeterminantBudget.lean:160:0: 'Reconstruction.determinant_nullity_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: DeterminantBudget.lean:161:0: 'Reconstruction.normalized_nullity_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
-✔ [3121/3148] Built ExpansionGraphBase (9.6s)
-✔ [3122/3148] Built LayoutMoments (11s)
-✔ [3123/3148] Built ExpansionGraphCNF (7.8s)
-✔ [3124/3148] Built LayoutBudget (9.9s)
-✔ [3125/3148] Built ExpansionGraphCycle (11s)
-✔ [3126/3148] Built ExpansionGraphPerm (11s)
-✔ [3127/3148] Built ExpansionGraphCost (6.6s)
-✔ [3128/3148] Built LayoutMismatchTensor (8.8s)
-✔ [3129/3148] Built VisitRuntimeCosts (8.9s)
-✔ [3130/3148] Built ExpansionGraphCostConformance (6.0s)
-✔ [3131/3148] Built LayoutMomentsSelection (10s)
-✔ [3132/3148] Built LayoutMomentsHalf (11s)
-✔ [3133/3148] Built ExpansionGraph (10s)
-✔ [3134/3148] Built LayoutMismatchPacking (9.0s)
-✔ [3135/3148] Built VisitRuntimeNumerical (12s)
-✔ [3136/3148] Built LayoutMomentsPrincipal (10s)
-✔ [3137/3148] Built LayoutMismatchCount (7.2s)
-✔ [3138/3148] Built LayoutMismatch (6.7s)
-✔ [3139/3148] Built LayoutMomentsMismatch (10s)
-✔ [3140/3148] Built VisitRuntimeRank (9.4s)
-✔ [3141/3148] Built VisitRuntimeAssembly (9.2s)
-✔ [3142/3148] Built VisitRuntimeGraph (9.0s)
-✔ [3143/3148] Built VisitRuntime (10s)
-✔ [3144/3148] Built ReleaseLayoutNumerical (10s)
-✔ [3145/3148] Built VisitSigned (14s)
-ℹ [3146/3148] Built VisitRuntimeAudit (15s)
+⚠ [3187/3226] Replayed ReleaseColor
+warning: ReleaseColor.lean:199:0: automatically included section variable(s) unused in theorem `Reconstruction.ReleaseColor.convolutionPower_card`:
+  [DecidableEq R]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq R] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ReleaseColor.lean:230:42: This simp argument is unused:
+  nsmul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  simp [Finset.sum_const,̵ ̵n̵s̵m̵u̵l̵_̵e̵q̵_̵m̵u̵l̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3191/3226] Replayed ReleaseColorInterpolation
+warning: ReleaseColorInterpolation.lean:48:8: This simp argument is unused:
+  natDegree_X_sub_C
+
+Hint: Omit it from the simp argument list.
+  simp [n̵a̵t̵D̵e̵g̵r̵e̵e̵_̵X̵_̵s̵u̵b̵_̵C̵,̵ ̵Finset.card_erase_of_mem (Finset.mem_univ t)]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ReleaseColorInterpolation.lean:107:24: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ReleaseColorInterpolation.lean:107:24: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ReleaseColorInterpolation.lean:129:46: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ReleaseColorInterpolation.lean:129:46: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [3193/3226] Replayed ReleaseColorSemantics
+warning: ReleaseColorSemantics.lean:27:0: automatically included section variable(s) unused in theorem `Reconstruction.ReleaseColor.arbitraryDecoder_iff_kernel`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3194/3226] Replayed ReleaseColorWalsh
+warning: ReleaseColorWalsh.lean:65:8: automatically included section variable(s) unused in theorem `_private.ReleaseColorWalsh.0.Reconstruction.ReleaseColor.Walsh.totalAt_zero`:
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ReleaseColorWalsh.lean:69:8: automatically included section variable(s) unused in theorem `_private.ReleaseColorWalsh.0.Reconstruction.ReleaseColor.Walsh.totalAt_degree`:
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ReleaseColorWalsh.lean:95:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ReleaseColorWalsh.lean:92:71: This simp argument is unused:
+  inv_mul_cancel₀ h
+
+Hint: Omit it from the simp argument list.
+  simp [siteFactor, h,̵ ̵i̵n̵v̵_̵m̵u̵l̵_̵c̵a̵n̵c̵e̵l̵₀̵ ̵h̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ReleaseColorWalsh.lean:148:8: automatically included section variable(s) unused in theorem `_private.ReleaseColorWalsh.0.Reconstruction.ReleaseColor.Walsh.character_toggle`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ReleaseColorWalsh.lean:259:0: automatically included section variable(s) unused in theorem `Reconstruction.ReleaseColor.Walsh.diagonalGate_properties`:
+  [DecidableEq I]
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq I] [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3221/3226] Replayed ResearchCertificates
+warning: ResearchCertificates.lean:31:0: automatically included section variable(s) unused in theorem `Reconstruction.contract_eval`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ResearchCertificates.lean:45:0: automatically included section variable(s) unused in theorem `Reconstruction.contract_vanishes`:
+  [Fintype I]
+  [Fintype M]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] [Fintype M] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ResearchCertificates.lean:69:0: automatically included section variable(s) unused in theorem `Reconstruction.contract_degree`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: ResearchCertificates.lean:129:0: 'Reconstruction.bilinear_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ResearchCertificates.lean:130:0: 'Reconstruction.square_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3222/3226] Replayed UnrestrictedRank
+info: UnrestrictedRank.lean:75:0: 'Reconstruction.auxiliary_kernel_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: UnrestrictedRank.lean:191:0: 'Reconstruction.weighted_feature_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: UnrestrictedRank.lean:230:0: 'Reconstruction.cube_feature_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: UnrestrictedRank.lean:279:0: 'Reconstruction.boolean_measurement_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3223/3226] Replayed VisitRuntimeAudit
 info: VisitRuntimeAudit.lean:3:0: 'Reconstruction.VisitRuntime.reachableImage_card_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: VisitRuntimeAudit.lean:4:0: 'Reconstruction.VisitRuntime.Visits.rank_pow_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: VisitRuntimeAudit.lean:5:0: 'Reconstruction.VisitRuntime.Visits.taylor_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -111,5 +361,6 @@ info: VisitRuntimeAudit.lean:23:0: Reconstruction.VisitRuntime.parsimonious_exte
                                       2 ^ (C₃ * Reconstruction.VisitRuntime.arbitraryNodeScale N) ≤ ↑T ∧
                                         (↑r ^ (2 * Q) ≤ ↑N ^ A →
                                           C₆ * (↑N * Reconstruction.VisitRuntime.scheduledRate N) ≤ Real.log ↑T)
-✔ [3147/3148] Built ReleaseLayoutSigned (8.9s)
-Build completed successfully (3148 jobs).
+✔ [3224/3226] Built BareissPaperTraceCost (9.3s)
+✔ [3225/3226] Built BareissPaper (8.9s)
+Build completed successfully (3226 jobs).

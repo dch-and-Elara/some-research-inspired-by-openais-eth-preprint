@@ -1,0 +1,8 @@
+q=2, labels=(1, 2), feasible blocks 4/4, drop parity row 2/4
+q=2, labels=(7, 3), feasible blocks 4/4, drop parity row 2/4
+q=3, labels=(1, 2, 3), feasible blocks 8/8, drop parity row 4/8
+q=3, labels=(7, 3, 6), feasible blocks 8/8, drop parity row 4/8
+q=4, labels=(1, 2, 3, 4), feasible blocks 16/16, drop parity row 8/16
+q=4, labels=(7, 3, 6, 2), feasible blocks 16/16, drop parity row 8/16
+q=5, labels=(1, 2, 3, 4, 5), feasible blocks 32/32, drop parity row 16/32
+q=5, labels=(7, 3, 6, 2, 5), feasible blocks 32/32, drop parity row 16/32

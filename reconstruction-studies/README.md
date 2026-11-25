@@ -1,12 +1,17 @@
-# Rank lower bounds for node-dependent polynomial reconstruction in SAT counting
+# Polynomial reconstruction and paired local recovery
 
-[Read the preprint](papers/paper_polynomial_recovery.pdf) · [LaTeX source](papers/paper_polynomial_recovery.tex) · [Theorem index](THEOREMS.md)
+Two research preprints study what shared linear measurements can recover. The papers use different models and have separate mathematical conclusions.
 
-With physical-variable layouts that vary at each interpolation node, principal-submatrix and mismatch inequalities bound the actual measurement ranks. The runtime theorems count visits to Boolean-reachable measurement tuples, the prescribed Taylor subsets, and assignments of a largest group in one interpolation call. The construction also gives a bounded-occurrence family and a parsimonious extension of arbitrary CNFs.
+| Preprint | Main result |
+| --- | --- |
+| [Rank lower bounds for node-dependent polynomial reconstruction in SAT counting](papers/paper_polynomial_recovery.pdf) · [TeX](papers/paper_polynomial_recovery.tex) | For physical-variable layouts that can vary at each interpolation point, principal-submatrix and mismatch inequalities bound the ranks of the actual measurements. On a bounded-occurrence graph family they give visit lower bounds for the specified counting routine. |
+| [Ternary Measurements for Paired Local Recovery](papers/paper_ternary_codes.pdf) · [TeX](papers/paper_ternary_codes.tex) | A central sender attains the binary minimum ranks $(4^q-1)/3$ at degree zero and $q+\lceil q/2\rceil+2$ at degree $q-2$. For each fixed even alphabet size $r$, the optimal degree-zero measurement fraction tends to $(r-1)/(2r-1)$. |
+
+The first paper assumes visits to all Boolean-reachable measurement tuples, the prescribed Taylor subsets, and the assignments of a largest group. The bounds concern one such interpolation call. The second paper studies the full paired array with side information at each slot. Its exact binary endpoint results permit measurements across swap orbits.
 
 ## Read and reproduce the proofs
 
-The [theorem index](THEOREMS.md) maps manuscript statements to source declarations. The project uses Lean 4.24.0 and a [pinned Mathlib revision](formal/lake-manifest.json). Run from this directory with Elan, Git and Python 3 installed:
+The [theorem index](THEOREMS.md) maps manuscript statements to source declarations. The two-paper project uses Lean 4.24.0 and a [pinned Mathlib revision](formal/lake-manifest.json). Run from this directory with Elan, Git and Python 3 installed:
 
 ```sh
 cd formal
@@ -17,8 +22,8 @@ python verify.py --logs ./replay
 
 The verifier builds every local Lean module, enumerates the public theorem declarations in those modules, and runs `#print axioms` for each one. Enumeration includes Lean-generated public equations. The [recorded run](verification/result.txt) links the [build](verification/build.txt), [axiom output](verification/axioms.txt), and [source hashes](verification/source-sha256.txt) to the released files.
 
-The [exact finite checks](tests) reproduce the layout examples. Run the Python scripts directly to compare their output with the recorded checks in [verification](verification).
+The [exact finite checks](tests) reproduce the examples in the papers. Install the Python dependency in [requirements.txt](tests/requirements.txt) before running the scripts. The additional finite-field checker evaluates the binary-valued encoder against the original recovery equations in characteristic two.
 
 ## Research status and attribution
 
-This is a research preprint. The project initiator supplied the questions and early conjectures. AI assistants contributed substantially to the proofs, computational checks, Lean code and manuscript preparation. The manuscript describes its antecedents and open problems. Independent human peer review and a determination of publication priority remain outstanding.
+These are research preprints. The project initiator supplied the questions and early conjectures. AI assistants contributed substantially to the proofs, computational checks, Lean code and manuscript preparation. The papers describe their antecedents and retain the open problems. Independent human peer review and a determination of publication priority remain outstanding.

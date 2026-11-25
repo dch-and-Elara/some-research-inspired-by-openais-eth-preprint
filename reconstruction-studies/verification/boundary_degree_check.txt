@@ -1,0 +1,8 @@
+q=2 d=0 rank=5 construction: 4/4 second-word blocks feasible, primal = dual
+q=2 d=0 rank=4 delete one broadcast row: 2/4 second-word blocks feasible, primal = dual
+q=3 d=1 rank=7 construction: 8/8 second-word blocks feasible, primal = dual
+q=3 d=1 rank=6 delete one broadcast row: 4/8 second-word blocks feasible, primal = dual
+q=3 d=0 rank=7 decrease degree: 0/8 second-word blocks feasible, primal = dual
+q=4 d=2 rank=8 construction: 16/16 second-word blocks feasible, primal = dual
+q=4 d=2 rank=7 delete one broadcast row: 8/16 second-word blocks feasible, primal = dual
+q=4 d=1 rank=8 decrease degree: 0/16 second-word blocks feasible, primal = dual

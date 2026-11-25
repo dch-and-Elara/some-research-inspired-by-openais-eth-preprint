@@ -1,0 +1,9 @@
+State-space optima equal the closed form on all 340 ordered profiles (1..4 slots, sizes 1..4).
+(1,): direct maximum 0 / 1 on 1 labeled receiver orders.
+(3,): direct maximum 3 / 9 on 6 labeled receiver orders.
+(2, 2): direct maximum 5 / 16 on 24 labeled receiver orders.
+(2, 3): direct maximum 13 / 36 on 120 labeled receiver orders.
+(2, 2, 2): direct maximum 21 / 64 on 720 labeled receiver orders.
+(1, 4, 2): direct maximum 25 / 64 on 5040 labeled receiver orders.
+(2, 2, 3): direct maximum 53 / 144 on 5040 labeled receiver orders.
+All 10951 direct receiver permutations checked.
