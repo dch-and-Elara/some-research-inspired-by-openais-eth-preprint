@@ -1,0 +1,11 @@
+{
+  "exact_tensor_filtration_levels": 38,
+  "feasible_polynomial_layouts": 160,
+  "original_assignments_with_unique_gate_extension": 1096,
+  "physical_node_variable_subset_checks": 61824,
+  "positive_tight_rank_checks": 5554,
+  "principal_minor_and_imbalance_checks": 120864,
+  "restricted_group_image_checks": 44352,
+  "seed": 20261125,
+  "status": "passed"
+}

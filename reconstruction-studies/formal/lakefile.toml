@@ -1,0 +1,42 @@
+name = "reconstruction_rank_and_codes"
+version = "0.2.0"
+defaultTargets = ["ReconstructionStudies"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
+
+[[lean_lib]]
+name = "ReconstructionStudies"
+roots = [
+  "DeterminantBudget",
+  "ExpansionGraph",
+  "ExpansionGraphBase",
+  "ExpansionGraphCNF",
+  "ExpansionGraphCost",
+  "ExpansionGraphCostConformance",
+  "ExpansionGraphCycle",
+  "ExpansionGraphPerm",
+  "LayoutBudget",
+  "LayoutMismatch",
+  "LayoutMismatchCount",
+  "LayoutMismatchPacking",
+  "LayoutMismatchTensor",
+  "LayoutMoments",
+  "LayoutMomentsHalf",
+  "LayoutMomentsMismatch",
+  "LayoutMomentsPrincipal",
+  "LayoutMomentsSelection",
+  "ReleaseLayoutNumerical",
+  "ReleaseLayoutSigned",
+  "VisitRuntime",
+  "VisitRuntimeAssembly",
+  "VisitRuntimeAudit",
+  "VisitRuntimeCosts",
+  "VisitRuntimeDegree",
+  "VisitRuntimeGraph",
+  "VisitRuntimeNumerical",
+  "VisitRuntimeRank",
+  "VisitSigned",
+]

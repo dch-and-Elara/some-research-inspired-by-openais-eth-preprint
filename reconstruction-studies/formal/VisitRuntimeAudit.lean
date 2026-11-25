@@ -1,0 +1,23 @@
+import VisitRuntime
+
+#print axioms Reconstruction.VisitRuntime.reachableImage_card_ge
+#print axioms Reconstruction.VisitRuntime.Visits.rank_pow_le
+#print axioms Reconstruction.VisitRuntime.Visits.taylor_sum_le
+#print axioms Reconstruction.VisitRuntime.Visits.largest_size_ge
+#print axioms Reconstruction.VisitRuntime.Visits.scan_pow_le_at_every_node
+#print axioms Reconstruction.LayoutBudget.principal_subset_imbalance
+#print axioms Reconstruction.determinant_nullity_budget
+#print axioms Reconstruction.LayoutMismatch.mismatch_rank
+#print axioms Reconstruction.VisitRuntime.CandidateFactors.corollaryTwo
+#print axioms Reconstruction.VisitRuntime.CandidateFactors.corollaryFive
+#print axioms Reconstruction.VisitRuntime.CandidateFactors.zeroDegree
+#print axioms Reconstruction.ExpansionGraph.exists_expanding_graph
+#print axioms Reconstruction.VisitRuntime.theorem3_numerical
+#print axioms Reconstruction.VisitRuntime.theorem6_numerical
+#print axioms Reconstruction.VisitRuntime.graph_preSubstitution_degree
+#print axioms Reconstruction.VisitRuntime.theorems3_and6_of_expanding_graphs
+#print axioms Reconstruction.VisitRuntime.theorems3_and6_graph_family
+#print axioms Reconstruction.VisitRuntime.parsimonious_extension_runtime
+
+#check Reconstruction.VisitRuntime.theorems3_and6_graph_family
+#check Reconstruction.VisitRuntime.parsimonious_extension_runtime

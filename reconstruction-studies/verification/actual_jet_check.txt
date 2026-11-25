@@ -1,0 +1,12 @@
+n s signed_formulas second_sign_rank actual_array_rank diagonal_rank B_s-1
+1 1 4 1 2 1 1
+2 1 16 2 8 2 2
+2 2 16 3 12 3 3
+3 1 64 3 24 3 3
+3 2 64 6 48 6 6
+3 3 64 7 56 7 7
+4 1 256 4 64 4 4
+4 2 256 10 160 10 10
+4 3 256 14 224 14 14
+4 4 256 15 240 15 15
+PASS: 10 parameter pairs; 1252 parameter-tagged signed formulas. All ranks and coefficient checks are exact.

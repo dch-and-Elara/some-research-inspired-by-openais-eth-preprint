@@ -1,0 +1,115 @@
+✔ [3119/3148] Built VisitRuntimeDegree (8.1s)
+ℹ [3120/3148] Built DeterminantBudget (9.7s)
+info: DeterminantBudget.lean:157:0: 'Reconstruction.det_degree_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: DeterminantBudget.lean:158:0: 'Reconstruction.det_dvd_of_zero_rows' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: DeterminantBudget.lean:159:0: 'Reconstruction.nullity_factor_dvd_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: DeterminantBudget.lean:160:0: 'Reconstruction.determinant_nullity_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: DeterminantBudget.lean:161:0: 'Reconstruction.normalized_nullity_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [3121/3148] Built ExpansionGraphBase (9.6s)
+✔ [3122/3148] Built LayoutMoments (11s)
+✔ [3123/3148] Built ExpansionGraphCNF (7.8s)
+✔ [3124/3148] Built LayoutBudget (9.9s)
+✔ [3125/3148] Built ExpansionGraphCycle (11s)
+✔ [3126/3148] Built ExpansionGraphPerm (11s)
+✔ [3127/3148] Built ExpansionGraphCost (6.6s)
+✔ [3128/3148] Built LayoutMismatchTensor (8.8s)
+✔ [3129/3148] Built VisitRuntimeCosts (8.9s)
+✔ [3130/3148] Built ExpansionGraphCostConformance (6.0s)
+✔ [3131/3148] Built LayoutMomentsSelection (10s)
+✔ [3132/3148] Built LayoutMomentsHalf (11s)
+✔ [3133/3148] Built ExpansionGraph (10s)
+✔ [3134/3148] Built LayoutMismatchPacking (9.0s)
+✔ [3135/3148] Built VisitRuntimeNumerical (12s)
+✔ [3136/3148] Built LayoutMomentsPrincipal (10s)
+✔ [3137/3148] Built LayoutMismatchCount (7.2s)
+✔ [3138/3148] Built LayoutMismatch (6.7s)
+✔ [3139/3148] Built LayoutMomentsMismatch (10s)
+✔ [3140/3148] Built VisitRuntimeRank (9.4s)
+✔ [3141/3148] Built VisitRuntimeAssembly (9.2s)
+✔ [3142/3148] Built VisitRuntimeGraph (9.0s)
+✔ [3143/3148] Built VisitRuntime (10s)
+✔ [3144/3148] Built ReleaseLayoutNumerical (10s)
+✔ [3145/3148] Built VisitSigned (14s)
+ℹ [3146/3148] Built VisitRuntimeAudit (15s)
+info: VisitRuntimeAudit.lean:3:0: 'Reconstruction.VisitRuntime.reachableImage_card_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: VisitRuntimeAudit.lean:4:0: 'Reconstruction.VisitRuntime.Visits.rank_pow_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: VisitRuntimeAudit.lean:5:0: 'Reconstruction.VisitRuntime.Visits.taylor_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: VisitRuntimeAudit.lean:6:0: 'Reconstruction.VisitRuntime.Visits.largest_size_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: VisitRuntimeAudit.lean:7:0: 'Reconstruction.VisitRuntime.Visits.scan_pow_le_at_every_node' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: VisitRuntimeAudit.lean:8:0: 'Reconstruction.LayoutBudget.principal_subset_imbalance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: VisitRuntimeAudit.lean:9:0: 'Reconstruction.determinant_nullity_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: VisitRuntimeAudit.lean:10:0: 'Reconstruction.LayoutMismatch.mismatch_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: VisitRuntimeAudit.lean:11:0: 'Reconstruction.VisitRuntime.CandidateFactors.corollaryTwo' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: VisitRuntimeAudit.lean:12:0: 'Reconstruction.VisitRuntime.CandidateFactors.corollaryFive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: VisitRuntimeAudit.lean:13:0: 'Reconstruction.VisitRuntime.CandidateFactors.zeroDegree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: VisitRuntimeAudit.lean:14:0: 'Reconstruction.ExpansionGraph.exists_expanding_graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: VisitRuntimeAudit.lean:15:0: 'Reconstruction.VisitRuntime.theorem3_numerical' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: VisitRuntimeAudit.lean:16:0: 'Reconstruction.VisitRuntime.theorem6_numerical' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: VisitRuntimeAudit.lean:17:0: 'Reconstruction.VisitRuntime.graph_preSubstitution_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: VisitRuntimeAudit.lean:18:0: 'Reconstruction.VisitRuntime.theorems3_and6_of_expanding_graphs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: VisitRuntimeAudit.lean:19:0: 'Reconstruction.VisitRuntime.theorems3_and6_graph_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: VisitRuntimeAudit.lean:20:0: 'Reconstruction.VisitRuntime.parsimonious_extension_runtime' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: VisitRuntimeAudit.lean:22:0: Reconstruction.VisitRuntime.theorems3_and6_graph_family {A c₀ : ℝ} (hA : 0 < A) (hc₀ : 0 < c₀) :
+  ∃ C₃ C₆ Cᵤ,
+    0 < C₃ ∧
+      0 < C₆ ∧
+        0 < Cᵤ ∧
+          ∃ n₀,
+            ∀ n ≥ n₀,
+              128 ∣ n →
+                ∃ G x,
+                  (∀ C ∈ Reconstruction.ExpansionGraph.positiveGraphCNF G, C.length = 2 ∧ ∀ l ∈ C, l.2 = true) ∧
+                    (∀ (v : Fin n),
+                        Reconstruction.ExpansionGraph.occurs v (Reconstruction.ExpansionGraph.positiveGraphCNF G) ≤ 3) ∧
+                      ∀ {Q r R d₀ T : ℕ}
+                        (L :
+                          Reconstruction.VisitRuntime.PhysicalLayout (Fin n)
+                            (Fin (List.length (Reconstruction.ExpansionGraph.positiveGraphCNF G))) Q r R)
+                        (_W : Reconstruction.VisitRuntime.Visits L d₀ T),
+                        L.scope =
+                            Reconstruction.VisitRuntime.formulaScope
+                              (Reconstruction.ExpansionGraph.positiveGraphCNF G) →
+                          c₀ * ↑n ≤ ↑d₀ →
+                            (L.balanced → 2 ^ (C₃ * Reconstruction.VisitRuntime.arbitraryNodeScale n) ≤ ↑T) ∧
+                              (L.balanced →
+                                  ↑r ^ (2 * Q) ≤ ↑n ^ A →
+                                    C₆ * (↑n * Reconstruction.VisitRuntime.scheduledRate n) ≤ Real.log ↑T) ∧
+                                (Reconstruction.VisitRuntime.ScansAtEveryNode L T →
+                                  2 ^ (Cᵤ * Reconstruction.VisitRuntime.arbitraryNodeScale n) ≤ ↑T)
+info: VisitRuntimeAudit.lean:23:0: Reconstruction.VisitRuntime.parsimonious_extension_runtime {A c₀ : ℝ} (hA : 0 < A) (hc₀ : 0 < c₀) :
+  ∃ C₃ C₆,
+    0 < C₃ ∧
+      0 < C₆ ∧
+        ∃ N₀,
+          ∀ {n w : ℕ} (F : Reconstruction.ExpansionGraph.CNF (Fin n)),
+            Reconstruction.ExpansionGraph.WidthAtMost F w →
+              ∃ G x,
+                have H := Reconstruction.ExpansionGraph.gateExtension G (Reconstruction.ExpansionGraph.padCNF F);
+                have N := Fintype.card (Reconstruction.ExpansionGraph.GateVar G);
+                Nat.card (Reconstruction.ExpansionGraph.Models H) = Nat.card (Reconstruction.ExpansionGraph.Models F) ∧
+                  2 * N ≤ 5 * (n + Reconstruction.ExpansionGraph.paddingCount n) ∧
+                    List.length H =
+                        List.length F + Reconstruction.ExpansionGraph.paddingCount n + 3 * Fintype.card ↑G.edgeSet ∧
+                      Reconstruction.ExpansionGraph.WidthAtMost H (max 3 w) ∧
+                        (∀ (v : Reconstruction.ExpansionGraph.PaddedVar n),
+                            Reconstruction.ExpansionGraph.occurs (Sum.inl v) H ≤
+                              Reconstruction.ExpansionGraph.occurs v (Reconstruction.ExpansionGraph.padCNF F) + 6) ∧
+                          (∀ (e : ↑G.edgeSet), Reconstruction.ExpansionGraph.occurs (Sum.inr e) H = 3) ∧
+                            ∀ {Q r R d₀ T : ℕ}
+                              (L :
+                                Reconstruction.VisitRuntime.PhysicalLayout (Reconstruction.ExpansionGraph.GateVar G)
+                                  (Fin (List.length H)) Q r R)
+                              (_W : Reconstruction.VisitRuntime.Visits L d₀ T),
+                              L.scope = Reconstruction.VisitRuntime.formulaScope H →
+                                N₀ ≤ N →
+                                  c₀ * ↑N ≤ ↑d₀ →
+                                    L.balanced →
+                                      2 ^ (C₃ * Reconstruction.VisitRuntime.arbitraryNodeScale N) ≤ ↑T ∧
+                                        (↑r ^ (2 * Q) ≤ ↑N ^ A →
+                                          C₆ * (↑N * Reconstruction.VisitRuntime.scheduledRate N) ≤ Real.log ↑T)
+✔ [3147/3148] Built ReleaseLayoutSigned (8.9s)
+Build completed successfully (3148 jobs).
