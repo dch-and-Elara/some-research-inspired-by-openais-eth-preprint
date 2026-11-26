@@ -1,6 +1,6 @@
 # Some Research Inspired by OpenAI’s ETH Preprint
 
-These four papers study local polynomial reconstruction, shared measurements, and the cost of representing a SAT count by products of local functions. The starting point is the interpolation method in OpenAI’s [preprint on the Exponential Time Hypothesis](https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026).
+These five papers study local polynomial reconstruction, shared measurements, and rank bounds for interpolation algorithms that count satisfying assignments. The starting point is the interpolation method in OpenAI’s [preprint on the Exponential Time Hypothesis](https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026).
 
 | Paper | Lean verification |
 | --- | --- |
@@ -8,6 +8,7 @@ These four papers study local polynomial reconstruction, shared measurements, an
 | [Rank lower bounds for node-dependent polynomial reconstruction in SAT counting](reconstruction-studies/papers/paper_polynomial_recovery.pdf) | [Theorem index](reconstruction-studies/THEOREMS.md#rank-lower-bounds-for-node-dependent-polynomial-reconstruction) · [Verification record](reconstruction-studies/verification/result.txt) |
 | [Ternary Measurements for Paired Local Recovery](reconstruction-studies/papers/paper_ternary_codes.pdf) | [Theorem index](reconstruction-studies/THEOREMS.md#ternary-measurements-for-paired-local-recovery) · [Verification record](reconstruction-studies/verification/result.txt) |
 | [A Root-Separation Barrier for Tensor-Interpolation SAT Algorithms](root-separation/paper/root_separation.pdf) | [Theorem index](root-separation/THEOREMS.md) · [Verification record](root-separation/verification/result.txt) |
+| [Rank-Budget Barriers for Interpolation Algorithms](rank-budget-barriers/paper/rank_budget_barriers.pdf) | [Theorem index](rank-budget-barriers/THEOREMS.md) · [Kernel audit](rank-budget-barriers/verification/joint-kernel.txt) |
 
 ## Optimal Degrees for Local Polynomial Reconstruction on the Boolean Cube
 
@@ -36,3 +37,9 @@ lake env lean Audit.lean
 ```
 
 The default build imports all proof modules. The last command prints the axioms used by the audited declarations. [Verification record](VERIFICATION.md) · [AI disclosure](AI_DISCLOSURE.md)
+
+## Rank-Budget Barriers for Interpolation Algorithms
+
+Section 8 shows how one multiplication can recover the exact SAT count from two products of local functions. On the cloned input, both coordinates can come from one MAIN layout, both from one Appendix D packing, or one from each method. On the original uncloned input, levels 0 and 1 of a single Appendix D root suffice. Each local function reads only the signs in its assigned group. The linear evaluation cost applies to the terminal scan after preprocessing.
+
+The Section 8 update independently recompiled 29 Lean modules and checked 125 named declarations for axiom dependencies. The combined audit imported all 643 modules of this paper and found no project-defined axioms. [Section 8 replay](rank-budget-barriers/verification/section8-replay.json) · [LaTeX source](rank-budget-barriers/paper/rank_budget_barriers.tex) · [Reproduction instructions](rank-budget-barriers/README.md#reproduction)
