@@ -24,3 +24,4 @@ if "4.24.0" not in version or "797c613eb9b6" not in version:
     sys.exit(f"Unexpected toolchain: {version}")
 subprocess.run(["lake","build"],cwd=formal,check=True)
 subprocess.run(["lake","env","lean","--root="+str(evidence),"-DwarningAsError=true",str(evidence / "AllModules.lean")],cwd=formal,check=True)
+subprocess.run(["lake","env","lean","--root="+str(evidence),"-DwarningAsError=true",str(evidence / "UnclonedPrecision.lean")],cwd=formal,check=True)

@@ -1,6 +1,6 @@
 # Theorem index
 
-The entries link to checked declarations and their hypotheses. The [full index](verification/declarations.tsv) lists all 2,918 named checks.
+The entries link to checked declarations and their hypotheses. The [full index](verification/declarations.tsv) lists all 3,043 named project checks.
 
 ## §2, scaled Hermite and independent errors
 
@@ -66,6 +66,14 @@ The entries link to checked declarations and their hypotheses. The [full index](
 - [Paper5.HybridClosure.actual_joint_tied_layouts](formal/P5HybridClosureActual.lean)
 - [Paper5.HybridClosure.twoMethodScan_exact](formal/P5HybridClosureScan.lean)
 - [Paper5.HybridClosure.Printed.checked_actual_printed_E1](formal/P5HybridClosurePrintedEnd.lean)
+
+## §8, two coordinates of one method
+
+- [Two prescribed MAIN nodes on one placement](formal/P5HybridMainOnlyPrinted.lean) and [the group-product identity and scan fee](formal/P5HybridMainOnlyTerminal.lean)
+- [Two prescribed retained coordinates of one cloned D packing, with active centers, native precision and exact count](formal/P5HybridDOnlyPrinted.lean)
+- [Levels 0 and 1 of one uncloned D packing, the original model count and root contraction](formal/P5HybridDUnclonedSource.lean)
+- [Eventual uncloned size guards](formal/P5HybridDUnclonedParams.lean), [tensor-file count](formal/P5HybridDUnclonedCount.lean) and [uncloned bucket-scan fee](formal/P5HybridDUnclonedScan.lean)
+- [Separate check of uncloned register precision](verification/UnclonedPrecision.lean) and [its named axiom output](verification/UnclonedPrecision.txt)
 
 ## §10, quadratic hashes
 

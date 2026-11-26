@@ -2092,7 +2092,47 @@ certified layouts proves the stated lower bound for fixed linear
 combinations. An arbitrary constant offset can be counted as one extra
 group product.
 
-\paragraph{Scope of the construction.} The proved construction uses one MAIN coordinate and one retained D coordinate on the same cloned family. The separate question of installing two coordinates of each type simultaneously on the same certified placements is reserved.
+\paragraph*{Two coordinates on one layout.}
+Fix two distinct MAIN nodes on the cloned input. At the first node tie
+the three unary pins of each triangle to one symbol. At the second node
+tie the pins of each exterior matching edge to one symbol. Choose the
+two families of primitive symbols independently. For a D packing use
+the same two ties on two distinct retained root coordinates. At every
+other position keep the previous independent symbols. Each pin has two
+triangle neighbors and one exterior mate. These are distinct, so the
+extra comparisons involve \(2N+N=3N\) ordered pairs of pins. Each
+unary pin specifies one physical incidence. Bounding each extra
+contribution by one gives \(4M_M+3N\le5M_M\) and
+\(4M_D+3N\le6M_D\). In MAIN the assignment-group contribution to the
+joint potential is unchanged. Thus one MAIN layout satisfies both ties
+and the preceding load and group bounds. In D, rounding the maximum
+cell load once gives a single packing with both ties and the preceding
+packet bounds. All these choices precede the sign input.
+
+In the cloned D packing the two retained indices identify distinct
+active root centers with the source precision at \(M_D=24N\) and root
+precision \(4N+1\). At either coordinate each bucket reads the signs
+of its own unary pins. Its product is the conjunction of the OR clauses
+on the preassigned edge list. Grouping the triangle edges and the
+exterior edges this way gives the same two factors of \(C_G(\sigma)\)
+for every sign word. We may take both factors from MAIN, both from D,
+or the triangle factor from MAIN and the exterior factor from D on
+these same layouts. The two scans and final multiplication cost
+\(6N+2r_M+1\) indexed operations for MAIN alone and \(6N+129\) for D
+alone under the stated scan convention.
+
+For the original uncloned D input take retained level \(0\) for
+triangles and level \(1\) for exterior mates. The printed size bounds
+hold eventually, so both levels occur at active centers of the same
+root. Here \(M_D=10N\) and the root precision is \(N+1\). The
+four occurrence ports of each variable are joined by a trivalent
+equality tree. Once its unary sign is fixed, every occurrence and the
+internal wire are forced. An accepting extension therefore exists
+exactly when all edge clauses are satisfied, and that extension is
+unique. The grouped product equals the natural-number model count of
+the original pinned formula and its reduction agrees with the root
+contraction. The scan costs above concern the chosen terminal group
+functions after the edge lists have been prepared.
 
 \section{Other failures of unrestricted cost
 transfer}\label{other-failures-of-unrestricted-cost-transfer}
@@ -2728,7 +2768,7 @@ inspected}\label{primary-references-inspected}
 \end{itemize}
 
 \section{Formal verification and reproduction}\label{formal-verification-and-statement-coverage}
-The frozen C17 project consists of 609 Lean modules. A fresh replay using Lean 4.24.0 and the pinned Mathlib revision checks 2,908 distinct named axiom reports. This edition adds five modules with ten further named checks. All 614 modules were subsequently imported into one environment. An audit traversed 12,042 declarations belonging to those modules, including 8,046 theorem declarations. It found zero locally declared axioms. The complete transitive axiom set is \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}. The source bundle includes toolchain pins, the audit driver, and the output. External expander existence and the source evaluator's published bit-time upper bound enter as cited mathematical results. The supplement proves the visit lower bound directly for each selected layout.
+The frozen C17 project consists of 609 Lean modules. A fresh replay using Lean 4.24.0 and the pinned Mathlib revision checks 2,908 distinct named axiom reports. The direct-window and packing supplements added five modules with ten named checks. The same-route constructions add 29 independently compiled modules and 125 named checks. All 643 project modules were imported into one environment. The combined audit traversed 12,664 declarations, including 8,370 theorem declarations. It found zero locally declared axioms. The complete transitive axiom set is \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}. The source bundle includes toolchain pins, the audit driver, and the output. External expander existence and the source evaluator's published bit-time upper bound enter as cited mathematical results. The supplement proves the visit lower bound directly for each selected layout.
 
 \section{Source coverage matrix}\label{source-coverage-matrix}
 
@@ -2911,7 +2951,7 @@ The accompanying source index gives the module and declaration for each of the f
 \item Sections 2--3: scaled Hermite reconstruction and compression; full local factors and finite sums; off-grid transfer ranks; finite observation length and exact common-precision Smith truncation.
 \item Section 4: the actual pinned model count, its direct and sparse MAIN readouts, and high-order witnesses on the always-satisfiable family. Integer exactness is used for the direct terminal, parity for the sparse terminal rank argument.
 \item Sections 5--6: the real weighted matching theorem for arbitrary finite layout families; fixed and routed budgets; projection to attainable measurement tuples and the three explicit iterator obligations.
-\item Sections 7--9: sharp native error windows for the given decoder; one cross-method product on a common input; rank examples for alternative executions.
+\item Sections 7--9: sharp native error windows for the given decoder; a cross-method product and two same-method products on a common cloned input, plus the two-D product on the original input; rank examples for alternative executions.
 \item Sections 10--11: finite hash obstructions, the charged iteration model and the literal root visit lower bound for every source collision packing.
 \end{itemize}
 \clearpage

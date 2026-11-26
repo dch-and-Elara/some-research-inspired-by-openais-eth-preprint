@@ -1,0 +1,3 @@
+'Paper5.HybridDUncloned.Review.actual_uncloned_register_precision' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
