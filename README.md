@@ -43,3 +43,7 @@ The default build imports all proof modules. The last command prints the axioms 
 Section 8 shows how one multiplication can recover the exact SAT count from two products of local functions. On the cloned input, both coordinates can come from one MAIN layout, both from one Appendix D packing, or one from each method. On the original uncloned input, levels 0 and 1 of a single Appendix D root suffice. Each local function reads only the signs in its assigned group. The linear evaluation cost applies to the terminal scan after preprocessing.
 
 The Section 8 update independently recompiled 29 Lean modules and checked 125 named declarations for axiom dependencies. The combined audit imported all 643 modules of this paper and found no project-defined axioms. [Section 8 replay](rank-budget-barriers/verification/section8-replay.json) · [LaTeX source](rank-budget-barriers/paper/rank_budget_barriers.tex) · [Reproduction instructions](rank-budget-barriers/README.md#reproduction)
+
+## Contact
+
+<dingchuhang26@stu.pku.edu.cn>
