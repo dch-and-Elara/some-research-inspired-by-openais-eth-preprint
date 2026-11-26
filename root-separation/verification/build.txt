@@ -1,39 +1,93 @@
-ℹ [1719/1757] Built edge_certificate (11s)
-info: edge_certificate.lean:53:0: 'NativeTwoView.crossed_survival' depends on axioms: [propext, Quot.sound]
-info: edge_certificate.lean:54:0: 'NativeTwoView.sound_fiber_unique' depends on axioms: [propext, Quot.sound]
-info: edge_certificate.lean:55:0: 'NativeTwoView.cover_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1720/1757] Built LocalVariance (11s)
-info: LocalVariance.lean:171:0: 'LocalVariance.weighted_square_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: LocalVariance.lean:172:0: 'LocalVariance.abs_mean_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: LocalVariance.lean:173:0: 'LocalVariance.abs_covariance_le_four' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: LocalVariance.lean:174:0: 'LocalVariance.bounded_dependency_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: LocalVariance.lean:175:0: 'LocalVariance.covariance_means' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: LocalVariance.lean:176:0: 'LocalVariance.variance_of_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: LocalVariance.lean:177:0: 'LocalVariance.variance_of_disjoint_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1721/1757] Built FiniteSelection (11s)
-info: FiniteSelection.lean:105:0: 'FiniteSelection.exists_avoid_bad' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: FiniteSelection.lean:106:0: 'FiniteSelection.tail_mass_le' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: FiniteSelection.lean:107:0: 'FiniteSelection.exists_simultaneous_close' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: FiniteSelection.lean:108:0: 'FiniteSelection.exists_simultaneous_large' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1722/1757] Built ProjectionDiagonal (11s)
-info: ProjectionDiagonal.lean:41:0: 'ProjectionDiagonal.realizable_iff_agree' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1723/1757] Built FiniteMoments (12s)
+ℹ [911/1155] Replayed FiniteMoments
 info: FiniteMoments.lean:42:0: 'FiniteMoments.centered_square_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: FiniteMoments.lean:43:0: 'FiniteMoments.centered_square_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: FiniteMoments.lean:44:0: 'FiniteMoments.dominated_centered_second_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1724/1757] Built BangCore (12s)
+ℹ [912/1155] Replayed BangCore
 info: BangCore.lean:72:0: 'BangCore.bitSign_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: BangCore.lean:73:0: 'BangCore.flip_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: BangCore.lean:74:0: 'BangCore.flip_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: BangCore.lean:75:0: 'BangCore.exists_simultaneous_signed_dot' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1725/1757] Built HuberPotential (12s)
+ℹ [938/1155] Replayed ProductVariance
+info: ProductVariance.lean:230:0: 'ProductVariance.coordinate_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProductVariance.lean:231:0: 'ProductVariance.distinct_coordinate_orthogonality' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProductVariance.lean:232:0: 'ProductVariance.uniform_product_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProductVariance.lean:233:0: 'ProductVariance.uniform_variance_le_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProductVariance.lean:234:0: 'ProductVariance.dominated_coordinate_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProductVariance.lean:235:0: 'ProductVariance.signed_centered_coordinate_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [939/1155] Replayed HuberPotential
 info: HuberPotential.lean:54:0: 'HuberPotential.slope_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: HuberPotential.lean:55:0: 'HuberPotential.supporting_line' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: HuberPotential.lean:56:0: 'HuberPotential.rho_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: HuberPotential.lean:57:0: 'HuberPotential.slope_central' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: HuberPotential.lean:58:0: 'HuberPotential.central_flip_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: HuberPotential.lean:59:0: 'HuberPotential.flip_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1726/1757] Built PinnedCNF (13s)
+ℹ [946/1155] Replayed HuberCorrelation
+info: HuberCorrelation.lean:162:0: 'HuberCorrelation.central_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HuberCorrelation.lean:163:0: 'HuberCorrelation.abs_boundedSlope_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HuberCorrelation.lean:164:0: 'HuberCorrelation.flip_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HuberCorrelation.lean:165:0: 'HuberCorrelation.exists_normalized_signed_correlations' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HuberCorrelation.lean:166:0: 'HuberCorrelation.exists_simultaneous_correlation' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [947/1155] Replayed HuberEdgeCorrelation
+info: HuberEdgeCorrelation.lean:165:0: 'HuberEdgeCorrelation.four_mul_outside_mass_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HuberEdgeCorrelation.lean:166:0: 'HuberEdgeCorrelation.central_energy_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HuberEdgeCorrelation.lean:167:0: 'HuberEdgeCorrelation.exists_signs_for_central_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HuberEdgeCorrelation.lean:168:0: 'HuberEdgeCorrelation.exists_simultaneous_edge_correlation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HuberEdgeCorrelation.lean:169:0: 'HuberEdgeCorrelation.exists_edge_correlation_of_doubled_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [948/1155] Replayed GraphCutMoments
+info: GraphCutMoments.lean:203:0: 'GraphCutMoments.weighted_incidence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GraphCutMoments.lean:204:0: 'GraphCutMoments.sum_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GraphCutMoments.lean:205:0: 'GraphCutMoments.regular_edge_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GraphCutMoments.lean:206:0: 'GraphCutMoments.cut_energy_eq_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GraphCutMoments.lean:207:0: 'GraphCutMoments.abs_cutDifference_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GraphCutMoments.lean:208:0: 'GraphCutMoments.edge_energy_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GraphCutMoments.lean:209:0: 'GraphCutMoments.regular_mean_energy_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GraphCutMoments.lean:210:0: 'GraphCutMoments.cubic_mean_energy_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GraphCutMoments.lean:211:0: 'GraphCutMoments.cubic_signed_edge_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GraphCutMoments.lean:212:0: 'GraphCutMoments.cubic_cut_correlations' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GraphCutMoments.lean:213:0: 'GraphCutMoments.cubic_expander_cut_correlations' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [949/1155] Replayed EmpiricalCutMoments
+info: EmpiricalCutMoments.lean:105:0: 'EmpiricalCutMoments.empiricalLaw_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: EmpiricalCutMoments.lean:106:0: 'EmpiricalCutMoments.empirical_expectation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: EmpiricalCutMoments.lean:107:0: 'EmpiricalCutMoments.sum_empiricalLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: EmpiricalCutMoments.lean:108:0: 'EmpiricalCutMoments.labelCut_bit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: EmpiricalCutMoments.lean:109:0: 'EmpiricalCutMoments.empirical_cut_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: EmpiricalCutMoments.lean:110:0: 'EmpiricalCutMoments.vertex_signed_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: EmpiricalCutMoments.lean:111:0: 'EmpiricalCutMoments.cubic_expander_label_correlations' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [950/1155] Replayed SourceDensity
+info: SourceDensity.lean:205:0: 'SourceDensity.numeric_cell_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SourceDensity.lean:206:0: 'SourceDensity.port_cell_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SourceDensity.lean:207:0: 'SourceDensity.fiberCount_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SourceDensity.lean:208:0: 'SourceDensity.fiberCount_injection' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SourceDensity.lean:209:0: 'SourceDensity.regular_projection_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SourceDensity.lean:210:0: 'SourceDensity.projected_port_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SourceDensity.lean:211:0: 'SourceDensity.pin_marginal_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SourceDensity.lean:212:0: 'SourceDensity.pin_marginal_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SourceDensity.lean:213:0: 'SourceDensity.coordinate_projection_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SourceDensity.lean:214:0: 'SourceDensity.ordered_cell_projection_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SourceDensity.lean:215:0: 'SourceDensity.source_pin_marginal_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [951/1155] Replayed BalancedUnion
+info: BalancedUnion.lean:149:0: 'BalancedUnion.exists_quarter_union' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BalancedUnion.lean:150:0: 'BalancedUnion.union_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BalancedUnion.lean:151:0: 'BalancedUnion.exists_balanced_vertex_union_of_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BalancedUnion.lean:152:0: 'BalancedUnion.exists_balanced_vertex_union' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BalancedUnion.lean:153:0: 'BalancedUnion.single_coordinate_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BalancedUnion.lean:154:0: 'BalancedUnion.source_balanced_unions' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BalancedUnion.lean:155:0: 'BalancedUnion.group_product_separates' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1722/1899] Replayed BooleanMeasurement
+info: BooleanMeasurement.lean:140:0: 'BooleanMeasurement.bit_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BooleanMeasurement.lean:141:0: 'BooleanMeasurement.exists_independent_columns' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BooleanMeasurement.lean:142:0: 'BooleanMeasurement.measure_injective_of_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BooleanMeasurement.lean:143:0: 'BooleanMeasurement.range_restrict_measure_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BooleanMeasurement.lean:144:0: 'BooleanMeasurement.two_pow_finrank_le_range_ncard' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BooleanMeasurement.lean:145:0: 'BooleanMeasurement.two_pow_rank_le_mulVec_range_ncard' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BooleanMeasurement.lean:146:0: 'BooleanMeasurement.two_pow_rank_le_rational_cube_image_ncard' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: BooleanMeasurement.lean:147:0: 'BooleanMeasurement.two_pow_rank_le_summary_range_ncard' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BooleanMeasurement.lean:148:0: 'BooleanMeasurement.two_pow_rank_le_grouped_range_ncard' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1723/1899] Replayed PinnedCNF
 info: PinnedCNF.lean:319:0: 'PinnedCNF.sat_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: PinnedCNF.lean:320:0: 'PinnedCNF.satisfiable_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: PinnedCNF.lean:321:0: 'PinnedCNF.count_eq_indicator' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -62,25 +116,7 @@ info: PinnedCNF.lean:343:0: 'PinnedCNF.violations_separated' depends on axioms: 
 info: PinnedCNF.lean:344:0: 'PinnedCNF.count_eq_separated_zero_test' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: PinnedCNF.lean:345:0: 'PinnedCNF.violations_le_card' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: PinnedCNF.lean:346:0: 'PinnedCNF.count_eq_rational_product' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1727/1757] Built IntegralOutputTransfer (13s)
-info: IntegralOutputTransfer.lean:105:0: 'IntegralOutputTransfer.weighted_lift_identity' depends on axioms: [propext, Quot.sound]
-info: IntegralOutputTransfer.lean:106:0: 'IntegralOutputTransfer.reconstructed_residue' depends on axioms: [propext]
-info: IntegralOutputTransfer.lean:107:0: 'IntegralOutputTransfer.exists_integral_reconstruction' depends on axioms: [propext, Quot.sound]
-info: IntegralOutputTransfer.lean:108:0: 'IntegralOutputTransfer.det_ne_zero_of_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: IntegralOutputTransfer.lean:109:0: 'IntegralOutputTransfer.det_embedding_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: IntegralOutputTransfer.lean:110:0: 'IntegralOutputTransfer.full_rank_of_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: IntegralOutputTransfer.lean:111:0: 'IntegralOutputTransfer.sum_full_rank_of_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1728/1757] Built MatchingCore (13s)
-info: MatchingCore.lean:38:0: 'MatchingCore.or_left_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MatchingCore.lean:39:0: 'MatchingCore.or_right_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MatchingCore.lean:40:0: 'MatchingCore.or_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MatchingCore.lean:41:0: 'MatchingCore.flatten_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1729/1757] Built NativeJetEvaluation (13s)
-info: NativeJetEvaluation.lean:39:0: 'NativeJetEvaluation.eval_eq_of_sub_dvd_X_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: NativeJetEvaluation.lean:40:0: 'NativeJetEvaluation.eval_truncated_jet' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: NativeJetEvaluation.lean:41:0: 'NativeJetEvaluation.nilpotent_power_for_precision' does not depend on any axioms
-info: NativeJetEvaluation.lean:42:0: 'NativeJetEvaluation.eval_truncated_at_precision' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1730/1757] Built SeparatedRank (13s)
+ℹ [1724/1899] Replayed SeparatedRank
 info: SeparatedRank.lean:254:0: 'SeparatedRank.conditioned_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: SeparatedRank.lean:255:0: 'SeparatedRank.rank_add_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: SeparatedRank.lean:256:0: 'SeparatedRank.rank_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -91,14 +127,24 @@ info: SeparatedRank.lean:260:0: 'SeparatedRank.separated_barrier' depends on axi
 info: SeparatedRank.lean:261:0: 'SeparatedRank.VertexTerm.onTransversal_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: SeparatedRank.lean:262:0: 'SeparatedRank.vertex_restriction_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: SeparatedRank.lean:263:0: 'SeparatedRank.vertex_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1731/1757] Built ProductVariance (8.0s)
-info: ProductVariance.lean:230:0: 'ProductVariance.coordinate_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: ProductVariance.lean:231:0: 'ProductVariance.distinct_coordinate_orthogonality' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: ProductVariance.lean:232:0: 'ProductVariance.uniform_product_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: ProductVariance.lean:233:0: 'ProductVariance.uniform_variance_le_square' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: ProductVariance.lean:234:0: 'ProductVariance.dominated_coordinate_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: ProductVariance.lean:235:0: 'ProductVariance.signed_centered_coordinate_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1732/1757] Built IndependentThinning (8.2s)
+ℹ [1725/1899] Replayed IntegralOutputTransfer
+info: IntegralOutputTransfer.lean:105:0: 'IntegralOutputTransfer.weighted_lift_identity' depends on axioms: [propext, Quot.sound]
+info: IntegralOutputTransfer.lean:106:0: 'IntegralOutputTransfer.reconstructed_residue' depends on axioms: [propext]
+info: IntegralOutputTransfer.lean:107:0: 'IntegralOutputTransfer.exists_integral_reconstruction' depends on axioms: [propext, Quot.sound]
+info: IntegralOutputTransfer.lean:108:0: 'IntegralOutputTransfer.det_ne_zero_of_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegralOutputTransfer.lean:109:0: 'IntegralOutputTransfer.det_embedding_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegralOutputTransfer.lean:110:0: 'IntegralOutputTransfer.full_rank_of_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegralOutputTransfer.lean:111:0: 'IntegralOutputTransfer.sum_full_rank_of_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1726/1899] Replayed CertifiedBarrier
+info: CertifiedBarrier.lean:83:0: 'CertifiedBarrier.exact_count_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: CertifiedBarrier.lean:84:0: 'CertifiedBarrier.modular_output_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: CertifiedBarrier.lean:85:0: 'CertifiedBarrier.reconstructed_output_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1727/1899] Replayed FiniteSelection
+info: FiniteSelection.lean:105:0: 'FiniteSelection.exists_avoid_bad' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteSelection.lean:106:0: 'FiniteSelection.tail_mass_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteSelection.lean:107:0: 'FiniteSelection.exists_simultaneous_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteSelection.lean:108:0: 'FiniteSelection.exists_simultaneous_large' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1728/1899] Replayed IndependentThinning
 info: IndependentThinning.lean:149:0: 'IndependentThinning.coinWeight_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: IndependentThinning.lean:150:0: 'IndependentThinning.sum_coinWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: IndependentThinning.lean:151:0: 'IndependentThinning.prob_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -108,62 +154,15 @@ info: IndependentThinning.lean:154:0: 'IndependentThinning.abs_signedValue_le_on
 info: IndependentThinning.lean:155:0: 'IndependentThinning.mean_signedValue' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: IndependentThinning.lean:156:0: 'IndependentThinning.disjoint_cross_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: IndependentThinning.lean:157:0: 'IndependentThinning.disjoint_covariance_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1733/1757] Built HuberCorrelation (8.3s)
-info: HuberCorrelation.lean:162:0: 'HuberCorrelation.central_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: HuberCorrelation.lean:163:0: 'HuberCorrelation.abs_boundedSlope_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: HuberCorrelation.lean:164:0: 'HuberCorrelation.flip_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: HuberCorrelation.lean:165:0: 'HuberCorrelation.exists_normalized_signed_correlations' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: HuberCorrelation.lean:166:0: 'HuberCorrelation.exists_simultaneous_correlation' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1734/1757] Built ConcreteRankAudit (8.3s)
-info: ConcreteRankAudit.lean:24:0: 'fullRankForActualPinnedLift' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1735/1757] Built CertifiedBarrier (9.4s)
-info: CertifiedBarrier.lean:83:0: 'CertifiedBarrier.exact_count_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: CertifiedBarrier.lean:84:0: 'CertifiedBarrier.modular_output_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: CertifiedBarrier.lean:85:0: 'CertifiedBarrier.reconstructed_output_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1736/1757] Built OverlappingRank (9.5s)
-info: OverlappingRank.lean:150:0: 'OverlappingRank.ViewTerm.rank_le_conditioned' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: OverlappingRank.lean:151:0: 'OverlappingRank.ViewTerm.deficit_le' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: OverlappingRank.lean:152:0: 'OverlappingRank.ViewTerm.rank_le_deficit' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: OverlappingRank.lean:153:0: 'OverlappingRank.overlap_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: OverlappingRank.lean:154:0: 'OverlappingRank.overlap_weighted' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: OverlappingRank.lean:155:0: 'OverlappingRank.overlap_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1737/1757] Built HuberEdgeCorrelation (6.8s)
-info: HuberEdgeCorrelation.lean:165:0: 'HuberEdgeCorrelation.four_mul_outside_mass_le' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: HuberEdgeCorrelation.lean:166:0: 'HuberEdgeCorrelation.central_energy_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: HuberEdgeCorrelation.lean:167:0: 'HuberEdgeCorrelation.exists_signs_for_central_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: HuberEdgeCorrelation.lean:168:0: 'HuberEdgeCorrelation.exists_simultaneous_edge_correlation' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: HuberEdgeCorrelation.lean:169:0: 'HuberEdgeCorrelation.exists_edge_correlation_of_doubled_bound' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-ℹ [1738/1757] Built GuardedBarrier (7.1s)
-info: GuardedBarrier.lean:223:0: 'GuardedBarrier.GuardedTerm.masked_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: GuardedBarrier.lean:224:0: 'GuardedBarrier.guarded_matrix_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: GuardedBarrier.lean:225:0: 'GuardedBarrier.adaptive_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: GuardedBarrier.lean:226:0: 'GuardedBarrier.QueryTree.path_all_iff' depends on axioms: [propext]
-info: GuardedBarrier.lean:227:0: 'GuardedBarrier.QueryTree.card_leaf_le' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: GuardedBarrier.lean:228:0: 'GuardedBarrier.LocalTest.attach_passes' depends on axioms: [propext, Quot.sound]
-info: GuardedBarrier.lean:229:0: 'GuardedBarrier.tree_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1739/1757] Built GraphCutMoments (6.9s)
-info: GraphCutMoments.lean:203:0: 'GraphCutMoments.weighted_incidence' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: GraphCutMoments.lean:204:0: 'GraphCutMoments.sum_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: GraphCutMoments.lean:205:0: 'GraphCutMoments.regular_edge_count' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: GraphCutMoments.lean:206:0: 'GraphCutMoments.cut_energy_eq_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: GraphCutMoments.lean:207:0: 'GraphCutMoments.abs_cutDifference_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: GraphCutMoments.lean:208:0: 'GraphCutMoments.edge_energy_le' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: GraphCutMoments.lean:209:0: 'GraphCutMoments.regular_mean_energy_le' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: GraphCutMoments.lean:210:0: 'GraphCutMoments.cubic_mean_energy_le' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: GraphCutMoments.lean:211:0: 'GraphCutMoments.cubic_signed_edge_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: GraphCutMoments.lean:212:0: 'GraphCutMoments.cubic_cut_correlations' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: GraphCutMoments.lean:213:0: 'GraphCutMoments.cubic_expander_cut_correlations' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1740/1757] Built EmpiricalCutMoments (7.2s)
-info: EmpiricalCutMoments.lean:105:0: 'EmpiricalCutMoments.empiricalLaw_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: EmpiricalCutMoments.lean:106:0: 'EmpiricalCutMoments.empirical_expectation' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: EmpiricalCutMoments.lean:107:0: 'EmpiricalCutMoments.sum_empiricalLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: EmpiricalCutMoments.lean:108:0: 'EmpiricalCutMoments.labelCut_bit' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: EmpiricalCutMoments.lean:109:0: 'EmpiricalCutMoments.empirical_cut_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: EmpiricalCutMoments.lean:110:0: 'EmpiricalCutMoments.vertex_signed_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: EmpiricalCutMoments.lean:111:0: 'EmpiricalCutMoments.cubic_expander_label_correlations' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1741/1757] Built MatchingThinning (7.3s)
+ℹ [1729/1899] Replayed LocalVariance
+info: LocalVariance.lean:171:0: 'LocalVariance.weighted_square_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LocalVariance.lean:172:0: 'LocalVariance.abs_mean_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LocalVariance.lean:173:0: 'LocalVariance.abs_covariance_le_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LocalVariance.lean:174:0: 'LocalVariance.bounded_dependency_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LocalVariance.lean:175:0: 'LocalVariance.covariance_means' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LocalVariance.lean:176:0: 'LocalVariance.variance_of_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LocalVariance.lean:177:0: 'LocalVariance.variance_of_disjoint_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1730/1899] Replayed MatchingThinning
 info: MatchingThinning.lean:161:0: 'MatchingThinning.mem_block_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: MatchingThinning.lean:162:0: 'MatchingThinning.self_mem_block' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: MatchingThinning.lean:163:0: 'MatchingThinning.keep_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -171,19 +170,7 @@ info: MatchingThinning.lean:164:0: 'MatchingThinning.keep_pattern_iff' depends o
 info: MatchingThinning.lean:165:0: 'MatchingThinning.retained_endpoints_separate' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: MatchingThinning.lean:166:0: 'MatchingThinning.matching' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: MatchingThinning.lean:167:0: 'MatchingThinning.signed_imbalance' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1742/1757] Built SourceDensity (7.1s)
-info: SourceDensity.lean:205:0: 'SourceDensity.numeric_cell_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: SourceDensity.lean:206:0: 'SourceDensity.port_cell_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: SourceDensity.lean:207:0: 'SourceDensity.fiberCount_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: SourceDensity.lean:208:0: 'SourceDensity.fiberCount_injection' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: SourceDensity.lean:209:0: 'SourceDensity.regular_projection_card' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: SourceDensity.lean:210:0: 'SourceDensity.projected_port_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: SourceDensity.lean:211:0: 'SourceDensity.pin_marginal_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: SourceDensity.lean:212:0: 'SourceDensity.pin_marginal_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: SourceDensity.lean:213:0: 'SourceDensity.coordinate_projection_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: SourceDensity.lean:214:0: 'SourceDensity.ordered_cell_projection_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: SourceDensity.lean:215:0: 'SourceDensity.source_pin_marginal_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1743/1757] Built ThinningBlockBounds (6.9s)
+ℹ [1731/1899] Replayed ThinningBlockBounds
 info: ThinningBlockBounds.lean:113:0: 'ThinningBlockBounds.star_card_le_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: ThinningBlockBounds.lean:114:0: 'ThinningBlockBounds.touching_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: ThinningBlockBounds.lean:115:0: 'ThinningBlockBounds.mem_touching_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -192,20 +179,7 @@ info: ThinningBlockBounds.lean:117:0: 'ThinningBlockBounds.block_card_le' depend
 info: ThinningBlockBounds.lean:118:0: 'ThinningBlockBounds.mem_block_symm' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: ThinningBlockBounds.lean:119:0: 'ThinningBlockBounds.overlapping_blocks_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: ThinningBlockBounds.lean:120:0: 'ThinningBlockBounds.overlapping_blocks_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1744/1757] Built BalancedUnion (7.2s)
-info: BalancedUnion.lean:149:0: 'BalancedUnion.exists_quarter_union' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: BalancedUnion.lean:150:0: 'BalancedUnion.union_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: BalancedUnion.lean:151:0: 'BalancedUnion.exists_balanced_vertex_union_of_law' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: BalancedUnion.lean:152:0: 'BalancedUnion.exists_balanced_vertex_union' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: BalancedUnion.lean:153:0: 'BalancedUnion.single_coordinate_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: BalancedUnion.lean:154:0: 'BalancedUnion.source_balanced_unions' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: BalancedUnion.lean:155:0: 'BalancedUnion.group_product_separates' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1745/1757] Built SourceCoordinates (7.1s)
-info: SourceCoordinates.lean:60:0: 'SourceCoordinates.card_cells_le_twice_ports' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: SourceCoordinates.lean:61:0: 'SourceCoordinates.paired_alphabet_lower' depends on axioms: [propext]
-info: SourceCoordinates.lean:62:0: 'SourceCoordinates.coordinate_count_le_log' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: SourceCoordinates.lean:63:0: 'SourceCoordinates.kept_card_le_log' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1746/1757] Built CommonMatchingSelection (7.8s)
+ℹ [1732/1899] Replayed CommonMatchingSelection
 info: CommonMatchingSelection.lean:174:0: 'CommonMatchingSelection.rate_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: CommonMatchingSelection.lean:175:0: 'CommonMatchingSelection.bias_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: CommonMatchingSelection.lean:176:0: 'CommonMatchingSelection.retention_bias' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -214,22 +188,38 @@ info: CommonMatchingSelection.lean:178:0: 'CommonMatchingSelection.signedValue_e
 info: CommonMatchingSelection.lean:179:0: 'CommonMatchingSelection.realized_imbalance' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: CommonMatchingSelection.lean:180:0: 'CommonMatchingSelection.select_common' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: CommonMatchingSelection.lean:181:0: 'CommonMatchingSelection.select_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1747/1757] Built GroupProducts (6.9s)
+ℹ [1733/1899] Replayed ConcreteRankAudit
+info: ConcreteRankAudit.lean:24:0: 'fullRankForActualPinnedLift' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1738/1899] Replayed S8Certificates
+warning: S8Certificates.lean:166:0: automatically included section variable(s) unused in theorem `S8.appendixD_certificate_of_moment`:
+  [Nonempty C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: S8Certificates.lean:174:0: 'S8.collision_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Certificates.lean:175:0: 'S8.mean_collision_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Certificates.lean:176:0: 'S8.exists_of_mean_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Certificates.lean:177:0: 'S8.cell_load_of_potential' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Certificates.lean:178:0: 'S8.main_certificates_of_moments' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Certificates.lean:179:0: 'S8.appendixD_certificate_of_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1739/1899] Replayed S8Primitive
+info: S8Primitive.lean:97:0: 'S8.restrictPrimitive_fst' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Primitive.lean:98:0: 'S8.mean_restrict_primitive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Primitive.lean:99:0: 'S8.primitive_agreement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Primitive.lean:100:0: 'S8.primitive_collision_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1740/1899] Replayed GroupProducts
 info: GroupProducts.lean:83:0: 'GroupProducts.GroupTerm.toVertexTerm_side' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: GroupProducts.lean:84:0: 'GroupProducts.GroupTerm.toVertexTerm_value' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: GroupProducts.lean:85:0: 'GroupProducts.sum_toVertexTerm_values' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: GroupProducts.lean:86:0: 'GroupProducts.source_balanced_views' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1748/1757] Built ExpanderBarrier (8.0s)
+ℹ [1741/1899] Replayed ExpanderBarrier
 info: ExpanderBarrier.lean:163:0: 'ExpanderBarrier.margin_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: ExpanderBarrier.lean:164:0: 'ExpanderBarrier.common_matching' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: ExpanderBarrier.lean:165:0: 'ExpanderBarrier.exact_count_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: ExpanderBarrier.lean:166:0: 'ExpanderBarrier.modular_output_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: ExpanderBarrier.lean:167:0: 'ExpanderBarrier.reconstructed_output_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1749/1757] Built SourceBarrier (8.4s)
-info: SourceBarrier.lean:115:0: 'SourceBarrier.Geometry.toLabelGeometry' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: SourceBarrier.lean:116:0: 'SourceBarrier.modular_output_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: SourceBarrier.lean:117:0: 'SourceBarrier.reconstructed_output_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1750/1757] Built FiniteGrowth (8.5s)
+ℹ [1748/1899] Replayed FiniteGrowth
 info: FiniteGrowth.lean:169:0: 'FiniteGrowth.floor_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: FiniteGrowth.lean:170:0: 'FiniteGrowth.cubic_budget_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: FiniteGrowth.lean:171:0: 'FiniteGrowth.threshold_of_linear_caps' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -241,7 +231,7 @@ info: FiniteGrowth.lean:176:0: 'FiniteGrowth.selection_budget_iff' depends on ax
 info: FiniteGrowth.lean:177:0: 'FiniteGrowth.margin_ge_two_of_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: FiniteGrowth.lean:178:0: 'FiniteGrowth.finite_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: FiniteGrowth.lean:179:0: 'FiniteGrowth.modular_growth_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1751/1757] Built LogarithmicBudget (7.6s)
+ℹ [1749/1899] Replayed LogarithmicBudget
 info: LogarithmicBudget.lean:142:0: 'LogarithmicBudget.cube_le_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: LogarithmicBudget.lean:143:0: 'LogarithmicBudget.quadratic_lt_of_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: LogarithmicBudget.lean:144:0: 'LogarithmicBudget.log_square_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -251,16 +241,573 @@ info: LogarithmicBudget.lean:147:0: 'LogarithmicBudget.source_root_coordinates_l
 info: LogarithmicBudget.lean:148:0: 'LogarithmicBudget.logarithmic_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: LogarithmicBudget.lean:149:0: 'LogarithmicBudget.squared_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: LogarithmicBudget.lean:150:0: 'LogarithmicBudget.logarithmic_modular_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1752/1757] Built FixedSchedule (7.7s)
+ℹ [1750/1899] Replayed MainIncidence
+info: MainIncidence.lean:267:0: 'MainIncidence.project_marked_incidence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainIncidence.lean:268:0: 'MainIncidence.factor_word_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainIncidence.lean:269:0: 'MainIncidence.factor_symbol_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainIncidence.lean:270:0: 'MainIncidence.Layout.density' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainIncidence.lean:271:0: 'MainIncidence.Layout.balanced' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainIncidence.lean:272:0: 'MainIncidence.scale_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainIncidence.lean:273:0: 'MainIncidence.Layout.geometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainIncidence.lean:274:0: 'MainIncidence.main_modular_cut_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainIncidence.lean:275:0: 'MainIncidence.main_modular_group_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainIncidence.lean:276:0: 'MainIncidence.cloned_port_budget' depends on axioms: [propext, Quot.sound]
+ℹ [1751/1899] Replayed MainClonedCNF
+info: MainClonedCNF.lean:211:0: 'MainClonedCNF.cycle_sat' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainClonedCNF.lean:212:0: 'MainClonedCNF.sat_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainClonedCNF.lean:213:0: 'MainClonedCNF.modelCount_cloned' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainClonedCNF.lean:214:0: 'MainClonedCNF.endpoint_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainClonedCNF.lean:215:0: 'MainClonedCNF.port_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainClonedCNF.lean:216:0: 'MainClonedCNF.literalCount_eq_ports' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainClonedCNF.lean:217:0: 'MainClonedCNF.direct_cloned_group_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1752/1899] Replayed S8Triangle
+warning: S8Triangle.lean:39:0: automatically included section variable(s) unused in theorem `S8.Triangle.endpoint_injective`:
+  [Fintype U]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype U] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S8Triangle.lean:155:5: unused variable `loopless`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: S8Triangle.lean:193:0: 'S8.Triangle.graph_loopless' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Triangle.lean:194:0: 'S8.Triangle.internal_tie' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Triangle.lean:195:0: 'S8.Triangle.exterior_tie' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Triangle.lean:196:0: 'S8.Triangle.endpoint_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Triangle.lean:197:0: 'S8.Triangle.endpoint_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Triangle.lean:198:0: 'S8.Triangle.exterior_disjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Triangle.lean:199:0: 'S8.Triangle.exterior_perfect' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Triangle.lean:200:0: 'S8.Triangle.internal_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Triangle.lean:201:0: 'S8.Triangle.graph_cubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1753/1899] Replayed S8CrossRoute
+warning: S8CrossRoute.lean:62:0: automatically included section variable(s) unused in theorem `S8.route_product`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S8CrossRoute.lean:91:0: automatically included section variable(s) unused in theorem `S8.indexedWork_eq`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: S8CrossRoute.lean:119:0: 'S8.pinned_count_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8CrossRoute.lean:120:0: 'S8.route_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8CrossRoute.lean:121:0: 'S8.cross_route_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8CrossRoute.lean:122:0: 'S8.scan_work' does not depend on any axioms
+info: S8CrossRoute.lean:123:0: 'S8.indexedWork_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8CrossRoute.lean:124:0: 'S8.cross_route_indexed_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1754/1899] Replayed S8Placement
+warning: S8Placement.lean:66:8: automatically included section variable(s) unused in theorem `S8.main_pin_tied`:
+  [Fintype V]
+  [Fintype I]
+  [Fintype A]
+  [DecidableEq A]
+  [Nonempty A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype I] [Fintype A] [DecidableEq A] [Nonempty A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S8Placement.lean:72:8: automatically included section variable(s) unused in theorem `S8.appendix_pin_tied`:
+  [Fintype V]
+  [Fintype I]
+  [Fintype A]
+  [DecidableEq A]
+  [Nonempty A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype I] [Fintype A] [DecidableEq A] [Nonempty A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: S8Placement.lean:123:0: 'S8.wire_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Placement.lean:124:0: 'S8.main_pin_tied' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Placement.lean:125:0: 'S8.appendix_pin_tied' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Placement.lean:126:0: 'S8.main_pin_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Placement.lean:127:0: 'S8.appendix_pin_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1755/1899] Replayed S8PlacementSampling
+info: S8PlacementSampling.lean:98:0: 'S8.collision_equiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8PlacementSampling.lean:99:0: 'S8.mean_words' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8PlacementSampling.lean:100:0: 'S8.uniform_variable_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1756/1899] Replayed S8PortDegrees
+warning: S8PortDegrees.lean:71:18: Try `simp at h` instead of `simpa using h`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: S8PortDegrees.lean:82:18: Try `simp at h` instead of `simpa using h`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: S8PortDegrees.lean:75:44: This simp argument is unused:
+  Sum.inr.injEq
+
+Hint: Omit it from the simp argument list.
+  simp only [Finset.mem_coe, Finset.mem_filter, Finset.mem_univ, true_and, wireOld,
+  ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲Bool.false_eq_true, if_false, if_true, Sum.inl.injEq, S̵u̵m̵.̵i̵n̵r̵.̵i̵n̵j̵E̵q̵,̵ ̵reduceCtorEq,
+  ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲Prod.mk.injEq] at hp hq h ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: S8PortDegrees.lean:86:29: This simp argument is unused:
+  Sum.inl.injEq
+
+Hint: Omit it from the simp argument list.
+  simp only [Finset.mem_coe, Finset.mem_filter, Finset.mem_univ, true_and, wireOld,
+  ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲Bool.false_eq_true, if_false, if_true, S̵u̵m̵.̵i̵n̵l̵.̵i̵n̵j̵E̵q̵,̵ ̵Sum.inr.injEq, reduceCtorEq,
+  ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲Prod.mk.injEq] at hp hq h ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: S8PortDegrees.lean:75:101: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: S8PortDegrees.lean:86:101: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: S8PortDegrees.lean:100:0: 'S8.clauseDegree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8PortDegrees.lean:101:0: 'S8.cloneDegree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8PortDegrees.lean:102:0: 'S8.wireOldDegree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8PortDegrees.lean:103:0: 'S8.subdivDegree' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1757/1899] Replayed S8Conflicts
+info: S8Conflicts.lean:105:0: 'S8.conflict_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Conflicts.lean:106:0: 'S8.separate_sites' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1758/1899] Replayed S8PinConflicts
+warning: S8PinConflicts.lean:28:0: automatically included section variable(s) unused in theorem `S8.pinNeighbors_mem`:
+  [Fintype W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: S8PinConflicts.lean:51:0: 'S8.pinNeighbors_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8PinConflicts.lean:52:0: 'S8.pinNeighbors_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1759/1899] Replayed S8CertifiedPlacement
+warning: S8CertifiedPlacement.lean:25:0: automatically included section variable(s) unused in theorem `S8.port_is_pin`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S8CertifiedPlacement.lean:71:8: automatically included section variable(s) unused in theorem `S8.sampleMain_pin`:
+  [Fintype V]
+  [Nonempty V]
+  [Fintype G]
+  [DecidableEq G]
+  [Fintype I]
+  [Nonempty I]
+  [Fintype A]
+  [DecidableEq A]
+  [Nonempty A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype
+  V] [Nonempty
+  V] [Fintype G] [DecidableEq G] [Fintype I] [Nonempty I] [Fintype A] [DecidableEq A] [Nonempty A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S8CertifiedPlacement.lean:77:8: automatically included section variable(s) unused in theorem `S8.sampleD_pin`:
+  [Fintype V]
+  [Nonempty V]
+  [Fintype G]
+  [DecidableEq G]
+  [Fintype I]
+  [Nonempty I]
+  [Fintype A]
+  [DecidableEq A]
+  [Nonempty A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype
+  V] [Nonempty
+  V] [Fintype G] [DecidableEq G] [Fintype I] [Nonempty I] [Fintype A] [DecidableEq A] [Nonempty A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S8CertifiedPlacement.lean:83:0: automatically included section variable(s) unused in theorem `S8.main_collision_moment`:
+  [Nonempty V]
+  [Nonempty I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty V] [Nonempty I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S8CertifiedPlacement.lean:104:28: 'push_cast at ⊢' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: S8CertifiedPlacement.lean:106:0: automatically included section variable(s) unused in theorem `S8.appendix_collision_moment`:
+  [Nonempty V]
+  [Nonempty I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty V] [Nonempty I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: S8CertifiedPlacement.lean:186:0: 'S8.sampleMain_pin' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8CertifiedPlacement.lean:187:0: 'S8.sampleD_pin' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8CertifiedPlacement.lean:188:0: 'S8.main_collision_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8CertifiedPlacement.lean:189:0: 'S8.appendix_collision_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8CertifiedPlacement.lean:190:0: 'S8.exists_main_placement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8CertifiedPlacement.lean:191:0: 'S8.exists_appendix_placement' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1760/1899] Replayed S8Simple
+info: S8Simple.lean:52:0: 'S8.Triangle.graph_no_reverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1761/1899] Replayed S8DoubleSampling
+warning: S8DoubleSampling.lean:102:0: automatically included section variable(s) unused in theorem `S8.multi_separate_sites`:
+  [Fintype X]
+  [Fintype Y]
+  [Fintype LX]
+  [DecidableEq LX]
+  [Fintype LY]
+  [DecidableEq LY]
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [Fintype Y] [Fintype LX] [DecidableEq LX] [Fintype LY] [DecidableEq LY] [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S8DoubleSampling.lean:139:0: automatically included section variable(s) unused in theorem `S8.multi_mean_words`:
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: S8DoubleSampling.lean:155:0: 'S8.pinNeighbors_characterize' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DoubleSampling.lean:156:0: 'S8.doubleNeighbors_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DoubleSampling.lean:157:0: 'S8.multi_separate_sites' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DoubleSampling.lean:158:0: 'S8.multi_mean_words' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1762/1899] Replayed RootIncidence
+warning: RootIncidence.lean:97:4: 'all_goals
+  try
+    (solve
+      |
+        cases s <;> cases t <;>
+            simp_all only [Bool.false_eq_true, if_false, if_true, Fin.isValue, and_true, and_false, Nat.reduceEq] <;>
+          omega)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RootIncidence.lean:98:67: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RootIncidence.lean:112:0: automatically included section variable(s) unused in theorem `S8.Uncloned.pin_wire_iff`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: RootIncidence.lean:135:0: automatically included section variable(s) unused in theorem `S8.Uncloned.accepts_iff`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: RootIncidence.lean:184:0: 'S8.Uncloned.old_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootIncidence.lean:185:0: 'S8.Uncloned.wire_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootIncidence.lean:186:0: 'S8.Uncloned.pin_wire_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootIncidence.lean:187:0: 'S8.Uncloned.accepts_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootIncidence.lean:188:0: 'S8.Uncloned.countUncloned' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3131/3271] Replayed S11Schedule
+warning: S11Schedule.lean:42:2: exponent 131071 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+info: S11Schedule.lean:220:0: 'S11.root_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Schedule.lean:221:0: 'S11.positive_root_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Schedule.lean:222:0: 'S11.one_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Schedule.lean:223:0: 'S11.odd_precision_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Schedule.lean:224:0: 'S11.mem_tuples' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Schedule.lean:225:0: 'S11.foldTuples_eq' depends on axioms: [propext, Quot.sound]
+info: S11Schedule.lean:226:0: 'S11.runBatch_trace' depends on axioms: [propext]
+info: S11Schedule.lean:227:0: 'S11.runBatch_value' depends on axioms: [propext]
+info: S11Schedule.lean:228:0: 'S11.batch_le_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3132/3271] Replayed S11Modes
+warning: S11Modes.lean:166:30: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: S11Modes.lean:267:0: 'S11.Packing.mixed_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Modes.lean:268:0: 'S11.Packing.mixed_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Modes.lean:269:0: 'S11.small_modes_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Modes.lean:270:0: 'S11.lowWeights_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Modes.lean:271:0: 'S11.lowWeights_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3133/3271] Replayed S11Wires
+warning: S11Wires.lean:102:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+info: S11Wires.lean:175:0: 'S11.subdivisionEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Wires.lean:176:0: 'S11.contraction_eq_modelCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Wires.lean:177:0: 'S11.wire_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Wires.lean:178:0: 'S11.every_clone_occurs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Wires.lean:179:0: 'S11.cloned_wire_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Wires.lean:180:0: 'S11.cloned_contraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Wires.lean:181:0: 'S11.cloned_dimensions' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Wires.lean:182:0: 'S11.cloned_dispatch' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3134/3271] Replayed S11Literal
+info: S11Literal.lean:194:0: 'S11.sourceBatch_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Literal.lean:195:0: 'S11.sourceTrace_eq_slots' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Literal.lean:196:0: 'S11.slot_charge' depends on axioms: [propext, Quot.sound]
+info: S11Literal.lean:197:0: 'S11.odd_root_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Literal.lean:198:0: 'S11.cloned_root_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Literal.lean:199:0: 'S11.cloned_branch_reached' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Literal.lean:200:0: 'S11.cloned_literal_root_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Literal.lean:201:0: 'S11.edgeScan_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3135/3271] Replayed RootEntry
+info: RootEntry.lean:283:0: @dispatch_pinned : ∀ {V : Type u_2} [inst : Fintype V] [inst_1 : DecidableEq V] (E : Finset (V × V)),
+  (∀ (v : V), degree E v = 3) → ∀ (σ : V → Bool), 20 ≤ n → dispatch (PinnedCNF.formula E σ) = Dispatch.sparse
+info: RootEntry.lean:284:0: @literalAt : ∀ {V : Type u_2} [Fintype V] [DecidableEq V] (E : Finset (V × V)) (σ : V → Bool) (p : Incidence E),
+  (clause E σ (portClause E p))[portIndex E p]? = some (portLiteral E σ p)
+info: RootEntry.lean:285:0: @row : {V : Type u_2} →
+  [inst : DecidableEq V] → (E : Finset (V × V)) → (∀ (v : V), degree E v = 3) → Wire E → OldVertex E
+info: RootEntry.lean:286:0: @column : {V : Type u_2} → (E : Finset (V × V)) → Wire E → OriginalEdge E
+info: RootEntry.lean:287:0: @dimensions : ∀ {V : Type u_2} [inst : Fintype V] [inst_1 : DecidableEq V] (E : Finset (V × V)),
+  (∀ (v : V), degree E v = 3) → 2 * m E = 5 * n ∧ 2 * size E = 7 * n
+info: RootEntry.lean:288:0: @wire_count : ∀ {V : Type u_2} [inst : Fintype V] [inst_1 : DecidableEq V] (E : Finset (V × V)),
+  (∀ (v : V), degree E v = 3) → Fintype.card (Wire E) = 10 * n
+info: RootEntry.lean:289:0: @root_active : ∀ {V : Type u_2} [inst : Fintype V] [inst_1 : DecidableEq V] (E : Finset (V × V)),
+  (∀ (v : V), degree E v = 3) → 16 < n → S11.leafThreshold (size E) < Fintype.card (Wire E)
+info: RootEntry.lean:290:0: 'RootSeparation.Entry.simpleNormalize_pinned' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootEntry.lean:291:0: 'RootSeparation.Entry.allPositive_after_subsumption' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootEntry.lean:292:0: 'RootSeparation.Entry.dispatch_pinned' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootEntry.lean:293:0: 'RootSeparation.Entry.literalAt' depends on axioms: [propext, Quot.sound]
+info: RootEntry.lean:294:0: 'RootSeparation.Entry.clause_nodup_vars' depends on axioms: [propext, Quot.sound]
+info: RootEntry.lean:295:0: 'RootSeparation.Entry.clause_distinct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootEntry.lean:296:0: 'RootSeparation.Entry.no_trivial_clause' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootEntry.lean:297:0: 'RootSeparation.Entry.survives_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootEntry.lean:298:0: 'RootSeparation.Entry.allPositive_subsumption' depends on axioms: [propext, Quot.sound]
+info: RootEntry.lean:299:0: 'RootSeparation.Entry.slot_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootEntry.lean:300:0: 'RootSeparation.Entry.row_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootEntry.lean:301:0: 'RootSeparation.Entry.col_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootEntry.lean:302:0: 'RootSeparation.Entry.wire_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootEntry.lean:303:0: 'RootSeparation.Entry.network_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootEntry.lean:304:0: 'RootSeparation.Entry.sparse_dispatch' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootEntry.lean:305:0: 'RootSeparation.Entry.root_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3136/3271] Replayed S8DPadding
+warning: S8DPadding.lean:31:50: unused variable `hL`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: S8DPadding.lean:97:0: 'S8.symbol_port_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DPadding.lean:98:0: 'S8.padded_load_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DPadding.lean:99:0: 'S8.padded_load_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DPadding.lean:100:0: 'S8.packet_count_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3137/3271] Replayed S8DPacketSlots
+info: S8DPacketSlots.lean:123:0: 'S8.embed_wires_into_packets' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DPacketSlots.lean:124:0: 'S8.slot_pattern' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DPacketSlots.lean:125:0: 'S8.cell_by_bits' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DPacketSlots.lean:126:0: 'S8.embed_cell_into_packet_slots' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3138/3271] Replayed S8DPacketCount
+warning: S8DPacketCount.lean:16:8: automatically included section variable(s) unused in theorem `_private.S8DPacketCount.0.S8.sorted_orientation`:
+  [Fintype I]
+  [DecidableEq I]
+  [Fintype A]
+  [Nonempty A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] [DecidableEq I] [Fintype A] [Nonempty A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: S8DPacketCount.lean:98:0: 'S8.certified_root_packets' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DPacketCount.lean:99:0: 'S8.patternEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DPacketCount.lean:100:0: 'S8.packet_volume' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3139/3271] Replayed S8Prefix
+info: S8Prefix.lean:133:0: 'S8.Prefix.conditional_cons' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Prefix.lean:134:0: 'S8.Prefix.best_le_member' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Prefix.lean:135:0: 'S8.Prefix.solve_le_conditional' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3140/3271] Replayed S8Preprocessing
+info: S8Preprocessing.lean:43:0: 'S8.agreementSupport_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Preprocessing.lean:44:0: 'S8.support_preserves_agreement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8Preprocessing.lean:45:0: 'S8.support_enumeration_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3141/3271] Replayed S8PrefixScore
+warning: S8PrefixScore.lean:25:0: automatically included section variable(s) unused in theorem `S8.Prefix.Test.ones_le`:
+  [Fintype P]
+  [Nonempty A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype P] [Nonempty A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S8PrefixScore.lean:29:22: This simp argument is unused:
+  Fintype.card_fun
+
+Hint: Omit it from the simp argument list.
+  simp ̵[̵F̵i̵n̵t̵y̵p̵e̵.̵c̵a̵r̵d̵_̵f̵u̵n̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: S8PrefixScore.lean:77:49: This simp argument is unused:
+  Finset.sum_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [conditional, rawScore, uniformMean, F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵m̵u̵l̵,̵ ̵Finset.mul_sum, score, Nat.cast_sum,
+  ̲  ̲ ̲ ̲Nat.cast_mul] at m ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: S8PrefixScore.lean:115:0: automatically included section variable(s) unused in theorem `S8.Prefix.agreement_indicator`:
+  [Fintype P]
+  [Fintype A]
+  [Nonempty A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype P] [Fintype A] [Nonempty A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S8PrefixScore.lean:121:0: automatically included section variable(s) unused in theorem `S8.Prefix.agreement_width`:
+  [Fintype P]
+  [Fintype A]
+  [Nonempty A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype P] [Fintype A] [Nonempty A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: S8PrefixScore.lean:130:0: 'S8.Prefix.Test.conditional_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8PrefixScore.lean:131:0: 'S8.Prefix.score_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8PrefixScore.lean:132:0: 'S8.Prefix.solve_score_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8PrefixScore.lean:133:0: 'S8.Prefix.agreement_indicator' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8PrefixScore.lean:134:0: 'S8.Prefix.agreement_width' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3142/3271] Replayed S8DeterministicPlacement
+warning: S8DeterministicPlacement.lean:21:0: automatically included section variable(s) unused in theorem `S8.Prefix.conditional_all`:
+  [DecidableEq A]
+  [Nonempty A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] [Nonempty A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S8DeterministicPlacement.lean:28:0: automatically included section variable(s) unused in theorem `S8.Prefix.mean_add_const`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: S8DeterministicPlacement.lean:128:0: 'S8.Prefix.collisionSolve_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DeterministicPlacement.lean:129:0: 'S8.Prefix.main_eq_joint' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DeterministicPlacement.lean:130:0: 'S8.Prefix.mainSolve_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3143/3271] Replayed RootPacking
+warning: RootPacking.lean:143:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+info: RootPacking.lean:201:0: 'RootSeparation.selected_collision' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootPacking.lean:202:0: 'RootSeparation.exact_packets' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootPacking.lean:203:0: 'RootSeparation.packet_group_quota' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3144/3271] Replayed RootParameters
+warning: RootParameters.lean:53:8: unused variable `a`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: RootParameters.lean:154:0: 'RootSeparation.root_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootParameters.lean:155:0: 'RootSeparation.root_numeric' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootParameters.lean:156:0: 'RootSeparation.cell_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3145/3271] Replayed RootLayout
+warning: RootLayout.lean:29:35: exponent 131071 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+warning: RootLayout.lean:28:0: automatically included section variable(s) unused in theorem `RootSeparation.bigRoot_n`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: RootLayout.lean:36:53: exponent 131071 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+warning: RootLayout.lean:33:0: automatically included section variable(s) unused in theorem `RootSeparation.root_lambda`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: RootLayout.lean:125:0: 'RootSeparation.root_certified' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootLayout.lean:126:0: 'RootSeparation.exponent_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3146/3271] Replayed RootGraphs
+info: RootGraphs.lean:59:0: 'RootSeparation.cliques_simple' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootGraphs.lean:60:0: 'RootSeparation.cliques_cubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootGraphs.lean:61:0: 'RootSeparation.cliques_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3147/3271] Replayed S11Upper
+info: S11Upper.lean:86:0: 'S11.tuple_generating_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3148/3271] Replayed S11Partition
+info: S11Partition.lean:176:0: 'S11.mode_exp_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Partition.lean:177:0: 'S11.depth_product_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Partition.lean:178:0: 'S11.log_partition_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Partition.lean:179:0: 'S11.mode_partition_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3149/3271] Replayed S11DFSWork
+info: S11DFSWork.lean:158:0: 'S11.countedFold_erase' depends on axioms: [propext]
+info: S11DFSWork.lean:159:0: 'S11.countedFold_visits' depends on axioms: [propext, Quot.sound]
+info: S11DFSWork.lean:160:0: 'S11.prefixVisits_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11DFSWork.lean:161:0: 'S11.address_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11DFSWork.lean:162:0: 'S11.layer_size_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3150/3271] Replayed S11TraceCore
+info: S11TraceCore.lean:126:0: 'S11.addWord_count' depends on axioms: [propext]
+info: S11TraceCore.lean:127:0: 'S11.addWord_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11TraceCore.lean:128:0: 'S11.sourceTrace_covers' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11TraceCore.lean:129:0: 'S11.sourceTrace_mem_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11TraceCore.lean:130:0: 'S11.accumulatorBitWork_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11TraceCore.lean:131:0: 'S11.literal_root_bits' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3151/3271] Replayed S11Probes
+info: S11Probes.lean:63:0: 'S11.center_reached' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Probes.lean:64:0: 'S11.binaryProbe_injective' depends on axioms: [propext]
+info: S11Probes.lean:65:0: 'S11.root_probe_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3152/3271] Replayed HermiteJetTransport
+info: HermiteJetTransport.lean:326:0: 'HermiteJetTransport.zero_of_all_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HermiteJetTransport.lean:327:0: 'HermiteJetTransport.hermiteEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HermiteJetTransport.lean:328:0: 'HermiteJetTransport.localCoeffEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HermiteJetTransport.lean:329:0: 'HermiteJetTransport.decode_jet_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HermiteJetTransport.lean:330:0: 'HermiteJetTransport.jet_image_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HermiteJetTransport.lean:331:0: 'HermiteJetTransport.actual_image_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HermiteJetTransport.lean:332:0: 'HermiteJetTransport.jet_factor_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HermiteJetTransport.lean:333:0: 'HermiteJetTransport.nonuniform_degree_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HermiteJetTransport.lean:334:0: 'HermiteJetTransport.regular_of_anchor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HermiteJetTransport.lean:335:0: 'HermiteJetTransport.weighted_jet_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3154/3271] Replayed S11Interpolation
+info: S11Interpolation.lean:130:0: 'S11.probeDecoder_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Interpolation.lean:131:0: 'S11.weighted_probes' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Interpolation.lean:132:0: 'S11.lagrange_basis_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Interpolation.lean:133:0: 'S11.decoder_congruence' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3155/3271] Replayed S11Lift
+info: S11Lift.lean:67:0: 'S11.lift_group_local' depends on axioms: [Quot.sound]
+info: S11Lift.lean:68:0: 'S11.lift_batch_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Lift.lean:69:0: 'S11.lift_batch_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Lift.lean:70:0: 'S11.tapered_loss_fits' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3156/3271] Replayed RootProgram
+info: RootProgram.lean:138:0: @pinned_literal_program_lower : ∀ {V : Type u_2} [inst : Fintype V] [inst_1 : DecidableEq V] (E : Finset (V × V))
+  {O : Type u_3} [inst_2 : CommRing O],
+  Simple E →
+    ∀ (reg : ∀ (v : V), degree E v = 3) (σ : V → Bool) (K : ℕ) (child : NativeChild E O) (acc term : Slot → ℕ)
+      (otherWork : ℕ),
+      max (2 ^ 131071) K < n → 2 ^ (↑n / (2 * √(Real.logb 2 ↑n))) ≤ ↑(runBitWork E reg σ K child acc term otherWork)
+info: RootProgram.lean:139:0: @chosenPacking_spec : ∀ {V : Type u_2} [inst : Fintype V] [inst_1 : DecidableEq V] (E : Finset (V × V))
+  (reg : ∀ (v : V), degree E v = 3) (hn : bigRoot n),
+  (chosenPacking E reg hn).cell = rootCell E reg ∧
+    CollisionCertificate (chosenPacking E reg hn).cell ↑(degreeEnvelope (size E)) ∧
+      Fintype.card (RootPackets E reg) * rootL E ≤ 3 * rootM E
+info: RootProgram.lean:140:0: @runEvents_active : ∀ {V : Type u_2} [inst : Fintype V] [inst_1 : DecidableEq V] (E : Finset (V × V)) {O : Type u_3}
+  [inst_2 : CommRing O],
+  Simple E →
+    ∀ (reg : ∀ (v : V), degree E v = 3) (σ : V → Bool) (K : ℕ) (child : NativeChild E O) (hn : bigRoot n),
+      K < size E →
+        runEvents E reg σ K child =
+          sourceTrace (chosenPacking E reg hn).mixedAt (rootM E) (rootL E) (rootA E) (rootU E) initialPrecision child
+info: RootProgram.lean:141:0: 'RootSeparation.chosenPacking_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootProgram.lean:142:0: 'RootSeparation.chosenPacking_group_quota' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootProgram.lean:143:0: 'RootSeparation.probe' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootProgram.lean:144:0: 'RootSeparation.runEvents_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootProgram.lean:145:0: 'RootSeparation.runEvents_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootProgram.lean:146:0: 'RootSeparation.pinned_finite_work' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootProgram.lean:147:0: 'RootSeparation.pinned_literal_program_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3157/3271] Replayed CutoffExample
+info: CutoffExample.lean:27:0: 'FourthPaperReview.source_parameter_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3158/3271] Replayed SourceBarrier
+info: SourceBarrier.lean:115:0: 'SourceBarrier.Geometry.toLabelGeometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SourceBarrier.lean:116:0: 'SourceBarrier.modular_output_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SourceBarrier.lean:117:0: 'SourceBarrier.reconstructed_output_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3159/3271] Replayed FixedSchedule
 info: FixedSchedule.lean:97:0: 'FixedSchedule.card_le_trace_length' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: FixedSchedule.lean:98:0: 'FixedSchedule.card_le_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: FixedSchedule.lean:99:0: 'FixedSchedule.source_output_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: FixedSchedule.lean:100:0: 'FixedSchedule.source_growth_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1753/1757] Built PowerCost (7.0s)
-info: PowerCost.lean:71:0: 'PowerCost.exponent_exceeds_log' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: PowerCost.lean:72:0: 'PowerCost.polynomial_lt_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: PowerCost.lean:73:0: 'PowerCost.polynomial_lt_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1754/1757] Built MenuBounds (8.1s)
+ℹ [3160/3271] Replayed FourthPaperReview
+info: FourthPaperReview.lean:47:0: 'FourthPaperReview.callbacks_have_identical_visits' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FourthPaperReview.lean:48:0: 'FourthPaperReview.operand_values_do_not_enter_charge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FourthPaperReview.lean:49:0: 'FourthPaperReview.exponential_root_visits' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3161/3271] Replayed FullGroupBarrier
+info: FullGroupBarrier.lean:173:0: 'FullGroupBarrier.scale_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FullGroupBarrier.lean:174:0: 'FullGroupBarrier.Layout.toGeometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FullGroupBarrier.lean:175:0: 'FullGroupBarrier.logarithmic_modular_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FullGroupBarrier.lean:176:0: 'FullGroupBarrier.logarithmic_materialization_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FullGroupBarrier.lean:177:0: 'FullGroupBarrier.published_coordinate_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3162/3271] Replayed OverlappingRank
+info: OverlappingRank.lean:150:0: 'OverlappingRank.ViewTerm.rank_le_conditioned' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OverlappingRank.lean:151:0: 'OverlappingRank.ViewTerm.deficit_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OverlappingRank.lean:152:0: 'OverlappingRank.ViewTerm.rank_le_deficit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OverlappingRank.lean:153:0: 'OverlappingRank.overlap_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OverlappingRank.lean:154:0: 'OverlappingRank.overlap_weighted' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OverlappingRank.lean:155:0: 'OverlappingRank.overlap_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3163/3271] Replayed GuardedBarrier
+info: GuardedBarrier.lean:223:0: 'GuardedBarrier.GuardedTerm.masked_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GuardedBarrier.lean:224:0: 'GuardedBarrier.guarded_matrix_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GuardedBarrier.lean:225:0: 'GuardedBarrier.adaptive_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GuardedBarrier.lean:226:0: 'GuardedBarrier.QueryTree.path_all_iff' depends on axioms: [propext]
+info: GuardedBarrier.lean:227:0: 'GuardedBarrier.QueryTree.card_leaf_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GuardedBarrier.lean:228:0: 'GuardedBarrier.LocalTest.attach_passes' depends on axioms: [propext, Quot.sound]
+info: GuardedBarrier.lean:229:0: 'GuardedBarrier.tree_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3164/3271] Replayed MatchingCore
+info: MatchingCore.lean:38:0: 'MatchingCore.or_left_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MatchingCore.lean:39:0: 'MatchingCore.or_right_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MatchingCore.lean:40:0: 'MatchingCore.or_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MatchingCore.lean:41:0: 'MatchingCore.flatten_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3165/3271] Replayed MenuBounds
 info: MenuBounds.lean:139:0: 'MenuBounds.menu_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: MenuBounds.lean:140:0: 'MenuBounds.coordinate_count_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: MenuBounds.lean:141:0: 'MenuBounds.sum_coordinate_squares_le' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -268,15 +815,733 @@ info: MenuBounds.lean:142:0: 'MenuBounds.countedScale_pos' depends on axioms: [p
 info: MenuBounds.lean:143:0: 'MenuBounds.countedScale_dominates' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: MenuBounds.lean:144:0: 'MenuBounds.countedScale_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: MenuBounds.lean:145:0: 'MenuBounds.source_distinct_menu_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1755/1757] Built FullGroupBarrier (8.9s)
-info: FullGroupBarrier.lean:173:0: 'FullGroupBarrier.scale_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: FullGroupBarrier.lean:174:0: 'FullGroupBarrier.Layout.toGeometry' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: FullGroupBarrier.lean:175:0: 'FullGroupBarrier.logarithmic_modular_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: FullGroupBarrier.lean:176:0: 'FullGroupBarrier.logarithmic_materialization_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: FullGroupBarrier.lean:177:0: 'FullGroupBarrier.published_coordinate_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1756/1757] Built RetunedLayout (7.6s)
+ℹ [3166/3271] Replayed NativeJetEvaluation
+info: NativeJetEvaluation.lean:39:0: 'NativeJetEvaluation.eval_eq_of_sub_dvd_X_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NativeJetEvaluation.lean:40:0: 'NativeJetEvaluation.eval_truncated_jet' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NativeJetEvaluation.lean:41:0: 'NativeJetEvaluation.nilpotent_power_for_precision' does not depend on any axioms
+info: NativeJetEvaluation.lean:42:0: 'NativeJetEvaluation.eval_truncated_at_precision' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3167/3271] Replayed PTThreshold
+info: PTThreshold.lean:166:0: 'RootSeparation.Preprocessing.active_depth_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTThreshold.lean:167:0: 'RootSeparation.Preprocessing.label_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTThreshold.lean:168:0: 'RootSeparation.Preprocessing.active_retained_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTThreshold.lean:169:0: 'RootSeparation.Preprocessing.active_retained_rpow' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3168/3271] Replayed PTAdmissibility
+warning: PTAdmissibility.lean:168:12: exponent 1000 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+info: PTAdmissibility.lean:170:0: 'RootSeparation.Preprocessing.active_numbers' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3169/3271] Replayed PTPreprocess
+info: PTPreprocess.lean:224:0: 'RootSeparation.Preprocessing.normalize_pinned' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTPreprocess.lean:225:0: 'RootSeparation.Preprocessing.surviving_degree' depends on axioms: [propext, Quot.sound]
+info: PTPreprocess.lean:226:0: 'RootSeparation.Preprocessing.sat_normalized_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTPreprocess.lean:227:0: 'RootSeparation.Preprocessing.propagated_has_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTPreprocess.lean:228:0: 'RootSeparation.Preprocessing.normalized_clause_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTPreprocess.lean:229:0: 'RootSeparation.Preprocessing.builtM_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTPreprocess.lean:230:0: 'RootSeparation.Preprocessing.built_cubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTPreprocess.lean:231:0: 'RootSeparation.Preprocessing.built_allPositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTPreprocess.lean:232:0: 'RootSeparation.Preprocessing.built_normalized_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3170/3271] Replayed SolverPolynomialChoice
+info: SolverPolynomialChoice.lean:88:0: 'RootSeparation.Solver.binaryLift_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPolynomialChoice.lean:89:0: 'RootSeparation.Solver.binaryLift_monic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPolynomialChoice.lean:90:0: 'RootSeparation.Solver.sourcePolynomial_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3171/3271] Replayed PTEntryBridge
+warning: PTEntryBridge.lean:29:2: exponent 131071 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+warning: PTEntryBridge.lean:131:4: exponent 131071 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+info: PTEntryBridge.lean:143:0: 'RootSeparation.Preprocessing.sparse_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTEntryBridge.lean:144:0: 'RootSeparation.Preprocessing.reach_shrink' depends on axioms: [propext, Quot.sound]
+info: PTEntryBridge.lean:145:0: 'RootSeparation.Preprocessing.sparse_entry_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTEntryBridge.lean:146:0: 'RootSeparation.Preprocessing.sparse_trace_eventual' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTEntryBridge.lean:147:0: 'RootSeparation.Preprocessing.all_positive_wire_counterexample' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: PTEntryBridge.lean:148:0: 'RootSeparation.Preprocessing.cutoff_graph_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3172/3271] Replayed PTHermiteGuard
+info: PTHermiteGuard.lean:65:0: 'RootSeparation.Preprocessing.hermite_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3173/3271] Replayed S6Swap
+info: S6Swap.lean:155:0: 'Section6.gram_walsh' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Swap.lean:156:0: 'Section6.walsh_sq_of_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Swap.lean:157:0: 'Section6.cell_eq_of_first_of_samePair' depends on axioms: [propext, Quot.sound]
+ℹ [3174/3271] Replayed S6Orbit
+info: S6Orbit.lean:126:0: 'Section6.orbit_weight_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Orbit.lean:127:0: 'Section6.projection_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3175/3271] Replayed S6Trace
+info: S6Trace.lean:103:0: 'Section6.trace_le_measured_dim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Trace.lean:104:0: 'Section6.scaled_real_span_le_rat_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3176/3271] Replayed S6Placement
+warning: S6Placement.lean:159:65: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: S6Placement.lean:232:0: 'Section6.normalize_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Placement.lean:233:0: 'Section6.block_support_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Placement.lean:234:0: 'Section6.actualEntry_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Placement.lean:235:0: 'Section6.projection_trace_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Placement.lean:236:0: 'Section6.FA1' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3177/3271] Replayed S6Fair
+info: S6Fair.lean:216:0: 'Section6.centralMass_sq_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Fair.lean:217:0: 'Section6.shifted_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Fair.lean:218:0: 'Section6.FA2' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3178/3271] Replayed S6Cells
+info: S6Cells.lean:211:0: 'Section6.light_cell_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Cells.lean:212:0: 'Section6.badPlaces_count_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Cells.lean:213:0: 'Section6.badVars_count_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Cells.lean:214:0: 'Section6.FA3' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3179/3271] Replayed S6Iterators
+info: S6Iterators.lean:81:0: 'Section6.taylor_ge_choose' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Iterators.lean:82:0: 'Section6.taylor_ge_two_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Iterators.lean:83:0: 'Section6.largest_group_ge_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Iterators.lean:84:0: 'Section6.empty_pair_local_extends' depends on axioms: [propext, Quot.sound]
+info: S6Iterators.lean:85:0: 'Section6.visit_counts' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3180/3271] Replayed S6Tune
+warning: S6Tune.lean:21:73: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: S6Tune.lean:94:47: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: S6Tune.lean:209:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: S6Tune.lean:209:35: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: S6Tune.lean:211:0: 'Section6.choose_log_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Tune.lean:212:0: 'Section6.optimize_visits' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3181/3271] Replayed S6Bridge
+info: S6Bridge.lean:128:0: 'Section6.cap_implies_volume' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Bridge.lean:129:0: 'Section6.rank_le_lg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Bridge.lean:130:0: 'Section6.group_le_lg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Bridge.lean:131:0: 'Section6.FA4_at_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Bridge.lean:132:0: 'Section6.direct_nominal_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Bridge.lean:133:0: 'Section6.supplied_nominal_order' depends on axioms: [propext, Quot.sound]
+⚠ [3182/3271] Replayed S6Asymptotic
+warning: S6Asymptotic.lean:110:13: unused variable `hB`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: S6Asymptotic.lean:233:48: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: S6Asymptotic.lean:233:48: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+info: S6Asymptotic.lean:235:0: 'Section6.density_from_large_Q' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Asymptotic.lean:236:0: 'Section6.paperRate_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Asymptotic.lean:237:0: 'Section6.FA4' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3183/3271] Replayed S6Spectrum
+info: S6Spectrum.lean:146:0: 'Section6.single_pair_counts' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Spectrum.lean:147:0: 'Section6.exceptional_row_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Spectrum.lean:148:0: 'Section6.block_row_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3184/3271] Replayed S6UpperTail
+info: S6UpperTail.lean:112:0: 'Section6.bin_centered_mgf' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6UpperTail.lean:113:0: 'Section6.bin_window_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3185/3271] Replayed S6Packing
+info: S6Packing.lean:115:0: 'Section6.copies_iff_max_load' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Packing.lean:116:0: 'Section6.copies_at_peak' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Packing.lean:117:0: 'Section6.peak_copy_volume' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Packing.lean:118:0: 'Section6.grouped_row_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Packing.lean:119:0: 'Section6.support_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3186/3271] Replayed S6Upper
+info: S6Upper.lean:155:0: 'Section6.actual_grid_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Upper.lean:156:0: 'Section6.taylor_generating_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Upper.lean:157:0: 'Section6.literal_scan_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3187/3271] Replayed S6UpperWindow
+warning: S6UpperWindow.lean:115:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: S6UpperWindow.lean:152:0: 'Section6.row_fraction_binomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6UpperWindow.lean:153:0: 'Section6.centeredWindow_ends' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6UpperWindow.lean:154:0: 'Section6.centeredWindow_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6UpperWindow.lean:155:0: 'Section6.centered_row_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6UpperWindow.lean:156:0: 'Section6.source_tail_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3188/3271] Replayed S6UpperCost
+info: S6UpperCost.lean:94:0: 'Section6.taylor_log_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6UpperCost.lean:95:0: 'Section6.literal_log_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6UpperCost.lean:96:0: 'Section6.balanced_exp_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3189/3271] Replayed S6LabelPlacement
+info: S6LabelPlacement.lean:86:0: 'Section6.realize_balanced_labels' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3190/3271] Replayed S6Matching
+info: S6Matching.lean:98:0: 'Section6.FA3_summary' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Matching.lean:99:0: 'Section6.matching_on_balanced_labels' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3191/3271] Replayed S6Published
+info: S6Published.lean:221:0: 'Section6.eventually_rounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Published.lean:222:0: 'Section6.lambda_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3192/3271] Replayed S6Feasible
+info: S6Feasible.lean:114:0: 'Section6.eventually_room' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6Feasible.lean:115:0: 'Section6.eventually_numeric_layout' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3193/3271] Replayed S6IntegerGate
+info: S6IntegerGate.lean:159:0: 'Section6.publishedLambda_eq_clog' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6IntegerGate.lean:160:0: 'Section6.publishedQ_eq_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6IntegerGate.lean:161:0: 'Section6.sqrtCeil_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6IntegerGate.lean:162:0: 'Section6.publishedRGroups_eq_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6IntegerGate.lean:163:0: 'Section6.centeredStart_eq_integerStart' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S6IntegerGate.lean:164:0: 'Section6.integer_tail_guard' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3194/3271] Replayed PTMainRoute
+info: PTMainRoute.lean:210:0: 'RootSeparation.Preprocessing.mainT_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTMainRoute.lean:211:0: 'RootSeparation.Preprocessing.threshold_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTMainRoute.lean:212:0: 'RootSeparation.Preprocessing.normalized_single_leaf' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTMainRoute.lean:213:0: 'RootSeparation.Preprocessing.main_sparse_leaf' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTMainRoute.lean:284:0: 'RootSeparation.Preprocessing.mainT_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTMainRoute.lean:285:0: 'RootSeparation.Preprocessing.mainM_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTMainRoute.lean:286:0: 'RootSeparation.Preprocessing.mainB_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTMainRoute.lean:287:0: 'RootSeparation.Preprocessing.main_size_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3195/3271] Replayed PTPacking
+info: PTPacking.lean:121:0: 'RootSeparation.Preprocessing.active_packing' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTPacking.lean:122:0: 'RootSeparation.Preprocessing.group_wire_shrink' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTPacking.lean:123:0: 'RootSeparation.Preprocessing.child_packet_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTPacking.lean:124:0: 'RootSeparation.Preprocessing.child_old_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3196/3271] Replayed PTWireTopology
+info: PTWireTopology.lean:129:0: 'RootSeparation.Preprocessing.port_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTWireTopology.lean:130:0: 'RootSeparation.Preprocessing.local_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTWireTopology.lean:131:0: 'RootSeparation.Preprocessing.pin_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTWireTopology.lean:132:0: 'RootSeparation.Preprocessing.mid_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTWireTopology.lean:133:0: 'RootSeparation.Preprocessing.normalized_ports' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PTWireTopology.lean:134:0: 'RootSeparation.Preprocessing.propagated_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3197/3271] Replayed PreprocessingThresholds
+info: PreprocessingThresholds.lean:59:0: 'RootSeparation.Preprocessing.main_entry_eventual' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PreprocessingThresholds.lean:60:0: 'RootSeparation.Preprocessing.dense_only_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PreprocessingThresholds.lean:61:0: 'RootSeparation.Preprocessing.retained_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PreprocessingThresholds.lean:62:0: 'RootSeparation.Preprocessing.active_probe_embedding' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PreprocessingThresholds.lean:63:0: 'RootSeparation.Preprocessing.active_positive_precision' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PreprocessingThresholds.lean:65:0: @normalize_pinned : ∀ {V : Type u_2} [inst : Fintype V] [inst_1 : DecidableEq V] (E : Finset (V × V)),
+  Simple E →
+    ∀ (σ : V → Bool), normalized (PinnedCNF.formula E σ) = clauseSets (PinnedCNF.formula (survivingEdges E σ) σ)
+info: PreprocessingThresholds.lean:66:0: @builtM_eq : ∀ {V : Type u_2} [inst : Fintype V] [inst_1 : DecidableEq V] (E : Finset (V × V)),
+  builtM E = 2 * (Fintype.card V + 2 * E.card + triple E)
+info: PreprocessingThresholds.lean:67:0: main_entry_eventual : ∀ (k : ℕ),
+  2 ≤ k →
+    ∃ N0,
+      ∀ (V : Type u_2) [inst : Fintype V] [inst_1 : DecidableEq V] (E : Finset (V × V)),
+        N0 ≤ Fintype.card V → Simple E → (∀ (v : V), degree E v = 3) → ∀ (σ : V → Bool), MainLeaf E σ k
+info: PreprocessingThresholds.lean:68:0: @sparse_entry_admissible : ∀ {V : Type u_2} [inst : Fintype V] [inst_1 : DecidableEq V] (E : Finset (V × V)),
+  Simple E →
+    (∀ (v : V), degree E v = 3) →
+      ∀ (σ : V → Bool),
+        sizeCutoff < n →
+          dispatch (simpleNormalize (PinnedCNF.formula E σ)) = Dispatch.sparse ∧
+            rootM E = 10 * n ∧
+              2 * size E = 7 * n ∧
+                0 < initialPrecision ∧
+                  order = 1 ∧
+                    leafThreshold (size E) < rootM E ∧
+                      ActiveNumbers (size E) 0 (rootM E) ∧
+                        Nonempty (Solver.SourcePolynomial (4 * lambda (size E))) ∧
+                          ∀ (d M : ℕ), ReachSize (rootM E) d M → leafThreshold (size E) < M → ActiveNumbers (size E) d M
+info: PreprocessingThresholds.lean:69:0: @sparse_trace_eventual : ∀ {V : Type u_2} [inst : Fintype V] [inst_1 : DecidableEq V] (E : Finset (V × V)),
+  Simple E →
+    ∀ (reg : ∀ (v : V), degree E v = 3) (σ : V → Bool) (K : ℕ) {O : Type u_3} [inst_2 : CommRing O]
+      (child : NativeChild E O),
+      max sizeCutoff K < n →
+        ∃ (hn : bigRoot n),
+          runEvents E reg σ K child =
+            sourceTrace (chosenPacking E reg hn).mixedAt (rootM E) (rootL E) (rootA E) (rootU E) initialPrecision child
+info: PreprocessingThresholds.lean:70:0: cutoff_graph_example : have k := 2 ^ 131070;
+let E := cliques k;
+n = 2 ^ 131072 ∧
+  bigRoot n ∧
+    useSparse n (m E) ∧
+      leafThreshold (size E) < rootM E ∧
+        (∃ G, G.cell = rootCell E ⋯) ∧
+          lambda (size E) = 131074 ∧ retained (size E) 0 = 1 ∧ retained (size E) 0 ^ 5 < lambda (size E) ^ 4
+info: PreprocessingThresholds.lean:71:0: @active_retained_rpow : ∀ {s d M : ℕ},
+  depthLogCutoff ≤ lambda s → leafThreshold s < M → M * 8 ^ d ≤ 3 * s → ↑(lambda s) ^ (4 / 5) ≤ ↑(retained s d)
+info: PreprocessingThresholds.lean:105:0: 'RootSeparation.Preprocessing.active_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PreprocessingThresholds.lean:106:0: @active_step : ∀ {W : Type u_2} {X : Type u_3} {Y : Type u_4} [inst : Fintype W] [inst_1 : Fintype X]
+  [inst_2 : Fintype Y] [inst_3 : DecidableEq X] [inst_4 : DecidableEq Y] {s d M0 : ℕ},
+  depthLogCutoff ≤ lambda s →
+    M0 ≤ 3 * s →
+      ∀ (row : W → X) (col : W → Y),
+        ReachSize M0 d (Fintype.card W) →
+          leafThreshold s < Fintype.card W →
+            (∀ (v : X), fiberCount row v ≤ degreeEnvelope s) →
+              (∀ (v : Y), fiberCount col v ≤ degreeEnvelope s) →
+                have a := labelLength s d;
+                have L := packetLength s d;
+                have cell := cellAt row col (selectedLabels row col fun x => 0);
+                let P := S8.Packet (Fin a) (Fin 64) (exactPad cell);
+                ∃ G,
+                  G.cell = cell ∧
+                    CollisionCertificate G.cell ↑(degreeEnvelope s) ∧
+                      ∀ (j : Fin a) (g : Fin 64),
+                        have M' := Fintype.card (GroupWires G.cell j g);
+                        ReachSize M0 (d + 1) M' ∧
+                          (∀ (v : X ⊕ Y), fiberCount (childOld G.cell j g row col) v ≤ degreeEnvelope s) ∧
+                            (∀ (v : P), fiberCount (childPacket G j g) v ≤ degreeEnvelope s) ∧
+                              (leafThreshold s < M' → ActiveNumbers s (d + 1) M')
+info: PreprocessingThresholds.lean:107:0: @hermite_mass : ∀ {s d M : ℕ},
+  ActiveNumbers s d M →
+    M * (2 * packetLength s d - 1) <
+      ∑ t ∈ centers (retained s d) (packetLength s d), S11.multiplicity M (retained s d) t
+info: PreprocessingThresholds.lean:117:0: 'RootSeparation.Preprocessing.one_positive_clique' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PreprocessingThresholds.lean:153:0: 'RootSeparation.Preprocessing.entry_dispatch_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PreprocessingThresholds.lean:154:0: 'RootSeparation.Preprocessing.sparse_root_degrees' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PreprocessingThresholds.lean:155:0: @entry_dispatch_exact : ∀ {V : Type u_2} [inst : Fintype V] [inst_1 : DecidableEq V] (E : Finset (V × V)),
+  Simple E →
+    (∀ (v : V), degree E v = 3) →
+      ∀ (σ : V → Bool),
+        dispatch (simpleNormalize (PinnedCNF.formula E σ)) =
+          if n = 0 then Dispatch.free else if n < 20 then Dispatch.enumerate else Dispatch.sparse
+⚠ [3198/3271] Replayed S11Kernel
+warning: S11Kernel.lean:101:0: automatically included section variable(s) unused in theorem `S11.deformed_degree`:
+  [CharZero K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CharZero K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: S11Kernel.lean:171:0: 'S11.packetKernel_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Kernel.lean:172:0: 'S11.packetKernel_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Kernel.lean:173:0: 'S11.kernel_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Kernel.lean:174:0: 'S11.deformed_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Kernel.lean:175:0: 'S11.deformed_origin' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Kernel.lean:176:0: 'S11.local_degree_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3199/3271] Replayed SolverNetwork
+info: SolverNetwork.lean:165:0: 'RootSeparation.Solver.Network.map_contract' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverNetwork.lean:166:0: 'RootSeparation.Solver.accepts_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverNetwork.lean:167:0: 'RootSeparation.Solver.entryNetwork_contract' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3200/3271] Replayed S11ChildPorts
+info: S11ChildPorts.lean:43:0: 'S11.child_wire_shrink' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11ChildPorts.lean:44:0: 'S11.child_wire_source_eighth' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3201/3271] Replayed S8DChild
+warning: S8DChild.lean:53:16: Try `simp at he` instead of `simpa using he`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: S8DChild.lean:38:0: automatically included section variable(s) unused in theorem `S8.DChild.old_degree_left`:
+  [DecidableEq W]
+  [Fintype I]
+  [DecidableEq I]
+  [Fintype A]
+  [Nonempty A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq W] [Fintype I] [DecidableEq I] [Fintype A] [Nonempty A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S8DChild.lean:75:16: Try `simp at he` instead of `simpa using he`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: S8DChild.lean:60:0: automatically included section variable(s) unused in theorem `S8.DChild.old_degree_right`:
+  [DecidableEq W]
+  [Fintype I]
+  [DecidableEq I]
+  [Fintype A]
+  [Nonempty A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq W] [Fintype I] [DecidableEq I] [Fintype A] [Nonempty A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S8DChild.lean:82:0: automatically included section variable(s) unused in theorem `S8.DChild.packet_degree`:
+  [DecidableEq W]
+  [Fintype I]
+  [DecidableEq I]
+  [Fintype A]
+  [Nonempty A]
+  [DecidableEq U]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq
+  W] [Fintype I] [DecidableEq I] [Fintype A] [Nonempty A] [DecidableEq U] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S8DChild.lean:99:0: automatically included section variable(s) unused in theorem `S8.DChild.true_port_load_le`:
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S8DChild.lean:111:0: automatically included section variable(s) unused in theorem `S8.DChild.child_edge_count`:
+  [DecidableEq U]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq U] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: S8DChild.lean:160:0: 'S8.DChild.old_degree_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DChild.lean:161:0: 'S8.DChild.old_degree_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DChild.lean:162:0: 'S8.DChild.packet_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DChild.lean:163:0: 'S8.DChild.child_edge_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S8DChild.lean:164:0: 'S8.DChild.recursive_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3202/3271] Replayed SolverChildren
+info: SolverChildren.lean:134:0: 'RootSeparation.Solver.childNetwork_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverChildren.lean:135:0: 'RootSeparation.Solver.childNetwork_shrink' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverChildren.lean:136:0: 'RootSeparation.Solver.packetCoeff_empty_rows' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3203/3271] Replayed RootExecution
+info: RootExecution.lean:261:0: 'RootSeparation.Execution.projection_ordered_injection' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootExecution.lean:262:0: 'RootSeparation.Execution.addTracked_value' depends on axioms: [propext]
+info: RootExecution.lean:263:0: 'RootSeparation.Execution.addTracked_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootExecution.lean:264:0: 'RootSeparation.Execution.stepTuple_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootExecution.lean:265:0: 'RootSeparation.Execution.groupProduct_order' depends on axioms: [propext]
+info: RootExecution.lean:266:0: 'RootSeparation.Execution.stepTuple_digits' depends on axioms: [propext, Quot.sound]
+info: RootExecution.lean:267:0: 'RootSeparation.Execution.executeBatch_project' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootExecution.lean:268:0: 'RootSeparation.Execution.executeBatch_digits' depends on axioms: [propext, Quot.sound]
+info: RootExecution.lean:269:0: 'RootSeparation.Execution.executeBatch_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3204/3271] Replayed SolverCoordinates
+info: SolverCoordinates.lean:139:0: 'RootSeparation.Solver.changeRoot_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverCoordinates.lean:140:0: 'RootSeparation.Solver.liftCanonical_section' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverCoordinates.lean:141:0: 'RootSeparation.Solver.liftCanonical_preserved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverCoordinates.lean:142:0: 'RootSeparation.Solver.rational_irreducible' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3205/3271] Replayed RootExecutionDriver
+info: RootExecutionDriver.lean:158:0: 'RootSeparation.Execution.executeProbe_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootExecutionDriver.lean:159:0: 'RootSeparation.Execution.executeRoot_project' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootExecutionDriver.lean:160:0: 'RootSeparation.Execution.executeRoot_inject' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootExecutionDriver.lean:161:0: 'RootSeparation.Execution.executed_root_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootExecutionDriver.lean:162:0: 'RootSeparation.Execution.polynomialCodec' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootExecutionDriver.lean:163:0: 'RootSeparation.Execution.polynomial_root_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RootExecutionDriver.lean:164:0: @executeRoot_inject : ∀ {V : Type u_4} [inst : Fintype V] [inst_1 : DecidableEq V] (E : Finset (V × V))
+  {R : ℤ → Type u_5} [inst_2 : (t : ℤ) → CommSemiring (R t)] {I : Type u_6} [inst_3 : DecidableEq I] {O : Type u_7}
+  [inst_4 : CommRing O] (reg : ∀ (v : V), GraphCutMoments.degree E v = 3) (σ : V → Bool) (K : ℕ) (codec : Codec E)
+  (track : I) (child : Child) (reference : NativeChild E O),
+  have digs := executedDigits (executeRoot E reg σ K codec track child);
+  have events := runEvents E reg σ K reference;
+  ∃ pos, StrictMono pos ∧ ∀ (i : Fin events.length), (digs.get (pos i)).firstSlot = some (events.get i)
+info: RootExecutionDriver.lean:165:0: @polynomial_root_lower : ∀ {V : Type u_4} [inst : Fintype V] [inst_1 : DecidableEq V] (E : Finset (V × V)),
+  Simple E →
+    ∀ (reg : ∀ (v : V), GraphCutMoments.degree E v = 3) (σ : V → Bool) (K : ℕ) (f : ℤ[X]) (hf : f.Monic)
+      (he : f.natDegree = 4 * lambda (size E)) (positive : 0 < 4 * lambda (size E)) (child : Child),
+      max (2 ^ 131071) K < n →
+        2 ^ (↑n / (2 * √(Real.logb 2 ↑n))) ≤ ↑(trackedPolynomialWork E reg σ K f hf he positive child)
+ℹ [3206/3271] Replayed SolverRecursion
+info: SolverRecursion.lean:170:0: 'RootSeparation.Solver.leafValue_contract' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRecursion.lean:171:0: 'RootSeparation.Solver.childCall_packet_at_creation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRecursion.lean:172:0: 'RootSeparation.Solver.childCall_shrink' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRecursion.lean:173:0: 'RootSeparation.Solver.runCall' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRecursion.lean:174:0: 'RootSeparation.Solver.runCall_leaf' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRecursion.lean:175:0: 'RootSeparation.Solver.runCall_finite_exception' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3207/3271] Replayed PrecisionLattice
+info: PrecisionLattice.lean:196:0: 'PrecisionLattice.all_combinations_mem_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PrecisionLattice.lean:197:0: 'PrecisionLattice.mem_coordinateLattice_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PrecisionLattice.lean:198:0: 'PrecisionLattice.decoder_precision_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PrecisionLattice.lean:199:0: 'PrecisionLattice.decoder_map_le_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PrecisionLattice.lean:200:0: 'PrecisionLattice.decoder_map_eq_span_columns' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PrecisionLattice.lean:201:0: 'PrecisionLattice.matrix_precision_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PrecisionLattice.lean:202:0: 'PrecisionLattice.matrix_power_precision_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PrecisionLattice.lean:203:0: 'PrecisionLattice.column_clear_denominator_iff' depends on axioms: [propext, Quot.sound]
+info: PrecisionLattice.lean:204:0: 'PrecisionLattice.matrix_power_precision_clear_denominators_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3215/3271] Replayed S11GridValuation
+warning: S11GridValuation.lean:78:66: `Int.natAbs_ofNat` has been deprecated: Use `Int.natAbs_natCast` instead
+info: S11GridValuation.lean:153:0: 'S11.shiftGrid_level' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11GridValuation.lean:154:0: 'S11.valuation_multiset' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3216/3271] Replayed S11NativeKernel
+warning: S11NativeKernel.lean:15:0: automatically included section variable(s) unused in theorem `S11.val_two_pow`:
+  [CharZero K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CharZero K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S11NativeKernel.lean:19:8: automatically included section variable(s) unused in theorem `_private.S11NativeKernel.0.S11.val_prod_int`:
+  [CharZero K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CharZero K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S11NativeKernel.lean:105:0: automatically included section variable(s) unused in theorem `S11.shiftedKernel_eq`:
+  [CharZero K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CharZero K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S11NativeKernel.lean:145:0: automatically included section variable(s) unused in theorem `S11.eval_bound`:
+  [CharZero K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CharZero K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: S11NativeKernel.lean:153:0: 'S11.val_origin_denominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11NativeKernel.lean:154:0: 'S11.shifted_numerator_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11NativeKernel.lean:155:0: 'S11.kernel_integral_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11NativeKernel.lean:156:0: 'S11.eval_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3217/3271] Replayed S11Geometric
+warning: S11Geometric.lean:13:0: automatically included section variable(s) unused in theorem `S11.valuation_add_strict`:
+  [CharZero K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CharZero K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S11Geometric.lean:20:0: automatically included section variable(s) unused in theorem `S11.coefficient_weight`:
+  [CharZero K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CharZero K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: S11Geometric.lean:123:0: 'S11.coefficient_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Geometric.lean:124:0: 'S11.geometric_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Geometric.lean:125:0: 'S11.tile_constant_group_bit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Geometric.lean:126:0: 'S11.crossing_integer_denominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Geometric.lean:127:0: 'S11.crossing_shifted_denominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3218/3271] Replayed S11NativeModes
+warning: S11NativeModes.lean:20:0: automatically included section variable(s) unused in theorem `S11.packet_fraction`:
+  [CharZero K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CharZero K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S11NativeModes.lean:113:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: S11NativeModes.lean:120:0: 'S11.packet_fraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11NativeModes.lean:121:0: 'S11.crossing_modes_native' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3219/3271] Replayed S11ShellCounts
+info: S11ShellCounts.lean:115:0: 'S11.shell_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11ShellCounts.lean:116:0: 'S11.shell_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11ShellCounts.lean:117:0: 'S11.excess_second_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3220/3271] Replayed S11TaperLoss
+info: S11TaperLoss.lean:118:0: 'S11.level_sub_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11TaperLoss.lean:119:0: 'S11.tapered_cardinal_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3221/3271] Replayed S11NativeWindow
+warning: S11NativeWindow.lean:84:0: automatically included section variable(s) unused in theorem `S11.source_taper_certified`:
+  [CharZero K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CharZero K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: S11NativeWindow.lean:140:0: 'S11.source_lossInt_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11NativeWindow.lean:141:0: 'S11.source_taper_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11NativeWindow.lean:142:0: 'S11.source_taper_certified' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3222/3271] Replayed S11TupleCodec
+warning: S11TupleCodec.lean:113:4: 'change (Multiset.map (fun bs => term (readExponent zs bs)) (L : Multiset (List ℕ))).sum = _' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+info: S11TupleCodec.lean:141:0: 'S11.tuples_nodup' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11TupleCodec.lean:142:0: 'S11.tuple_sum_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3223/3271] Replayed SolverPacket
+info: SolverPacket.lean:126:0: 'RootSeparation.Solver.tile_crossing_bit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPacket.lean:127:0: 'RootSeparation.Solver.nativePacket' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPacket.lean:128:0: 'RootSeparation.Solver.crossing_kernel_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3224/3271] Replayed SolverPhysicalModes
+info: SolverPhysicalModes.lean:66:0: 'RootSeparation.Solver.modeOfCross_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPhysicalModes.lean:67:0: 'RootSeparation.Solver.modeOfCross_target' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3225/3271] Replayed SolverPacketProduct
+info: SolverPacketProduct.lean:50:0: 'RootSeparation.Solver.packetCoeff_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPacketProduct.lean:51:0: 'RootSeparation.Solver.packetValue_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3226/3271] Replayed SolverRowPartition
+info: SolverRowPartition.lean:157:0: 'RootSeparation.Solver.countChoices_packet' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRowPartition.lean:158:0: 'RootSeparation.Solver.packetCoeff_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3227/3271] Replayed S11ModeIdentity
+warning: S11ModeIdentity.lean:82:8: automatically included section variable(s) unused in theorem `_private.S11ModeIdentity.0.S11.AffinePacket.global_tile`:
+  [(g : G) → Fintype (A.Bits g)]
+  [(g : G) → Fintype (A.Rows g)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(g : G) → Fintype (A.Bits g)] [(g : G) → Fintype (A.Rows g)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S11ModeIdentity.lean:124:8: automatically included section variable(s) unused in theorem `_private.S11ModeIdentity.0.S11.AffinePacket.exponents_weight`:
+  [CommSemiring R]
+  [(g : G) → Fintype (A.Bits g)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CommSemiring R] [(g : G) → Fintype (A.Bits g)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: S11ModeIdentity.lean:156:0: automatically included section variable(s) unused in theorem `S11.AffinePacket.exponent_lt_budget`:
+  [CommSemiring R]
+  [(g : G) → Fintype (A.Bits g)]
+  [(g : G) → Fintype (A.Rows g)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CommSemiring R] [(g : G) → Fintype (A.Bits g)] [(g : G) → Fintype (A.Rows g)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: S11ModeIdentity.lean:205:0: 'S11.AffinePacket.sample_expand' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11ModeIdentity.lean:206:0: 'S11.AffinePacket.expanded_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11ModeIdentity.lean:207:0: 'S11.AffinePacket.recursion_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3228/3271] Replayed S11ModeDFS
+info: S11ModeDFS.lean:80:0: 'S11.native_batch_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11ModeDFS.lean:81:0: 'S11.native_mod_two_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11ModeDFS.lean:82:0: 'S11.sourceBatch_recursion' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3229/3271] Replayed SolverAffinePackets
+info: SolverAffinePackets.lean:110:0: 'RootSeparation.Solver.PacketData.affine_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverAffinePackets.lean:111:0: 'RootSeparation.Solver.PacketData.affine_tile' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverAffinePackets.lean:112:0: 'RootSeparation.Solver.PacketData.affine_child_packets' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverAffinePackets.lean:130:0: 'RootSeparation.Solver.executeBatch_affine_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3230/3271] Replayed S11ProbeErrors
+info: S11ProbeErrors.lean:63:0: 'S11.lagrange_probe_errors' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11ProbeErrors.lean:64:0: 'S11.printed_probe_error_clearing' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3231/3271] Replayed SolverReadout
+info: SolverReadout.lean:162:0: 'RootSeparation.Solver.piece_trunc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverReadout.lean:163:0: 'RootSeparation.Solver.readout_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverReadout.lean:164:0: 'RootSeparation.Solver.recover_modular' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3232/3271] Replayed S11Taper
+info: S11Taper.lean:56:0: 'S11.oddGridPoint_level' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Taper.lean:57:0: 'S11.oddGridPoint_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: S11Taper.lean:58:0: 'S11.taper_degree_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3233/3271] Replayed SolverDeformation
+info: SolverDeformation.lean:107:0: 'RootSeparation.Solver.normalizedDeformation_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverDeformation.lean:108:0: 'RootSeparation.Solver.normalizedDeformation_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverDeformation.lean:109:0: 'RootSeparation.Solver.normalizedDeformation_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverDeformation.lean:110:0: 'RootSeparation.Solver.rootDeformation_origin' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverDeformation.lean:111:0: 'RootSeparation.Solver.rootDeformation_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3234/3271] Replayed SolverProbes
+info: SolverProbes.lean:155:0: 'RootSeparation.Solver.residue_fromInteger' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverProbes.lean:156:0: 'RootSeparation.Solver.residue_zero_dvd_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverProbes.lean:157:0: 'RootSeparation.Solver.probe_unit_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverProbes.lean:158:0: 'RootSeparation.Solver.root_probe_unit_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3235/3271] Replayed SolverRoot
+info: SolverRoot.lean:133:0: 'RootSeparation.Solver.rootCall_wire_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRoot.lean:134:0: 'RootSeparation.Solver.rootLeaf_word' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRoot.lean:135:0: 'RootSeparation.Solver.rootReadout_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRoot.lean:136:0: 'RootSeparation.Solver.rootChild' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRoot.lean:137:0: 'RootSeparation.Solver.rootExecutionTrace_project' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRoot.lean:138:0: 'RootSeparation.Solver.rootExecutionTrace_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3236/3271] Replayed SolverOddLocalization
+info: SolverOddLocalization.lean:236:0: 'RootSeparation.Solver.integralRational_integerIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverOddLocalization.lean:237:0: 'RootSeparation.Solver.integralRational_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverOddLocalization.lean:238:0: 'RootSeparation.Solver.integralRational_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverOddLocalization.lean:239:0: 'RootSeparation.Solver.tryWord_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverOddLocalization.lean:240:0: 'RootSeparation.Solver.tryWord_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverOddLocalization.lean:241:0: 'RootSeparation.Solver.localizedRat_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverOddLocalization.lean:242:0: 'RootSeparation.Solver.localizedRat_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverOddLocalization.lean:243:0: 'RootSeparation.Solver.integralWord_integerIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverOddLocalization.lean:244:0: 'RootSeparation.Solver.integralWord_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3237/3271] Replayed SolverScalarValuation
+info: SolverScalarValuation.lean:62:0: 'RootSeparation.Solver.scalarValuation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverScalarValuation.lean:63:0: 'RootSeparation.Solver.scalarOrder_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverScalarValuation.lean:64:0: 'RootSeparation.Solver.scalarOrder_nonnegative_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3238/3271] Replayed SolverCoefficientOrder
+info: SolverCoefficientOrder.lean:119:0: 'RootSeparation.Solver.localizedWord_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverCoefficientOrder.lean:120:0: 'RootSeparation.Solver.integralWord_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverCoefficientOrder.lean:121:0: 'RootSeparation.Solver.coordinateOrder_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverCoefficientOrder.lean:122:0: 'RootSeparation.Solver.coordinateOrder_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverCoefficientOrder.lean:123:0: 'RootSeparation.Solver.canonical_probe_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3239/3271] Replayed SolverValuation
+info: SolverValuation.lean:215:0: 'RootSeparation.Solver.orderInBasis_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverValuation.lean:216:0: 'RootSeparation.Solver.orderInBasis_primitive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverValuation.lean:217:0: 'RootSeparation.Solver.rationalValuation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverValuation.lean:218:0: 'RootSeparation.Solver.rationalValuation_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverValuation.lean:219:0: 'RootSeparation.Solver.rationalValuation_integer' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverValuation.lean:220:0: 'RootSeparation.Solver.binaryPoint_valuation_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverValuation.lean:221:0: 'RootSeparation.Solver.tryWord_congr' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3240/3271] Replayed SolverConcreteRoot
+info: SolverConcreteRoot.lean:93:0: 'RootSeparation.Solver.tryRootWord' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverConcreteRoot.lean:94:0: 'RootSeparation.Solver.tryRootWord_of_probe_congruence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverConcreteRoot.lean:95:0: 'RootSeparation.Solver.tryRootWord_of_probe_residues' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3241/3271] Replayed SolverPacketIntegral
+info: SolverPacketIntegral.lean:157:0: 'RootSeparation.Solver.target_tile_bit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPacketIntegral.lean:158:0: 'RootSeparation.Solver.localForm_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPacketIntegral.lean:159:0: 'RootSeparation.Solver.crossingCoeff_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPacketIntegral.lean:160:0: 'RootSeparation.Solver.crossingCoeff_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPacketIntegral.lean:161:0: 'RootSeparation.Solver.nativePacket_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3242/3271] Replayed SolverPacketWords
+info: SolverPacketWords.lean:47:0: 'RootSeparation.Solver.nativeTables_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3243/3271] Replayed SolverNativeAffine
+info: SolverNativeAffine.lean:110:0: 'RootSeparation.Solver.nativeAffineData' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverNativeAffine.lean:111:0: 'RootSeparation.Solver.nativeAffine_weights' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3244/3271] Replayed SolverPortPartition
+info: SolverPortPartition.lean:68:0: 'RootSeparation.Solver.splitPortsEquiv' depends on axioms: [propext, Quot.sound]
+info: SolverPortPartition.lean:69:0: 'RootSeparation.Solver.oldTable_splitPorts' depends on axioms: [propext, Quot.sound]
+info: SolverPortPartition.lean:70:0: 'RootSeparation.Solver.childOldProducts' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3245/3271] Replayed SolverColumnPorts
+info: SolverColumnPorts.lean:71:0: 'RootSeparation.Solver.columnPortEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverColumnPorts.lean:72:0: 'RootSeparation.Solver.localForm_physical' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverColumnPorts.lean:73:0: 'RootSeparation.Solver.sourceTile_physical' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3246/3271] Replayed SolverIntegralArithmetic
+info: SolverIntegralArithmetic.lean:76:0: 'RootSeparation.Solver.integralEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverIntegralArithmetic.lean:77:0: 'RootSeparation.Solver.reduceElements_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverIntegralArithmetic.lean:78:0: 'RootSeparation.Solver.map_packetValue' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3247/3271] Replayed SolverPacketCompatibility
+info: SolverPacketCompatibility.lean:86:0: 'RootSeparation.Solver.integralPacket_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPacketCompatibility.lean:87:0: 'RootSeparation.Solver.nativeTables_as_packetValue' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3248/3271] Replayed SolverCrossingColumns
+warning: SolverCrossingColumns.lean:62:17: This simp argument is unused:
+  ModeColumns
+
+Hint: Omit it from the simp argument list.
+  simp only [M̵o̵d̵e̵C̵o̵l̵u̵m̵n̵s̵,̵hz]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: SolverCrossingColumns.lean:61:6: 'change _ ↔ _' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+info: SolverCrossingColumns.lean:66:0: 'RootSeparation.Solver.crossingColumnsEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3249/3271] Replayed SolverLayout
+info: SolverLayout.lean:74:0: 'RootSeparation.Solver.callU_le_callA' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverLayout.lean:75:0: 'RootSeparation.Solver.selectCallLayout' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverLayout.lean:76:0: 'RootSeparation.Solver.childCall_degrees' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3250/3271] Replayed SolverSchedule
+info: SolverSchedule.lean:156:0: 'RootSeparation.Solver.active_numeric' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3251/3271] Replayed SolverBaseCount
+info: SolverBaseCount.lean:52:0: 'RootSeparation.Solver.wordConstant_zero_coord' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverBaseCount.lean:53:0: 'RootSeparation.Solver.rootConstant_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverBaseCount.lean:54:0: 'RootSeparation.Solver.rootLeaf_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3252/3271] Replayed SolverNativeRun
+info: SolverNativeRun.lean:168:0: 'RootSeparation.Solver.checkedBatch_success' depends on axioms: [propext, Quot.sound]
+info: SolverNativeRun.lean:169:0: 'RootSeparation.Solver.checkedBatch_project' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverNativeRun.lean:170:0: 'RootSeparation.Solver.recoverCall' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverNativeRun.lean:171:0: 'RootSeparation.Solver.childState' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverNativeRun.lean:172:0: 'RootSeparation.Solver.runNativeCall' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverNativeRun.lean:173:0: 'RootSeparation.Solver.runNativeCall_leaf' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3253/3271] Replayed SolverNativeRecovery
+info: SolverNativeRecovery.lean:67:0: 'RootSeparation.Solver.callDeformation_origin' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverNativeRecovery.lean:68:0: 'RootSeparation.Solver.recoverCall_of_probe_residues' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3254/3271] Replayed SolverPhysicalSample
+info: SolverPhysicalSample.lean:67:0: 'RootSeparation.Solver.exactCallProbe_physical' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3255/3271] Replayed SolverKernelWords
+info: SolverKernelWords.lean:61:0: 'RootSeparation.Solver.realCrossingSeries_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3256/3271] Replayed SolverParentWords
+info: SolverParentWords.lean:78:0: 'RootSeparation.Solver.rowLinearAt_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverParentWords.lean:79:0: 'RootSeparation.Solver.exactCallProbe_reduce' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3257/3271] Replayed SolverRowApproximation
+info: SolverRowApproximation.lean:95:0: 'RootSeparation.Solver.exact_expandedKernel_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRowApproximation.lean:96:0: 'RootSeparation.Solver.rowLinearAt_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3258/3271] Replayed SolverCrossingSum
+info: SolverCrossingSum.lean:182:0: 'RootSeparation.Solver.crossingSeries_in_modes' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverCrossingSum.lean:183:0: 'RootSeparation.Solver.crossingSum_in_modes' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverCrossingSum.lean:184:0: 'RootSeparation.Solver.expandedRow_field' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3259/3271] Replayed SolverChildCompatibility
+info: SolverChildCompatibility.lean:95:0: 'RootSeparation.Solver.packetExponent_native' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverChildCompatibility.lean:96:0: 'RootSeparation.Solver.affineChild_physical' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3260/3271] Replayed SolverPhysicalRows
+info: SolverPhysicalRows.lean:125:0: 'RootSeparation.Solver.allRowPorts' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPhysicalRows.lean:126:0: 'RootSeparation.Solver.integralRowLiteral_reduce' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPhysicalRows.lean:127:0: 'RootSeparation.Solver.expandedRowLiteral_modes' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3261/3271] Replayed SolverParentCompatibility
+info: SolverParentCompatibility.lean:140:0: 'RootSeparation.Solver.affineLiteral_physical' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverParentCompatibility.lean:141:0: 'RootSeparation.Solver.exactCallProbe_affine_sample' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3262/3271] Replayed SolverRootRun
+info: SolverRootRun.lean:161:0: 'RootSeparation.Solver.frozenRootState' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRootRun.lean:162:0: 'RootSeparation.Solver.frozenRootGroup' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRootRun.lean:163:0: 'RootSeparation.Solver.frozenRootBatch' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRootRun.lean:164:0: 'RootSeparation.Solver.frozenActiveRoot' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRootRun.lean:165:0: 'RootSeparation.Solver.frozenActiveRoot_project' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRootRun.lean:166:0: 'RootSeparation.Solver.frozenActiveRoot_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRootRun.lean:167:0: 'RootSeparation.Solver.runPinnedSparse_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverRootRun.lean:168:0: 'RootSeparation.Solver.decodePinned_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3263/3271] Replayed SolverCountingCorrectness
+info: SolverCountingCorrectness.lean:126:0: 'RootSeparation.Solver.exactCallProbe_specBatch' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverCountingCorrectness.lean:127:0: 'RootSeparation.Solver.runNativeCall_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3264/3271] Replayed SolverPinnedCorrectness
+info: SolverPinnedCorrectness.lean:119:0: 'RootSeparation.Solver.frozenRootBatch_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPinnedCorrectness.lean:120:0: 'RootSeparation.Solver.frozenActiveRoot_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPinnedCorrectness.lean:121:0: 'RootSeparation.Solver.decodePinned_simple_cubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPinnedCorrectness.lean:122:0: 'RootSeparation.Solver.solveUnclonedPinned_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SolverPinnedCorrectness.lean:123:0: 'RootSeparation.Solver.frozenActiveRoot_count_and_work' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3265/3271] Replayed PowerCost
+info: PowerCost.lean:71:0: 'PowerCost.exponent_exceeds_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PowerCost.lean:72:0: 'PowerCost.polynomial_lt_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PowerCost.lean:73:0: 'PowerCost.polynomial_lt_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3266/3271] Replayed ProjectionDiagonal
+info: ProjectionDiagonal.lean:41:0: 'ProjectionDiagonal.realizable_iff_agree' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3267/3271] Replayed SourceCoordinates
+info: SourceCoordinates.lean:60:0: 'SourceCoordinates.card_cells_le_twice_ports' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SourceCoordinates.lean:61:0: 'SourceCoordinates.paired_alphabet_lower' depends on axioms: [propext]
+info: SourceCoordinates.lean:62:0: 'SourceCoordinates.coordinate_count_le_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SourceCoordinates.lean:63:0: 'SourceCoordinates.kept_card_le_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3268/3271] Replayed RetunedLayout
 info: RetunedLayout.lean:102:0: 'RetunedLayout.modular_output_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: RetunedLayout.lean:103:0: 'RetunedLayout.materialization_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: RetunedLayout.lean:104:0: 'RetunedLayout.superpolynomial_representation' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: RetunedLayout.lean:105:0: 'RetunedLayout.superpolynomial_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
-Build completed successfully (1757 jobs).
+ℹ [3269/3271] Replayed edge_certificate
+info: edge_certificate.lean:53:0: 'NativeTwoView.crossed_survival' depends on axioms: [propext, Quot.sound]
+info: edge_certificate.lean:54:0: 'NativeTwoView.sound_fiber_unique' depends on axioms: [propext, Quot.sound]
+info: edge_certificate.lean:55:0: 'NativeTwoView.cover_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3270/3271] Built PublicSparseRun (11s)
+info: PublicSparseRun.lean:69:0: 'RootSeparation.Preprocessing.publicSparseRun' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PublicSparseRun.lean:70:0: 'RootSeparation.Preprocessing.publicSparseRun_count_projection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: PublicSparseRun.lean:71:0: 'RootSeparation.Preprocessing.publicSparse_log_gate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PublicSparseRun.lean:72:0: 'RootSeparation.Preprocessing.publicSparseRun_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PublicSparseRun.lean:73:0: 'RootSeparation.Preprocessing.publicSparseRun_count_and_work' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PublicSparseRun.lean:75:0: @publicSparseRun_count_and_work : ∀ {V : Type} [inst : Fintype V] [inst_1 : DecidableEq V] (E : Finset (V × V)),
+  Simple E →
+    ∀ (reg : ∀ (v : V), degree E v = 3) (σ : V → Bool),
+      sizeCutoff < n →
+        dispatch (simpleNormalize (PinnedCNF.formula E σ)) = Dispatch.sparse ∧
+          ∃ trace,
+            publicSparseRun E reg σ = some (PinnedCNF.modelCount (PinnedCNF.formula E σ), trace) ∧
+              2 ^ (↑n / (2 * √(Real.logb 2 ↑n))) ≤ ↑(Execution.executedDigits trace).length
+Build completed successfully (3271 jobs).

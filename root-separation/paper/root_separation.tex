@@ -67,7 +67,7 @@
   filecolor={Maroon},
   citecolor={Blue},
   urlcolor={blue},
-  pdfcreator={LaTeX via pandoc}}
+  pdfcreator={LaTeX with Tectonic}}
 
 \title{A Root-Separation Barrier for Tensor-Interpolation SAT
 Algorithms}
@@ -98,7 +98,10 @@ calculations. A common oriented induced matching gives a rank deficit for
 all terms on the same matrix. We derive finite bounds, the cost of a trace
 covering the representation, and weighted variants for overlapping views and
 local query trees. A global zero test computes the same witnesses from a short
-sum. Two appendices give the bounded-majorant and edge-correlation proofs.
+sum. Appendices A and B give the bounded-majorant and edge-correlation
+proofs. Appendix C proves exact counting for the frozen uncloned sparse
+entry and an exponential lower bound on the digit steps of the same
+execution's root trace.
 \end{abstract}
 
 \subsection{1. Exact interface and main
@@ -275,9 +278,15 @@ repeated or tautological clauses. Each variable occurs four times. The
 source's trivalent equality tree for four occurrences has two internal
 vertices and one internal edge. Before subdivision there are \(4N\)
 clause incidences and \(N\) equality-tree internal edges. Subdividing
-each edge produces \(M=10N\) wires. All tensors have bounded arity. The graph of this construction is the same for every choice of signs. A preprocessing rule that substitutes the
-unary assignments changes this interface and solves the instances
-directly.
+each edge produces \(M=10N\) wires. All tensors have bounded arity.
+This is the direct sparse clause-network entry, with every unit and
+edge clause retained. Its graph is the same for every choice of signs.
+If clause containment is removed before building the network, a
+positive edge survives exactly when both endpoint pins are negative.
+For all-positive pins the modified builder gives \(2N\) wires.
+Substituting the unary assignments computes the count directly by
+checking the pins against the edge clauses. Appendix~C proves the
+entry distinctions and the work bound for the \(10N\) network.
 
 An infinite sequence of the required cubic expanders is provided by the
 regular bipartite Ramanujan families of Marcus, Spielman and Srivastava.
@@ -768,15 +777,16 @@ To see the polynomial comparison explicitly, let
 that \(N^p<2^d\), also for \(p=0\). This proves the second assertion
 of Corollary 3.
 
-A claim about the running time of a specific implementation would
-additionally have to identify the events in its actual execution,
-establish coverage on the inputs in question and justify their charges.
-Similarly a matching upper bound for the minimum representation length
-would require exhibiting and counting terms for a particular reconstruction
-schedule. The lower bounds proved here hold at the fixed alphabet and
+Applying this corollary to an implementation requires identifying its
+representation, the events that cover its terms, and their charges.
+Appendix~C establishes a separate work lower bound by directly counting
+ordered additions in the frozen sparse root execution. The minimum
+representation length and the cost of other reconstruction schedules
+continue to depend on their respective representations and evaluators.
+The representation lower bounds here hold at the fixed alphabet and
 under the full-group retuning conditions of Section 5. The direct scan
-and the global statistic of Section 7 show why other computation models
-can behave differently on the same formulas.
+and the global statistic of Section 7 exhibit other ways to compute
+the same function.
 
 \subsection{9. Prior tools and
 verification}\label{prior-tools-and-verification}
@@ -818,14 +828,25 @@ hypotheses. The constants for the graph argument in Appendix B use the
 rational edge theorem. The external real-variable arctangent comparison
 is due to Nazarov.
 
-The public project pins Lean 4.24.0 and its Mathlib revision. Its
-theorem index links these arguments to source files; its verification
-directory records the build, declaration inventory, and axiom reports.
-The five finite test suites supply additional examples. The research
-question and publication were directed by the project initiator; AI
-assistants contributed to the derivations, formalization, review and
-preparation of the paper. Publication priority and independent human
-peer review remain open.
+\paragraph{Revision note.}
+This revision adds Appendix~C, with the direct sparse entry and its
+subsumption counterexample, sufficient numerical thresholds throughout
+the recursion, the native probe and Hermite correctness proof, and the
+root trace bound. The count and the charged digits are projections of
+the same formal run. The original representation theorems, the
+derivations in Appendices A and B, and their references are retained.
+The scope of the execution result is the semantics translated from
+the frozen Appendix~D, as specified in Appendix~C.
+
+The formalizations use Lean 4.24.0 and the pinned Mathlib dependencies.
+Verification of this revision covers the representation results,
+the sparse entry, recursive count correctness, and the root digit
+trace in Appendix~C. For release-source hashes, consult
+\href{../verification/source-sha256.txt}{\nolinkurl{verification/source-sha256.txt}}. The five baseline finite test
+suites supply additional examples. The project initiator directed the
+research question and publication. AI assistants contributed to the
+derivations, formalization, review and preparation of the paper.
+Publication priority and independent human peer review remain open.
 
 \clearpage
 \subsection{Appendix A. A piecewise-quadratic
@@ -945,5 +966,570 @@ variance estimate and the common union bound apply with this same
 choice of weights. This produces the discrete matching and orientation
 used for all matrices in the proof. The signed weights enter only the
 existence argument; the rank comparison is for the original integral output.
+
+\clearpage
+\subsection{Appendix C. Correct count and root work in the frozen sparse execution}
+\label{app:frozen-execution}
+\setcounter{equation}{0}
+\renewcommand*{\theequation}{C\arabic{equation}}
+\renewcommand*{\theHequation}{appendixC.\arabic{equation}}
+
+This appendix uses the clause-network branch of the 25 October 2026
+source, with auxiliary order one. By the \emph{frozen source} we mean the
+four TeX inputs identified by SHA-256 in the \texttt{upstream.json}
+manifest of the Root-Separation baseline \texttt{adbffd95}. The branch and
+network construction are in \texttt{quantitative-reduction.tex},
+lines 65--94 and 363--369. The contraction rules are in
+\texttt{quantitative-contraction.tex}, lines 11--71, 76--171, 176--346,
+387--529, 544--569, and 603--613. The formal model specifies exact
+arithmetic, finite choices of admissible data, and the order of the
+root loop. These specifications are a translation of the TeX.
+
+\begin{theorem}[Correct count and charged steps of one sparse root]
+\label{thm:frozen-root-count-work}
+Let \(H_N\) be any finite simple cubic graph with each edge stored once,
+and let \(\sigma\) be any assignment of pin signs in \textup{(A)}. Put
+\[
+  \Lambda_0=262144^{30}9^5,\qquad N_0=2^{\Lambda_0-1}.
+\]
+For \(N>N_0\), the frozen semantics with the direct sparse
+clause-network entry selects the uncloned network with \(10N\) physical
+wires. Its run returns \(C_N(\sigma)\) and a trace of its own root
+execution. On a single tracked coefficient of every root accumulation,
+the trace contains at least
+\[
+                      2^{\,N/(2\sqrt{\log_2 N})}
+\]
+fixed-width addition digit steps. This is also a lower bound for the
+charge of any run into whose charged steps these digit steps embed
+injectively and in order, with at least one unit charged per image.
+\end{theorem}
+
+The threshold displayed here is a sufficient bound. A separate
+\emph{counting} statement holds for every \(N\ge20\): the sparse entry with
+its finite-range direct-summation branch returns \(C_N(\sigma)\).
+The work conclusion concerns the active root loop of this entry.
+It supplies neither a whole-run upper bound nor a result about the
+main-text hash counter, the high-density branch, or a compiled external
+solver. Expansion is used in the representation results of this paper.
+The execution result uses only the cubic degree condition.
+
+\subsubsection*{Entry, normalization, and physical ports}
+
+There are \(N\) unit clauses and \(3N/2\) positive edge clauses. Each
+variable occurs and has four clause ports. The variable tensor tree
+has two ternary equality vertices, one connecting edge, and two
+external clause ports on each vertex. Thus there are \(4N\) incidence
+edges and \(N\) connecting edges before subdivision. Each old edge is
+replaced by two wires joined at one binary equality vertex. The
+clause/equality side has degree at most three, and the subdivision
+side has degree two. Each satisfying assignment extends uniquely to
+the internal and subdivided edges, and every nonzero product of
+Boolean tensor entries comes from such an assignment. The size,
+initial precision and truncation order are
+\[
+              n=N,\qquad 2m=5N,\qquad s=n+m=7N/2,\qquad
+              P_0=N+1,\qquad \ell=1.
+\]
+All initial entries are \(0\) or \(1\).
+
+The sparse entry preserves this formula under deletion of repeated
+literals, duplicate clauses and tautologies. A graph edge has two
+distinct variables, and two different stored edges cannot yield the
+same clause. Unit clauses have different variables, and there are no
+empty clauses. For positive \(N\), the test
+\[
+                m\le N\ceil{\log_2\ceil{\log_2 N}}
+\]
+holds exactly for \(N>16\). Indeed, \(m/N=5/2\), so the integer on the
+right after division by \(N\) must be at least three. The entry for the
+count statement uses \(N\ge20\). Its finite contraction exceptions are
+handled by direct summation on the same network.
+
+Clause containment in the main-text normalization
+(\texttt{main\_full\_version.tex}, lines 3577--3581) changes this input.
+A positive edge clause is removed exactly when one of its endpoints
+has a positive pin. All unit clauses survive. With \(E'\) the surviving
+edge set, write \(e'=|E'|\) and let \(n_3'\) count vertices of retained
+degree three. The variable at \(v\) then has \(1+\deg_{E'}(v)\) ports.
+A one-port variable uses a unary all-ones tensor, a two-port variable
+uses binary equality, and a three-port variable uses one ternary
+equality vertex. Only a four-port variable has an internal connecting
+edge. Consequently the same builder applied after containment
+deletion has \(2(N+2e'+n_3')\) physical wires. In particular,
+all-positive pins give \(e'=n_3'=0\) and \(2N\) wires. All-negative pins
+preserve every edge. This gives an explicit obstruction to identifying
+the two input maps for every \(\sigma\). Unit substitution would go
+further and directly test the pins against the edge clauses.
+
+\subsubsection*{Thresholds along the active recursion}
+
+Keep \(s\) fixed down the tree and set \(\lambda=\ceil{\log_2 s}\).
+At depth \(d\), use the parameters
+\[
+\begin{gathered}
+ H=\ceil{s/\floor{\sqrt{\lambda}}},\quad
+ \Delta=\ceil{s^{9/10}},\quad
+ u_d=\floor{\lambda/(131072\,2^d)},\quad
+ a_d=2\sum_{j=0}^d u_j,\\
+ L_d=2^{a_d},\qquad Q_d=64^{2a_d}.
+\end{gathered}
+\]
+A call of \(M\) wires is active when \(M>H\). At the root this holds
+once \(N\) is sufficiently large, since \(H\le s<10N\). The local
+child rule proved below gives \(M'\le 6M/64<M/8\) for every child of an
+active call. Inductively \(M8^d\le3s\), starting from \(10N\le3s\).
+For an active call these inequalities imply
+\(8^d<3\floor{\sqrt{\lambda}}\), so \((2^d)^6\le9\lambda\).
+
+The distinction between numerical estimates and finite branch
+conditions matters. For example, take \(N=2^{131072}\), an admissible
+cubic size witnessed by disjoint copies of \(K_4\). Then
+\(s=7\cdot2^{131071}\), \(\lambda=131074\), and \(u_0=1\).
+The smaller root-size test \(N>2^{131071}\) and the root packing
+inequalities hold, while \(\lambda^4\le u_0^5\) fails.
+For the uniform threshold in the theorem, \(N>N_0\) implies
+\(\lambda\ge\Lambda_0\). Put \(A=262144\,2^d\). Then
+\[
+ A^{30}\le 262144^{30}(9\lambda)^5
+           =\Lambda_0\lambda^5\le\lambda^6 .
+\]
+Hence \(A^5\le\lambda\), so \(u_d=\floor{2\lambda/A}\ge1\).
+The floor bound gives \(\lambda\le A u_d\), whence
+\(\lambda^5\le A^5 u_d^5\le\lambda u_d^5\).
+Thus \(\lambda^{4/5}\le u_d\) holds at every active depth, including
+for an entry that explicitly checks this estimate. The same floor
+calculation bounds \(u_d\) between
+\(\lambda/(262144\,2^d)\) and \(\lambda/(131072\,2^d)\).
+
+Here are the remaining numerical checks. In one active call,
+write \(u,a,L,Q\) for the depth-specific values. Summing the
+geometric bounds on the \(u_j\) gives \(2u\le a\le4\lambda/131072\).
+Let \(J=\lambda-1-\floor{\lambda/32}\) and
+\(b=\ceil{9\lambda/10}\). For \(\lambda\ge1024\),
+\(\lambda\le 2^{\floor{\lambda/32}}\), as follows by induction from
+\(32(k+1)\le2^k\) for \(k\ge32\).
+As \(s\le H\floor{\sqrt{\lambda}}<M\floor{\sqrt{\lambda}}\)
+and \(s>2^{\lambda-1}\), it follows that \(M>2^J\).
+The bounds on \(a\) give
+\[
+\begin{aligned}
+ 24a+1+b &\le J, & 13a &\le J, &
+ 10(a+1)&\le9(\lambda-1).
+\end{aligned}
+\]
+Using \(\Delta\le2^b\), \(Q=2^{12a}\), and the last exponent
+inequality, we get \(2Q^2\Delta\le M,\ LQ\le M,\ 2L\le\Delta\).
+Also \(u\le\lambda<M\) and \(12000a\le\lambda-1\), giving \(L^{1000},Q^{1000}\le s\). Finally,
+\(M(2L-1)+1\le2^{\lambda+a+4}<s^4\le2^{4\lambda}\).
+For the strict bound use \(\lambda+a+4\le4(\lambda-1)\) and
+\(s>2^{\lambda-1}\). These estimates verify packing and interpolation
+capacity at each active call. The larger threshold also implies the
+solver's finite guard \(\lambda\ge2^{40}\) and its root-size guard.
+
+\subsubsection*{Collision certificate, slotting, and child topology}
+
+At a call of maximum vertex degree \(\Delta\), give the vertices on
+the two bipartite sides independent uniform labels in \([64]^a\).
+Let \(X_c\) count the real wires in ordered cell \(c\), where
+there are \(Q\) cells. The expected sum of squared deviations from
+\(M/Q\) is the sum over ordered wire pairs of their agreement
+probability minus \(1/Q\). Pairs with disjoint endpoints contribute
+zero. At most \(2M\Delta\) ordered pairs share an endpoint, and
+each contributes at most one. Fixing one vertex label at a time
+can preserve this bound by minimizing the conditional expectation
+over its possible labels. Each conditional agreement term concerns
+at most four vertices. Thus the selected complete labeling satisfies
+\[
+    \sum_c (X_c-M/Q)^2\le 2M\Delta,
+       \qquad X_c\le M/Q+\sqrt{2M\Delta}\le 2M/Q .
+\]
+Round the maximum load up to a multiple \(P_{\rm pad}\) of \(L\).
+Then \(P_{\rm pad}\le3M/Q\) by \(LQ\le M\).
+Fix the unordered coordinate pairs. If they differ in \(a'\)
+coordinates, the ordered cells for this pattern number \(2^{a'}\).
+Each packet reserves \(2^{a-a'}\) slots in each such cell.
+Unequal-coordinate bits specify the orientation, and the other
+bits distinguish copies. Padding permits this reservation in
+every cell, so every real wire gets a unique same-numbered row and
+column slot. There are \(Q P_{\rm pad}/L\) packets in all.
+
+In each coordinate, a fixed symbol on either side occurs in \(Q/64\)
+of the ordered cells. The number of real ports of that symbol on
+each side is at most \(3M/64\). In a child associated with that
+symbol, keep the vertices of the group on one side and create a
+vertex on the other side for each packet, attached to its retained
+row and column ports. The child's number of wires is the number of
+these retained ports, at most \(6M/64\). The inherited degrees do
+not increase, and new degrees are at most \(2L\le\Delta\).
+This proves the claimed decrease and, together with the threshold
+checks, establishes the simultaneous size and degree invariants by
+induction. At the root the labeling, slot layout and loop order can
+all be fixed from the graph before varying the signs.
+
+\subsubsection*{The native recurrence at one probe}
+
+Put \(e=4\lambda\). Take a monic binary-coefficient polynomial \(f\)
+of degree \(e\) whose reduction modulo two is irreducible. Such a
+polynomial is obtained by taking the minimal polynomial of a
+generator of the degree-\(e\) finite field extension of
+\(\mathbb F_2\) and lifting its coefficients. Use
+\[
+ \mathcal K=\mathbb Q[U]/(f),\qquad
+ \mathcal O=\mathbb Z_{(2)}[U]/(f),\qquad
+ \mathcal O_p=\mathcal O/(2^p).
+\]
+The powers \(1,U,\ldots,U^{e-1}\) are a basis for the coefficient
+description. Over \(\mathcal K\) the valuation is the minimum
+coordinate valuation. Removing that common power of two from
+each nonzero operand leaves a nonzero residue in the field
+\(\mathcal O_1\), which proves additivity of the valuation on
+products. An element of \(\mathcal O\) with nonzero residue is a
+unit. Its multiplication matrix is invertible modulo two and
+therefore has determinant a unit in \(\mathbb Z_{(2)}\).
+In particular,
+\(\mathcal O_p\) has the presentation
+\((\mathbb Z/2^p\mathbb Z)[U]/(f\bmod 2^p)\).
+The canonical lift of a residue uses the least nonnegative
+representative of each coordinate in this basis.
+
+A call stores an original or created tensor at its creation
+precision. It evaluates that entry there, lifts it canonically,
+and reuses that same integer-coefficient representative whenever
+the vertex survives. For a newly created tensor, its table is
+first formed at the child precision and then stored in this
+manner. Reduction of an entry commutes with the sums and products
+that define a contraction. The proof uses this homomorphism
+property of reduction. The coordinate section is used entry by
+entry.
+
+For a call with \(M\) wires, let \(S=\{-L,\ldots,L-1\}\),
+\(\alpha=2^{a+1}\), and \(C(T)=\prod_{b\in S}(T-b)\).
+For real row and column slots \(x,y\) of the same packet use
+\[
+ W_{xy}(T)=\frac{C(T)}{C'(0)(T-(y-x))},
+\]
+and set all entries between packets to zero. The indicated
+linear factor cancels, so \(W_{xy}\) is a polynomial of degree
+\(2L-1\). At \(T=0\) the only surviving entries pair the two
+ports of each real wire, with value one. If \(A(Y)\) and \(B(X)\)
+are the products of the fixed lifted tables on the two sides,
+set \(\ell_0(z)=1-z\), \(\ell_1(z)=z\), and put
+\[
+ F(T)=\sum_{Y,X}A(Y)B(X)\prod_{\text{real row ports }x}
+                      \ell_{Y_x}\bigl((W(T)X)_x\bigr).
+\]
+The two bit strings in this sum initially vary independently.
+The identity at \(T=0\) forces equality across each original
+wire. Thus \(F(0)\) is the contraction of this call's lifted
+tables, and \(\deg F\le M(2L-1)\).
+
+The grid \(S\) is complete modulo \(2^{a+1}\).
+The nonzero difference valuations from any \(t\in S\) have
+the same multiplicities as those from zero. Hence
+\(v_2(C'(t))=v_2(C'(0))\).
+After substituting \(T=t+\alpha z\) and canceling the factor for
+\(y-x\), the remaining factors with index \(b\ne t\) retain
+\(2^{v_2(t-b)}\) in their content. If \(y-x=t\), these factors
+cancel the entire two-part of \(C'(0)\). Otherwise the factor
+\(\alpha z\) is still present, and the canceled factor had
+valuation at most \(a\). Consequently \(W(t+\alpha z)\) is
+integral coefficientwise, with its second kind of entry divisible
+by two. The same integrality holds for \(F(t+\alpha z)\).
+
+At an active center \(t\ne0\), put \(i=v_2(t)<u\),
+\(D_t=L/2^i\), \(h=\ceil{3M/u}\), and set
+\[
+                  p_t=p+8hD_t+8M(a+1),
+\]
+where \(p\) is the call's input precision. Fix a probe
+\(\zeta\) and work in \(\mathcal O_{p_t}\), with \(T=t+\alpha\zeta\).
+A packet whose symbols agree at coordinate \(i\) is local.
+In a packet whose symbols differ, two slots are in different
+groups exactly when their \(i\)-th bits agree. Tile its columns by
+\(y=y_0+2^{i+1}j\) with \(0\le y_0<2^{i+1}\), so a tile has a
+fixed source group. For a row crossing to the tile,
+\(t-y_0+x\) has valuation at most \(i\). A larger valuation would
+require \(y_0\equiv x+2^i\pmod{2^{i+1}}\), in conflict with
+the equal \(i\)-th bits. Adding \(\alpha\zeta\) preserves this
+valuation. Thus \(A_0=T-y_0+x\) has valuation at most \(i\),
+and \(2^{i+1}/A_0\) has valuation at least one. The geometric
+expansion gives
+\[
+ W_{xy}(T)\equiv
+ \sum_{b=0}^{p_t-2}
+      \frac{C(T)}{C'(0)A_0}
+      \left(\frac{2^{i+1}}{A_0}\right)^b j^b
+ \pmod{2^{p_t}}.
+\]
+The prefactor has valuation at least \(a+1-i\), by the
+content bound for \(C(T)/C'(0)\) before cancellation.
+Each summand therefore contains \(2^{b+1}\), and the omitted
+geometric tail vanishes at this precision. The denominators here
+are interpreted by separating their known powers of two and
+inverting the unit part.
+
+For each such packet, tile and \(b\), introduce a mode \(Z\) of
+weight \(b+1\), substituted by
+\(L_Z(X)=\sum_{y\text{ real in tile}} j(y)^b X_y\)
+with \(j^0=1\). A mode has one source group and one target group.
+Ordinary row forms use local column bits and the modes targeted
+at the row group. The coefficient of \(Z^\beta\) in the product
+of affine row factors is divisible by
+\(2^{\sum_Z(b+1)\beta_Z}\). In particular the sample requires
+only the strict budget \(\sum_Z w_Z\beta_Z<p_t\).
+
+For a fixed \(\beta\), the coefficient of the modes targeted at
+each packet and group is extracted from the product of its row
+factors. Multiply it by the product of \(L_Z(X)^{\beta_Z}\)
+over the modes sourced by that packet and group. This is the
+packet table on the retained ports described above. Each formal
+mode appears in row factors only in its own target block, so
+coefficient extraction factors over those blocks. Its substituted
+power uses only the bits of its source block. Hence after collecting
+these factors all remaining bit sums separate by group. This gives
+the actual probe recurrence
+\begin{equation}
+ F(t+\alpha\zeta)\equiv
+   \sum_{\beta:\,\sum_Z w_Z\beta_Z<p_t}
+      \prod_{g=1}^{64} Z_{g,\beta}\pmod{2^{p_t}},
+ \label{eq:appendix-c-sample}
+\end{equation}
+where \(Z_{g,\beta}\) is the contraction of the child at precision
+\(p_t\), including both its inherited vertex tables and its new
+packet tables. The formula covers empty tiles and empty target
+rows. For example, an empty tile gives \(L_Z=0\), with its
+zeroth power equal to one. The literal loop still enumerates
+budget-feasible tuples with these indices.
+
+\subsubsection*{Tapered Hermite readout at the requested precision}
+
+For a fixed center \(t\), use \(M(2L-1)+1\) distinct binary-coordinate
+lifts in \(\mathcal O\) as probes \(\zeta\). Their differences are
+units since their reductions in \(\mathcal O_1\) are distinct.
+Thus ordinary Lagrange interpolation recovers
+\(F(t+\alpha z)\) modulo \(2^{p_t}\) as a polynomial in \(z\).
+Indeed the Lagrange denominators are units, so replacing every
+sample by any representative changes every coefficient by an
+element of \(2^{p_t}\mathcal O\). The degree bound ensures that
+the exact interpolant is the stated polynomial.
+
+Set \(q_t=h\max(0,u-v_2(t))\) for \(t\ne0\) in \(S\), and
+let \(q(v)=h\max(0,u-v)\).
+There are \(L\) odd centers. The multiplicity sum is therefore
+at least \(Lhu\ge3ML>M(2L-1)\).
+Also \(h\le4M/u\) and \(q_t\le4M\) since \(u\le M\).
+For \(q_t>0\) define
+\[
+          E_t(T)=\prod_{\substack{b\in S\\ b\ne0,t}}
+                      \left(\frac{T-b}{t-b}\right)^{q_b}.
+\]
+Its local series \(E_t(t+\alpha z)\) has constant term one and
+integral coefficients, since \(v_2(t-b)\le a\). The truncated
+inverse is integral by the coefficient recursion for a series
+with constant term one. Form the polynomial pieces
+\[
+ E_t(T)\left[
+    F(t+\alpha z)/E_t(t+\alpha z)
+    \right]_{<q_t}\bigl((T-t)/\alpha\bigr).
+\]
+A piece agrees with \(F\) to order \(q_t\) at its own center,
+and vanishes at the other centers to their specified orders.
+Each piece has degree below the multiplicity sum. The difference
+of their sum and \(F\) is divisible by
+\(\prod_{t:q_t>0}(T-t)^{q_t}\) and has smaller degree, so it
+vanishes. Evaluating these pieces at \(T=0\) is the exact
+Hermite formula for the call's desired value.
+
+For the precision at this evaluation, take \(i=v_2(t)\) and
+\(D_t=L/2^i\). At levels \(i+j\), \(1\le j\le a-i\), there
+are \(D_t/2^j\) choices of \(b\) with \(v_2(b)=i+j\), and
+the same number with \(v_2(t-b)=i+j\). In the second set
+\(v_2(b)=i\). Points with \(v_2(b)<i\) contribute zero to
+the difference of valuations. It follows that
+\[
+\begin{aligned}
+ v_2(E_t(0))
+   &=D_t\sum_{j=1}^{a-i}\frac{j}{2^j}\bigl(q(i+j)-q(i)\bigr)\\
+   &\ge -hD_t\sum_{j\ge1}\frac{j^2}{2^j}
+    =-6hD_t .
+\end{aligned}
+\]
+The last sum follows by differentiating the geometric series.
+Evaluating the truncated local piece at \(-t/\alpha\) loses
+at most \(4M(a+1)\) additional powers of two. Each approximate
+Lagrange coefficient was correct modulo \(2^{p_t}\), and the
+truncated inverse has no precision loss. The combined loss per
+term of the Hermite sum is therefore at most
+\(6hD_t+4M(a+1)\le p_t-p\).
+The recovered sum differs from the integral \(F(0)\) by an
+element of \(2^p\mathcal O\). It thus determines the parent
+residue at its original precision. Individual rational
+summands can have negative valuation. The readout reduces the
+sum after the precision argument.
+
+\subsubsection*{Correctness of the recursive evaluator and its returned trace}
+
+Use strong induction on the number of wires. For \(M\le H\),
+direct summation gives the required contraction. The finite
+root exceptions use the same direct calculation. At an active
+call each child has fewer wires and satisfies the inherited
+size and degree conditions. The induction hypothesis applies at
+its own creation precision \(p_t\) and proves that every
+recursive group evaluation returns successfully with the
+residue of the specific child contraction. Substitution of
+these returned values into \eqref{eq:appendix-c-sample} gives
+a correct probe residue. The Lagrange and Hermite steps just
+proved then return the parent contraction modulo \(2^p\).
+In particular, the active proof requires no assumption of
+correct probe data from the caller. It establishes those data
+from the recursive children. At the root the Boolean network
+contraction is \(C_N(\sigma)\) and lies in \([0,2^N]\).
+Its constant coordinate is recovered as an integer from the
+residue modulo \(2^{N+1}\).
+
+Here the recurrence has an ordered, state-changing root
+implementation. At each center and probe it begins with zero
+accumulator and enumerates modes in the fixed order. With
+remaining budget \(b>0\), the next weight \(w\) permits the
+exponents \(0,\ldots,\floor{(b-1)/w}\), with budget
+\(b-w\beta\) thereafter. Induction on the number of remaining
+modes shows that this visits every and only feasible complete
+tuple once. At a leaf it takes the 64 returned residues in
+group order, multiplies them in \(\mathcal O_{p_t}\), and adds
+the product to the current probe accumulator.
+
+For the tracked coordinate, the addition acts on two \(p_t\)-bit
+words. At digit \(j\) the sum of the two input bits and the
+incoming carry determines the output bit modulo two and the
+next carry by division by two. The high remainders of the
+operands and the new carry are used at digit \(j+1\).
+After \(p_t\) digits the output word is their sum modulo \(2^{p_t}\).
+An induction on the width proves both this value identity and
+the exact \(p_t\) digit transitions. The accumulator vector
+with these updated coordinates is the state used by the next
+tuple. The trace records the executed transitions and the group
+returns. Keeping just the zero-index digit of each tracked
+addition gives, in order, exactly the center, probe and tuple
+addresses of the reference loop. Each occurrence is mapped
+to a different position of the charged digit trace, even when
+some operands or outputs coincide.
+
+The same evaluation supplies the probe accumulators to the
+Hermite decoder and returns the concatenated root trace from
+those batches. Thus the correctness argument applies to the
+returned value of the very run whose trace is charged. It
+does not require a second execution with synthetic child values.
+
+\subsubsection*{A lower bound from one batch of the returned trace}
+
+Use the root's center \(t=1\) and the first probe in its list.
+This center belongs to \(S\) and has positive multiplicity, since
+\(u=u_0\ge1\) and \(L=2^{2u}\).
+Let \(B\) count the packets whose two symbols in coordinate
+zero are different. Ordered cells with equal symbols in this
+coordinate comprise a \(1/64\) fraction of the cells. With the
+cell-load bound above, they carry at most
+\((Q/64)(2M/Q)=M/32\) real wires. The other wires fit into
+the \(B\) mixed packets, each of \(L\) slots. Together with the
+total packet bound, this gives
+\begin{equation}
+                        M\le2BL,\qquad BL\le3M .
+\label{eq:appendix-c-packet-load}
+\end{equation}
+
+Put \(q=\floor{\sqrt{u}}+1\) and \(k=\floor{L/q}\).
+In each mixed packet use the modes of weights \(1,\ldots,k\)
+at tile zero. Independently choose exponents zero or one on
+these \(b_*=Bk\) modes and zero elsewhere. Their maximum weight
+is at most \(Bk^2\).
+Since \(q^2>u\), \(qk\le L\), and \(BL\le3M\), we have
+\(uBk^2\le BL^2\le3ML\). At this odd center \(D_1=L\), so the
+printed precision gives \(up_1\ge8u\ceil{3M/u}L\ge24ML\).
+Thus all the binary choices fit the strict budget. In particular
+\(k\le Bk^2<p_1\), so all the selected modes exist. For \(u\ge1\),
+\(L=4^u\ge2(u+1)\ge2q\). Therefore \(k\ge1\) and
+\(L<(k+1)q\le2kq\). From \eqref{eq:appendix-c-packet-load},
+\[
+                M\le4q\,b_*.
+\]
+The \(2^{b_*}\) distinct tuples give that many executed additions,
+each with a charged digit in the returned trace. The argument
+counts feasible tuples even when the translated program obtains
+a zero contribution for a tuple.
+
+Finally \(M=10N\), \(u\le\lambda\), and
+\(\lambda=\ceil{\log_2(7N/2)}\le\log_2N+3\le2\log_2 N\)
+for \(N\ge20\). Hence \(q\le 2\sqrt{\lambda}\le4\sqrt{\log_2 N}\)
+and \(b_*\ge N/(2\sqrt{\log_2 N})\). This proves the work
+bound. Composing the injection into the root digit trace
+with an ordered injection into the charged steps of a containing
+run gives the claimed transfer. Such an injection is an explicit
+condition for applying this result to another execution semantics.
+
+\subsubsection*{Connection to the checked entry points}
+
+The sufficient size in Theorem~\ref{thm:frozen-root-count-work}
+implies \(N\ge20\), \(N>2^{131071}\), and
+\(\lambda\ge2^{40}\). Thus the direct sparse dispatcher reaches
+the active computation with its certified packing. The
+\texttt{runPinnedSparse\_active} equality from
+\texttt{SolverRootRun.lean} identifies this branch with
+\texttt{frozenActiveRoot}. A monic \(f\) of the specified degree
+is chosen as in the counting entry, and coordinate zero may
+be used as the tracked coordinate. This establishes the
+route claimed in the theorem and fixes the execution to which
+the returned count and work apply.
+
+The following are the Lean 4.24.0 interfaces for the proof.
+\begin{itemize}
+\item \nolinkurl{RootProgram.lean} verifies the uncloned entry,
+the certified packing and the addresses of the reference loop.
+The \texttt{RootExecution} and \texttt{RootExecutionDriver}
+modules implement the root batch state, its arithmetic and
+the positional projection to that loop, including
+\nolinkurl{executeProbe_value}, \nolinkurl{executeRoot_project},
+and \nolinkurl{executeRoot_inject}.
+\item \nolinkurl{PreprocessingThresholds.lean} and its dependencies
+verify the subsumption obstruction and the eventual active
+checks. In particular \nolinkurl{PTEntryBridge.lean} gives
+\nolinkurl{all_positive_wire_counterexample},
+\nolinkurl{cutoff_graph_example}, and
+\nolinkurl{sparse_entry_admissible}. The existence of the
+smaller-cutoff counterexample concerns an actual simple
+cubic graph. Eventual admission uses the larger explicit
+threshold.
+\item The declarations in \nolinkurl{SolverPinnedCorrectness.lean}
+are in namespace \texttt{RootSeparation.Solver}.
+\nolinkurl{solveUnclonedPinned_correct} proves that for
+\(N\ge20\) the pinned sparse counting entry returns the model
+count. \nolinkurl{frozenActiveRoot_count_and_work} proves,
+under the active guards and size hypotheses, that
+\texttt{frozenActiveRoot} returns one result with that count
+and the digit lower bound on its own \texttt{localTrace}.
+The underlying recursion and recovery use
+\nolinkurl{runNativeCall_correct} and
+\nolinkurl{recoverCall_of_probe_residues}.
+\item \nolinkurl{PublicSparseRun.lean} combines the thresholds and the
+two outputs. In namespace \nolinkurl{RootSeparation.Preprocessing},
+\nolinkurl{publicSparseRun_count_and_work} assumes \(N>N_0\).
+It proves sparse dispatch and returns the exact count paired with
+the trace meeting the lower bound. For \(N\ge20\), the count
+projection agrees with \nolinkurl{solveUnclonedPinned}.
+\end{itemize}
+For byte-level release provenance, see the accompanying
+\href{../verification/source-sha256.txt}{\nolinkurl{verification/source-sha256.txt}}.
+The entry-point axiom reports use only \texttt{propext},
+\texttt{Classical.choice}, and \texttt{Quot.sound}.
+
+The root work proof counts the tuple loop directly. The
+representation materialization corollary of Section 8 applies
+under its own hypotheses about a representation and its tags.
+Identifying that representation and its final residue with a
+particular program would require a separate correspondence.
+The appendix establishes the count and the digit steps of
+the frozen sparse semantics. A machine-level interpretation
+requires an executable specification and a refinement of
+its observable charged steps to the trace established here.
 
 \end{document}

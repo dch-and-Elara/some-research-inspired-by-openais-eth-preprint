@@ -1,1 +1,1 @@
-Verified 38 Lean source modules and 387 public theorem declarations. All 241 named declarations passed the axiom audit.
+Verified 180 Lean source modules and 1739 public theorem declarations. All 249 named declarations passed the axiom audit.
