@@ -38,7 +38,33 @@ lake env lean Audit.lean
 
 The default build imports all proof modules. The last command prints the axioms used by the audited declarations. [Verification record](VERIFICATION.md) · [AI disclosure](AI_DISCLOSURE.md)
 
+## Rank lower bounds for node-dependent polynomial reconstruction in SAT counting
+
+At each interpolation point, a factor can read its own group of variables and shared linear measurements of the other groups. The groups and measurements may change from one point to the next. The paper bounds how much measurement rank this freedom still requires, using determinants of submatrices and a count of the points where a variable’s source and target groups disagree.
+
+On an infinite family of positive 2-CNF formulas in which each variable occurs at most three times, one call with a balanced layout requires $2^{\Omega(n^{2/3})}$ visits, for any number of interpolation points. The bound applies to a routine that enumerates all Boolean-reachable measurement tuples, visits the prescribed Taylor subsets, and scans the assignments of a largest group. Here $n$ is the number of variables.
+
+[Paper (PDF)](reconstruction-studies/papers/paper_polynomial_recovery.pdf) · [LaTeX source](reconstruction-studies/papers/paper_polynomial_recovery.tex) · [Lean theorem index](reconstruction-studies/THEOREMS.md#rank-lower-bounds-for-node-dependent-polynomial-reconstruction)
+
+## Ternary Measurements for Paired Local Recovery
+
+Each array entry is indexed by a pair of length-$q$ words. A receiver sees part of the array directly and must recover its output using measurements shared by all receivers. How many independent measurements suffice?
+
+For a binary indexing alphabet over the rationals, the minimum rank at degree zero is $(4^q-1)/3$ for $q\ge 1$. At degree $q-2$ it is $q+\lceil q/2\rceil+2$ for $q\ge 2$. Both optima are attained using coefficients in $\{-1,0,1\}$. For example, at $q=3$, allowing degree one reduces the optimum from 21 measurements to 7.
+
+[Paper (PDF)](reconstruction-studies/papers/paper_ternary_codes.pdf) · [LaTeX source](reconstruction-studies/papers/paper_ternary_codes.tex) · [Lean theorem index](reconstruction-studies/THEOREMS.md#ternary-measurements-for-paired-local-recovery)
+
+## A Root-Separation Barrier for Tensor-Interpolation SAT Algorithms
+
+How many products of local functions are needed to express a final model count? For each pin assignment on a cubic expander with $N$ vertices, the model count is a single bit recording whether every edge clause is satisfied. For the layouts covered by the full-group theorem, with alphabet size at least 27 and fixed positive expansion, any fixed signed sum recovering this bit needs $2^{\Omega(N/\sqrt{\log N})}$ products. Each product may choose its own retained coordinate.
+
+Appendix C counts work in a specific execution. On sufficiently large simple cubic graphs, the specified sparse clause-network evaluator returns the exact count and performs at least $2^{N/(2\sqrt{\log_2 N})}$ digit updates at its root.
+
+[Paper (PDF)](root-separation/paper/root_separation.pdf) · [LaTeX source](root-separation/paper/root_separation.tex) · [Lean theorem index](root-separation/THEOREMS.md)
+
 ## Rank-Budget Barriers for Interpolation Algorithms
+
+This paper asks how much rank local interpolation data can retain when an algorithm combines them to recover a final value. It proves bounds for Hermite data at unequal precisions and for fixed affine combinations of local products across layouts. It also bounds the visits of a specified iterator when it enumerates only measurement tuples attainable on Boolean inputs.
 
 Section 8 shows how one multiplication can recover the exact SAT count from two products of local functions. On the cloned input, both coordinates can come from one MAIN layout, both from one Appendix D packing, or one from each method. On the original uncloned input, levels 0 and 1 of a single Appendix D root suffice. Each local function reads only the signs in its assigned group. The linear evaluation cost applies to the terminal scan after preprocessing.
 
