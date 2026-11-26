@@ -1,0 +1,3 @@
+AUDITED declarations=12042 theoremDeclarations=8046 localAxioms=0 transitiveAxioms=[propext,
+ Quot.sound,
+ Classical.choice]

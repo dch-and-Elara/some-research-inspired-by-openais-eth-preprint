@@ -1,0 +1,3056 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  
+  
+  
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=24mm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{microtype}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{4pt}
+\AtBeginEnvironment{longtable}{\small}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Rank-Budget Barriers for Interpolation Algorithms}
+\fancyhead[R]{\small Research draft}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.3pt}
+\allowdisplaybreaks[2]
+\AtBeginDocument{\hypersetup{linkcolor=blue!45!black,urlcolor=blue!55!black}}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Rank-Budget Barriers for Interpolation Algorithms},
+  pdfauthor={},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Rank-Budget Barriers for Interpolation Algorithms}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Unified Lower Bounds, Optimal Representations, and Escape
+Mechanisms for Algebraic Counting}
+\author{}
+\date{27 November 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We study the information retained by local data in exact interpolation
+algorithms. A matrix-valued Hermite transport identity connects
+polynomial degree, nonuniform jet multiplicities, local factor widths
+and the rank of a final input-value matrix. We give an exact
+fixed-decoder precision criterion, a finite observation-lattice bound
+and a source-specific optimum over retained dyadic jet profiles. On
+genuine bounded-occurrence CNFs a common oriented matching controls both
+the rational and tensor-contraction entry points of the studied
+manuscript, including fixed affine mixtures with cancellation and shared
+registers. An independent projection estimate gives the published
+optimized iterator exponent even when only attainable measurement tuples
+are enumerated. Conversely, certified layouts admit a linear-work
+cross-method product on the same family, delimiting any extension beyond
+the affine interface. The field, finite-algebra, CNF, common matching and literal root-visit theorems have Lean certificates. Source algorithms and external runtime upper bounds are cited explicitly. Classical precedents
+and open model-coverage questions are explicit.
+\end{abstract}
+
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\section{Introduction and main
+conclusions}\label{introduction-and-main-conclusions}
+
+Interpolation algorithms replace one difficult object by local data and
+recover its value by fixed linear operations. The central question here
+is what those local data must retain when the final value is viewed as a
+function of the original input. A single output number has no useful
+rank lower bound. Its matrix of values over two independently varied
+parts of the input can have large rank. Polynomial test vectors make
+this distinction compatible with Hermite interpolation, higher
+multiplicities and finite precision.
+
+We develop one accounting framework around the identity
+
+\[
+ L_a(A)=\sum_t(D_t\otimes I)L_t(A)(E_t\otimes I).
+ \tag{U.1}
+\]
+
+Here \(L_t(A)\) is multiplication by the actual matrix jet at node
+\(t\), and \(D_t,E_t\) are explicit scalar interpolation maps. If the
+entries of \(A(T)\) have degree at most \(d\), the total observation
+multiplicity is \(S\), and the anchor is invertible, then each
+\(b\le S-d\) supplies a rank-\(bN\) target in (U.1). Thus
+\(bN\le\sum_t\operatorname{rank}L_t(A)\). Whole-jet factor widths
+\(r_t\) give \(\sum_t k_t(N-r_t)\le Nd\). Pointwise matrix ranks do not
+give this multiplicity-weighted inequality. We give explicit
+counterexamples to that substitution and to a naive extension to
+colliding residues.
+
+The field inequality is a classical consequence of polynomial matrix
+theory. Interpolation of products in local algebras also has a
+substantial history, including the Chudnovsky--Chudnovsky method and
+Randriambololona's interpolation systems. Our aim is not to rename those
+results. We use their common transport identity to retain three pieces
+of information that matter for algorithm barriers: the exact loss of
+precision in the specified decoder, the permitted input dependence of
+local representations, and the distinction between a representation and
+an execution. The literature audit compares the precise hypotheses
+rather than treating similarity of terminology as novelty.
+
+For fraction fields of discrete valuation rings we determine, for a
+fixed decoder and independent coefficient errors, the exact
+coordinatewise accuracy needed to retain the anchor residue. This
+remains valid when distinct field nodes collide modulo the uniformizer.
+A complementary finite-module-length bound measures the actual image of
+the observation lattice; it uses Smith form over the DVR only, never
+over a nonprincipal double-truncation ring. Finite algebra readouts have
+their own exact bilinear capacity. These facts allow Taylor statistics,
+shared information and separated tensor products to be treated as
+channels of the same final value matrix.
+
+We apply the framework to two concrete entry points in OpenAI's October
+25, 2026 manuscript: the direct bounded-occurrence rational clause
+routine, and the sparse-CNF root contraction in Appendix D. We also
+analyze supplied sparse polynomial systems. Four-copy implication cycles
+put the same pinned expander CNFs into both entry points. A weighted
+simultaneous-correlation argument selects one oriented induced matching
+for their combined actual layouts. Thus the two routes are compared on
+the same target, not on different worst inputs. At the published scales
+a fixed affine mixture has a superpolynomial entrance requirement even
+if it uses signed cancellation, completed Taylor registers, shared
+caches, and bounded-capacity input-dependent transfers.
+
+The second main outcome is a limit on this result. On
+triangle-replacement expanders, admissible source layouts permit the
+same count function to be computed by two full coordinate products and
+one multiplication across coordinates. The products are computable in
+linear indexed work. An independent refinement uses one MAIN coordinate
+and one Appendix D coordinate. The functions used within the groups are
+arbitrary permitted local functions; we do not identify them with
+particular native numerical probes. This is a strict separation between
+the affine representation interface and a natural nonlinear extension.
+It prevents an assertion that rank alone excludes all hybrids built from
+the two local mechanisms.
+
+\subsection{Claims and their strength}\label{claims-and-their-strength}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Claim
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Mathematical scope
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Verification status
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Hermite image/degree budget & Regular polynomial matrices over arbitrary
+fields; distinct nodes and nonuniform lengths & Full field core in Lean,
+including constructed CRT \\
+Precision and finite-length budgets & Specified DVR decoder; independent
+coefficient errors, or globally integral observation lattices &
+Kernel-checked decoder criterion, Smith truncation and optimized native windows \\
+Main final count & Genuine three-occurrence CNFs; actual graph-only
+incidence layouts and joint finite-algebra readouts & Algebraic and CNF
+and native coefficient witnesses in Lean, with source references in the text \\
+Shared and mixed output & One common value-matrix restriction; affine
+suffix with charged transfer capacities & DAG, rank, guards and trace
+accounting and the common matching in Lean \\
+Matching literal-schedule rate & Explicit source iterators, with all
+costs stated as lower-bound obligations & Verified visit lists with an external fixed-density bit upper bound \\
+Cross-method product & Certified layouts, arbitrary
+group-local functions, one downstream product & Verified one-MAIN/one-D construction on the same cloned input \\
+Complete original adaptive front end & Sign-dependent parity rows,
+pruning and joint computation & Semantic barrier remains open \\
+\end{longtable}
+
+Throughout, asymptotic constants depend only on fixed expansion and
+density constants. Claims uniform over layout parameters state their
+feasibility and size conditions explicitly. The total number of
+interpolation coordinates cannot be allowed to grow without accounting
+for the common-cut hypothesis.
+
+The paper proves no separation of P and NP, and no failure of the
+source's subexponential correctness theorem. It distinguishes four
+objects: the size of an admissible representation, the cost of a stated
+evaluator, exact counting, and SAT decision. An entirely satisfiable
+variant with many exact counts makes the last distinction explicit. The
+positive bounds and the cheap counterexamples are both conclusions of
+the same invariant, not competing claims about an unspecified algorithm
+class.
+
+\subsection{Provenance and review}\label{provenance-and-review}
+
+The research direction and the earlier Boolean-cube model were supplied by the project owner. AI systems contributed to the mathematical proofs, Lean formalization and review. A separate source replay and a joint kernel audit accompany this edition. The final section pairs the two supplementary arguments with their Lean declarations.
+
+\section{Hermite transport, precision and matrix
+degree}\label{hermite-transport-precision-and-matrix-degree}
+
+\subsection{The reconstruction
+inequality}\label{the-reconstruction-inequality}
+
+Let \(K\) be a field and \(N\ge1\). Let \(A(T)\in K[T]^{N\times N}\)
+have entry degree at most \(d\) and \(\det A(a)\ne0\) at an anchor
+\(a\in K\). Select distinct \textbf{field} nodes \(t\in K\), positive
+lengths \(k_t\), and nonzero coordinate scales \(\alpha_t,\beta\in K\).
+Set \(S=\sum_t k_t\), \(1\le b\le S-d\), \(B_t=K[z]/z^{k_t}\), and
+\(B_a=K[w]/w^b\). All coefficients mean ordinary monomial coefficients
+after substitution, or Hasse coefficients, in arbitrary characteristic.
+Denote by \(L_t(P)\) multiplication of a vector in \(B_t^N\) by
+\(P\in B_t^{N\times N}\), written over \(K\) in coefficient-first order.
+Write \(J_t=A(t+\alpha_tz)\bmod z^{k_t}=\sum_j A_{tj}z^j\). Write
+\(L_a\) for multiplication by \(A(a+\beta w)\bmod w^b\).
+
+Define two scalar matrices independent of \(A\).
+
+\begin{itemize}
+\tightlist
+\item
+  \(E_t:K^b\longrightarrow K^{k_t}\) sends the coefficient vector of
+  \(h(w)\), \(\deg h<b\), to the jet of \(h((T-a)/\beta)\) at
+  \(T=t+\alpha_tz\).
+\item
+  The inverse of the Hermite evaluation isomorphism
+  \(K[T]_{<S}\longrightarrow\bigoplus_t B_t\) exists by CRT over \(K\).
+  Apply the inverse to a vector supported at node \(t\), substitute
+  \(T=a+\beta w\), and retain orders below \(b\). This defines
+  \(D_t:K^{k_t}\longrightarrow K^b\).
+\end{itemize}
+
+Let \(Z_t\) multiply a scalar jet by \(z\), and set
+\(G_{tj}=D_tZ_t^jE_t\). On vector coefficients, write scalar maps
+tensored with \(I_N\).
+
+\textbf{Theorem 1 (Hermite reconstruction with finite precision).} In
+the stated field setting, \[
+ L_a=\sum_t (D_t\otimes I_N)L_t(J_t)(E_t\otimes I_N)
+     =\sum_{t,j} G_{tj}\otimes A_{tj} . \tag{H.1}
+\] In particular, the left side has rank \(bN\). The same compression
+witnesses this rank after independent finite-precision replacement,
+under the following conditions. Let \(K\) be the fraction field of a DVR
+\(\mathcal O\), with uniformizer \(\pi\) and normalized valuation \(v\).
+Require all the true local jet coefficients and the anchor jet
+coefficients through order \(b-1\) to be integral, and require
+\(\det A(a)\) to be a unit. Allow
+\(\widetilde A_{tj}\equiv A_{tj}\pmod{\pi^{P_{tj}}}\) independently,
+entry by entry. For a target precision \(p\ge1\), the necessary and
+sufficient condition for \textbf{all these errors}, for this fixed
+compression, to change every block entry by an element of
+\(\pi^p\mathcal O\) is \[
+       P_{tj}+\min_{i,l} v((G_{tj})_{il})\ \ge p\quad\text{for every }t,j. \tag{H.2}
+\] Here \(v(0)=+\infty\). Under (H.2), for every permissible choice of
+local lifts \(\widetilde J_t=\sum_j\widetilde A_{tj}z^j\), \[
+ bN\ \le\ \sum_t\operatorname{rank}_K L_t(\widetilde J_t),\qquad
+ bN\ \le\ \sum_{t,j}\operatorname{rank}_K G_{tj}\ \operatorname{rank}_K\widetilde A_{tj}. \tag{H.3}
+\] One may replace either local matrix by a sum of entrance matrices and
+take the sum of their individual ranks. In the second inequality
+identical scalar entrance matrices \(U_c\) reused across coefficients
+combine to one \(H_c\otimes U_c\), with \(H_c=\sum_{tj}u_{tj,c}G_{tj}\)
+for fixed coefficients \(u_{tj,c}\). This gives
+\(bN\le\sum_c\operatorname{rank}H_c\operatorname{rank}U_c\). Counting a
+reused entrance several times is unnecessary in this version. For a
+rank-\(r\) residue anchor, restricting to an invertible \(r\)-minor
+gives \(br\) on the left. The same restriction works for rectangular
+matrices.
+
+\emph{Proof.} A test column \(h(w)\) of degree below \(b\) represents
+\(h((T-a)/\beta)\). The product \(A(T)h((T-a)/\beta)\) has degree at
+most \(d+b-1<S\). Hence the exact scalar inverse CRT in each component
+recovers the product from its local jets. Restriction at the anchor
+gives (H.1). In coefficient-first order \(L_a\) is block lower
+triangular with \(b\) copies of \(A(a)\) on its diagonal. Its
+determinant is \(\det(A(a))^b\). The difference of the compressed
+matrices is exactly
+\(\sum_{t,j}G_{tj}\otimes(\widetilde A_{tj}-A_{tj})\). Condition (H.2)
+bounds every entry by the nonarchimedean triangle inequality.
+Conversely, choose one coefficient error, one matrix unit and an entry
+attaining the minimum valuation to see necessity. The compressed lift is
+integral and has the same invertible residue as \(L_a\). It therefore
+has rank \(bN\) over \(K\). Subadditivity, rank monotonicity under
+composition, and Kronecker rank multiplicativity give all the
+assertions. No residue-level CRT or multivariate Smith form has been
+used. The necessity assertion is for the prescribed coefficientwise
+accuracy under independent errors. Other decoders, constrained errors,
+and mere preservation of rank can have weaker requirements.
+
+\textbf{Interpretation.} With \(b=1\), (H.1) is scalar Hermite
+interpolation followed by the full-rank terminal matrix test. With
+\(b=S-d\), every independent test column of degree below \(S-d\)
+simultaneously passes through the same local maps. In exact arithmetic,
+a local jet admitting a factorization through \(B_t^{r_t}\) has
+\(\operatorname{rank}_K L_t(J_t)\le k_t r_t\). Consequently \[
+                       \sum_t k_t(N-r_t)\le Nd. \tag{H.4}
+\] If \(S\le d\), (H.4) follows trivially for \(0\le r_t\le N\). Over
+\((\mathcal O/\pi^{P_t})[z]/z^{k_t}\), a width-\(r_t\) local
+factorization lifts by lifting \textbf{the factors} and multiplying
+modulo \(z^{k_t}\). Its coefficientwise error is admissible, and its
+lifted multiplication map still factors through \(K^{k_t r_t}\). Thus
+(H.3) gives \(\sum_t k_t r_t\ge bN\) at every certified \(b\). The same
+proof charges a sum of local factors. The coefficient capacity
+\(\operatorname{rank}G_{tj}\le\min(b,k_t-j)\) follows from the shift.
+When the anchor lies outside the full node set and \(b\ge k_t\), this
+rank equals \(k_t-j\). Indeed \(E_t\) is surjective by translating a
+polynomial of degree below \(k_t\). The single-node interpolant is
+\(\prod_{s\ne t}(T-s)^{k_s}\) times a polynomial of degree below
+\(k_t\), so \(D_t\) is injective since that product is a unit in the
+anchor jet and \(b\ge k_t\).
+
+\subsection{Exact sharp local profile}\label{exact-sharp-local-profile}
+
+For a regular square \(A\), let \(e_{t,1}\le\cdots\le e_{t,N}\) be the
+valuations of its local Smith factors over \(K[T]_{(T-t)}\). The
+invertible matrices in this normal form stay invertible after reduction
+to \(B_t\), and units and the nonzero coordinate scale do not affect
+rank. Hence \[
+ \delta_t:=Nk_t-\operatorname{rank}_K L_t(J_t)
+         =\sum_{i=1}^N\min(k_t,e_{t,i}). \tag{H.5}
+\] It follows that \[
+ \sum_t\delta_t\le\sum_t v_{T-t}(\det A)\le\deg\det A\le Nd. \tag{H.6}
+\] The first inequality is equality exactly when no sampled partial
+multiplicity exceeds its cap. The second is equality exactly when the
+determinant has no uncaptured irreducible factors. The final equality
+holds when the grade-\(d\) leading coefficient matrix is nonsingular.
+These conditions apply to a nonzero determinant, with constants
+included. For general normal rank \(r\), replace \(N\) in (H.5) by
+\(r\), keep the \(r\) finite local factors, and replace the determinant
+in (H.6) by the monic greatest common divisor \(\Delta_r\) of the
+nonzero \(r\)-minors. Smith form makes
+\(v_t(\Delta_r)=\sum_{i=1}^r e_{t,i}\), and a nonzero minor has degree
+at most \(rd\). More generally every \(s\le r\) has
+\(v_t(\Delta_s)=\sum_{i\le s}e_{t,i}\) and
+\(\sum_t\sum_{i\le s}\min(k_t,e_{t,i})\le\deg\Delta_s\le sd\). This uses
+determinantal divisors, equivalently the corresponding Fitting ideals.
+It does not require the determinant of a singular square matrix.
+
+Local factor width \(r_t\) is a stronger statistic than a rank bound on
+\(A(t)\). Over the principal local ring \(B_t\), the minimal factor
+width of a matrix with Smith exponents is the number of exponents
+\(e_{t,i}<k_t\). The upper bound is diagonal factorization. For the
+converse, a submodule of a module generated by \(r_t\) elements over
+this principal ideal ring also has at most \(r_t\) generators, by
+lifting that submodule to a submodule of \(K[z]^{r_t}\) under a
+surjection and using the PID submodule theorem. Thus the image of a
+factorization through \(B_t^{r_t}\) needs at most \(r_t\) generators.
+Its Smith decomposition exhibits exactly one cyclic summand for each
+surviving exponent, and reduction of the image modulo its own
+maximal-ideal multiple counts these summands. In particular
+\(k_t(N-r_t)\le\delta_t\). This result concerns inner rank over the jet
+algebra. Vanishing of \((r_t+1)\)-minors \textbf{modulo one power} need
+not imply it.
+
+For distinct monic irreducibles \(f_t\) of degrees \(c_t\), the same
+identity in the quotient \(K[T]/(f_t^{k_t})\) gives
+\(\delta_t=c_t\sum_i\min(k_t,v_{f_t}d_i)\), where \(d_i\) are the
+invariant polynomials. The coefficient budget is \(\sum_t c_tk_t\), and
+(H.6) holds with \(c_t\) multiplying each valuation. In the scalar-node
+case a direct CRT proof of the grade bound uses injectivity of
+\(v\mapsto Av\bmod\prod_t(T-t)^{k_t}\) on vector polynomials of degree
+below \(S-d\). This argument works without choosing an invertible
+field-valued anchor, even over a small finite field where one might not
+exist. Equations (H.5)--(H.6) retain all detectable multiplicities that
+the grade-only argument can discard.
+
+\subsection{Sharpness and failure
+modes}\label{sharpness-and-failure-modes}
+
+\begin{itemize}
+\tightlist
+\item
+  Let \(g=\prod_{t\in U}(T-t)^{k_t}\), \(d=\deg g\), and \(A=gI_N\).
+  Include at least one additional non-root node. At root nodes
+  \(r_t=0\), elsewhere \(r_t=N\). Every inequality (H.4)--(H.6) is
+  equality, and the local sum in (H.3) for \(b=S-d\) is exactly \(bN\).
+  An anchor outside the nodes is regular. The diagonal family
+  \(\operatorname{diag}(g_1,\ldots,g_N)\) realizes individually
+  specified nonnegative local orders by taking
+  \(g_i=\prod_t(T-t)^{e_{t,i}}\). The grade is \(\max_i\sum_t e_{t,i}\),
+  which must be accounted for in sharpness assertions.
+\item
+  Pointwise corank supplies one unit of degree per lost dimension,
+  without a free multiplicity factor. Take \(A(T)=TI_N\) at zero with
+  \(k=2\) and anchor 1. Its evaluated rank is zero, its determinant has
+  valuation \(N\), and its jet is \(zI_N\) with multiplication rank
+  \(N\), so the purported bound \(2N\le N\) fails. Even the \(2\times2\)
+  matrix \(\operatorname{diag}(z,z)\) over \(K[z]/z^2\) has zero
+  determinant but inner rank two, since its image needs two generators.
+  With \(N=3,r=1,k=2\), the matrix \(TI_3\) has every two-by-two minor
+  divisible by \(T^2\), while its determinant has valuation three, below
+  the proposed four.
+\item
+  A globally singular matrix with a zero column may have positive
+  deficiency at every node without any determinant degree available to
+  spend. The normal-rank version is the proper correction. An anchor of
+  residue rank zero can also hide a nonzero constant matrix, for
+  instance \(\pi I_N\pmod\pi\).
+\item
+  The quotient ring may contain distinct noncomaximal nodes. Over
+  \(\mathbf Z/8\), \(A(T)=T^2-1\) has four different roots \(1,3,5,7\)
+  and takes a unit value at zero. The degree is two. A two-node example
+  quantifies the missing precision. Over \(\mathbf Z_{(2)}\), let
+  \(A(T)=T\), use anchor 1 and field nodes 0 and \(2^P\), each known to
+  precision \(P\). Both samples admit the zero lift. The two-node
+  interpolation coefficient has valuation \(-P\), giving the one-bit
+  shortfall for a residue-valued target in (H.2).
+\item
+  One must use the degree of the matrix entries for compression and the
+  exact determinant degree for (H.6). Uniform scalar recovery on all
+  polynomials of degree \(d\) from jets with \(S\le d\) cannot determine
+  evaluation at an off-grid anchor. The polynomial
+  \(\prod_t(T-t)^{k_t}\) and zero give the same jets and different
+  anchor values. A promise on a smaller polynomial family can change
+  this necessity.
+\item
+  Over a DVR quotient \(\mathcal O/(\pi^p)\), the minimum
+  factorization width is bounded above by the fraction-field rank of
+  every integral lift. In fact it equals the minimum of those ranks.
+  To see the first inequality, take an integral basis of the free
+  column module of a lift and reduce the resulting factorization.
+  For the converse, lift the two factors in a minimum-width
+  factorization and multiply them. This is a statement about
+  unrestricted inner rank over the DVR quotient, not a bound on
+  additional source constraints. An entrywise canonical lift of a
+  product can add rank because it need not equal the product of
+  canonical lifts. For instance the product of \((1,2)^T\) and \((1,2)\)
+  modulo three has the rank-one integral lift
+  \(\left(\begin{smallmatrix}1&2\\2&4\end{smallmatrix}\right)\), while
+  entrywise representatives in \(\{0,1,2\}\) give determinant minus
+  three. A low-rank matrix over the residue field need not describe a
+  low-rank jet over \(K[z]/z^k\) or a low-cost integral family.
+  Conversely, arbitrary global decoding, nonlinear input-dependent
+  gates, and intrinsic running time are outside (H.3).
+\end{itemize}
+
+\section{Finite algebras and finite observation
+lattices}\label{finite-algebras-and-finite-observation-lattices}
+
+Let \(K\) be a field and \(B\) a finite-dimensional commutative
+\(K\)-algebra. A completed local statistic is allowed to be one element
+of \(B\), computed jointly with all its coefficients. For a fixed linear
+readout \(\lambda:B\to K\), define the multiplication pairing
+
+\[H_\lambda(u,v)=\lambda(uv),\qquad \rho(\lambda)=\operatorname{rank}_K H_\lambda.\]
+
+\textbf{Proposition (exact readout capacity).} The smallest integer
+\(r\) for which there exist linear forms \(a_i,b_i:B\to K\) satisfying
+
+\[\lambda(uv)=\sum_{i=1}^r a_i(u)b_i(v)\quad(u,v\in B)\]
+
+is \(\rho(\lambda)\), and \(\rho(\lambda)\le\dim_K B\). In any basis the
+equality expresses the coefficient matrix of the pairing as a sum of
+\(r\) outer products. Matrix rank gives the lower bound and a rank
+factorization gives the upper bound. This is the ordinary bilinear-rank
+theorem, not a new lower bound for unrestricted computation.
+
+Consequently, when \(u\) and \(v\) are arbitrary functions of opposite
+sides of a declared input cut, their one joint readout has at most
+\(\rho(\lambda)\) scalar separated terms on that cut. For the oriented
+matching restriction with \(m\) pairs and cut excess \(\Delta\), its
+value matrix has rank at most \(\rho(\lambda)2^{m-\Delta}\). This uses
+the single common output matrix, even when different registers use
+different cuts. Summing fixed readouts of the same register first may
+lower the pairing rank; charge the combined readout.
+
+For \(B=K[z]/z^k\), write \(\lambda_j=\lambda(z^j)\). The pairing matrix
+is the truncated Hankel matrix \(H_{ab}=\lambda_{a+b}\) for \(a+b<k\),
+and zero otherwise. If \(\lambda=0\), its rank is zero. Otherwise let
+\(r\) be the largest index with \(\lambda_r\ne0\). Rows and columns
+greater than \(r\) vanish; reversing the first \(r+1\) columns gives a
+triangular block with diagonal \(\lambda_r\). Therefore
+\(\rho(\lambda)=r+1\). For the top-coefficient functional this is \(k\),
+so the dimension bound is sharp.
+
+For the double truncation \(B=K[z,w]/(z^k,w^\ell)\), the rectangular
+monomial basis has size \(k\ell\). Reading the coefficient of
+\(z^{k-1}w^{\ell-1}\) gives the permutation pairing between
+complementary monomials, of rank \(k\ell\). Reading the coefficient of
+\(z^a w^b\) has rank \((a+1)(b+1)\). For a general linear combination of
+coefficients use its actual pairing matrix; there is no need to assign
+the full dimension if this matrix has lower rank. This is ordinary
+finite-algebra duality, not a Smith normal form over a two-variable
+truncated ring.
+
+For \(r\) symbol groups with elements \(u_g\in B\), first form the
+products on the two sides of a chosen union of symbols. The preceding
+proposition applies directly, with no enumeration of Taylor coefficient
+compositions. If a full \(r\)-way scalar product representation is
+desired and the field contains enough distinct interpolation points (as
+it does over \(\mathbb Q\)), lift each \(u_g\) to its ordinary
+polynomial representative and interpolate their unreduced product. One
+variable needs \(r(k-1)+1\) values, and a rectangular double truncation
+needs \([r(k-1)+1][r(\ell-1)+1]\) values. Truncate and apply \(\lambda\)
+only after the ordinary interpolation. Evaluation at a nonzero scalar is
+not an algebra homomorphism from \(K[z]/z^k\) and is never used as one.
+
+\subsection{The common accounting
+principle}\label{the-common-accounting-principle}
+
+An observation channel has an encoder \(E\), a local operation \(L\) and
+a decoder \(D\). Exact reconstruction gives an identity
+\(M=\sum_jD_jL_jE_j\). A full-rank target forces
+\(\operatorname{rank}M\le\sum_j\operatorname{rank}L_j\). The Hermite
+theorem supplies this identity from degree and actual jets. The readout
+proposition supplies the local capacity when a statistic is a product in
+a finite algebra. A value-matrix restriction supplies the target rank
+for the genuine count function. These are parts of one calculation: the
+target is the same linear map, and each representation must preserve its
+tested input directions through its local channels.
+
+When the local statistics are reused, group identical entrance matrices
+before estimating rank. For a fixed scalar affine suffix this means one
+coefficient per distinct register. With input-dependent coefficients,
+the capacity of the collected coefficient is part of the budget.
+Products of distinct completed registers create new nonlinear channels;
+the counterexamples show why such a channel cannot be declared cheap in
+rank merely because it is one arithmetic gate. All these statements
+concern representations until an execution contract proves that paid
+operations must deliver the charged values.
+
+The basis expansion, group regrouping, dimension bound and direct-main
+terminal corollary are kernel-checked in
+\nolinkurl{FiniteAlgebraReadout.lean}. The exact Hankel rank, the
+rectangular quotient-basis identification and the explicit source
+extraction have the proofs above and in the source audit. They are not
+claimed as separately verified Lean statements.
+
+\subsection{A complementary length bound for globally integral
+polynomials}\label{a-complementary-length-bound-for-globally-integral-polynomials}
+
+The next result uses the module length of the actual finite-ring image.
+It is intrinsic to the observations and also covers colliding residues.
+Here require \(A\in\mathcal O[T]^{N\times N}\) and that its residue
+polynomial matrix \(\bar A\) be regular. Nodes and nonzero scales lie in
+\(\mathcal O\). These stronger global integrality assumptions are
+separate from Theorem 1's diskwise assumptions. Write \(\ell\) for
+module length over \(\mathcal O\), normalized by
+\(\ell(\mathcal O/\pi)=1\), and assume \(d<S\). Write \(m=S-d\). The
+scalar observation map \[
+ V:\mathcal O[T]_{<S}\longrightarrow\bigoplus_t(\mathcal O/\pi^{P_t})^{k_t},\qquad
+ g\longmapsto \big(g(t+\alpha_t z)\bmod (\pi^{P_t},z^{k_t})\big)_t
+\] has image \(H\cong\bigoplus_{i=1}^S\mathcal O/\pi^{q_i}\), with
+\(0\le q_1\le\cdots\le q_S\), allowing zero-length factors. Let
+\(\overline L_t\) multiply by the actual double-truncated local jet.
+Then \[
+             \sum_t\ell(\operatorname{im}\overline L_t)\ \ge\ N\sum_{i=1}^{m} q_i. \tag{A.10}
+\] If the local jets factor through \(r_t\) double-truncated channels,
+the left side is at most \(\sum_t r_t k_t P_t\).
+
+\emph{Proof.} Multiplication by \(A\) maps \(\mathcal O[T]^N_{<m}\) into
+\(\mathcal O[T]^N_{<S}\). Its reduction modulo \(\pi\) is injective
+because \(\bar A\) is regular and this is multiplication before any
+truncation of the polynomial degree. A full-column minor of this map is
+therefore a unit, so its image \(U\) is a rank-\(mN\) direct summand.
+Applying \(V\) componentwise gives an image inside the direct sum of the
+local multiplication images. The quotient \(H^N/V^N(U)\) is generated by
+at most \((S-m)N\) elements, using the complementary summand. Every
+quotient \(Q\) of a finite-length module \(G\) that can be generated by
+\(j\) elements has length at most the sum of the largest \(j\) Smith
+exponents of \(G\). Indeed, each layer \(\pi^{s-1}Q/\pi^sQ\) has residue
+dimension bounded both by \(j\) and by \(\dim(\pi^{s-1}G/\pi^sG)\).
+Summing the layer dimensions proves the assertion. Removing up to
+\((S-m)N\) largest exponents of \(H^N\) leaves \(N\sum_{i\le m}q_i\). A
+local factorization has image a subquotient of
+\(((\mathcal O/\pi^{P_t})[z]/z^{k_t})^{r_t}\), of length \(r_t k_tP_t\).
+
+For equal precisions \(P\), let \(\sigma_1\le\cdots\le\sigma_S\) be the
+Smith valuations of the integral, untruncated-in-\(\pi\) confluent
+evaluation matrix. Then \(q_i=\max(0,P-\sigma_{S+1-i})\). The
+determinant of the evaluation matrix has valuation \[
+ \sum_t \binom{k_t}{2}v(\alpha_t)+\sum_{s<t}k_sk_t v(t-s).
+\] The determinant formula follows by the Newton basis with each node
+repeated \(k_t\) consecutive times. Within the block for \(t\), the
+\(j\)-th basis polynomial has a factor \((T-t)^j\), so all coefficient
+rows below order \(j\) in that jet vanish and its order-\(j\)
+coefficient is \(\alpha_t^j\prod_{s<t}(t-s)^{k_s}\). All earlier node
+blocks vanish too. Multiplying these diagonal entries proves the
+formula. Only the ordinary DVR coefficient matrix needs Smith form.
+
+If the \(t\) are pairwise distinct modulo \(\pi\) and the \(\alpha_t\)
+are units, \(V\) is surjective by integral CRT. Its precision list
+consists of \(P_t\) repeated \(k_t\) times. Thus the total local
+deficiency \(\sum_t (Nk_tP_t-\ell(\operatorname{im}\overline L_t))\) is
+bounded by \(N\) times the sum of the \(d\) largest entries of that
+list. This bound is sharp for every such list and every \(d\le S\).
+Select integers \(0\le l_t\le k_t\) accounting for those \(d\) entries.
+For \(A=I_N\prod_t(T-t)^{l_t}\), at each node all other factors are
+units, so its deficiency is exactly \(Nl_tP_t\). This family has regular
+reduction. If a unit-valued anchor is additionally required, assume that
+an available residue lies outside the selected roots and use that
+residue. The unrestricted sharpness statement above does not assert this
+extra condition over a finite residue field.
+
+For globally integral matrices with unit-scale distinct-residue nodes
+one can use the actual determinant degree \(D=\deg\det\bar A\). Let
+\(e_{t,i}\) be the Smith exponents of the reduction \(\bar A\) at
+\(\bar t\). If \(s_{t,h}\in\mathbf Z_{\ge0}\cup\{\infty\}\) are the DVR
+Smith valuations of the \(Nk_t\)-dimensional integral coefficient
+multiplication matrix, then \[
+ \ell(\operatorname{coker}\overline L_t)=\sum_h\min(P_t,s_{t,h})
+ \le P_t\sum_i\min(k_t,e_{t,i}).
+\] In fact the number of positive or infinite \(s_{t,h}\) is the nullity
+modulo \(\pi\), which is (H.5) for \(\bar A\). Summing one precision
+layer at a time gives \[
+ \sum_t\ell(\operatorname{coker}\overline L_t)\le
+ \sum_{s\ge1}\min\left(D,N\sum_{t:P_t\ge s}k_t\right). \tag{A.11}
+\] This gives \(PD\) for common precision \(P\), and refines the
+grade-only distinct-residue bound. For an explicit double truncation,
+\(A(T)=\pi+T\) at zero has
+\(\operatorname{coker}\overline L\cong\mathcal O/(\pi^P,\pi^k)\), of
+length \(\min(P,k)\), since the quotient sets \(z=-\pi\). A Smith form
+directly over \((\mathcal O/\pi^2)[z]/z^2\) is unavailable in general.
+The ideal \((\pi,z)\) is not principal since its quotient by its square
+has residue dimension two. Thus the single-row matrix \([\pi\ z]\) need
+not reduce to a one-entry diagonal by invertible row and column
+operations. Applying DVR Smith form to its ordinary coefficient map
+avoids that error.
+
+The coefficientwise precision certificate (H.2) is a linear
+image-of-lattices computation. Caruso, Roe and Vaccon develop a general
+theory of ultrametric lattice precision and apply it to matrix
+computations. They precede the precision principle used here. The
+specialized degree-constrained reconstruction, the local representation
+capacities and the source application carry the interpretive content.
+\href{https://doi.org/10.1112/S1461157014000357}{Tracking p-adic
+precision} ·
+\href{https://www.unilim.fr/pages_perso/tristan.vaccon/padicstability.pdf}{p-adic
+stability in linear algebra}
+
+\section{A common CNF and the genuine final
+scalar}\label{a-common-cnf-and-the-genuine-final-scalar}
+
+\subsection{One CNF for two source entry
+points}\label{one-cnf-for-two-source-entry-points}
+
+Let \(G\) range over simple connected cubic edge expanders on \(N\)
+vertices, with fixed positive expansion. At vertex \(v\) put a signed
+unit clause pinning a variable to \(s_v\), and for every edge \(vw\) put
+the positive clause \(x_v\lor x_w\). For the bounded-occurrence main
+algorithm, make four copies of each variable, assign its one pin and
+three edge occurrences to different copies, and join the four copies in
+a directed cycle of implications. This is exactly the copy gadget in the
+frozen main TeX, lines 1465--1485. Each cycle has precisely the two
+constant assignments. All its copies therefore receive the pinned value,
+and the final count is
+
+\[
+ F_G(s)=\prod_{vw\in E(G)}(s_v\lor s_w)\in\{0,1\}.
+\]
+
+The cloned input has \(n=4N\) variables, \(m=13N/2\) clauses and
+\(M=12N\) incidences. Every clone occurs in three clauses. All
+locations, signs outside the unary clauses, factor scopes and clause
+order are fixed. Lines 553--594 of the bounded-occurrence routine remove
+tautologies and repeated literals within a clause and then use the
+product of its clause-satisfaction polynomials. Those operations leave
+this family intact. The rational output at the origin equals the count
+exactly. The same formulas are actual inputs of the fixed-density
+Appendix D clause-network branch, whose equality stars have three
+external ports each and no internal edge. Subdivision gives \(M_D=24N\)
+wires and \(s_D=n+m=21N/2\). The original uncloned formulas give the
+smaller \(M_D=10N\) instance of that branch.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L553-L594}{Frozen
+main TeX} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L1465-L1485}{Copy
+gadget} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-reduction.tex\#L65-L97}{Fixed-density
+reduction}
+
+A second main entry point is the stated algorithm for \emph{supplied}
+sparse Boolean polynomial equations. On the uncloned \(G\), supply
+\(x_v+s_v=0\) over \(\mathbb F_2\) for each pin and \((1+x_v)(1+x_w)=0\)
+for each edge. The displayed product denotes its expanded four-monomial
+list over \(\mathbb F_2\). These are precisely the individual
+clause-violation polynomials. Their integer lifts use the source's
+integer sums of the listed monomials. Append the source's one neutral
+factor per variable. On every sign input the scopes are identical,
+\(n=N, m_{\rm test}=5N/2, M=5N, b=5, w=2\). The threshold
+\(b_0=5\lceil\sqrt{\lceil\log_2 N\rceil}\rceil\) fixes no variable, and
+there are no constant equations. The printed algorithm therefore calls
+its grouped Taylor routine once for this legal supplied system. The same
+construction on the cloned input uses its individual violation
+equations, \(n=4N, m_{\rm test}=13N/2, M=16N, b=4, w=2\). The
+implications have violation polynomial \(x_i(1+x_{i+1})\). Its sole
+branch is likewise structural. The printed integer
+\(L(s)=\mathcal S_\ell(H_s(0))\) is congruent to \(F_G(s)\) modulo
+\(2^\ell\), \(\ell=n+1\). Taking its least nonnegative residue gives the
+exact count. The proof below uses only this integer's parity at the
+terminal rank test.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L1640-L1649}{Sparse
+input theorem} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L3014-L3041}{Origin
+residue} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L3096-L3168}{Branch
+selection}
+
+\subsection{Ownership of real varying
+coefficients}\label{ownership-of-real-varying-coefficients}
+
+At interpolation node \(t\in[Q]\) the source places Boolean assignment
+variables into groups by \(a_v(t)\), and coefficient-bearing factors by
+\(d_f(t)\). The varying sign belongs to its \textbf{factor}. The two
+schedules have separate roles. Put \(d(v)=d_{\mathrm{pin}(v)}\in[r]^Q\).
+Fix any graph-only schedule and tie-breaking choices obeying the
+constructed bound on incidence loads. For \(D=r^{2Q}\), each ordered
+cell \((a,d)\) has at most \(2M/D\) incidences. Each unary pin has one
+incidence. Summing over all \(r^Q\) variable words gives, for every
+factor word \(d\),
+
+\[
+ \#\{v:d(v)=d\}\le 2M/r^Q,\qquad \mu(d)\le C r^{-Q},\quad C=2M/N.
+\tag{M.1}
+\]
+
+Here \(C=24,10,32\), respectively, for direct cloned, sparse uncloned
+and sparse cloned inputs. The construction's potential and tie-breaking
+can be fixed using only scopes. At the printed parameters
+\(r\to\infty\). For a differently tuned layout the subsequent
+cut argument requires these balanced unions, which do not follow
+from the cell bound alone for arbitrary fixed small \(r\).
+Eventually every coordinate symbol holds at most
+\(C/r\le1/2\) of the pins. Accumulating symbols until their total mass
+first reaches \(1/4\) gives a union \(S_t\) with both masses at least
+\(1/4\). Select just one such union per coordinate. This avoids any
+dependence on \(2^r\) when \(r\) grows.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L2423-L2510}{Source
+placement} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L2532-L2578}{Actual
+variable and factor groups}
+
+For a fixed tuple \((t,E,U,y)\), the Boolean-difference correction is
+evaluated at the structural vector \(\mathbf 1_U\), and the assignment
+fiber and representatives are obtained only from \(E,C_{t,g},y_g\). They
+can be selected once independently of all signs. The source group value
+\(\Sigma_{t,E,U,y,g}\) is consequently a function only of the signs with
+\(d(v)(t)=g\), even though its numerical arguments include
+representatives from other assignment groups. The group rings are
+
+\[
+ B=\mathbb Q[z]/z^J\quad\text{or}\quad B=\mathbb Q[V,z]/(V^\ell,z^J).
+\]
+
+The final Hermite matrix and the finite-difference signs are rational
+and independent of input. In the sparse case \(\mathcal S_\ell\) is
+linear only after the truncated product has been formed. Thus the
+pre-remainder terminal statistic of the printed routine has a
+representation
+
+\[
+ L(s)=\sum_{t,E,U,y}\Lambda_{t,E,U,y}\!\left(\prod_{g=1}^r \Sigma_{t,E,U,y,g}(s_{d(t)=g})\right),
+\tag{M.2}
+\]
+
+with fixed rational linear functionals \(B\to\mathbb Q\). For direct
+counts \(L=F_G\). For the sparse query, \(L\in\mathbb Z\) pointwise and
+\(L\equiv F_G\pmod{2^\ell}\). An infeasible measurement tuple is
+structurally zero and may be removed.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L1780-L1876}{Full
+separation lemma} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L1886-L1997}{Taylor
+assembly}
+
+\subsection{Rank cost of one joint
+statistic}\label{rank-cost-of-one-joint-statistic}
+
+For any fixed functional \(\Lambda:B\to\mathbb Q\), an \(r\)-way product
+of independently supplied group elements in (M.2) has scalar full-group
+product length at most
+
+\[
+ P_r(J,\ell)=(r(J-1)+1)(r(\ell-1)+1),
+\tag{M.3}
+\]
+
+where \(\ell=1\) covers direct counts. Lift each group element to its
+unique polynomial of individual degrees below \(J,\ell\). Their
+unreduced product has the two degrees at most \(r(J-1)\) and
+\(r(\ell-1)\). Interpolate the ordinary product on a rectangular grid of
+the two indicated numbers of distinct rational values. Applying
+\(\Lambda\) after truncation to the interpolating basis produces fixed
+scalars. At a grid point the product of the evaluations is already one
+full-group scalar product. Evaluation itself need not preserve
+multiplication in the \emph{quotient}. This calculation proves (M.3)
+without making that false assumption. For the single chosen cut, at most
+\(J\ell\) separated terms suffice. Form the products within each side of
+the cut in \(B\). The final functional of their product is a bilinear
+form on \(B\times B\) of matrix rank at most
+\(\dim_{\mathbb Q}B=J\ell\). Rank factorization gives the claim. Both
+bounds permit simultaneous computation of all retained orders within a
+group.
+
+More generally let an entrance \(a\) at node \(t(a)\) receive two
+group-local vectors \(u_a,v_a\) on opposite sides of \(S_{t(a)}\),
+contributing \(u_a^\top M_a v_a\) to a fixed linear output network. Its
+weight is \(w_a=\operatorname{rank}_{\mathbb Q}M_a\). The effective
+matrix incorporates fixed postprocessing, including the joint use of the
+same entrance by several output orders. When several fixed bilinear
+coefficient matrices act on the same two inputs, combine their terminal
+coefficients first and take the rank of the resulting matrix. A
+different representation may use smaller orders, different statistics at
+every node, distinct side dimensions, or even an arbitrary tabulated
+interface of known bipartite rank. The terminal budget is
+\(\sum_a w_a\). In particular, local data compression is measured by the
+dimension or rank it actually transmits. A node's output may depend on
+all pins through charged bilinear entrances.
+
+\subsection{The terminal theorem and high Taylor
+orders}\label{the-terminal-theorem-and-high-taylor-orders}
+
+For every structural schedule as above, every fixed sum of full-group
+scalar products, using at each product any one of the \(Q\) actual node
+partitions, whose value is integral for each sign word and agrees in
+parity with the final count has at least
+
+\[
+   2^{cN/\sqrt Q}
+\tag{M.4}
+\]
+
+terms for some absolute \(c>0\) depending on the expander and the
+uniform bound \(C\). The stronger interface satisfies
+\(\sum_a w_a\ge2^{cN/\sqrt Q}\). This is a lower bound on the true exact
+scalar as a function of CNF signs, valid also for any integral lift of
+its residue. It applies at the source's \(Q=\Theta(\log N/\log\log N)\),
+giving a logarithmic lower bound on the budget of order
+\(N\sqrt{\log\log N/\log N}\).
+
+Indeed, apply the simultaneous cut lemma to (M.1) with exactly one
+selected cut per coordinate, so \(H=\sqrt{CQ}\), \(K=Q\) and
+\(KH^2=O(Q^2)=o(N)\). It supplies a single oriented induced matching
+with endpoint imbalance \(\ge cN/\sqrt Q\) in absolute value across all
+the chosen cuts. On setting unmatched pins to one, the true target is
+the tensor product of OR matrices over the matching. With one endpoint
+per edge in each index of the flattening, this square matrix of order
+\(2^k\) for matching size \(k\) has odd determinant (up to reindexing it
+is an OR tensor power). The integral output lift thus has full rank over
+\(\mathbb Q\). A product across cut \(S_t\) has rank at most
+\(2^{k-|a_t-b_t|}\) where \(a_t,b_t\) are its matching endpoint counts
+in the two matrix indices. The rank sum proves (M.4). A weighted
+entrance of rank \(w_a\) decomposes into \(w_a\) such products on its
+cut. The existence proof uses graph expansion on the original \(G\),
+regardless of whether its variables are cloned in the computation.
+\href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/root-separation}{Simultaneous cut and
+matching proof}
+
+Consider the actual Hasse coefficient functions
+
+\[
+ K_{t,j,s}(s_*)=[V^s z^j]H_{s_*}(t+z),\qquad 0\le j<J,\quad 0\le s<\ell.
+\]
+
+Use \(s=0,\ell=1\) for the direct algorithm. Write \(\rho_{t,j,s}\) for
+the minimum number of scalar full-group products on node \(t\)'s own
+partition, or for the minimum number of separated terms on the
+\emph{chosen} cut \(S_t\). In either interpretation fixed Hermite
+recombination gives
+
+\[
+ \sum_{t,j,s}\rho_{t,j,s}\ge2^{cN/\sqrt Q}.
+\tag{M.5}
+\]
+
+There are polynomially many original coefficients, so some actual
+\(K_{t,j,s}\) has own-node rank of that exponential order. This
+conclusion persists if each order has its own compression and if the
+interpolation is performed jointly. To translate it into the cost of
+shared computations, count the rank of shared entrances at the terminal
+functional as above. Summing costs attributed to every use of a shared
+intermediate would generally overcount.
+
+For the actual source rows the high-rank statistic even has
+
+\[
+ j=\Omega\!\left(\frac{N}{\sqrt Q\log(2Q)}\right)
+  =\Omega\!\left(\frac{N}{\sqrt{\log N\log\log N}}\right).
+\tag{M.6}
+\]
+
+Here the degree cutoff is a mathematical consequence of these schedules.
+The source takes \textbf{exactly} the exceptional common eigenvectors as
+rows, giving \(c_{\cal B}=D\Pr(W\notin\mathcal I)\), and has
+\(c_t=r h c_{\cal B}\le2Mr\Pr(W\notin\mathcal I)\) total measurement
+coordinates. At the source parameters on these fixed scopes \(\beta=1\)
+eventually, and the source's interval has tail at most
+\(2\exp(-R^2/(8Q))\le2e^{-256\nu}\),
+\(\nu=\lceil\log_2\lceil\log_2n\rceil\rceil\). Consequently
+
+\[
+ \log_2 |\mathcal Y_t|= c_t\log_2(2D+1)=o(N/\sqrt Q).
+\]
+
+To compute only order \(j\), apply the same Boolean-difference identity
+to \([z^j]\mathcal G_x\), whose degree in \(X\) is at most \(j\). There
+are at most \(C_j=\sum_{a\le \min(j,n)}2^a\binom{n}{a}\) pairs. Each of
+the \(C_j|\mathcal Y_t|\) macro products has polynomial scalarization
+cost by (M.3). One can take order \(j+1\) here. For \(j\le n/2\),
+\(\log_2 C_j\le \log_2(j+1)+j\log_2(2en/j)\), with \(j=0\) handled
+directly. Put \(j=\delta N/(\sqrt Q\log(2Q))\). Monotonicity of the last
+upper bound and \(n=\Theta(N)\) make it at most
+\(O(\delta)N/\sqrt Q+o(N/\sqrt Q)\) for any fixed sufficiently small
+\(\delta>0\). Comparing with (M.5) proves (M.6). This yields a
+high-order coefficient of the \emph{actual deformed scalar}, even with
+the pin constraints already closed.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L2232-L2276}{Exceptional
+rows} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L1357-L1413}{Source
+tail at the chosen parameters}
+
+For the literal fixed-schedule evaluator let \(A\) be its number of
+feasible \((t,E,U,y)\) products, before any caching. Feasibility depends
+on the sign-independent assignment fibers. Equations (M.2) and the
+two-sided scalarization give \(AJ\ell\ge2^{cN/\sqrt Q}\). Representing
+the pre-remainder function by these products discharges the semantic
+premise. The printed group-product update processes each such tuple.
+Thus this statement also charges actual iterations of the specified
+implementation. A different method that creates a large equivalent
+expansion need not process it.
+
+\subsection{Exact counts with many values on an entirely satisfiable
+family}\label{exact-counts-with-many-values-on-an-entirely-satisfiable-family}
+
+The same proof applies to an exact counting task whose decision bit is
+constant. Introduce one Boolean switch \(y\). Keep the signed unary pins
+and replace each edge clause by \((\neg y\lor x_v\lor x_w)\). Fix a
+subset \(T\) of \(K=\lfloor N/4\rfloor\) vertices. Introduce a variable
+\(b_0\) and, for each \(v\in T\), a variable \(b_v\), with clauses
+
+\[
+ (\neg b_0\lor\neg y),\qquad
+ (\neg b_v\lor x_v),\quad(\neg b_v\lor\neg y)\quad(v\in T).
+\]
+
+With \(y=0\), there are exactly \(2^{1+\sum_{v\in T}s_v}\) completions,
+because \(b_0\) is free and \(b_v\) is free exactly when the pin is one.
+With \(y=1\), all the new \(b\) variables must vanish, and the edge
+clauses contribute \(F_G(s)\). Therefore the genuine exact count is
+
+\[
+ A_G(s)=2^{1+\sum_{v\in T}s_v}+F_G(s).
+\tag{M.7}
+\]
+
+Every formula is satisfiable. Taking each possible weight on \(T\) gives
+at least \(K+1\) distinct counts, since the two candidates
+\(2^{j+1},2^{j+1}+1\) at consecutive weights lie in disjoint intervals.
+Some counts have \(\Theta(N)\) binary digits. For every input
+\(A_G(s)\bmod2=F_G(s)\). Thus (M.4)--(M.6) apply with terminal output
+\(A_G\), even though a decision algorithm may return true on the entire
+family. The graph-only scan of \(s\), the public edges and the weight on
+\(T\) computes the exact count in polynomial time.
+
+The base formula has \(5N/2+2K+1\) clauses and \(P=11N/2+4K+2\)
+occurrences. Clone every variable having at least two occurrences using
+the source implication cycle. All variables occur, and only \(b_0\) has
+one occurrence. Hence \[
+ n=P,\qquad m=8N+6K+2,\qquad M_{\rm main}=3P-2=33N/2+12K+4 .
+\] After cloning, the maximum occurrence and width are three and all
+variable and pin-clause scopes are structural. The literal direct window uses the nominal cap \(3n\); Section~\ref{sec:window-and-layout} carries the same high-order witness into that window. In the sparse-equation
+version take the single violation equation of every cloned clause. A
+clause violation has maximal monomial equal to the product of its
+distinct variables, for either sign of a pin. Thus the scopes and all
+branch choices are fixed, the neutral factors add \(P\) incidences, and
+\(M_{\rm sparse}=22N+16K+6,\ b\le4,\ w=3\). Once again the degree
+threshold fixes no variable. The main density constants
+\(2M_{\rm main}/N\) and \(2M_{\rm sparse}/N\) stay bounded. At the
+actual parameters \(r\to\infty\) and there is a balanced union at every
+node.
+
+These identical CNFs enter Appendix D's clause branch. Every variable
+has degree three or one, so the source attachments have no internal
+edges. Subdivision gives \(M_D=2M_{\rm main}=33N+24K+8\le39N+8\). The
+actual D certificate gives a uniform bound \((M_D/N)(1+o(1))\le40\) on
+the selected-coordinate density for all sufficiently large sizes. Indeed
+each of the \(D_{\rm cells}\) ordered cells contains at most
+\(M_D/D_{\rm cells}+\sqrt{2M_D\lceil s_D^{9/10}\rceil}\) wires, and
+\(D_{\rm cells}\le s_D^{1/1000}\) makes the relative error tend to zero.
+Every D symbol then has empirical mass at most \(40/64=5/8\). If an atom
+has mass at least \(1/4\), take it alone. If all have mass below
+\(1/4\), accumulate until reaching \(1/4\). Either choice is
+quarter-balanced. The same fixed-rank-budget argument on the same
+independently varied pins therefore applies to the multi-valued count in
+both constructions.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-contraction.tex\#L73-L172}{Appendix
+D packing and cell bound} ·
+\href{https://annals.math.princeton.edu/2015/182-1/p07}{Source of simple
+cubic expander families}
+
+\section{One restriction and a mixed affine
+reconstruction}\label{one-restriction-and-a-mixed-affine-reconstruction}
+
+\subsection{The common input and the two source
+interfaces}\label{the-common-input-and-the-two-source-interfaces}
+
+Let \(G=(V,E)\) be a simple cubic graph of edge expansion at least a
+fixed \(\gamma>0\), with \(N=|V|\). For each \(\sigma\in\{0,1\}^V\) give
+variable \(x_v\) a unit clause fixing \(x_v=\sigma_v\). Add the clause
+\(x_v\lor x_w\) for every \(vw\in E\). The count and the decision bit
+are both
+
+\[
+ C_G(\sigma)=\prod_{vw\in E}(\sigma_v\lor\sigma_w).
+ \tag{X.1}
+\]
+
+To use the literal three-occurrence entry of the main text, replace each
+of the four occurrences of \(x_v\) by its own clone. Add the directed
+four-cycle of implications around those clones. This cycle forces
+equality, with a unique extension of each old assignment. The final
+count remains (X.1). This formula has \(4N\) variables, \(13N/2\)
+clauses and \(12N\) incidences. Its \(N\) freely varied inputs remain
+the unary literal signs. Fix all graph layouts independently of these
+signs. Use the direct three-occurrence product interface of the main
+text, denoted MAIN, and the sparse clause reduction and root contraction
+of Appendix D, denoted D. The same cloned clause list is a legal input
+to both. \href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/rank-budget-barriers}{Common source instance}
+
+For MAIN the labels \(d_f\in[r_M]^Q\) belong to the \emph{factors}. Each
+of the \(N\) varied unary factors contributes one incidence. There are
+\(M_M=12N\) incidences, and every clone occurs, so no added constant-one
+factor is required. The incidence-cell bound
+\(c_{(a,d)}\le 2M_M/r_M^{2Q}\) gives
+
+\[
+ \#\{v:d_{\mathrm{pin}(v)}=d\}\le 2M_M/r_M^Q .
+\]
+
+Thus the factor-label distribution of a uniform pin is dominated
+pointwise by \(C_M=24\) times the product-uniform law. On the same \(N\)
+pin locations, the D pin-label law on the \(u\) retained coordinates is
+dominated by \(C_D=48\) times its own product-uniform law. Each clone
+has three occurrences and requires one trivalent equality vertex, so
+subdividing the \(12N\) incidence edges gives \(M_D=24N\). Write
+\(Q_D=r_D^{2a}\) for the ordered cell count. The source collision
+certificate and \(M_D\ge2Q_D^2\Delta\) give each full cell load
+\(X_c\le M_D/Q_D+\sqrt{2M_D\Delta}\le2M_D/Q_D\). Summing over unused
+coordinates and all labels at the other endpoint proves the displayed
+marginal constant \(2M_D/N=48\). The two label distributions can be
+arbitrarily correlated. At the published parameters \(r_M\) tends to
+infinity and \(r_D=64\). For either layout each single symbol then has
+mass at most \(3/4\), with \(48/64=3/4\) permitted. Choose one union of
+symbols of mass in \([1/4,3/4]\) per coordinate. One symbol of mass at
+least \(1/4\) suffices. Otherwise accumulate symbols to first reach
+\(1/4\). Every full group product at the coordinate splits across this
+single fixed union. These statements concern the direct factor interface
+applied to the clauses themselves. The general sparse-polynomial and
+parity reductions have other dependencies.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex}{MAIN
+source} · \href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/root-separation}{D source
+load calculation for the original graph} ·
+\href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/rank-budget-barriers}{Operation contracts}
+
+\subsection{A weighted common
+matching}\label{a-weighted-common-matching}
+
+\textbf{Theorem 1.} Let finitely many graph-only layouts \(s\) on \(V\)
+have \(k_s\ge1\) coordinates and pin-label laws dominated by \(C_s\)
+times product-uniform measure. At each coordinate fix one
+\(\eta\)-balanced symbol union \(P_{si}\), with \(0<\eta\le1/2\). Give
+every event in layout \(s\) weight \(w_s>0\), and put
+
+\[
+ H=\sum_s w_s\sqrt{C_s k_s}.
+\]
+
+There are constants \(a_{\eta,\gamma}>0\) and \(B_{\eta,\gamma}<\infty\)
+that apply to all cubic input graphs under these assumptions. If
+
+\[
+ \frac{B_{\eta,\gamma}H^2}{N}\sum_s k_s/w_s^2<1 ,
+ \tag{X.2}
+\]
+
+there is one induced matching of \(m\) edges and one row/column
+orientation \(A\mid B\) of its endpoints such that
+
+\[
+  \left|\ |A\cap P_{si}|-|B\cap P_{si}|\ \right|
+       \ge a_{\eta,\gamma}\frac{Nw_s}{H}
+       \qquad\text{for all }s,i.                         \tag{X.3}
+\]
+
+The matching and partition are selected for the union of the layouts
+before any entrance, computation, or transcript is examined.
+
+\emph{Proof.} On the uniform vertex probability space set
+\(f_{si}=1_{P_{si}}-\Pr(P_{si})\). For every sign vector \(\epsilon\)
+let \(Y=\sum_{si}\epsilon_{si}w_s f_{si}\). In one layout, the variance
+of its signed sum is at most \(C_sk_s w_s^2\). Indeed, the actual
+variance minimizes the quadratic error over all centering constants.
+Center instead at the product-uniform mean and use density domination.
+Under the product law different coordinates are independent and a signed
+indicator has variance at most one. The triangle inequality in
+\(L^2(V)\) gives \(\|Y\|_2\le H\), with no assumption on joint labels
+from different layouts.
+
+Choose \(\epsilon\) maximizing \(\mathbb E\rho(Y/H)\) for
+\(\rho(t)=\sqrt{1+t^2}\), and set \(b=\rho'(Y/H)\). Flipping a sign
+replaces \(Y/H\) by \(Y/H-h\), \(h=2\epsilon_{si}w_sf_{si}/H\). Here
+\(w_s/H\le1\). The maximum and Taylor's formula give
+
+\[
+ \mathbb E(hb)\ge\tfrac12\mathbb E\!\left[
+ h^2\inf_{|v-Y/H|\le2}(1+v^2)^{-3/2}\right].
+\]
+
+On \(\{|Y/H|\le2\}\), an event of probability at least \(3/4\), the
+infimum is at least \(17^{-3/2}\) and \(|f_{si}|\ge\eta\). Consequently
+
+\[
+ |\mathbb E b f_{si}|\ge \frac{3\eta^2}{4\,17^{3/2}}\frac{w_s}{H}.
+ \tag{X.4}
+\]
+
+Give the vertices divergence \(g=(\gamma/2)(b-\mathbb E b)\), after
+decreasing \(\gamma\) to at most one if necessary. It has zero sum and
+\(|g|\le\gamma\). Expansion bounds the absolute demand on every vertex
+cut by that cut's edge capacity. Max-flow/min-cut provides an oriented
+edge flow \(F_e\in[-1,1]\) with this divergence. For each prescribed cut
+its signed flow therefore has magnitude at least a constant times
+\(Nw_s/H\).
+
+For completeness, independently mark each graph edge with probability
+\(1/2\) and retain a marked edge only when all other edges sharing or
+adjacent to an endpoint are unmarked. The retained edges form an induced
+matching. Their individual retention probabilities \(\pi_e\) have a
+fixed positive lower bound \(\pi_*\) by bounded degree. Give each
+retained edge an independent orientation sign with mean
+\(\pi_*F_e/\pi_e\) relative to a provisional orientation. The resulting
+signed crossing count for a fixed cut has expectation
+\(\pi_*\sum_{v\in P_{si}}g(v)\). Its variance is \(O(N)\), since each
+bounded summand is independent of summands beyond fixed graph distance.
+The probability of losing at least half the magnitude of its expectation
+is at most \(B_{\eta,\gamma}H^2/(Nw_s^2)\) by Chebyshev. Summing over
+the \(k_s\) cuts of each layout proves (X.3) under (X.2). The
+bounded-majorant sign argument and the flow/thinning method have
+precedents in Nazarov and the preceding study. The weights retain the
+different route scales on one physical restriction.
+\href{https://www.mathnet.ru/eng/aa774}{Nazarov, 1997} ·
+\href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/root-separation}{Prior unweighted
+matching proof}
+
+In particular take \(w_M=1/\sqrt Q\) and \(w_D=1/\sqrt u\). Then
+\(H=\sqrt{C_M}+\sqrt{C_D}\) is bounded and (X.2) holds for large \(N\)
+if \(Q^2+u^2=o(N)\). This includes the published schedules. Write
+\(d_s\) for the minimum integer absolute excess for its layout on the
+selected matching. Simultaneously
+
+\[
+ d_M=\Omega_\gamma(N/\sqrt Q),\qquad d_D=\Omega_\gamma(N/\sqrt u).
+ \tag{X.5}
+\]
+
+More generally positive weights \(w_s=\alpha_s/\sqrt{C_s k_s}\),
+\(\sum_s\alpha_s=1\), give margins proportional to
+\(\alpha_sN/\sqrt{C_s k_s}\) whenever (X.2) holds. A different
+\(\alpha\) may select a different witness.
+
+\subsection{Rank on the fixed
+restriction}\label{rank-on-the-fixed-restriction}
+
+Fix all signs outside the matching to one. On \(A\mid B\), both sides
+have \(m\) free bits and \(C_G\) has matrix \(D_\lor^{\otimes m}\) with
+\(D_\lor=\left(\begin{smallmatrix}0&1\\1&1\end{smallmatrix}\right)\).
+This matrix is unimodular. Work in the fraction field \(K\) of the
+source integral domain \(\mathcal O\) with its characteristic-two
+residue field. A final function \(F\) that is integral at every input
+and has the correct residue has rank \(D_*=2^m\), by reducing the
+determinant on this restriction. Products and summands may lie in \(K\)
+and can have dyadic denominators. Denominator loss is checked at
+reconstruction where needed. Write \(r(f)\) for the ordinary
+evaluation-matrix rank of \(f\) on this one restriction and orientation.
+
+An arbitrary scalar product \(U(\sigma_P)V(\sigma_{\bar P})\) across any
+listed cut has \(r\le2^{m-d_s}\). If \(P\) contains \(a\) row and \(b\)
+column bits of the matching, its matrix is, up to permutations, a
+Kronecker product of matrices of shape \(2^a\times2^b\) and
+\(2^{m-a}\times2^{m-b}\). Their ranks multiply and
+\(\min(a,b)+\min(m-a,m-b)=m-|a-b|\). The same bound holds when any
+additional calculations are confined to their respective sides. A
+two-view term with overlapping input sets has the corresponding bound
+\(2^{m-(|a-b|-\ell)_+}\), where \(\ell\) counts row bits from the excess
+side read on the opposite view plus column bits from the other side read
+on the excess view. Condition on those bits together with the two
+minority sets. Each resulting piece separates across \(A\mid B\). For a
+product/sum factor graph with latent indices, conditioning on an actual
+variable separator supplies the product of separator-domain sizes as a
+rank upper bound.
+\href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/root-separation}{Overlap proof} ·
+\href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/root-separation}{Latent and visible
+separators}
+
+For MAIN a native tuple can be a product in \(\mathcal A=K[z]/(z^J)\).
+Group its factors on the two sides as \(u,v\in\mathcal A\), and apply a
+fixed \(K\)-linear readout \(\lambda\). The coefficient matrix of the
+bilinear form \(\lambda(uv)\) is \(B_{ab}=\lambda(z^{a+b})\) for
+\(a+b<J\), and zero otherwise. For \(\lambda\ne0\), put
+\(k=\max\{j:\lambda(z^j)\ne0\}\). Rows and columns past \(k\) vanish.
+The top \((k+1)\)-square matrix becomes triangular with nonzero diagonal
+after its columns are reversed. Thus its scalar bilinear rank is
+precisely
+
+\[
+ s_\lambda=k+1\le J,\qquad r(\lambda(uv))\le s_\lambda\,2^{m-d_M}.
+ \tag{X.6}
+\]
+
+For zero readout use \(s_\lambda=0\). An arbitrary changed basis of the
+coefficient vector preserves this bilinear rank. Alternatively,
+interpolating the ordinary product of the \(r_M\) degree-\(<J\)
+representatives at \(r_M(J-1)+1\) distinct rationals yields that many
+full scalar coordinate-group products after applying the readout. These
+two upper bounds address different choices of entrance. Neither requires
+enumerating all weak compositions of a coefficient order. D's root
+scalar product of independently lifted local residues has scale one in
+\(K\). A global nonlinear residue section remains subject to an
+independent rank certificate.
+
+\subsection{A frontier bound with shared
+registers}\label{a-frontier-bound-with-shared-registers}
+
+Fix a routed leaf or a single straight-line program. A \emph{frontier}
+is a set of distinct cached input values \(P_j\), such as completed
+MAIN/D local products. After replacing each of their uses by the same
+scalar indeterminate \(z_j\), suppose the remaining expression is
+pointwise affine in these indeterminates over the algebra of functions
+of the original input:
+
+\[
+       H_0(\sigma)+\sum_{j}H_j(\sigma)z_j .                  \tag{X.7}
+\]
+
+The functions \(H_j\) have to be bounded on the same restriction. Any
+raw-input route bypassing the frontier is included in \(H_0\) or in
+these coefficient functions. One sufficient circuit syntax allows
+addition, fixed scalar maps, and multiplication by cached coefficient
+functions independent of the \emph{formal} indeterminates. The
+coefficient functions may share raw inputs with the \(P_j\). A transfer
+\(H_j\) is the coefficient after collecting all uses of \(z_j\),
+including all signs and cancellations. For a fixed scalar linear DAG the
+\(H_j\) are constants, regardless of the number of paths or fan-out. A
+fixed linear readout from a jet register first gives a single
+\(\lambda_j\) per distinct register. Equation (X.6) then applies. For
+several input-dependent readouts, include their scalar coordinate
+components or certify their combined rank separately.
+
+\textbf{Theorem 2.} Let \(F\) be integral with the residue in (X.1) and
+let \(G_\ell\in\{0,1\}\) be the indicators of a finite partition of the
+inputs into reached transcripts. On transcript \(\ell\) let (X.7)
+describe its output after substituting \(z_j=P_{\ell j}(\sigma)\). Use
+arbitrary total extensions off that transcript, multiplying each
+contribution by \(G_\ell\). Then
+
+\[
+\begin{split}
+ D_*&\le\sum_\ell r(G_\ell H_{\ell0})
+       +\sum_{\ell,j} r(G_\ell H_{\ell j} P_{\ell j})\\
+ &\le\sum_\ell r(G_\ell H_{\ell0})
+       +\sum_{\ell,j}\min\{D_*,
+                   r(G_\ell H_{\ell j})\,r(P_{\ell j})\}.
+\end{split}
+\tag{X.8}
+\]
+
+Any tighter bound on the augmented term in the first line can be
+substituted, including a term-relative guarded scope or a latent
+separator. If the same \(P_j\) is reused across transcripts, first
+collect \(\sum_\ell G_\ell H_{\ell j}\) and count \(P_j\) once wherever
+that gives a better bound.
+
+\emph{Proof.} One guard is true on each assignment. The entrywise sum of
+the guarded terms therefore equals the restricted \(F\) over \(K\). Rank
+is subadditive under addition. For functions \(a,b\), their product
+gives the Hadamard product of their matrices, with
+\(r(ab)\le r(a)r(b)\). Expand each input as a sum of rank-one outer
+products, then multiply them pairwise. All matrices have rank at most
+\(D_*\). These facts prove both lines. A local Boolean test on each of a
+term's two views folds directly into its respective factor, including
+negated tests for false branches. A deterministic two-party transcript
+relative to \(A\mid B\) is a rectangle because after its prefix is fixed
+every test belongs to the specified party. Its indicator has rank at
+most one. An arbitrary Boolean test of both sides can have full rank.
+\href{https://arxiv.org/pdf/0907.4006}{Arvind, Joglekar and Srinivasan,
+Prop. 1} · \href{https://doi.org/10.1145/800070.802208}{Mehlhorn and
+Schmidt, 1982}
+
+An arbitrary fixed arithmetic DAG also admits a \emph{certificate
+calculation}. Give constants rank budget one, an input gate its
+certified bound, and scalar sums and entrywise products the rules
+
+\[
+ R(g+h)\le\min(D_*,R(g)+R(h)),\qquad
+ R(gh)\le\min(D_*,R(g)R(h)).
+ \tag{X.9}
+\]
+
+Here the right side is an admissible upper budget, and any stronger
+semantic certificate can replace it. Apply the rules in topological
+order, evaluating one budget per gate. An equivalent distinct-node
+linear frontier can be obtained by stopping a reverse traversal of
+fixed-scalar linear gates at the first nonlinear result or primitive
+reached along each reverse path, then collecting repeated node
+identifiers. A new nonlinear gate may enter the frontier with its
+multiplicative bound. A single such gate can already reach full rank.
+Proofs that a larger subcircuit stays within a declared scope or has an
+affine suffix can give a smaller bound than the literal recurrence.
+Equation (X.9) is a bound on the output matrix of a circuit of the
+specified kind. A sum over its expanded arithmetic terms has no
+automatic correspondence to an execution trace.
+
+\subsection{Mixed resource tradeoffs}\label{mixed-resource-tradeoffs}
+
+For a single fixed straight-line affine suffix, with constant downstream
+coefficients, zero bypass, \(h_M\) distinct MAIN jet values, and \(h_D\)
+distinct D scalar entrances, (X.5)--(X.8) imply
+
+\[
+        1\le \sum_{j\in M}s_{\lambda_j}\,2^{-d_M}
+                        +h_D\,2^{-d_D}
+          \le J h_M\,2^{-d_M}+h_D\,2^{-d_D}.               \tag{X.10}
+\]
+
+For multiple transcripts, (X.10) requires the same capacity bound for
+every guarded entrance and counts those entrances across the leaves.
+Constants inside a leaf alone do not control its guard. General routing
+must use (X.8).
+
+Both sets of terms may have arbitrary signs and may cancel. It follows
+that \(J h_M\ge2^{d_M-1}\) or \(h_D\ge2^{d_D-1}\). At the published
+parameters this gives at least \(2^{\Omega(N/\sqrt{\log N})}\) distinct
+scalar/jet entrances up to a polynomial factor. If the D capacity is
+\(o(2^{d_D})\), (X.10) gives \((1-o(1))2^{d_M}/J\) MAIN entrances. This
+last bound exposes MAIN's own \(Q\) in place of \(u\). Analogous
+conclusions hold when cumulative overlap, bypass, or nonconstant
+transfer costs are included explicitly via (X.8).
+
+The common exact-count construction in the source application has
+terminal \(2^{1+\sum_{v\in T}\sigma_v}+C_G(\sigma)\) with
+\(|T|=\lfloor N/4\rfloor\). It yields at least \(|T|+1\) distinct
+positive counts and the same terminal residue. Its MAIN incidence
+density is bounded by an absolute constant, and the published D cell
+estimate gives density at most 40 eventually, hence symbol mass at most
+\(5/8\). The same weighted matching proof and (X.10) apply on that
+single always-satisfiable family. Only the counting task has this
+obstruction there. \href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/rank-budget-barriers}{Gadget and
+exact source counts}
+
+An actual mixed example uses a fixed sign \(\sigma_v\) to run direct
+MAIN when the sign is one and D when it is zero, returning the
+corresponding answer. Multiply the MAIN terms by \(\sigma_v\) and the D
+terms by \(1-\sigma_v\). In each term the guard can be assigned to the
+group containing that sign, preserving its rank bound. The
+constant-depth switch is a two-transcript instance of (X.8). No claim
+about the general SAT-to-parity preprocessing is needed.
+
+For a variable-length parser, put \(a_\ell\) equal to the contribution
+of leaf \(\ell\) in a valid upper budget in (X.8), divided by \(D_*\).
+Discard unreachable leaves on the restricted domain. If the public
+branch transcripts have prefix-free lengths \(b_\ell\), then
+
+\[
+     \exists\hbox{ a reached }\ell:\quad 2^{b_\ell}a_\ell\ge1. \tag{X.11}
+\]
+
+Indeed \(\sum_\ell a_\ell\ge1\) whereas Kraft's inequality gives
+\(\sum_\ell2^{-b_\ell}\le1\). Otherwise the first sum would be strictly
+smaller than the second. The same realized input therefore witnesses the
+\nolinkurl{transcript/entrance} tradeoff. For example, suppose there is
+zero bypass, all augmented entrances have rank at most
+\(\rho D_*2^{-d}\), and on every reached leaf the implementation
+materializes its \(h_\ell\) distinct required values at a rate of at
+most \(W\) values per unit charged work \(T_\ell\). Then on one reached
+leaf
+
+\[
+       2^d\le 2^{b_\ell}\rho h_\ell
+                          \le 2^{b_\ell}\rho W T_\ell .       \tag{X.12}
+\]
+
+With uniform \(b_\ell\le b\) this gives worst-case work at least
+\(2^{d-b}/(\rho W)\). For a fixed schedule use \(b=0\). With \(b=o(d)\)
+and polynomial \(\rho,W\), the exponential scale persists. If \(b\) can
+be of order \(d\), the tradeoff permits an ordinary linear scan. The
+variable batch version counts \(\sum_e W_ec_e\) over actual paid events
+of cost \(c_e\), with \(W_e\) a per-unit delivery rate and requires
+coverage by their returned values. Distinct outputs of a batch or cached
+vector must be accounted for under that interface.
+\href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/rank-budget-barriers}{Source and runtime ledger} ·
+\href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/rank-budget-barriers}{Concrete escapes on these
+CNFs}
+
+\subsubsection{Scope of the proof}\label{scope-of-the-proof}
+
+Equations (X.5) and (X.10) concern the same family and the same terminal
+output on one transversal. The route-specific ingredient of (X.5) is a
+weighted extension of the prior unweighted argument. Equations
+(X.8)--(X.12) are algebraic or communication-accounting statements. The
+general matrix facts, formula relative-rank method, guard argument and
+cut conditioning all have prior art. A proof that a specific redesigned
+implementation fits (X.7), has affordable coefficients, and produces all
+charged values is an additional mathematical claim about that
+implementation. The cubic expander family itself has a direct indexed
+linear-time algorithm.
+\href{https://eccc.weizmann.ac.il/report/2003/067/}{Raz, multilinear
+formulas} · \href{https://arxiv.org/abs/1508.04644}{Cui et al.,
+tensor-network cuts}
+
+\section{Attainable measurements and the optimized iterator
+cost}\label{attainable-measurements-and-the-optimized-iterator-cost}
+
+The exact set of Boolean measurements already has exponentially many
+elements when the exceptional spectral window is too short. This gives
+the source's optimized iterator exponent even after discarding
+impossible measurement tuples and removing linearly redundant
+coordinates. The statement concerns the numerical measurements and
+enumerations specified below. An algorithm computing the same final
+count through a different statistic has a separate cost analysis.
+
+\subsection{A finite lower bound for the Boolean measurement
+image}\label{a-finite-lower-bound-for-the-boolean-measurement-image}
+
+There are \(n\) assignment variables and \(M\) occupied incidences, with
+every variable occurring. Let \(r\ge2\), \(Q\ge2\), \(1\le R<Q\),
+\(D=r^{2Q}\). A full cell is \(u=(a,d)\in[r]^Q\times[r]^Q\). Every
+incidence of a fixed variable \(v\) has the same first word \(a_v\).
+Number the copies so that each occupied pair (copy, cell) contains
+exactly one incidence. Let \(c_u\) count all incidences in cell \(u\),
+with \(c_u\le 2M/D\). The placement map \(\iota\) writes \(x_v\) at its
+occupied positions and zero elsewhere. For any interval
+\(\mathcal I\subseteq\{0,\ldots,Q\}\) of \(R\) integers, let
+\(C^{\mathcal B}\) consist of the source's tensor-product swap
+eigenvectors whose eigenweight is outside \(\mathcal I\). Write
+\(\widetilde C\) for its direct sum across copies and
+\(\widehat C=\widetilde C\iota\). At a node the measured tuple is
+
+\[
+ Y_t(x)=(\widehat C|_{S_{t,g}}x_{S_{t,g}})_{g=1}^r,\qquad
+ \mathcal Y_t^*=\{Y_t(x):x\in\{0,1\}^n\}.
+\]
+
+These are the source's numerical objects. The incidence placement sends
+recurrences of one full cell to different copies. The local measurement
+matrices retain the corresponding columns of the same global matrix.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L2240-L2276}{Exceptional
+eigenbasis} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L2532-L2598}{Placement
+and actual measurements}
+
+\textbf{Proposition.} Put \(k(u)=|\{i:a(i)\ne d(i)\}|\) and
+\(b_v=\#\{\text{incidences of }v\}\). For every node,
+
+\[
+ \log_2|\mathcal Y_t^*|\ \ge\ \operatorname{rank}_{\mathbb Q}\widehat C
+ \ \ge\
+ \sum_{v=1}^n\frac{1}{b_v}
+ \sum_{\text{incidences of }v\text{ at }u}
+ \Pr\bigl[\operatorname{Bin}(k(u),1/2)\notin\mathcal I\bigr].
+ \tag{F.A1}
+\]
+
+To prove this, take the real orthogonal projection \(P\) onto the row
+space of \(\widetilde C\). Within a copy, two cells belong to the same
+orbit of the coordinate swaps exactly when their unordered pairs agree
+at every coordinate. Each tensor eigenvector is supported on a single
+such orbit. An orbit with \(k\) unequal pairs has \(2^k\) positions. Its
+normalized eigenvectors have squared entry \(2^{-k}\) at each position.
+There are \(\binom{k}{j}\) of eigenweight \(j\), because any \(j\) of
+the unequal coordinates may be assigned their antisymmetric factor. Thus
+\(P\) has zero entries between different copy-orbit pairs and has
+diagonal entry \(\Pr[\operatorname{Bin}(k(u),1/2)\notin\mathcal I]\) at
+an occupied slot of cell \(u\).
+
+The normalized columns \(e'_v=\iota e_v/\sqrt{b_v}\) are orthonormal
+because their supports are disjoint. Within one copy, two positions in
+the support of a fixed column cannot belong to the same orbit. The fixed
+first word \(a_v\) and the unordered pair in each coordinate determine
+the entire second word. Thus any same-orbit repetition would be the same
+cell in that copy, which the placement excludes. Repeated cells in
+different copies are orthogonal. It follows that \(\|Pe'_v\|^2\) is
+exactly the \(v\)-summand on the right of (F.A1).
+
+Let \(y_1,\ldots,y_m\) be an orthonormal basis of the span of the
+\(Pe'_v\). As \(Py_j=y_j\), Bessel's inequality gives
+
+\[
+  \sum_v\|Pe'_v\|^2=\sum_{j=1}^m\sum_v|\langle e'_v,y_j\rangle|^2\le m.
+\]
+
+The maps \(P\iota\) and \(\widetilde C\iota\) have the same kernel.
+Their common rank is \(m\), and the rational matrix \(\widehat C\) has
+the same real and rational ranks. Select \(m\) independent columns of
+\(\widehat C\) and vary only their Boolean inputs. The resulting \(2^m\)
+global measurement vectors are distinct. Summing the group components of
+\(Y_t(x)\) gives \(\widehat Cx\), so the same assignments give distinct
+node tuples. This proves both inequalities.
+
+\subsection{Uniform lower bounds on the diagonal
+entries}\label{uniform-lower-bounds-on-the-diagonal-entries}
+
+For a uniformly random full cell, \(k\) is binomial with parameters
+\(Q,1-1/r\). With \(\xi=2^{1/4}(3/4)<1\), Markov's inequality gives
+
+\[
+ \Pr[k<Q/4]\le 2^{Q/4}\mathbb E[2^{-k}]\le \xi^Q.
+\]
+
+The cell bound gives at most \(2M\xi^Q\) occupied incidences in such
+cells. If \(2M\xi^Q\le n/2\), at least \(n/2\) variables have all their
+occurrences in cells with \(k\ge Q/4\). This holds for \(Q\) above a
+constant on the cubic cloned input, where \(b_v=3\) and \(M=3n\). For
+\(M\le n(\log_2 n)^B\), it holds once \(Q\ge C_B\log_2\log_2 n\), with a
+constant depending only on \(B\). This last argument permits variable
+degrees to vary.
+
+For \(Q\) sufficiently large, \(R\le Q/16\), and \(Q/4\le k\le Q\),
+absolute constants \(c,C>0\) give
+
+\[
+ \Pr[\operatorname{Bin}(k,1/2)\notin\mathcal I]\ \ge\
+ c\exp(-C R^2/Q).                                      \tag{F.A2}
+\]
+
+Indeed, the \(R+\lfloor\sqrt k\rfloor\) consecutive integers starting at
+\(\lfloor k/2\rfloor\) include at least \(\lfloor\sqrt k\rfloor\)
+outside \(\mathcal I\), regardless of where \(\mathcal I\) lies. As
+\(R\le k/4\), these integers lie in \([k/4,7k/8]\) for large \(k\). For
+each of them the two-sided Stirling estimates give point probability at
+least
+
+\[
+ c_1 k^{-1/2}\exp[-k D_{\mathrm{KL}}(j/k\|1/2)]
+ \ \ge\ c_1 k^{-1/2}\exp[-C_1(R+\sqrt k+1)^2/k].
+\]
+
+In the final inequality, the relative entropy and its first derivative
+vanish at \(1/2\), and its second derivative \(1/[x(1-x)]\) is bounded
+on this compact interval. Summing the selected point probabilities
+cancels the factor \(k^{-1/2}\). The inequalities \(k\ge Q/4\) and
+\((R+\sqrt{k}+1)^2/k\le C_2(1+R^2/k)\) complete (F.A2). The same
+reasoning works for an arbitrary excluded complement of a set of \(R\)
+retained weights. \href{https://www.jstor.org/stable/2308012}{Herbert
+Robbins, \emph{A Remark on Stirling's Formula}, 1955}
+
+Combining (F.A1) and (F.A2), whenever \(2M\xi^Q\le n/2\) and
+\(R\le Q/16\),
+
+\[
+  \log_2|\mathcal Y_t^*|\ge c_3 n\exp(-C_3 R^2/Q).       \tag{F.A3}
+\]
+
+\subsection{Optimization over
+parameters}\label{optimization-over-parameters}
+
+\textbf{Theorem.} Fix \(B\ge0\) and \(\kappa>0\). Suppose
+\(n\le M\le n(\log_2 n)^B\) and the placement and cell guarantee above
+hold. A constant factor in the upper bound for \(M\) can be absorbed by
+enlarging \(B\). Consider an evaluator that pays at least one unit for
+each of the following sets of iterations on a common routine call.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  It visits each Taylor pair \(U\subseteq E\), \(|E|\le q\), with
+  \(q\ge\lfloor\kappa n R/Q\rfloor\).
+\item
+  At the empty Taylor pair it distinguishes and visits each value of the
+  actual node summary \(Y_t\), at one or more nodes. It can enumerate
+  the exact image and use any equivalent encoding.
+\item
+  For one node it explicitly visits every assignment of a largest
+  variable group. It may do this across different attainable tuples.
+  Each local assignment at the empty pair extends to a global
+  assignment, so separate enumeration of every compatible fiber
+  satisfies this condition.
+\end{enumerate}
+
+For every integer choice \(r\ge2\), \(Q>R\ge1\), every permitted
+interval, and all sufficiently large \(n\), the total cost \(T\)
+satisfies
+
+\[
+  \log_2 T\ \ge\ c_{B,\kappa}\,n\,\frac{(\log_2\log_2 n)^2}{\sqrt{\log_2 n}}.
+  \tag{F.A4}
+\]
+
+The proof uses the maximum of the three iteration counts. They may
+overlap in the same operation. Write \(L=\log_2 n\), \(l=\log_2 L\),
+\(\alpha=l^2/\sqrt L\). If \(r\le1/\alpha\), a largest group has at
+least \(n/r\ge n\alpha\) variables. Otherwise
+\(\log_2 r\ge l/2-2\log_2 l=\Omega(l)\). At least one full cell is
+occupied, so \(1\le 2M/D\) and \(D\le2M\). Consequently
+\(Q\log_2 r\le\log_2(2M)/2=O(L)\), giving \(Q=O(L/l)\). This implication
+uses the actual cell load and permits layouts beyond the source's
+sufficient check \(2(b+w)D^2\le M\).
+
+When \(Q\le C_B l\), \(q\ge\lfloor\kappa n/Q\rfloor\) and the Taylor
+enumeration includes at least \(2^{\min(q,n)}\) choices. Its log cost is
+\(\Omega(n/l)\), which exceeds \(n\alpha\) for large \(n\). This also
+covers bounded \(Q\) and integer rounding. When \(R>Q/16\), the same
+argument gives log cost \(\Omega_\kappa(n)\). We may therefore assume
+the hypotheses of (F.A3). If \(\log_2T\ge n\alpha\), the result is
+immediate. Otherwise (F.A3) implies
+
+\[
+   C_3 R^2/Q \ \ge\ \log(c_3/\alpha)=\Omega(l),
+   \qquad R/Q\ \ge\ c_4 \sqrt{l/Q}\ \ge\ c_5 l/\sqrt L .
+\]
+
+Choose \(j=\lfloor c_6 n l/\sqrt L\rfloor\) with \(c_6>0\) small enough,
+independently of the tuning. Then \(1\le j\le\min(q,n/2)\) for all
+sufficiently large \(n\), and \(\log_2(n/j)=\Omega(l)\). The Taylor list
+contains at least \(\binom{n}{j}\ge (n/j)^j\) pairs, whence (F.A4). The
+published parameters, together with the source's variable-group
+balance condition \(n_{tg}\le 2n/r\), give the matching upper
+exponent. Equal incidence counts in the full cells alone do not
+imply this variable-group bound when variable degrees vary.
+The direct cloned
+formula has \(q=\lfloor3nR/Q\rfloor\). In a supplied-equation branch on
+\(n\) free variables, the source's nominal order uses
+\(k(m_{\rm test}+2(\ell-1))R/Q\), with \(\ell-1\ge n\). Thus these
+source calls have a uniform \(\kappa>0\).
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L965-L1017}{Direct
+orders and upper bound} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L3014-L3055}{Sparse
+orders} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L3142-L3196}{Branch
+precision and parameters}
+
+Deleting zero and linearly dependent rows while retaining the same
+measurement information preserves the result. So does caching repeated
+visits to an identical attainable tuple. The hypotheses also distinguish
+aggregating several measurement values, avoiding the Taylor pairs,
+summing a local fiber implicitly, and exploiting a specific formula's
+algebraic cancellations. The source's scan satisfies all three
+conditions. Each modification can change one or more of them. No graph
+expansion or final-output rank assumption enters (F.A1)--(F.A4).
+
+\textbf{Exact finite checks.} The accompanying standard-library Python
+checker builds the actual exceptional rows, including cross-copy
+placements, independently computes each side of the projection trace
+identity using rational arithmetic, and enumerates every attainable
+Boolean vector in each test node. Across 13 intervals and 33 nodes for
+\((r,Q)=(2,2),(2,3),(3,2)\), all comparisons hold. Global ranks range
+from 6 to 9. These exercises use the stated cell cap in small examples.
+The estimates for growing \(n\), as well as (F.A1), are written
+mathematical proofs. \href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/rank-budget-barriers}{Check
+script}
+
+\section{Optimal precision windows for retained root
+jets}\label{optimal-precision-windows-for-retained-root-jets}
+
+The largest test window certified by the canonical Hermite decoder,
+after optimizing the sampled nodes and their truncation lengths, has
+order \(M2^{7u/4}/u^2\). Using every native coefficient gives order
+\(M2^u/u^2\) for the same decoder. Both assertions concern
+coefficientwise recovery against independent errors in the data.
+
+\subsection{Data and decoder}\label{data-and-decoder}
+
+At the source root let \(a=2u\), \(L=2^a\), \(\alpha=2^{a+1}\),
+\(d=M(2L-1)\), \(h=\lceil3M/u\rceil\), and \(p\ge1\). Assume
+\(u\to\infty\) and \(M/u^2\to\infty\), as holds at the published root on
+the sparse inputs under study. In the complete source grid
+\(\{-L,\ldots,L-1\}\), take the native nodes \[
+ \mathcal T_i=\{t\ne0:v_2(t)=i\},\qquad
+ 0\le i<u,\qquad D_i=|\mathcal T_i|=2^{a-i}.
+\] The original jet at \(t\in\mathcal T_i\) has length \(k_i=h(u-i)\)
+and known coefficients modulo \(2^{P_i}\), where \[
+ P_i=p+8hD_i+8M(a+1).
+\] The original implementation acquires the entire local polynomial at
+this precision before retaining these jets (source lines 336--346). The
+optimization here restricts to the stated retained-jet subprofiles, not
+all information that implementation computes. These are the integral
+local coordinates \(T=t+\alpha z\). The target coordinate is
+\(T=\alpha w\). The coefficient ring is a discrete valuation ring with
+uniformizer 2, with the field of fractions used for the interpolation
+maps. The original source establishes the arithmetic, grid, degree,
+integral disks, and single-value reconstruction.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-contraction.tex\#L173-L323}{Frozen
+contraction, lines 173--323}
+
+Choose \textbf{an arbitrary integer \(0\le q_t\le k_i\) at every native
+node}. Write \(S_q=\sum_tq_t\), and omit nodes where \(q_t=0\). A
+positive admissible window has \(1\le b\le S_q-d\). The encoder sends
+each \(h_0(w)\in K[w]_{<b}\) to \(h_0(t/\alpha+z)\bmod z^{q_t}\). For a
+local data jet, multiply in \(K[z]/z^{q_t}\), interpolate these products
+with their unique degree-\(<S_q\) representative, substitute
+\(T=\alpha w\), and truncate at \(w^b\). Exact data reconstruct the
+anchor multiplication because the product polynomial has degree at most
+\(d+b-1\). We say the window is \textbf{certified} if every independent
+change of every retained data coefficient by an element of
+\(2^{P_i}\mathcal O\) changes every entry of this linear operator by an
+element of \(2^p\mathcal O\). For matrix-valued data the errors may also
+be independent between matrix entries.
+\href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/rank-budget-barriers}{Matrix transport and representation
+consequence}
+
+\subsection{The exact precision
+criterion}\label{the-exact-precision-criterion}
+
+For \(q_t>0\), put \[
+ C_t(T)=\prod_{s\ne t,\ q_s>0}
+       \left(\frac{T-s}{t-s}\right)^{q_s},\qquad c_t=v_2(C_t(0)).
+\] A degree-admissible window is certified if and only if for every
+retained \(t\in\mathcal T_i\), \[
+       (b+q_t-2)(a+1-i)\ \le\ P_i-p+c_t.                 \tag{P.1}
+\] In particular, for a fixed profile its largest window is the lesser
+of \(S_q-d\) and \[
+ \min_{t:q_t>0}\left(2-q_t+
+ \left\lfloor\frac{P_i-p+c_t}{a+1-i}\right\rfloor\right),
+                                                               \tag{P.2}
+\] provided the lesser value is positive. Otherwise the profile has no
+positive certified window.
+
+To prove sufficiency, the single-node decoder sends \(y(z)\) to \[
+ C_t(\alpha w)
+ \left[ y(z)/C_t(t+\alpha z)\right]_{<q_t}
+     (w-t/\alpha)\pmod{w^b}.
+\] The coefficients of \(C_t(\alpha w)/C_t(0)\) are integral because
+\(v_2(\alpha/s)>0\) at each sampled \(s\). Likewise
+\(1/C_t(t+\alpha z)\bmod z^{q_t}\) has integral coefficients and
+constant one, as \(v_2(t-s)\le a\). The decoder entries therefore have
+valuation at least \(c_t-(q_t-1)(a+1-i)\). The encoder entries have
+valuation at least \(-(b-1)(a+1-i)\). Multiplication by \(z^j\) has
+entries zero and one in the coefficient basis. These estimates give
+(P.1).
+
+For necessity change only the coefficient of \(z^{q_t-1}\) at a single
+retained node and apply the perturbed decoder to \(w^{b-1}\). After
+multiplication by \(z^{q_t-1}\), only the constant input at the node
+survives. The constant coefficient of the resulting anchor jet per unit
+of perturbation is exactly \[
+      C_t(0)(-t/\alpha)^{q_t-1}(t/\alpha)^{b-1}.          \tag{P.3}
+\] Its valuation is \(c_t-(b+q_t-2)(a+1-i)\). A perturbation of size
+\(2^{P_i}\) tests (P.1) with equality in the entry estimate. For matrix
+data one may use a single matrix unit. This also justifies (P.2).
+
+\subsection{Native multiplicities}\label{native-multiplicities}
+
+For the full native profile \(q_t=h(u-i)\), the source gives
+\(c_t\ge-6hD_i\). Also \(q_t\le4M\), \(D_i\ge2^{a-u+1}\), and the odd
+nodes alone give \(S_q-d\ge M(L+1)\). Hence \[
+ b=\min\!\left(S_q-d,\ 4M+
+          \left\lfloor \frac{2h\,2^{a-u+1}}{a+1}\right\rfloor\right)
+\] is certified and is \(\Omega(M2^u/u^2)\). For a node in the deepest
+shell \(i=u-1\), the defining product for \(C_t(0)\) has \(c_t\le0\). In
+fact smaller-valuation nodes contribute zero, and other nodes in the
+same shell can only decrease \(c_t\). There \(D_i=2^{u+1}\) and
+\(a+1-i=u+2\). Inequality (P.1) yields \(b=O(h2^u/u+M)=O(M2^u/u^2)\).
+
+\subsection{A profile attaining the optimized
+order}\label{a-profile-attaining-the-optimized-order}
+
+Set \(H=\lfloor4h/3\rfloor\), \(v=\lceil M/H\rceil+2\), and
+\(q_t=H(v-i)_+\) for \(t\in\mathcal T_i\). For large \(u\),
+\(H=4M/u+O(1)\), \(v=u/4+O(1)\), \(H\ge h\) and \(Hv\le M+3H\le hu\).
+Thus \(1\le v\le u\) and \(q_t\le h(u-i)\). Summing the shell sizes
+gives \[
+ S_q=HL(2v-2+2^{1-v}),\qquad S_q-d\ \ge\ 2HL+M.         \tag{P.4}
+\] For \(t\in\mathcal T_i\) with \(i<v\), let \(r=v-i\) and \(n=a-i\).
+Comparing the nodes of valuations \(i+j\) with the nodes at distance of
+valuation \(i+j\) from \(t\) gives the exact \textbf{finite} loss \[
+ -c_t=H D_i\sum_{j=1}^{n}\frac{j\min(j,r)}{2^j}
+     =H D_i\!\left(6-\frac{2r+6}{2^r}
+                          -\frac{r(n+2)}{2^n}\right).       \tag{P.5}
+\] Indeed there are \(D_i/2^j\) points in each of those two classes. The
+same-shell class carries multiplicity \(Hr\), and the class in shell
+\(i+j\) carries \(H(r-j)_+\). Zero multiplicity outside the native
+support can be included throughout the full grid. The series identity
+uses \(\sum j^2/2^j=6\), \(\sum_{j>r}j(j-r)/2^j=(2r+6)/2^r\), and
+\(r\le n\).
+
+Since \(6H\le8h\), (P.5) leaves \[
+ 8hD_i+c_t\ \ge\ H(2r+6)2^{a-v}\ \ge\ 8H\,2^{a-v}.
+\] With \(q_t\le4M\), (P.1) therefore holds for \[
+ b_{\rm sat}=\min\!\left(S_q-d,\ 4M+
+       \left\lfloor\frac{8H\,2^{a-v}}{a+1}\right\rfloor\right)
+       =\Omega\!\left(\frac{M2^{7u/4}}{u^2}\right).         \tag{P.6}
+\] The first term in the minimum has the lower bound (P.4). The second
+has the asserted scale because \(H=\Theta(M/u)\) and \(a-v=7u/4+O(1)\).
+
+\subsection{Upper bound for every nodewise
+choice}\label{upper-bound-for-every-nodewise-choice}
+
+Take any profile admitting a positive certified \(b\) and put
+\(v=1+\max\{i:\sum_{t\in\mathcal T_i}q_t>0\}\). Define
+\(m_i=D_i^{-1}\sum_{t\in\mathcal T_i}q_t\) for \(i<v\), and set
+\(m_i=0\) for all \(i\ge v\). At each retained \(t\in\mathcal T_i\) the
+product defining \(C_t\) gives \[
+ -c_t=K_t-D_i\sum_{j\ge1}\frac j{2^j}m_{i+j},\qquad
+ K_t=\sum_{\substack{s\in\mathcal T_i\\s\ne t}}
+                   q_s\big(v_2(t-s)-i\big).                 \tag{P.7}
+\] Nodes of valuation less than \(i\) contribute zero. A higher shell
+\(i+j\) contributes \(j\) times its total multiplicity to \(c_t\). All
+same-shell contributions appear with the opposite sign. Condition (P.1)
+gives \(-c_t\le8hD_i+8M(a+1)\), since \(b,q_t\ge1\).
+
+Suppose \(m_i>0\), put \(n=a-i\) and \(W=D_i m_i\), and average \(K_t\)
+with weights \(q_t/W\). For each \(s=1,\ldots,n\), the shell consists of
+\(2^{s-1}\) residue classes modulo \(2^{i+s}\). Let \(W_C\) be the total
+weight in class \(C\). Counting thresholds \(v_2(t-x)-i\ge s\) and
+removing the diagonal pairs gives \[
+ \sum_t q_t K_t
+ =\sum_{s=1}^n\left(\sum_C W_C^2-\sum_t q_t^2\right)
+ \ \ge\ 2(1-2^{-n})W^2-n\sum_tq_t^2.                     \tag{P.8}
+\] Here Cauchy--Schwarz gives \(\sum_C W_C^2\ge W^2/2^{s-1}\). As
+\(q_t\le4M\) and \(D_i=2^n\), the average \(K_t\) is at least
+\(2(D_i-1)m_i-4Mn\). Combining (P.7) and (P.8) gives \[
+ 2m_i-\sum_{j\ge1}\frac j{2^j}m_{i+j}
+ \le 8h+\frac{8M(a+1)+4Mn+2m_i}{D_i}
+ \le 8h+\frac{M(12a+16)}{2^{u+1}} .                        \tag{P.9}
+\] For an empty shell the left side is nonpositive, so (P.9) holds there
+too. The last estimate uses \(D_i\ge 2^{u+1}\), \(n\le a\), and
+\(m_i\le4M\).
+
+Put \(B=4h+M(12a+16)/2^{u+2}\) and \(p_j=j/2^{j+1}\) for \(j\ge1\). Then
+\(m_i\le B+\sum_{j\ge1}p_jm_{i+j}\). For positive integers \(r\) set
+\(f(r)=(r+2)/3\), with \(f(r)=0\) otherwise. Direct summation gives \[
+ f(r)-1-\sum_{j=1}^{r-1}p_j f(r-j)=\frac{r-1}{3\,2^r}\ge0 .
+\] Backward induction from \(m_i=0\) for \(i\ge v\) now gives
+\(m_i\le Bf(v-i)\). Therefore \[
+ \frac{S_q}{L}=\sum_{i=0}^{v-1}2^{-i}m_i
+ \le \frac B3(2v+2-2^{1-v})\le\frac B3(2v+2).
+\] Degree admissibility gives \(S_q>d=2ML-M\), whence
+\(v>(3M/B)(1-1/(2L))-1\). The root hypotheses imply \(3M/B=u/4+o(1)\),
+so \(v\ge u/4-O(1)\).
+
+Choose any retained center in the deepest shell \(i=v-1\). Formula (P.7)
+there gives \(c_t=-K_t\le0\). With \(a+1-i=a+2-v\ge u+2\), (P.1) yields
+\[
+ b\le 2+\frac{8h\,2^{a-v+1}+8M(a+1)}{a+2-v}
+    = O\!\left(\frac{M2^{7u/4}}{u^2}\right).
+\] Together with (P.6), this determines the order of the largest
+certified window over every nodewise profile, including choices that
+vary within a shell.
+
+For a unit residue anchor of matrix dimension \(N\), (P.6) supplies
+\(b_{\rm sat}N\) independent field dimensions in the representation
+inequality. On the common matching of \(m\) edges, take \(N=2^m\). If
+each separated product costs at most \(q_t2^{m-\Delta}\) under a uniform
+discrepancy \(\Delta\), its contribution is charged to the receiving
+node. This gives at least \(b_{\rm sat}2^\Delta/(4M)\) node-indexed
+whole-jet terms. The upper bound above concerns this decoder, the stated
+polynomial representatives of test columns, fixed centers, native
+coefficient precisions, and adversarially independent errors. A
+different reconstruction, correlated errors, or a proof requiring only
+output rank can have a larger valid window. Operation costs and reuse
+across nodes require the separate execution contract.
+\href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/rank-budget-barriers}{Rank and cost hypotheses}
+
+\section{A certified cross-method multiplication
+escape}\label{a-certified-cross-method-multiplication-escape}
+
+\subsection{One multiplication across MAIN and Appendix
+D}\label{one-multiplication-across-main-and-appendix-d}
+
+\textbf{Theorem.} There is an infinite family of simple cubic expanders
+\(G\) for which the same three-occurrence cloned CNFs admit graph-only
+MAIN and Appendix D root layouts at their published parameters with \[
+ C_G(\sigma)=
+ \left(\prod_{g\in[r_M]} A_g(\sigma|_{\{v:d_{\mathrm{pin}(v)}(t)=g\}})\right)
+ \left(\prod_{h\in[64]} B_h(\sigma|_{\{v:c_{\mathrm{pin}(v)}(i)=h\}})\right)
+ \qquad(\sigma\in\{0,1\}^{V(G)}).
+\] Here \(d_{\mathrm{pin}(v)}(t)\) is the pin factor's symbol at an
+actual MAIN node \(t\), and \(c_{\mathrm{pin}(v)}(i)\) is the unary
+tensor's symbol at a retained D coordinate \(i\). The layouts meet the
+source incidence and group-size bounds for MAIN and the source collision
+and packet bounds for D. The \(A_g,B_h\) are arbitrary functions of
+their indicated sign groups. A binary multiplication of the two
+completed group products computes every count with total evaluation cost
+\(O(N)\) indexed word operations after graph-only preprocessing. On
+these same layouts, every fixed scalar linear combination of full group
+products, each from a single coordinate of either method, that has the
+correct terminal residue requires \(2^{\Omega(N/\sqrt{\log N})}\) terms.
+The group functions in this construction replace the native local
+formula at its terminal interface. Their equality to particular MAIN jet
+coefficients or D child contractions is a separate question.
+
+\textbf{Graph and terminal function.} Start from a simple cubic graph
+\(H\) of edge expansion at least \(\gamma>0\). Replace each vertex by a
+triangle and assign its three incident edges to the three distinct
+triangle vertices. The triangle edges of \(G\) form disjoint triples and
+the exterior edges form a perfect matching. The resulting \(N=3|V(H)|\)
+vertex graph is simple and cubic. For \(S\subseteq V(G)\), let \(T\) be
+the set of base vertices whose triangles have a majority in \(S\), let
+\(S_0\) be their union, put \(p=|S\triangle S_0|\), and put
+\(q=\min(|S|,N-|S|)\). The \(p\) split triangles supply \(2p\) internal
+boundary edges. Altering one vertex changes the exterior boundary by at
+most one, hence that boundary has size at least \(|\partial_H T|-p\).
+The smaller side of \(S_0\) has at least \(q-p\) vertices. Therefore \[
+ |\partial_G S|\ \ge\ p+\frac{\gamma}{3}(q-p)\ \ge\ \frac{\gamma}{3}q
+ \quad (0<\gamma\le 3).
+\] For example, the iterated simple 2-lifts of \(K_{3,3}\) in the
+bipartite Ramanujan construction give an infinite choice of \(H\). To
+see that they have uniform edge expansion, apply the Laplacian bound
+\(3-2\sqrt2\) on the orthocomplement of the constant vector to a
+centered subset indicator. Each graph vertex has a unary pin clause and
+each edge a positive OR clause. In the common input each variable's four
+occurrences receive four clones tied by a directed implication cycle.
+The pin forces their unique common value, so the terminal count is the
+product of the edge ORs.
+\href{https://annals.math.princeton.edu/2015/182-1/p07}{Marcus, Spielman
+and Srivastava} · \href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/rank-budget-barriers}{Cloned CNFs}
+
+\textbf{MAIN placement.} Fix a node \(t\), use one independent uniform
+symbol for each triangle, and put this symbol at coordinate \(t\) of all
+three corresponding unary \emph{factor} labels. All variable labels and
+all remaining primitive symbols are independent and uniform. Each
+individual word is still uniform. There are \(n_M=4N\) assignment
+variables, \(M_M=12N\) incidences, maximum variable occurrence \(b=3\)
+and maximum factor width \(w=2\). Put \(D_M=r_M^{2Q}\). Let
+\(\Phi_M=\sum_u(c_u-M_M/D_M)^2\) be the incidence collision potential
+and let \(\Xi_M=\sum_{j,g}(n_{j,g}-n_M/r_M)^2\) be the
+assignment-variable group potential. In the agreement-pair expansion for
+\(\mathbb E\Phi_M\), at most \(4M_M\) ordered pairs share an endpoint,
+including identical incidences. Indeed an incidence shares with at most
+\(3+2-1=4\) incidences. The only additional dependent pairs are the two
+other pins on the same triangle for each of the \(N\) pins. All other
+full-cell agreements have probability \(1/D_M\). Consequently \[
+ \mathbb E\Phi_M\le4M_M+2N\le5M_M=M_M(b+w),
+ \qquad \mathbb E\Xi_M=Qn_M(1-1/r_M)\le Qn_M.
+\] Conditional expectation on the independent primitive symbols fixes a
+labeling with \[
+ \Phi_M/[M_M(b+w)]+\Xi_M/(Qn_M)\le2 .
+\] The published feasibility conditions \(2(b+w)D_M^2\le M_M\) and
+\(2Qr_M^2\le n_M\) now give \(c_u\le2M_M/D_M\) and
+\(n_{j,g}\le2n_M/r_M\) simultaneously. The bounded-occurrence overview
+uses the stronger \(12D_M^2\le M_M\). The tied coordinates belong to the
+unary factors, while the variable-group estimate uses the unchanged law
+of the assignment labels.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L2423-L2529}{MAIN
+placement and its joint potential, lines 2423--2529}
+
+\textbf{Appendix D placement.} Fix a retained root coordinate \(i\). At
+that coordinate give the two old unary-clause vertices for every
+exterior matching edge one common independent uniform symbol. Draw all
+other primitive symbols independently and uniformly. The fixed-density
+network has \(M_D=24N\) physical wires on the clones. Each clone
+supplies a trivalent equality vertex and each of the \(12N\) incidences
+is subdivided once. The uncloned D family instead has \(4N\) incidence
+edges and \(N\) internal edges in the four-port equality trees, yielding
+\(M_D=10N\) after subdivision. The old vertices have degree at most
+three, subdivision vertices have degree two, and each unary pin is
+incident to precisely one physical wire.
+
+Write \(D_D=64^{2a}\) and \(\Phi_D=\sum_c(X_c-M_D/D_D)^2\). Each wire
+has uniform ordered cell label. In the agreement expansion of
+\(\mathbb E\Phi_D\), the number of ordered pairs sharing a physical
+endpoint, including the diagonal, is at most \(M_D(3+2-1)=4M_D\).
+Disjoint wires have independent full-cell labels except for the \(N\)
+ordered unary-pin pairs corresponding to exterior mates. Thus
+\(\mathbb E\Phi_D\le4M_D+N\le6M_D\). This yields the required
+\(\Phi_D\le2M_D\Delta\) with the published
+\(\Delta=\lceil s_D^{9/10}\rceil\). At its root \(s_D\) and \(M_D\) are
+each proportional to \(N\), \(u\to\infty\), and
+\(D_D,L\le s_D^{1/1000}\). Hence
+\(M_D\ge2D_D^2\Delta,\ M_D\ge LD_D,\ 2L\le\Delta\) eventually. Round the
+maximum ordered-cell load up to a multiple of \(L\). This is at most
+\(M_D/D_D+\sqrt{2M_D\Delta}+L\le3M_D/D_D\), so the source's slot
+construction gives the required orientations in each packet, at most
+\(3M_D/L\) packets and at most \(3M_D/64\) real ports of any coordinate
+symbol on either side. The estimate \(6M_D\) strengthens the collision
+comparison only. The feasibility and recursive degree checks here use
+the published growing \(\Delta\).
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-reduction.tex\#L65-L93}{Clause
+networks, lines 65--93} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-contraction.tex\#L73-L171}{D
+packing, lines 73--171}
+
+Both conditional-expectation constructions have polynomial graph-only
+cost. At a partial fixing each agreement indicator involves at most four
+full labels. One may enumerate the primitive values in these labels,
+respecting shared symbols, in at most \(r^{4k}\) assignments for word
+length \(k\). This equals the square of the cell count, which is
+polynomial at the native parameters. Each assignment-variable group
+indicator in \(\Xi_M\) uses at most two symbols. The public layouts can
+be fixed independently of one another and of all signs. The original
+source algorithms derandomize a fully independent word assignment. The
+present constructions establish certified choices of layouts and leave
+the output of a prescribed source tie-breaking rule unspecified.
+
+\textbf{Evaluation and separation.} In each MAIN symbol group take
+\(A_g\) to be the product of the OR clauses of all internal edges of
+triangles with symbol \(g\). Both endpoint signs of each clause are
+input coordinates of \(A_g\). In each D symbol group take \(B_h\) to be
+the product over all exterior edges with symbol \(h\). Both endpoint
+signs belong to that D group. Empty products equal one. Each edge occurs
+once in the product \(U_MU_D\), where \(U_M=\prod_g A_g\) and
+\(U_D=\prod_h B_h\). Indexed scans of the preassigned edge lists have
+total size \(3N/2\), and the two final symbol loops cost
+\(O(r_M+64)=O(N)\). The common matching theorem applied to these same
+certified layouts proves the stated lower bound for fixed linear
+combinations. An arbitrary constant offset can be counted as one extra
+group product.
+
+\paragraph{Scope of the construction.} The proved construction uses one MAIN coordinate and one retained D coordinate on the same cloned family. The separate question of installing two coordinates of each type simultaneously on the same certified placements is reserved.
+
+\section{Other failures of unrestricted cost
+transfer}\label{other-failures-of-unrestricted-cost-transfer}
+
+\subsection{Short tests for other proposed
+transfers}\label{short-tests-for-other-proposed-transfers}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Proposed inference
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Concrete calculation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+What it establishes
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Exponentially many terms after expanding one scalar require that many
+arithmetic operations & On \(m\) pairs, \(\prod_{i=1}^m(1+x_i y_i)\)
+expands into \(2^m\) independent row/column monomials. Its matrix is
+\(\left(\begin{smallmatrix}1&1\\1&2\end{smallmatrix}\right)^{\otimes m}\),
+of rank \(2^m\). The circuit uses \(O(m)\) arithmetic gates and values
+of \(O(m)\) bits. & Even a formula without shared subexpressions has a
+cheap compact product of full rank. \\
+Caching a rank-two scalar keeps all its subsequent values at low rank &
+Identify each side's \(m\) bits with an element of \(\mathbb F_{2^m}\).
+The seed \(s=x-y\) has rank at most two. Repeated squaring and
+multiplication evaluate \(1-s^{2^m-1}\), the equality indicator of rank
+\(2^m\), in \(O(m)\) field operations. & The example uses \(m\)-bit
+field elements and polynomial bit work with a fixed irreducible
+polynomial. A formula expansion into ordinary monomials is an accounting
+choice. This generic field example has a different precision interface
+from the D root. \\
+Fan-out of a single entrance through input-dependent rank-one edge
+weights is free & Start at \(z_0=1\) and use
+\(z_{i+1}=z_i+x_{i+1}y_{i+1}z_i\). Each multiplier \(x_iy_i\) has rank
+one, yet the transfer from the single cached source to the output is
+\(\prod_i(1+x_i y_i)\) of full rank. & Bound the \emph{collected
+transfer coefficient} after all paths, or require fixed constants.
+Counting only distinct source registers misses the computation. \\
+Few reached branch decisions imply a cheap mask in a source
+decomposition & The one-bit test \([\sigma\text{ covers every edge}]\)
+chooses constant outputs 1 or 0. Its accepting mask has full rank on the
+common restriction. Computing the test by an edge scan costs \(O(N)\). &
+Bit length of a joint test does not bound its matrix rank. Access to the
+test is an operation whose inputs have to be specified. \\
+The number of leaves is the cost of one run & Query the \(m\) row bits
+consecutively and then inspect the column word on the matching. There
+are \(2^m\) row transcripts and \(O(m)\) tests/bit operations on each
+input. & A protocol supplies a transcript-length tradeoff. Its tree size
+alone gives no exponential per-run cost. \\
+A global canonical lift of a dyadic scalar keeps the rank of a small
+lift & For \(q=2^m\), \(0\le x,y<q\), the integer lift \(x-y\) has rank
+at most two. Its least nonnegative residue \(L_{xy}=(x-y\bmod q)\) has
+rational rank \(q\). Consecutive row differences for \(x=1,\ldots,q-1\)
+are \(\mathbf1-q e_x\). They are independent by inspecting coordinate
+zero and then each \(x\), and each has coordinate sum zero. Row zero has
+nonzero sum \(q(q-1)/2\). & A single modular subtraction and
+normalization costs \(O(m)\) bit operations. Lifting the global answer
+can introduce full rational rank. Lifts taken within each declared
+source scope retain that scope. \\
+Independent route hard cases force every hybrid to pay their maximum &
+On two input classes, route 1 may be slow only on the first while route
+2 is slow only on the second. A one-bit class selector can use the
+faster route on each. Taking the maxima in the other order reverses the
+inference. & A hybrid statement needs one family, one restriction and
+the actual selector masks. Equation (X.8) meets these requirements. \\
+\end{longtable}
+
+The first example also works directly with the genuine OR matrix on the
+matched pairs. Its two local factors can have ranks \(2^a\) and
+\(2^{m-a}\) for complementary subsets of the pairs, and their product
+attains \(2^m\). The certified construction above lifts that elementary
+rank phenomenon to a full source-layout family.
+
+\section{Cost contracts and the complete rational
+entry}\label{cost-contracts-and-the-complete-rational-entry}
+
+\subsection{Relating algebraic size to a
+trace}\label{relating-algebraic-size-to-a-trace}
+
+For a reached transcript choose the set \(J_\ell\) of distinct
+scalar/jet frontier values required by the certified representation. The
+execution contract permits cached subcomputations, repeated reads,
+arbitrary work to compute a value, and batched emissions.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  A trace consists of its actually executed charged events \(e\), with
+  total positive cost \(T_\ell=\sum_e c_e\).
+\item
+  Each event has a record \(I_e\subseteq J_\ell\) of completed frontier
+  values it delivers or individually materializes, with a proved bound
+  \(|I_e|\le Wc_e\). A promised simultaneous bound for a concrete vector
+  instruction can use its own \(W_e\) and sum \(\sum_e W_ec_e\).
+\item
+  Every index of \(J_\ell\) belongs to some \(I_e\). A value supplied by
+  preprocessing shared by all inputs may enter as an ordinary fixed
+  constant. Precomputed values depending on the actual signs require a
+  charge or an explicit input/advice contract. The proof uses only
+  \(|J_\ell|\le\sum_e |I_e|\le WT_\ell\).
+\end{enumerate}
+
+On a fixed schedule all sign-independent, graph-only feasibility checks
+can be settled before the signs arrive. The rank lower bound on the
+needed distinct entrances therefore gives \(T\ge2^d/(\rho W)\) when the
+normalized capacity per entrance is at most \(\rho 2^{-d}\) and there is
+no bypass. For the two original scalar/jet types one can instead keep
+the different \(d_s\) and \(s_\lambda\) in (X.10). A sum assembled by an
+arbitrary fixed linear DAG is covered because the coefficient of each
+distinct entrance equals the sum of its path coefficients. Constant
+batch width, polynomial batch width, and taking polynomially many
+coordinates from one vector all preserve the exponential scale.
+
+For a routed program the trace covers only its selected leaf. Combine
+its coverage with the prefix-free bound (X.11) for a worst-case claim
+about a single reached input. An uncharged selector depending jointly on
+the signs requires the rank of its full predicate or an actual
+source-scope factorization. Path bits are not a substitute for predicate
+rank.
+
+Implementations that assemble an entire symbolic answer without
+producing all chosen entrance values need a different frontier or a
+different trace proof. A circuit can expand exponentially many monomials
+with polynomial work. A local cache or an exact fixed linear
+recombination can save repeated visits, which is why the gate set
+consists of distinct entrances. A product of two locally computed values
+from different partitions, a data-dependent address, a global modular
+reduction, a determinant or a batched algorithm may give large rank at
+an inexpensive cut of the execution. Record its certified capacity and
+actual costs before applying (X.8) or the batched trace contract.
+\href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/rank-budget-barriers}{Same-family one-product
+escape}
+
+\subsection{Interpretation}\label{interpretation}
+
+The joint result lower-bounds the fixed terminal representation whenever
+its full recovered output has the correct residue. The source equalities
+provide two concrete ways to obtain such forms and a one-sign switch
+combines the printed routes on actual CNFs. A claim about every possible
+interleaving, optimizer, preprocessing branch, or SAT algorithm would
+require additional restrictions. The graph family (X.1) itself is
+decidable by a single pass over the explicit pin signs and edge clauses.
+
+\subsection{Reached computations in the full rational CNF
+proposition}\label{reached-computations-in-the-full-rational-cnf-proposition}
+
+For every \(n\ge20\), take \(n\) signed unit clauses on the \(n\)
+distinct declared variables. There is one satisfying assignment \(x=s\),
+all variables occur, normalization preserves the clauses, and the
+sparsification rule cannot branch on a nonempty proper subset of a unit
+clause. Its sole leaf is nonempty. If a preliminary source guard invokes
+exhaustive search it checks the original \(2^n\) assignments. Otherwise
+the full rational proposition sends this leaf to its parity tests. The
+combined headline algorithm chooses its Appendix D clause network on
+this fixed-density family at large sizes.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L3570-L3604}{Normalization
+and rational entry} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L3647-L3675}{Sparsification
+rule} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-reduction.tex\#L362-L369}{Combined
+dispatch}
+
+For every candidate binary matrix \(A\), its system is precisely
+\(A(x+s)=0\) over \(\mathbb F_2\), and
+\(N(A)=2^{n-\operatorname{rank} A}\). Thus even the entire list of
+candidate counts at each greedy round is sign-independent. Each
+singleton row \(e_v\) occurs among the enumerated ordered length-\(P\)
+lists, using one coefficient one and \(P-1\) zeros. If \(A\) has rank
+below \(n\), some singleton is outside its row span. The minimum count
+is attained by a rank-increasing candidate, so each round raises the
+rank by one until it is \(n\). The source enumerates every candidate,
+including those it discards, and uses one final count. This also
+exhibits a reached full-column-rank counting call if the last answer
+were reused from an earlier round.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L3446-L3466}{Candidate
+representation} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L3483-L3529}{Selection
+and final count}
+
+On this full-rank call, let \(S\) be the variables fixed by the source's
+high-incidence threshold. Its calculation gives
+\(|S|\le n/\sqrt{\lceil\log_2n\rceil}\). Every branch therefore has
+\(n'=n-|S|\ge n/2\). Follow the branch \(x_S=s_S\). The free-column
+submatrix remains full column rank \(n'\), and every constant equation
+is \(0=0\). Removing those equations still leaves nonconstant equations.
+The remaining neutral factors give \(M'\ge n'\), and the source's
+list-length bounds yield \(M'\le n'(\log n')^{O_k(1)}\). The precision
+is \(\ell=n+1\) and \(k(m_{\rm test}+2(\ell-1))=\Theta_k(n')\). Thus
+this branch reaches the routine with all size assumptions in the
+attainable-tuple theorem, unless a failed guard makes the solver
+enumerate the \textbf{original \(2^n\)} assignments for that candidate.
+At the printed schedule a largest-group scan alone gives
+\(\Omega(nl^2/\sqrt L)\) in the logarithm. Every allowed retuning of the
+three iterators satisfies the same lower bound. A computation using
+linear algebra can obtain every one of these candidate counts directly.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L3096-L3145}{Branch
+sizes and thresholds} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L3169-L3196}{Nominal
+precision and full fallback}
+
+An independent first-round witness uses a variable \(v\) of least
+initial incidence \(d_v\le M_0/n\), including the \(n\) neutral scopes
+in \(M_0\). Take candidate \(e_v\). Its one additional equation
+\(x_v+s_v=0\) raises this incidence by one. For \(n\ge20\),
+\(d_v+1\le\lceil (M_0+1)/n\rceil\lceil\sqrt{\lceil\log_2n\rceil}\rceil\),
+so \(v\) remains free. The branch of \(x=s\) keeps this nonconstant
+equation and encounters no contradiction. This establishes a reached
+call without using later greedy choices.
+
+\subsection{What the guarded expander's adaptive hashes
+reveal}\label{what-the-guarded-expanders-adaptive-hashes-reveal}
+
+For the raw, \textbf{uncloned} expander, the rational normalizer deletes
+precisely the positive edges having a positive unary subclause. No
+surviving edge means the full target is one. In the guarded replacement,
+the \(2N\) variables \(x_v,z_v\) and \(7N/2\) clauses form an antichain
+for every sign word. No variable participates in more than four
+width-two clauses, and the source's binary split threshold grows, so the
+guarded family reaches a single unchanged leaf. The first Tanner matrix
+really does give two indexed test rows reading every pin, from opposite
+endpoints. The minimum-distance condition rules out a zero local column
+when \(d_G=D_0\) and \(\delta d_G>1\). Shortening retains the two
+indexed occurrences. The row vectors themselves could agree, and the
+groups owning these rows could agree at some nodes. The number of
+initial indexed rows is \(<m/B\), and at least one reads \(\Omega(B)\)
+signs. A row containing pin \(v\) changes its \(z_v\) coefficient when
+\(s_v\) flips, while its unique quadratic monomial \(z_vx_v\) survives.
+These facts invalidate unique ownership of the old unary signs in the
+new list of factors.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex\#L3363-L3436}{Tanner
+checks and shortening}
+
+There is an exact additional obstruction at the early queries. If a hash
+matrix has binary row rank \(h\), choose \(h\) independent indexed rows
+with the same system of zeros. The resulting test polynomials \(P_i\)
+have degree at most two in \(2N\) variables. For \(h<N\),
+
+\[
+                 2^{N-h}\ \mid\ N(A).
+\]
+
+Indeed, for any Boolean quadratic \(q\), put \(W(q)=\sum_x(-1)^{q(x)}\)
+and let \(B(x,y)=q(x+y)+q(x)+q(y)+q(0)\) be its bilinear polarization.
+Changing variables in the square gives
+
+\[
+ W(q)^2
+ =\sum_y(-1)^{q(y)+q(0)}\sum_x(-1)^{B(x,y)}
+ =2^{2N}\sum_{y:\,B(\cdot,y)=0}(-1)^{q(y)+q(0)}.
+\]
+
+Thus \(2^N\) divides every integral \(W(q)\), including zero.
+Orthogonality on the equation values gives
+\(2^h N(A)=\sum_{a\in\mathbb F_2^h}W(\sum_i a_iP_i)\), proving the
+divisibility. In particular, all early candidates of rank below \(N\)
+have even counts for every sign word. An instance with \(F(s)=1\) needs
+at least \(N\) independent rows at its correct final query, so starting
+with \(<m/B=o(N)\) rows needs \(\Omega(N)\) appends. The upper bits of
+the completed integer counts are available to the greedy comparisons.
+This arithmetic observation supplies no exponential time bound for
+implementing those choices and does not establish a separated
+representation of the terminal output of the adaptive route. The divisibility statement is formalized by \nolinkurl{polynomial_hash_rank_divisible}.
+
+\section{Matching cost for the literal Appendix D
+root}\label{matching-cost-for-the-literal-appendix-d-root}
+
+\subsection{The literal Appendix D root attains the fixed-density time
+exponent}\label{the-literal-appendix-d-root-attains-the-fixed-density-time-exponent}
+
+\textbf{Corollary.} On the common cloned expander family, for every layout returned by the source collision packing procedure, the root of
+the printed Appendix D evaluator visits at least
+\(2^{\Omega(N/\sqrt{\log N})}\) individual mode products for all
+sufficiently large \(N\). Its logarithmic running time on this family
+has order \(N/\sqrt{\log N}\) in the source bit model.
+
+The cloned formula has \(n=4N\) variables, \(m_{\rm cl}=13N/2\) clauses
+and no unused variables. Its clause network has
+\(s=n+m_{\rm cl}=21N/2\), \(M_D=24N\) wires, \(P_0=n+1\) and \(\ell=1\).
+The fixed-density dispatcher selects the clause network. Set
+\(\lambda=\lceil\log_2s\rceil\). Its root is active because the leaf
+threshold \(\lceil s/\lfloor\sqrt\lambda\rfloor\rceil=o(N)\) is
+eventually smaller than \(M_D\). The root uses
+\(u=\lfloor\varepsilon\lambda\rfloor=\Theta(\log N)\). Let
+\(\mathcal I_D\) contain one slot \((t,\zeta,\beta)\) for each active
+node \(t\), each of the \(M_D(2L-1)+1\) prescribed residue-distinct
+probes at that node and each packet-mode tuple satisfying
+\(\sum_Zw_Z\beta_Z<p_t\). This set is graph-only once packing and
+interpolation points have been fixed.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-reduction.tex\#L65-L97}{Clause-network
+reduction and precision} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-reduction.tex\#L362-L369}{Combined
+dispatcher} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-contraction.tex\#L76-L109}{Root
+parameters}
+
+For each slot, lift the residue of each child \(g\) separately to a
+function \(\widetilde Z_{g,t,\zeta,\beta}\) of its own group's signs.
+The source recursion identity makes the sum over \(\beta\) of their
+products congruent to the true sample modulo \(2^{p_t}\). Lagrange
+interpolation at these probes has unit differences, so the reconstructed
+local coefficients have their prescribed precision. Multiplication by
+the truncated reciprocal of the cardinal polynomial is integral. The
+source Hermite error estimate then places the final error in
+\(2^{P_0}\mathcal O\). The two interpolation steps are fixed and linear
+over the fraction field. Their composition therefore gives constants
+\(c_{t,\zeta}\) and a pointwise integral lift
+
+\[
+ \widetilde F(\sigma)=
+ \sum_{(t,\zeta,\beta)\in\mathcal I_D}
+ c_{t,\zeta}\prod_g\widetilde Z_{g,t,\zeta,\beta}(\sigma)
+ \equiv C_G(\sigma)\pmod{2^{P_0}}.
+\]
+
+For the actual selected packing, Section~\ref{sec:window-and-layout} constructs the necessary common restriction. With \(m_*\) matching edges the target has
+rank \(2^{m_*}\) after reduction modulo two. The integral lift has this
+full rank over the fraction field. Each slot contributes rank at most
+\(2^{m_*-d_D}\) across the same flattening, where
+\(d_D=\Omega(N/\sqrt u)\). Subadditivity gives
+\(|\mathcal I_D|\ge 2^{d_D}\). The lift proves a lower bound on the
+number of scheduled slots even when the implementation accumulates
+modular products.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-contraction.tex\#L487-L523}{Root
+group identity} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-contraction.tex\#L275-L345}{Denominators
+and sample interpolation}
+
+The printed procedure enumerates the feasible exponent tuples, computes
+the child identity for every active node and every prescribed probe, and
+traverses it with one sum over tuples and one product over groups at a
+time. Its loop has no sign-dependent early termination. On each sign
+input for this fixed graph and schedule the root therefore executes at
+least \(|\mathcal I_D|\) iterations. The source fixed-density upper
+bound is polynomial in \(s\) times \(2^{O(s/\sqrt{\log s})}\), which
+gives the matching upper exponent here. This lower bound applies to that
+actual iterator. An algorithm that aggregates these products implicitly
+or decides the pin constraints by scanning the edges uses a different
+execution.
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-contraction.tex\#L475-L482}{Tuple
+enumeration} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-contraction.tex\#L560-L567}{Every
+active node and probe} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-contraction.tex\#L603-L613}{Sequential
+accumulation}
+
+\section{Consequences, computational boundaries, and open
+problems}\label{consequences-computational-boundaries-and-open-problems}
+
+\subsection{What the common invariant
+resolves}\label{what-the-common-invariant-resolves}
+
+The same tested target map governs the field degree budget, the finite
+precision reconstruction, finite-algebra readouts and the final count
+representation. The invariant is the rank or module length that a
+certified observation channel can carry on one fixed restriction. A
+change of basis, signed cancellation, a different order for fixed linear
+operations, and ordinary reuse of a register leave the identity intact.
+Mixed layouts change the capacity of each entrance and the geometric
+problem of finding one restriction; they do not require separate output
+matrices.
+
+The source-specific theorems quantify two distinct constraints. The main
+routine's exceptional measurements contain many genuinely attainable
+Boolean values, and the mandated Taylor/local iterations have a matching
+optimized exponent. The Appendix D precision schedule constrains how far
+its retained jets can certify the specified block decoder, and this
+window can be optimized sharply even over nonuniform choices within
+valuation shells. Neither fact by itself forces an arbitrary algorithm
+to materialize these data.
+
+\subsection{A classification by the operations that preserve the
+certificate}\label{a-classification-by-the-operations-that-preserve-the-certificate}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Operation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+What remains invariant
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Additional obligation
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Fixed linear recombination and signed cancellation & Collected transfer
+and target rank & Count distinct registers after collecting
+coefficients \\
+Joint Taylor computation in a local group & Input scope and
+multiplication-pairing capacity & Use the actual algebra
+dimension/readout rank, not all formal monomials \\
+Lossless recoding of summary rows & The attainable measurement image &
+The iterator theorem still requires visiting each distinct value \\
+Cache reuse & One entrance with the sum of its transfer coefficients &
+Input-dependent transfer functions need their own rank bounds \\
+Leakage or shared latent variables & A conditioned or separator rank
+capacity & Charge the actual shared \nolinkurl{coordinates/domains} \\
+Adaptive routing & Guarded sum identity & Charge complete guard rank and
+a same-execution transcript/work bound \\
+Multiplication of registers from different partitions & Rank is at most
+the product of ranks & A single gate may reach full target rank; the
+affine entrance lower bound need not survive \\
+Joint nonlinear residue normalization & The residue may be preserved &
+Rational value-matrix rank can increase sharply; use a local lift
+contract \\
+Implicit fiber summation or global contraction & May preserve the final
+scalar & No visit-count lower bound follows without a separate
+invariant \\
+\end{longtable}
+
+The mixed multiplication construction rules out a universal extension of
+the affine barrier to arbitrary local functions followed by cross-route
+products. It does not give a polynomial algorithm on arbitrary CNFs.
+Conversely the signed-unit instance shows that the literal rational
+procedure can perform superpolynomial work even when the exact count is
+one. These examples are compatible: they measure an interface and an
+evaluator, not intrinsic hardness of the test family.
+
+\subsection{Specific remaining mathematical
+problems}\label{specific-remaining-mathematical-problems}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Native-register classification.} Determine whether the two
+  cheap group products in the cross-route example can be realized by a
+  polynomial number of actual MAIN jet registers and D probe values
+  under their native formulas. Certified label scopes alone settle
+  neither direction.
+\item
+  \textbf{Adaptive preprocessing.} Develop an invariant for the genuine
+  coefficient functions created by Tanner checks and greedy parity rows.
+  Their overlapping dependence on original signs invalidates one-owner
+  arguments. Low bits of early quadratic-system counts can vanish
+  identically; upper bits still inform adaptive choices.
+\item
+  \textbf{Implicit aggregation.} Characterize which dependencies among
+  attainable measurement values permit an efficient aggregate without
+  enumerating all fibers or Taylor pairs. The projection bound limits
+  lossless recoding, whereas it does not prevent a sufficient statistic
+  specific to the final summation.
+\item
+  \textbf{Decoders beyond canonical retained jets.} The precision
+  optimum concerns exactly the degree representatives, native
+  coefficient precisions and independent errors stated in its theorem.
+  The source actually computes whole local polynomials before retaining
+  the jets. Additional coefficients, correlated errors, alternative test
+  spaces and rank-only robustness can evade that particular optimization
+  problem.
+\item
+  \textbf{Full formal composition.} Formalize the observation lattice,
+  native denominator arithmetic, weighted matching selection and
+  correlated packing, then extract the source algorithms into the
+  verified interfaces. Successful model compilation is not a substitute
+  for those bridges.
+\end{enumerate}
+
+The correct next question is therefore which extra structure of native
+registers excludes the exhibited cheap cross-route product, or permits
+it in a useful wider family. A proof in either direction would refine
+the model. Assuming that all nonlinear computation is expensive would
+decide this question by definition and would not constitute a complexity
+barrier.
+
+\section{Prior work and candidate
+contributions}\label{prior-work-and-candidate-contributions}
+
+Audit date: 2026-11-26. This is a primary-source comparison of the
+closest identified results, not a proof of worldwide priority. The
+manuscript contains self-contained arguments and attributes the
+classical tools. No assertion of originality rests on the absence of a
+keyword search result.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Prior source
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Closest established result
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Consequence for this manuscript
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+De Terán, Dopico, Van Dooren, \emph{Matrix polynomials with completely
+prescribed eigenstructure}, Theorem 3.1 & Index sum relates polynomial
+grade, rank, invariant-factor degrees and minimal indices. & The field
+degree/defect budget is classical. The manuscript supplies a direct
+quotient proof and formalizes it; it does not claim this inequality as a
+new discovery. \\
+Randriambololona, \emph{Bilinear complexity of algebras and the
+Chudnovsky--Chudnovsky interpolation method}, Definition 2.1,
+Proposition 2.2, Theorem 3.5 & Products are encoded in local algebras
+and linearly reconstructed, including higher multiplicities and
+nonuniform observations. & This is a close precedent for the exact
+Hermite transport mechanism. Its use here is a precision- and
+input-scope-sensitive capacity calculation. \\
+Noferini and Van Dooren, \emph{Computing a compact local Smith--McMillan
+form} & Local invariant orders can be read from ranks of triangular
+Toeplitz coefficient matrices. & The jet image profile is another
+classical tool, not an independent novelty claim. \\
+Caruso, Roe, Vaccon, \emph{Tracking p-adic precision}, Lemma 3.4 &
+Precision propagates as lattices under a differential, with exact linear
+transport as a basic case. & Our independent-error column criterion
+specializes linear lattice transport. The source-specific optimizing
+problem retains its exact stated decoder and data hypotheses. \\
+Nazarov, \emph{The Bang solution of the coefficient problem}, Part 2 &
+Convex sign maximization yields one bounded function correlated with
+many prescribed functions. & The simultaneous correlation principle and
+weighted sign method must be credited. Combining it with the actual two
+source layouts and one pin restriction is the application studied
+here. \\
+Raz, \emph{Multi-linear formulas for permanent and determinant are of
+super-polynomial size}, Propositions 3.1--3.3 & Flattening rank is
+subadditive and small for sufficiently unbalanced variable partitions. &
+The rank calculus is established. Our source proof must justify one
+common restriction, rather than present this calculus as a new general
+circuit lower bound. \\
+De Colnet and Mengel, \emph{A compilation of succinctness results for
+arithmetic circuits} & Value matrices and induced matchings give signed
+arithmetic lower bounds on expander-based functions in stated circuit
+models. & A close graph/rank precedent. The present matrix has a unit
+characteristic-two determinant and controls permitted cuts from several
+concrete layouts. \\
+Cui, Freedman, Sattath, Stong, Minton, \emph{Quantum max-flow/min-cut} &
+Network cuts bound the rank carried by latent indices. & Separator and
+overlap capacities are classical network principles. Scope and actual
+sharing must still be certified. \\
+Dias and Lima, \emph{Limits and Constants of OpenAI's Claimed ETH
+Refutation}, Definition 5.1 and Theorems 7.2, 8.1--8.3 & A
+clause-product interpolation model, explicit cost assumptions and
+treewidth-based barriers; parity and tensor routes are distinguished. &
+We do not claim the first interpolation barrier. The attained-fiber
+result concerns the actual exceptional-space embedding and specified
+iterators; the terminal output theorem uses a different invariant. \\
+Tulsyan, \emph{What the ETH refutations do not give}, Proposition 5.2
+and Sections 3--5, 8--9 & Noncommuting M0-template bounds, local
+counting-network ranks, correlated decompositions, and careful
+separation of Lean statements from paper cost bridges. & General rank
+barriers and non-product extensions already have direct prior art. Our
+restricted mixed output result and counterexample must be compared at
+their exact input and gate interfaces. \\
+\end{longtable}
+
+\subsection{Precise candidate
+contributions}\label{precise-candidate-contributions}
+
+The source-specific attained-measurement estimate uses the occupied-cell
+embedding and swap-orbit leverage scores to survive removal of redundant
+rows and enumeration of only attainable values. Its optimized iterator
+consequence still has three explicit execution obligations. The exact
+dyadic precision window is optimized over every subprofile of the stated
+retained Hermite jets, with a matching upper bound using weighted shell
+averages. The common input construction and weighted restriction treat
+MAIN and Appendix D in one value matrix. The certified cross-method
+product shows why an affine barrier cannot automatically survive a
+nonlinear extension. These are the concrete results to assess for
+novelty, together with their proof-assistant coverage.
+
+The core field transport inequality, multiplication-pairing rank, linear
+precision transport, Nazarov correlation, matrix subadditivity, Hadamard
+rank bound and Kraft inequality are not claimed as new. The paper does
+not claim optimality over every decoder, every matrix construction,
+every algorithmic layout, unrestricted arithmetic circuits, or all SAT
+algorithms. No journal or conference acceptance claim is made. Human
+expert review and a wider priority search remain necessary before
+publication claims of originality.
+
+\subsection{Primary references
+inspected}\label{primary-references-inspected}
+
+\begin{itemize}
+\tightlist
+\item
+  De Terán, Dopico and Van Dooren:
+  \url{https://perso.uclouvain.be/paul.vandooren/publications/DeTeranDV15.pdf}
+\item
+  Randriambololona: \url{https://arxiv.org/pdf/1107.0336}
+\item
+  Noferini and Van Dooren:
+  \url{https://doi.org/10.1080/03081087.2024.2340746}
+\item
+  Caruso, Roe and Vaccon: \url{https://arxiv.org/html/1402.7142v1}
+\item
+  Nazarov journal record: \url{https://www.mathnet.ru/eng/aa774}
+\item
+  Nazarov English manuscript:
+  \url{https://eclass.uoa.gr/modules/document/file.php/MATH121/04-\%CE\%95\%CF\%81\%CE\%B3\%CE\%B1\%CF\%83\%CE\%AF\%CE\%B5\%CF\%82/04-1.\%20\%CE\%A4\%CE\%B1\%20\%CE\%B8\%CE\%AD\%CE\%BC\%CE\%B1\%CF\%84\%CE\%B1/24.\%20coe.pdf}
+\item
+  Raz: \url{https://eccc.weizmann.ac.il/report/2003/067/download/}
+\item
+  De Colnet and Mengel: \url{https://arxiv.org/pdf/2110.13014}
+\item
+  Cui and coauthors: \url{https://arxiv.org/pdf/1508.04644}
+\item
+  Dias and Lima: \url{https://arxiv.org/html/2611.00517v1}
+\item
+  Tulsyan: \url{https://hexagonmath.org/pdf/2611.00149v1}
+\item
+  Arvind, Joglekar and Srinivasan, matrix Hadamard bound:
+  \url{https://arxiv.org/pdf/0907.4006}
+\item
+  Marcus, Spielman and Srivastava, simple cubic expander families:
+  \url{https://annals.math.princeton.edu/2015/182-1/p07}
+\item
+  Robbins, uniform Stirling bounds:
+  \url{https://www.jstor.org/stable/2308012}
+\item
+  OpenAI frozen manuscript:
+  \url{https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026}
+\item
+  OpenAI formalization scope:
+  \url{https://github.com/openai/math/blob/main/lean/docs/378.md}
+\end{itemize}
+
+\section{Formal verification and reproduction}\label{formal-verification-and-statement-coverage}
+The frozen C17 project consists of 609 Lean modules. A fresh replay using Lean 4.24.0 and the pinned Mathlib revision checks 2,908 distinct named axiom reports. This edition adds five modules with ten further named checks. All 614 modules were subsequently imported into one environment. An audit traversed 12,042 declarations belonging to those modules, including 8,046 theorem declarations. It found zero locally declared axioms. The complete transitive axiom set is \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}. The source bundle includes toolchain pins, the audit driver, and the output. External expander existence and the source evaluator's published bit-time upper bound enter as cited mathematical results. The supplement proves the visit lower bound directly for each selected layout.
+
+\section{Source coverage matrix}\label{source-coverage-matrix}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Interface
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Positive theorem applies
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Source-specific proof supplied
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Still required for a stronger claim
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Direct bounded-occurrence MAIN with graph-only scopes & Yes, genuine
+cloned input and exact count & Actual factor labels, incidence
+distribution, finite differences, fibers and fixed Hermite readout &
+Formal extraction of the TeX program; arbitrary optimizers need a new
+cost proof \\
+Supplied sparse polynomial systems & Yes, integral final lift and parity
+of the exact count & Neutral factors, stable scopes, double truncation
+and linear readout after multiplication & General CNF-to-equation
+preprocessing may duplicate or adapt sign ownership \\
+Appendix D sparse-CNF root & Yes, final residue and actual root group
+partitions & Physical-wire counts, packing, local lifts, denominator
+losses and fixed outer reconstruction & Recursive sharing, arbitrary
+contraction reordering and nonlinear decoders are not all charged \\
+Literal Appendix D root iteration & Matching fixed-density time exponent
+& Native child lifts, full-rank output, scheduled mode count and printed
+sequential traversal & Does not require optimized implementations to
+enumerate the same slots \\
+Fixed affine mixed computation & Yes, same family and common matching &
+Combined moment bounds and each route's local capacity & Any bypass and
+collected coefficient/guard capacity must be included \\
+Adaptive finite routing & Capacity inequality and same-reached-leaf
+tradeoff & Exact guarded sum and prefix-code proof & Large global
+predicates or long adaptive transcripts can remove the runtime
+implication \\
+Losslessly compressed measurement enumeration & Optimized source
+iterator lower bound & Actual projected rowspace, Boolean image and
+retuned entropy argument & Simultaneous aggregation of distinct fibers
+or avoiding Taylor pairs is outside that iterator theorem \\
+Full literal rational CNF procedure & A real input reaches expensive
+printed iterations & Signed-unit witness and source-order audit & Does
+not imply intrinsic hardness: the count is trivial on that witness \\
+Complete sign-adaptive CNF front end, semantic count & No complete
+barrier proved & Subsumption and parity-row obstructions identified &
+Need a new invariant surviving nonlinear normalization, overlapping
+ownership and greedy information reuse \\
+Arbitrary local functions with cross-method products & Extending the
+affine bound through one cross-method multiplication is false &
+Constructive certified-layout U\_MAIN U\_D identity & Equality of these
+factors to native probes remains open \\
+General exact counting or SAT algorithms & No unconditional lower bound
+asserted & Explicit polynomial-time escapes on the test families & Would
+require fundamentally stronger complexity results \\
+\end{longtable}
+
+All cost statements distinguish arithmetic operations from bit
+operations. A loop-iteration lower bound is also a lower bound in a bit
+implementation that must execute the loop. Field-operation upper bounds
+require a bit-size audit. The explicit counterexamples use Boolean
+values or polynomial-size field/word representations and have the stated
+polynomial bit costs. A sum of exponentially many formal monomials is
+never counted as an execution without the separate coverage contract.
+
+\section{Reconstruction and execution
+interfaces}\label{reconstruction-and-execution-interfaces}
+
+\subsection{Source ownership}\label{source-ownership}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Source operation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Function of the varied signs
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Condition for using the joint budget
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+MAIN direct input, full text 1465--1485, 1664--1704 and 2094--2135 & Use
+the four-clone implication cycle for each original variable. The unary
+factor is \(Y\) or \(1-Y\) according to its varied sign. A positive edge
+has factor \(Y+Z-YZ\), and an implication has factor \(1-Y+YZ\). Their
+Boolean sum-product is \(C_G(\sigma)\). Here \(M_M=12N\), scope at most
+two and every clone has three occurrences. & The \(4N\) variables summed
+over internally are distinct from the \(N\) external sign indices. A
+fixed layout can depend on each scope and the graph.
+\href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/rank-budget-barriers}{Common source instance} \\
+MAIN labels, 2423--2530 & Factor \(f\) gets \(d_f(t)\). Summing
+\(c_{a,d}\le2M_M/r_M^{2Q}\) over variable labels \(a\) bounds the entire
+unary factor-label law by \(24\) times product-uniform. No dummy factors
+are necessary. & Use the factor labels \(d_f\) at unit clauses.
+Variable-group size bounds alone apply to the wrong set of labels for
+this proof. \\
+MAIN group sums, 1809--1884 and 1964--1997 & For fixed
+\((t,E,U,\vec y)\), Boolean representatives, measurement fibers and
+fixed substitution are determined by the layout and external indices.
+Each \(\Sigma_g\) depends on signs only of unary factors assigned to
+\(g\). It is an element of \(\mathbb Q[z]/(z^J)\), since the direct
+clause interface may use \(\mathcal A=\mathbb Q\). An infeasible
+measurement tuple contributes an identically zero term. & The
+data-independent choice of representatives is legal with fixed
+measurement matrices. A redesigned selection could require a new scope
+or a guarded representation. \\
+MAIN Hermite recovery, 1886--1903 and 1964--2040 & Möbius signs and the
+readout of all jet coefficients are rational linear operations. A fixed
+downstream linear DAG gives one fixed functional per distinct jet
+register. On a balanced union, \(\lambda(\prod_g\Sigma_g)\) has scalar
+bilinear cost \(s_\lambda\le J\). \(J\le dR+1\) is polynomial on these
+inputs. & Charge one logical jet entrance multiplied by \(s_\lambda\) in
+the rank budget. A polynomial number of coefficient slots does not
+justify charging exponentially many formal coefficient products. \\
+D sparse branch, reduction 65--98 and 362--369 & The cloned network has
+\(24N\) physical edges, \(N\) unary-pin ports and an immutable graph
+over all sign choices. Its count is a bit. Every fixed-density input in
+this family eventually takes the source sparse branch. & There is one
+trivalent equality vertex per clone and one edge per incidence before
+subdivision. All clauses are nonempty, all variables occur, and the
+topology has no tautological clauses. \\
+D packing, contraction 73--171 & The certificate and feasibility bound
+give \(X_c\le2M_D/r_D^{2a}\). Marginalizing the other endpoint and
+unused coordinates, then using the unary-port injection, bounds the pin
+law by \(48\) times product-uniform at the retained coordinates. & Count
+the old-vertex side containing unary tensors. The D symbols may be
+unrelated to the MAIN factor labels. \\
+D probes and modes, contraction 244--346 and 384--555 & For a fixed
+\((t,\zeta,\beta)\) the native identity uses
+\(\prod_g Z_{g,t,\zeta,\beta}\). Only one root group supplies signs to
+each child. Its local tables can be computed implicitly. & Lift each
+local residue within its declared group. The sum of the lifted products
+then represents the sample at its native precision. The prior error
+analysis gives the final origin residue under the prescribed fixed
+coefficients. \\
+D reconstruction, contraction 244--382 and 557--619 & Rational
+reconstruction after lifting has known powers of two in its
+denominators. The output is integral with the correct terminal residue.
+The same field can be used for MAIN because the D fraction field
+contains \(\mathbb Q\). & Independent modified sample readouts must
+re-establish the error-clearing identity. Applying a nonlinear section
+to a joint value can increase rational rank up to the full matrix
+dimension. \\
+Main text general parity/hash procedure, 2847--3532, and D
+higher-density reduction, reduction 100--369 & Constructed equations may
+combine several original clauses. Some newly generated signs,
+coefficients, selected rows, branches and subproblem scopes can depend
+on many original signs. & These operations require proving their actual
+dependencies on the same original sign cube. Labeling a newly combined
+parity row as a single original unary factor does not supply such a
+proof. \\
+\end{longtable}
+
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/main_full_version.tex}{Frozen
+MAIN source} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-contraction.tex}{Frozen
+D contraction} ·
+\href{https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-reduction.tex}{Frozen
+D reductions} ·
+\href{https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/main/root-separation}{Prior D precision
+analysis}
+
+\section{Theorem index}
+The accompanying source index gives the module and declaration for each of the following conclusions.
+\begin{itemize}
+\item Sections 2--3: scaled Hermite reconstruction and compression; full local factors and finite sums; off-grid transfer ranks; finite observation length and exact common-precision Smith truncation.
+\item Section 4: the actual pinned model count, its direct and sparse MAIN readouts, and high-order witnesses on the always-satisfiable family. Integer exactness is used for the direct terminal, parity for the sparse terminal rank argument.
+\item Sections 5--6: the real weighted matching theorem for arbitrary finite layout families; fixed and routed budgets; projection to attainable measurement tuples and the three explicit iterator obligations.
+\item Sections 7--9: sharp native error windows for the given decoder; one cross-method product on a common input; rank examples for alternative executions.
+\item Sections 10--11: finite hash obstructions, the charged iteration model and the literal root visit lower bound for every source collision packing.
+\end{itemize}
+\clearpage
+\section{The direct MAIN window and the Appendix D layout quantifier}
+\label{sec:window-and-layout}
+
+\subsection{A witness in the window read by direct MAIN}
+For the bounded-occurrence direct input in display (M.7), write \(n\) for
+the variable count, \(Q\) for the number of nodes and \(R\) for the
+printed interpolation width. The direct polynomial has degree \(3n-2\)
+on the family under consideration. The source allocates the nominal cap
+\(3n\). At cap \(d\) the orders kept at each node are \(0\le j<J(d)\),
+where \(J(d)=\lfloor dR/Q\rfloor+1\).
+
+\textbf{Window lemma.} Each high-rank coefficient witness for cap \(d\)
+is a witness for every cap \(d'\ge d\) of the same recipe, with the same
+cuts, node, order and matrix.
+
+\emph{Proof.} Choose the cuts, the node \(t\), the order \(j\) and the
+remaining address indices furnished by the original witness. Integer
+division is monotone, so \(j<J(d)\le J(d')\). Use \(j\) itself in the
+larger address set. The Hasse coefficient evaluated at this address is
+computed from the same polynomial recipe and the same grid. Neither
+its entries nor its flattening depend on the upper bound used to type
+the index. All the balance, order and rank inequalities therefore hold
+with their original witnesses. Apply this lemma with \(d=3n-2\) and
+\(d'=3n\). No equality of the two lists of retained addresses is needed.
+The sparse MAIN construction keeps its own grid and parity argument.
+\(\square\)
+
+\subsection{Every source collision packing on the same graph}
+Let \(F\) be a finite, nonempty loopless cubic graph on \(N\) vertices.
+Fix a rational \(0<\gamma\le3\) and suppose every vertex subset \(U\)
+has at least \((\gamma/3)\min(|U|,N-|U|)\) boundary edges. Use the
+cloned CNF, its physical clause network, the \(\ell=1\) root and the
+printed parameters of Section 11. In the formal statement the source
+extension polynomial is monic, has degree \(4\lambda\), and has
+irreducible reduction modulo two. All labels and the packing are chosen
+before the pin input. Write \(M=24N\) for the number of physical wires,
+\(a\) for the full word length, \(u\) for the number of retained
+coordinates, \(D=64^{2a}\) for the number of ordered word cells and
+\(\Delta\) for the source degree bound, which is at least three.
+
+\textbf{Theorem.} For all sufficiently large \(N\) (threshold depending
+only on \(\gamma\)), take \emph{any} physical packing \(P\) with cell
+loads \(X_c\) satisfying
+\[
+  \Phi(P)=\sum_c(X_c-M/D)^2\le 2M\Delta .
+\]
+The literal root menu of this same packing has at least
+\(2^{\lfloor c_\gamma N/\sqrt{\ln N}\rfloor}\) slots for a fixed
+\(c_\gamma>0\). For every sign word \(\sigma\), its literal root visit
+list has at least this length. In particular this holds for every
+minimizing tie rule in the printed conditional-expectation construction.
+
+\emph{Proof of the selector guarantee.} Start with independent uniform
+labels at all row and column vertices. Expanding the squared loads as
+a sum over ordered wire pairs gives a contribution equal to the
+probability of cell agreement minus \(1/D\) for each pair. Wires with
+disjoint endpoints have independent cells and contribute zero. At most
+\(2M\Delta\) ordered pairs share an endpoint, and each contributes at
+most one. Thus the initial expectation is at most \(2M\Delta\).
+After fixing any partial assignment the conditional score is evaluated
+from the very same ordered pairs. For each side use agreement
+probability one for the same endpoint, or the dot product of the two
+marginal label distributions for distinct endpoints. Multiply the row
+and column agreement probabilities and subtract the constant \(M^2/D\)
+from the sum. This equals the conditional expectation of \(\Phi\),
+since the two sides use disjoint sets of vertex variables.
+
+At the next unfixed vertex the current score is a weighted average of
+the possible next scores. Every minimizer gives a score no larger than
+the current one, even when several labels tie. A minimum exists on the
+nonempty finite alphabet. Fixing one fresh vertex per step produces a
+complete assignment, and its conditional mean is its actual score.
+Padding classes to the printed multiple of \(2^a\) retains the labels
+of every original wire. Hence the bound applies to the packing that
+was chosen, for every tie rule. A choice that merely keeps the
+conditional mean from increasing gives the same inequality by
+transitivity.
+
+\emph{From cells to cuts.} The printed size guard is \(2D^2\Delta\le M\).
+Consequently \(X_c\le M/D+\sqrt{2M\Delta}\le2M/D\) in each cell. Pick
+for each original vertex the clause-side half of its unary-pin wire.
+These \(N\) wires are distinct, and the row word there is exactly the
+one seen by the public root. Fixing its \(u\) retained coordinates leaves
+\(D/64^u\) possible full cells. For each retained word \(x\) its
+empirical mass among the pins is therefore at most
+\[
+  N^{-1}(D/64^u)(2M/D)=48\,64^{-u}.
+\]
+Each one-coordinate symbol has mass at most \(48/64=3/4\).
+A symbol of mass in \([1/4,3/4]\) gives a balanced cut by itself.
+Otherwise accumulate the symbols of mass less than \(1/4\) until first
+reaching \(1/4\). Their total is then less than \(1/2\). This gives a
+quarter-balanced union of symbols at each retained coordinate.
+
+\emph{One matching for this packing.} Here is the precise specialization
+used by the Lean proof. Choose one such cut \(U\) (eventually \(u>0\))
+and introduce a single auxiliary coordinate over 32 symbols that takes
+only two values, according as the vertex belongs to \(U\) or to its
+complement. Each of its atoms has mass at most \(3/4=24/32\). Apply
+the two-layout matching theorem of Section 5 with this auxiliary
+layout and the actual retained layout of \(P\). In its numerical budget
+\(31104(1+u^2)\) is no greater than \(31104(Q^2+u^2)\), where \(Q\ge1\)
+is the printed MAIN node count. The printed readiness inequalities
+thus suffice. The auxiliary layout is used only to invoke a proved
+matching theorem. It changes no address or calculation of the evaluator.
+
+The resulting oriented induced matching and symbol cuts have endpoint
+imbalance at least
+\[
+ d_D=\left\lfloor b_{\gamma/3} N/(\lfloor\sqrt u\rfloor+1)\right\rfloor
+\]
+at every retained coordinate of \(P\), where \(b_{\gamma/3}>0\) is the
+matching coefficient of Section 5. Write \(m_*\) for the size of the
+matching. Its OR matrix has rank \(2^{m_*}\) modulo two. The integral
+lift in Section 11 has the same full rank over the coefficient field,
+whereas each scheduled product on this very packing has rank at most
+\(2^{m_*-d_D}\). Subadditivity implies \(2^{d_D}\le|\mathcal I_D(P)|\).
+The printed depth estimate gives
+\(d_D\ge\lfloor c_\gamma N/\sqrt{\ln N}\rfloor\).
+Finally the ledger visits each member of \(\mathcal I_D(P)\) on
+\emph{every} pin input, so the same lower bound holds for its length.
+The size threshold precedes all choices of graph, packing and input.
+The fixed-density bit-time upper bound in Section 11 is quoted from
+the source evaluator. The quantity counted in this proof is the
+number of literal root visits. \(\square\)
+
+\paragraph{Lean declarations.}
+The window lemmas are \nolinkurl{audit_printedWitness_mono} and
+\nolinkurl{audit_direct_source_window}. The selector proof uses
+\nolinkurl{every_prefix_nonincreasing},
+\nolinkurl{minimizing_transcript_exists} and
+\nolinkurl{every_full_transcript_collision}.
+The pin and rank steps are \nolinkurl{every_packing_pin_domination}
+and \nolinkurl{every_collision_packing_visits}.
+The threshold and the visit ledger for the very same selected layout
+occur together in \nolinkurl{eventual_every_printed_root}.
+
+
+\end{document}
