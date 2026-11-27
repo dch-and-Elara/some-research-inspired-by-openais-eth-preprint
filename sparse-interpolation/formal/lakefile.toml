@@ -1,0 +1,13 @@
+name = "grenet_rational_final"
+version = "0.2.0"
+defaultTargets = ["GrenetRational"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
+
+[[lean_lib]]
+name = "GrenetRational"
+globs = ["Alternants", "Audit", "Degree", "ExactDegree", "Factor", "FinalAudit", "GrenetHalf", "GrenetPaper", "GrenetRank", "GrenetRankAlgebra", "GrenetRankArendt", "GrenetRankComplete", "GrenetRational", "GrenetResidue", "GrenetSameSign", "GrenetStrict", "HalfBridge", "HalfReciprocal", "LocalTwo", "Lower", "Main", "MatrixRows", "McCoy", "Normalization", "OppositeRows", "PairCount", "PaperDetails", "ParityReduction", "Rational", "RationalFinal", "RationalKernel", "RationalPairs", "RationalSign", "RationalTransfer", "Representative", "RingTransfer", "Rows", "Scale", "SharpFactor", "SparseEvaluation", "StrictAlternant", "StrictDenominator", "StrictLocal", "StrictRows", "SymbolicMinors", "Threshold", "Upper"]
+leanOptions = { warningAsError = true }

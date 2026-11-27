@@ -1,0 +1,307 @@
+Lean (version 4.24.0, x86_64-w64-windows-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)
+Checkpoint 26 SHA-256 e89d0d7c5da8a785df436ec0590a110fa980e72a552f8b75fbba537985b70521
+mathlib f897ebcf72cd16f89ab4577d0c826cd14afaafc7
+plausible dfd06ebfe8d0e8fa7faba9cb5e5a2e74e7bd2805
+LeanSearchClient 99657ad92e23804e279f77ea6dbdeebaa1317b98
+importGraph d768126816be17600904726ca7976b185786e6b9
+proofwidgets 556caed0eadb7901e068131d1be208dd907d07a2
+aesop 725ac8cd67acd70a7beaf47c3725e23484c1ef50
+Qq dea6a3361fa36d5a13f87333dc506ada582e025c
+batteries 8da40b72fece29b7d3fe3d768bac4c8910ce9bee
+Cli 91c18fa62838ad0ab7384c03c9684d99d306e1da
+Lake independently resolved the pinned local package paths.
+Fresh paper module build: build-tfbssydx
+Mathlib dependency overlay: <dependency cache>
+44333b4fe23b6c8839e65d89419d2cc8ef5ffed6f5a2f504de821bcc87111ad1  GrenetSameSign.lean
+Lean exit 0
+d33e58d586e032bfe8a591d5d483fd4b7c3df7581e061d6400ce09a7655aefce  GrenetRankAlgebra.lean
+Lean exit 0
+34d4907928c65bab4822469f3d61e5455a6e8ec3f7dc14feaab7719c23e22e9e  McCoy.lean
+Lean exit 0
+5f7197e85a6832528029025e0a899515c85e31d51cd3cca73ae3028e6d30a97c  SparseEvaluation.lean
+Lean exit 0
+61f0422d5235b8400f5ca60264038ddbab3c7637a1392a1f6d3011dc8a20db1c  SymbolicMinors.lean
+Lean exit 0
+03ffa211679a0d36814ac541295f5acbacaa3a8c2330e09005915ec02073da49  RingTransfer.lean
+Lean exit 0
+33c272b9c19c3184292954f81c99f332b647c8649b21bd93d155fa3eea64a7e0  Upper.lean
+Lean exit 0
+17a43b59a36b6bd85ba94341c4fa48572ff47df4b5e2504bc41ddf6747d11d75  GrenetRank.lean
+Lean exit 0
+aa169250254c21bcfb270fa8d42f96bf9e3e62e8ffba4b34f42bdeb8c3ce8faf  LocalTwo.lean
+Lean exit 0
+12211b15da79c24cffbb2e54f5bd42478fa58da3028f8c04d0b997c86f4649e9  Rows.lean
+Lean exit 0
+Try this:
+  ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+5170d9fbdc741a863310ed117f8a26b5dce07a2a48c7416565ccba934bb01f03  MatrixRows.lean
+Lean exit 0
+47e386758c8885f06ed050a0c7b2ef18e7e23226f1a88d6eda707e51d91e10f5  Alternants.lean
+Lean exit 0
+90fc27dafbddcff8aa3edb6f00eafc2e56d78deacc10be3d734fe5c3c2c185e9  Normalization.lean
+Lean exit 0
+022721469cbb4206eab525775fd296dee0577285bbec9e7350111d120cdf000d  ParityReduction.lean
+Lean exit 0
+c830f1f7cd948f456d45ded2b5275f33cb1333e1c451f12bc14013d9b3a93fd7  SharpFactor.lean
+Lean exit 0
+f4bd1e2352afba3a8ae45388e4b41ee05560496aa66b9ed2175cf0d7720b9803  OppositeRows.lean
+Lean exit 0
+cb75177d9bd3bd586648399f127bf049666aa95299bf17d5f432079d855796d2  RationalPairs.lean
+Lean exit 0
+4adabe3e49844759cacbf44836279f5bd60cda36e22d281dd8156ce5df6d1ede  PairCount.lean
+Lean exit 0
+'HalfBlockCount.all_centers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HalfBlockCount.pairs_as_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HalfBlockCount.first_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HalfBlockCount.second_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HalfBlockCount.first_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HalfBlockCount.second_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HalfBlockCount.odd_multiplicity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HalfBlockCount.even_multiplicity' depends on axioms: [propext, Classical.choice, Quot.sound]
+1ac5e6c1d438ee735be299bdd486efbc5d926a06a862f17ae914215ed7a00cde  Factor.lean
+Lean exit 0
+41d1202cd259211cae7e9898c48e4f623a58c816a917a4f0bd12aced4ac3655c  Degree.lean
+Lean exit 0
+b344dc5522a2b425b89bfbe06b20e14579f132fbed8add5c8ef716b629ec4a32  GrenetRankArendt.lean
+Lean exit 0
+5969f297075d59c28182c8b23d588f8b0accce85dbaeeaa831c9753f0369f147  Representative.lean
+Lean exit 0
+059e3146648daa86ff532c9887adca35e6a4b9d4e82a98fd68a9bc89766ee937  GrenetResidue.lean
+Lean exit 0
+bdeb0d33e0fc1ce9f4b0c519256270720d53aeef861a650cd17dc83f6b00a2ac  GrenetRankComplete.lean
+Lean exit 0
+ef3f927963154d4525edf75ce2cc6f3b461f342b1051253e8f9099ebd42d5b20  Main.lean
+Lean exit 0
+c820f55441a415f5c692221791e1c2bfeee79d55c2840b3a7c710e254c3ac1c8  ExactDegree.lean
+Lean exit 0
+0f1c19e15385b7507d9b9f02cae52fe5da6a8bc8856cad182a6d332ee0dff08c  Lower.lean
+Lean exit 0
+ab8362523dcb4018ade349f59acd2cffb188d2ec9f590dc8577d7814df5a869e  Scale.lean
+Lean exit 0
+92f30642fc359ae4208eb75882a842ff1b528d33c1cd197dc12803458eec370f  Rational.lean
+Lean exit 0
+b3a4f81d17b61419957e2705083918bd14a8cecd4116bb8949ecc46164551165  RationalSign.lean
+Lean exit 0
+b22f969479686eaec119cb4670804ff2fba0587e2ed3337cb8d169e312d61a38  GrenetPaper.lean
+Lean exit 0
+58a0c95d89c061c92ecae01acb899c9fce87b1543cac46e6d79f8d493ec37416  RationalTransfer.lean
+Lean exit 0
+1fcc8a67e8ccbd2555a5f27010d63211eab1095315658d77bb999ba0593565a6  Threshold.lean
+Lean exit 0
+10392b0ef32e1f5e863fe51e4b77210d550cf208d827df70a3e6a038e3b7aade  GrenetHalf.lean
+Lean exit 0
+e8d155a609d6ddf727f2286a20205ac2afc248a765a17c1dc1059208e6399e9d  HalfBridge.lean
+Lean exit 0
+b891f1859fb03fba2b8a6d79460fd5bf5a92fbdf0c301e9ecf40e4c1dc6e705f  StrictLocal.lean
+Lean exit 0
+80a924a5841664567d6d775901a38ecc7f16126c96adc0ed58e1465b19269a2b  StrictRows.lean
+Lean exit 0
+48a52f2ad59022ff70ea811d705dfece74ce10b82409d4a353f56c5aae373401  StrictAlternant.lean
+Lean exit 0
+a0df1a47b01a5f1b250d19496d8d0e95c314a02a12775e343410d93b4317e2a8  StrictDenominator.lean
+Lean exit 0
+aebef88a67718d55903ec27da404b097dd819dfe1442431188fe671980fa056f  GrenetStrict.lean
+Lean exit 0
+b149656f3d9ef78e8f29b7aec7345c1cb164e6ed5eab1b428649c1deb98f75c2  RationalFinal.lean
+Lean exit 0
+1a568d3b2e7fac1168ae28766efb1f3b76fd2e49e681fd2b512388f21115c84e  RationalKernel.lean
+Lean exit 0
+3ac415070735e68b83fab01796a8f45336dc6b415c790bf5ac77d2d0fd08350a  PaperDetails.lean
+Lean exit 0
+754658e91068e74a9e658e0ebcc5f63b61e6ee51337ebde1616ca199494bba30  HalfReciprocal.lean
+Lean exit 0
+f5d65121bf5392821383d7b6a88114e62e5c1cb2c4b162e6afd07e02778444d6  GrenetRational.lean
+Lean exit 0
+686c4732c4e871164f2632f3e91432b6b82c45a52c17f0af16545a24a25c60d9  Audit.lean
+Lean exit 0
+'GrenetMcCoy.mulVec_injective_iff_fullMinorIdeal_annihilator_eq_bot' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GrenetMcCoy.determinesSparse_iff_max_support_matrices' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetMcCoy.determinesFixedLeading_iff_determinantal_annihilator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GrenetMcCoy.determinesExactDegree_iff_determinantal_annihilator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GrenetMcCoy.determinesExactDegree_zmodTwo_iff_determinantal_annihilator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GrenetMcCoy.exact_support_difference_of_third' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round4Transfer.symbolic_fullMinorIdeal_eq_top_of_no_common_root' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Round4Transfer.symbolic_fullMinorIdeal_eq_top_of_pointwise_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Round4Transfer.determinesUnboundedSparse_of_symbolic_unit_ideals' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Round4Prefix.four_t_samples_of_no_common_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round4Prefix.four_t_samples_of_pointwise_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round4Prefix.symmetricWitness_root_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round4Prefix.symmetricWitness_support_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round4Prefix.integer_short_prefix_collision' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round4Prefix.rational_short_prefix_collision' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.scaledWitness_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.scaledWitness_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.regular_step_collision' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.regular_step_prefix_not_determining' depends on axioms: [propext, Classical.choice, Quot.sound]
+GrenetPaper.regular_step_collision.{u_1} {R : Type u_1} [CommRing R] [Nontrivial R] [IsAddTorsionFree R] (t : ℕ)
+  (ht : 1 ≤ t) (b : R) (hb : b ∈ nonZeroDivisors R) :
+  ∃ f g,
+    f.support.card = t ∧
+      g.support.card = t ∧
+        f ≠ g ∧
+          f - g = scaledWitness (2 * t - 1) b ∧
+            (∀ (i : Fin (4 * t - 1)),
+                Polynomial.eval (progression (fun j => ↑j) (worstStart t b) b i) f =
+                  Polynomial.eval (progression (fun j => ↑j) (worstStart t b) b i) g) ∧
+              Polynomial.eval (↑(2 * t) * b) f ≠ Polynomial.eval (↑(2 * t) * b) g
+GrenetPaper.regular_step_prefix_not_determining.{u_1} {R : Type u_1} [CommRing R] [Nontrivial R] [IsAddTorsionFree R]
+  (t m : ℕ) (ht : 1 ≤ t) (hm : m < 4 * t) (b : R) (hb : b ∈ nonZeroDivisors R) :
+  ¬DeterminesUnboundedSparse (progression (fun i => ↑i) (worstStart t b) b) t
+'GrenetPaper.not_determining_of_small_sample_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.not_determining_of_small_squared_sample_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.rational_prefix_lt_two_t' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.one_term_determining_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SharpDifference.common_symbolic_normalization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetResidue.normalized_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetResidue.normalized_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetResidue.normalized_odd_part' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetSameSign.det_pow_ne_zero_rat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRank.full_minor_of_normalized_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.four_t_full_minor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.four_t_samples' depends on axioms: [propext, Classical.choice, Quot.sound]
+GrenetPaper.four_t_full_minor.{u_1} {K : Type u_1} [Field K] (q : ℚ →+* K) (t : ℕ) (E : Finset ℕ)
+  (hcard : E.card = 2 * t) (z : K) : ∃ rows, ((evaluationMatrix (fun i => z + ↑↑i) E).submatrix rows id).det ≠ 0
+GrenetPaper.four_t_samples.{u_1} {R : Type u_1} [CommRing R] [IsAddTorsionFree R] (t : ℕ) (a b : R)
+  (hb : b ∈ nonZeroDivisors R) : DeterminesUnboundedSparse (progression (prefixOffsets t) a b) t
+'GrenetPaper.rational_one_term_prefix_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.rational_one_term_progression_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.rational_determining_of_same_sign' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.four_t_worst_case' depends on axioms: [propext, Classical.choice, Quot.sound]
+GrenetPaper.four_t_worst_case.{u_1} {R : Type u_1} [CommRing R] [Nontrivial R] [IsAddTorsionFree R] (t : ℕ) (ht : 1 ≤ t)
+  (b : R) (hb : b ∈ nonZeroDivisors R) :
+  (∀ (a : R), DeterminesUnboundedSparse (progression (prefixOffsets t) a b) t) ∧
+    ∃ a, ∀ m < 4 * t, ¬DeterminesUnboundedSparse (progression (fun i => ↑i) a b) t
+'GrenetRankArendt.normalized_residual_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRankArendt.normalized_residual_reductions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRankComplete.finset_full_minor' depends on axioms: [propext, Classical.choice, Quot.sound]
+595985920c2a13f0df4dbf37fed78c465ab3187b0231429c8388078d5b3b0b10  FinalAudit.lean
+Lean exit 0
+'GrenetRational.scaled_evaluation_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.integer_nodes_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.rational_ratio_support_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.determines_iff_supports' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.rational_ratio_prefix_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.rational_kernel_clearing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.den_le_two_iff_double_integer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.node_neg_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.node_pos_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.negIndices_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.posIndices_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.signThreshold_le_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.determines_at_signThreshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.normalized_prefix_basic_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetHalf.doubleNode_reflect_side' depends on axioms: [propext, Quot.sound]
+'GrenetHalf.card_nonzeroAbs_of_reflect_side' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetHalf.rational_progression_card_nonzeroAbs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetHalf.rational_half_prefix_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.half_prefix_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetStrict.denominator_prime' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetStrict.inverse_val_of_dvd_den' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetStrict.exists_strict_prime_of_den' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetStrict.factorial_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetStrict.kernel_reduce' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetStrict.fwdDiff_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetStrict.strict_symbolic_quotient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetStrict.determinant_row_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetStrict.strict_normalized_residue_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetStrict.prefix_det_ne_zero_of_den_gt_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.strict_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.normalized_prefix_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.rational_ratio_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.rational_ratio_least' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.rational_progression_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.threshold_of_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.published_threshold_examples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round4Transfer.polynomial_span_eq_top_iff_no_common_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round4Transfer.map_fullMinorIdeal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round4Transfer.progression_injective_of_symbolic_unit_ideal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetMcCoy.admissible_iff_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetMcCoy.exists_kernel_of_fewer_rows' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.fullMinorIdeal_empty_columns' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.fullMinorIdeal_fewer_rows' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetSameSign.card_lt_support_of_positive_roots' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetSameSign.det_pow_ne_zero_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SharpDifference.factorial_val_two_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SharpDifference.scaled_factorial_odd_den' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SharpDifference.rowPoly_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SharpDifference.determinant_row_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SharpDifference.exists_symmetric_alternant_quotient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetResidue.normalized_at_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetResidue.normalized_same_odd_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SharpFactor.opposite_powers_rank_deficiency' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SharpFactor.pow_X_sub_C_dvd_det_of_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SharpFactor.halfSample_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetResidue.all_factors_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HalfBlockCount.odd_multiplicity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HalfBlockCount.even_multiplicity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetResidue.representative_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetResidue.representative_factor_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetResidue.normalized_shift_one_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetResidue.oddFactors_unit_leadingCoeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetResidue.multiplicity_zero_of_large' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRankAlgebra.isCoprime_reflect_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.scaledWitness_eq_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round4Prefix.symmetricWitness_root_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetMcCoy.exists_nonzero_sub_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetMcCoy.determinesFixedLeading_iff_determinesLower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetMcCoy.determinesExactDegree_iff_support_matrices' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetMcCoy.determinesExactDegreeExactTermsWith_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetMcCoy.zmodTwo_exact_support_difference_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetMcCoy.determinesExactDegreeExactTerms_zmodTwo_iff_even_kernel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GrenetMcCoy.determinesExactDegreeExactTerms_zmodTwo_iff_determinantal_annihilator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GrenetMcCoy.determinesBoundedDegreeExactTerms_iff_determinesSparse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GrenetMcCoy.determinesBoundedDegreeExactTerms_zmodTwo_iff_determinantal_annihilator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GrenetRational.rational_ratio_exact.{u_1} {R : Type u_1} [CommRing R] [Nontrivial R] [IsAddTorsionFree R] (a b : R)
+  (A : ℤ) (B : ℕ) (hB : 0 < B) (hb : b ∈ nonZeroDivisors R) (hRatio : ↑B * a = ↑A * b) (t m : ℕ) (ht : 1 ≤ t) :
+  Round4Transfer.DeterminesUnboundedSparse (GrenetRational.ringPrefix a b m) t ↔
+    GrenetRational.threshold (↑A / ↑B) t ≤ m
+GrenetRational.rational_ratio_least.{u_1} {R : Type u_1} [CommRing R] [Nontrivial R] [IsAddTorsionFree R] (a b : R)
+  (A : ℤ) (B : ℕ) (hB : 0 < B) (hb : b ∈ nonZeroDivisors R) (hRatio : ↑B * a = ↑A * b) (t : ℕ) (ht : 1 ≤ t) :
+  IsLeast {m | Round4Transfer.DeterminesUnboundedSparse (GrenetRational.ringPrefix a b m) t}
+    (GrenetRational.threshold (↑A / ↑B) t)
+GrenetRational.rational_kernel_clearing.{u_1} {R : Type u_1} [CommRing R] [Nontrivial R] [IsAddTorsionFree R] (a b : R)
+  (A : ℤ) (B : ℕ) (hB : B ≠ 0) (hb : b ∈ nonZeroDivisors R) (hRatio : ↑B * a = ↑A * b) (m : ℕ) (H : Polynomial ℚ)
+  (hroot : ∀ (i : Fin m), Polynomial.eval (GrenetRational.normalizedPrefix (↑A / ↑B) m i) H = 0) :
+  ∃ L P W,
+    L ≠ 0 ∧
+      (∀ (e : ℕ), ↑(P.coeff e) = ↑L * H.coeff e) ∧
+        (∀ (e : ℕ), W.coeff e = ↑(P.coeff e) * b ^ (H.natDegree - e)) ∧
+          W.support = H.support ∧ ∀ (i : Fin m), Polynomial.eval (GrenetRational.ringPrefix a b m i) W = 0
+'GrenetRational.rational_ratio_exact_manuscript' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.threshold_one_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.threshold_eq_four_t_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.reflect_source_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.evenPolynomialMatrix_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.even_and_odd_common_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.characteristic_two_collision' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetRational.zero_step_collision' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.strict_localization_denominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.strict_residue_field' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GrenetPaper.parity_residue_field' depends on axioms: [propext, Classical.choice, Quot.sound]
+Rebuilt 47 paper modules with 132 axiom checks.

@@ -1,0 +1,98 @@
+import GrenetRational
+import Audit
+
+#print axioms GrenetRational.scaled_evaluation_iff
+#print axioms GrenetRational.integer_nodes_iff
+#print axioms GrenetRational.rational_ratio_support_iff
+#print axioms GrenetRational.determines_iff_supports
+#print axioms GrenetRational.rational_ratio_prefix_iff
+#print axioms GrenetRational.rational_kernel_clearing
+#print axioms GrenetRational.den_le_two_iff_double_integer
+#print axioms GrenetRational.node_neg_iff
+#print axioms GrenetRational.node_pos_iff
+#print axioms GrenetRational.negIndices_card
+#print axioms GrenetRational.posIndices_card
+#print axioms GrenetRational.signThreshold_le_iff
+#print axioms GrenetRational.determines_at_signThreshold
+#print axioms GrenetRational.normalized_prefix_basic_lower
+#print axioms GrenetHalf.doubleNode_reflect_side
+#print axioms GrenetHalf.card_nonzeroAbs_of_reflect_side
+#print axioms GrenetHalf.rational_progression_card_nonzeroAbs
+#print axioms GrenetHalf.rational_half_prefix_iff
+#print axioms GrenetRational.half_prefix_exact
+#print axioms GrenetStrict.denominator_prime
+#print axioms GrenetStrict.inverse_val_of_dvd_den
+#print axioms GrenetStrict.exists_strict_prime_of_den
+#print axioms GrenetStrict.factorial_bound
+#print axioms GrenetStrict.kernel_reduce
+#print axioms GrenetStrict.fwdDiff_row
+#print axioms GrenetStrict.strict_symbolic_quotient
+#print axioms GrenetStrict.determinant_row_factor
+#print axioms GrenetStrict.strict_normalized_residue_one
+#print axioms GrenetStrict.prefix_det_ne_zero_of_den_gt_two
+#print axioms GrenetRational.strict_square
+#print axioms GrenetRational.normalized_prefix_exact
+#print axioms GrenetRational.rational_ratio_exact
+#print axioms GrenetRational.rational_ratio_least
+#print axioms GrenetRational.rational_progression_exact
+#print axioms GrenetRational.threshold_of_positive
+#print axioms GrenetRational.published_threshold_examples
+
+#print axioms Round4Transfer.polynomial_span_eq_top_iff_no_common_root
+#print axioms Round4Transfer.map_fullMinorIdeal
+#print axioms Round4Transfer.progression_injective_of_symbolic_unit_ideal
+#print axioms GrenetMcCoy.admissible_iff_split
+#print axioms GrenetMcCoy.exists_kernel_of_fewer_rows
+#print axioms GrenetRational.fullMinorIdeal_empty_columns
+#print axioms GrenetRational.fullMinorIdeal_fewer_rows
+#print axioms GrenetSameSign.card_lt_support_of_positive_roots
+#print axioms GrenetSameSign.det_pow_ne_zero_real
+#print axioms SharpDifference.factorial_val_two_le
+#print axioms SharpDifference.scaled_factorial_odd_den
+#print axioms SharpDifference.rowPoly_finite
+#print axioms SharpDifference.determinant_row_factor
+#print axioms SharpDifference.exists_symmetric_alternant_quotient
+#print axioms GrenetResidue.normalized_at_zero
+#print axioms GrenetResidue.normalized_same_odd_count
+#print axioms SharpFactor.opposite_powers_rank_deficiency
+#print axioms SharpFactor.pow_X_sub_C_dvd_det_of_rank
+#print axioms SharpFactor.halfSample_factor
+#print axioms GrenetResidue.all_factors_dvd
+#print axioms HalfBlockCount.odd_multiplicity
+#print axioms HalfBlockCount.even_multiplicity
+#print axioms GrenetResidue.representative_sum
+#print axioms GrenetResidue.representative_factor_exact
+#print axioms GrenetResidue.normalized_shift_one_residue
+#print axioms GrenetResidue.oddFactors_unit_leadingCoeff
+#print axioms GrenetResidue.multiplicity_zero_of_large
+#print axioms GrenetRankAlgebra.isCoprime_reflect_shift
+#print axioms GrenetPaper.scaledWitness_eq_product
+#print axioms Round4Prefix.symmetricWitness_root_set
+#print axioms GrenetMcCoy.exists_nonzero_sub_eq
+#print axioms GrenetMcCoy.determinesFixedLeading_iff_determinesLower
+#print axioms GrenetMcCoy.determinesExactDegree_iff_support_matrices
+#print axioms GrenetMcCoy.determinesExactDegreeExactTermsWith_iff
+#print axioms GrenetMcCoy.zmodTwo_exact_support_difference_iff
+#print axioms GrenetMcCoy.determinesExactDegreeExactTerms_zmodTwo_iff_even_kernel
+#print axioms GrenetMcCoy.determinesExactDegreeExactTerms_zmodTwo_iff_determinantal_annihilator
+#print axioms GrenetMcCoy.determinesBoundedDegreeExactTerms_iff_determinesSparse
+#print axioms GrenetMcCoy.determinesBoundedDegreeExactTerms_zmodTwo_iff_determinantal_annihilator
+
+#check GrenetRational.rational_ratio_exact
+#check GrenetRational.rational_ratio_least
+#check GrenetRational.rational_kernel_clearing
+
+#print axioms GrenetRational.rational_ratio_exact_manuscript
+#print axioms GrenetRational.threshold_one_eq
+
+#print axioms GrenetRational.threshold_eq_four_t_iff
+#print axioms GrenetPaper.reflect_source_det
+#print axioms GrenetPaper.evenPolynomialMatrix_factor
+#print axioms GrenetPaper.even_and_odd_common_root
+
+#print axioms GrenetRational.characteristic_two_collision
+#print axioms GrenetRational.zero_step_collision
+
+#print axioms GrenetPaper.strict_localization_denominator
+#print axioms GrenetPaper.strict_residue_field
+#print axioms GrenetPaper.parity_residue_field

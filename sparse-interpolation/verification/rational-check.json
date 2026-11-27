@@ -1,0 +1,18 @@
+{
+  "rational_starts": 132,
+  "threshold_minus_one_witnesses": 396,
+  "nonzero_determinants": 38940,
+  "scale_and_worst_start_pairs": 11312,
+  "t1_examples": {
+    "0": 3,
+    "-1/2": 3,
+    "-1": 4,
+    "-3/2": 2
+  },
+  "t2_examples": {
+    "-7/3": 4,
+    "-5/4": 4,
+    "-5/2": 7,
+    "-3": 8
+  }
+}

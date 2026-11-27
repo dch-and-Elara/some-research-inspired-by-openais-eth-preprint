@@ -1,6 +1,6 @@
 # Some Research Inspired by OpenAI’s ETH Preprint
 
-These five papers study local polynomial reconstruction, shared measurements, and rank bounds for interpolation algorithms that count satisfying assignments. The starting point is the interpolation method in OpenAI’s [preprint on the Exponential Time Hypothesis](https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026).
+These papers study local polynomial reconstruction, shared measurements, rank bounds for interpolation algorithms that count satisfying assignments, and sample bounds for sparse interpolation. The starting point is the interpolation method in OpenAI’s [preprint on the Exponential Time Hypothesis](https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026).
 
 | Paper | Lean verification |
 | --- | --- |
@@ -9,6 +9,7 @@ These five papers study local polynomial reconstruction, shared measurements, an
 | [Ternary Measurements for Paired Local Recovery](reconstruction-studies/papers/paper_ternary_codes.pdf) | [Theorem index](reconstruction-studies/THEOREMS.md#ternary-measurements-for-paired-local-recovery) · [Verification record](reconstruction-studies/verification/result.txt) |
 | [A Root-Separation Barrier for Tensor-Interpolation SAT Algorithms](root-separation/paper/root_separation.pdf) | [Theorem index](root-separation/THEOREMS.md) · [Verification record](root-separation/verification/result.txt) |
 | [Rank-Budget Barriers for Interpolation Algorithms](rank-budget-barriers/paper/rank_budget_barriers.pdf) | [Theorem index](rank-budget-barriers/THEOREMS.md) · [Kernel audit](rank-budget-barriers/verification/joint-kernel.txt) |
+| [Sharp Sample Bounds for Sparse Interpolation on Prescribed Arithmetic Progressions](sparse-interpolation/paper/Grenet.pdf) | [Theorem index](sparse-interpolation/COVERAGE.md) · [Verification record](sparse-interpolation/VERIFICATION.md) |
 
 ## Optimal Degrees for Local Polynomial Reconstruction on the Boolean Cube
 
@@ -69,6 +70,12 @@ This paper asks how much rank local interpolation data can retain when an algori
 Section 8 shows how one multiplication can recover the exact SAT count from two products of local functions. On the cloned input, both coordinates can come from one MAIN layout, both from one Appendix D packing, or one from each method. On the original uncloned input, levels 0 and 1 of a single Appendix D root suffice. Each local function reads only the signs in its assigned group. The linear evaluation cost applies to the terminal scan after preprocessing.
 
 The Section 8 update independently recompiled 29 Lean modules and checked 125 named declarations for axiom dependencies. The combined audit imported all 643 modules of this paper and found no project-defined axioms. [Section 8 replay](rank-budget-barriers/verification/section8-replay.json) · [LaTeX source](rank-budget-barriers/paper/rank_budget_barriers.tex) · [Reproduction instructions](rank-budget-barriers/README.md#reproduction)
+
+## Sharp sample bounds for sparse interpolation on prescribed arithmetic progressions
+
+For polynomials with at most $t$ terms and unbounded degree, how many consecutive evaluations on a prescribed arithmetic progression determine the polynomial? Over a nonzero commutative ring with identity and torsion-free additive group, every progression with a non-zero-divisor step succeeds after $4t$ evaluations. For each such ring and step, some start requires all $4t$. The paper also determines the exact minimum for each rational normalized start.
+
+[Paper (PDF)](sparse-interpolation/paper/Grenet.pdf) · [LaTeX source](sparse-interpolation/paper/Grenet.tex) · [Lean and reproduction instructions](sparse-interpolation/README.md)
 
 ## Contact
 

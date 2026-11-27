@@ -1,0 +1,51 @@
+import GrenetPaper
+
+open GrenetPaper GrenetMcCoy Round4Prefix Round4Transfer
+
+#print axioms mulVec_injective_iff_fullMinorIdeal_annihilator_eq_bot
+#print axioms determinesSparse_iff_max_support_matrices
+#print axioms determinesFixedLeading_iff_determinantal_annihilator
+#print axioms determinesExactDegree_iff_determinantal_annihilator
+#print axioms determinesExactDegree_zmodTwo_iff_determinantal_annihilator
+#print axioms exact_support_difference_of_third
+#print axioms symbolic_fullMinorIdeal_eq_top_of_no_common_root
+#print axioms symbolic_fullMinorIdeal_eq_top_of_pointwise_injective
+#print axioms determinesUnboundedSparse_of_symbolic_unit_ideals
+#print axioms four_t_samples_of_no_common_root
+#print axioms four_t_samples_of_pointwise_injective
+#print axioms symmetricWitness_root_count
+#print axioms symmetricWitness_support_card
+#print axioms integer_short_prefix_collision
+#print axioms rational_short_prefix_collision
+#print axioms scaledWitness_support
+#print axioms scaledWitness_eval
+#print axioms regular_step_collision
+#print axioms regular_step_prefix_not_determining
+#check regular_step_collision
+#check regular_step_prefix_not_determining
+
+#print axioms GrenetPaper.not_determining_of_small_sample_set
+#print axioms GrenetPaper.not_determining_of_small_squared_sample_set
+#print axioms GrenetPaper.rational_prefix_lt_two_t
+#print axioms GrenetPaper.one_term_determining_iff
+#print axioms SharpDifference.common_symbolic_normalization
+#print axioms GrenetResidue.normalized_factorization
+#print axioms GrenetResidue.normalized_residue
+#print axioms GrenetResidue.normalized_odd_part
+#print axioms GrenetSameSign.det_pow_ne_zero_rat
+#print axioms GrenetRank.full_minor_of_normalized_half
+#print axioms GrenetPaper.four_t_full_minor
+#print axioms GrenetPaper.four_t_samples
+#check GrenetPaper.four_t_full_minor
+#check GrenetPaper.four_t_samples
+
+#print axioms GrenetPaper.rational_one_term_prefix_exact
+#print axioms GrenetPaper.rational_one_term_progression_exact
+#print axioms GrenetPaper.rational_determining_of_same_sign
+
+#print axioms GrenetPaper.four_t_worst_case
+#check GrenetPaper.four_t_worst_case
+
+#print axioms GrenetRankArendt.normalized_residual_budget
+#print axioms GrenetRankArendt.normalized_residual_reductions
+#print axioms GrenetRankComplete.finset_full_minor

@@ -1,0 +1,4 @@
+formal/** -text
+paper/*.tex -text
+verification/*.py -text
+verification/rational-check.json -text
