@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "exit": 0,
+  "direct_dependency_lean_source_sha256": "92256a5253eeb285382eb471b3dbb3f9916398236085452a47f667dd5501f554",
+  "direct_dependency_olean_sha256": "3dc95732782c8bcbff03176b4b8577efd80549710f22072613c881fc0725b71e",
+  "paired_fresh_parent_summary": "Matched the direct dependency source and olean SHA-256 against the successful clean 654-module parent replay.",
+  "module_source_sha256": "7c4a8e6072b36e5342ea75d23ba1900f4926ddf54fec7bb9c4a0d19e4c0fd10e",
+  "log_sha256": "6b1e5a66984bbf9ddd596b55ce6d982c5fe9013ce122a22ebe9cb0bb6a15617b",
+  "warnings_as_errors": true,
+  "axioms": {
+    "Paper5.D1Literal.cloned_source_clause_network_branch_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper5.D1Literal.oldRow_dispatch_matches_cloned_formula": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper5.D1Literal.oldRow_dispatch_selects_clause_network": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "lean_version": "Lean (version 4.24.0, x86_64-w64-windows-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+  "module_olean_sha256": "4dd3a7b3bd75f110d382b6f0ce60c30385bb48348721582553634f6da005fe67",
+  "clean_parent_summary_sha256": "614cedfdfe1a5cf24921738f763689119dc5fd41f5fac883c6f87bf580314eb2"
+}
