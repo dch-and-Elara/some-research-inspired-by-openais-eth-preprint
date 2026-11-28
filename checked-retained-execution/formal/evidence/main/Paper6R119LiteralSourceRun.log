@@ -1,0 +1,7 @@
+'J6R114PrescribedReceipts.runAtLiteralSourcePrecision' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J6R114PrescribedReceipts.literal_source_startup_emits_the_padded_source_ordinal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'J6R114PrescribedReceipts.literal_source_run_counts_and_pays_the_same_clock' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,10 +1,12 @@
 # Paper 6 Lean sources and replay
 
-The archive contains the complete source bytes of both verified Lean variants and their official endpoint audit sources. Main has 3,136 project modules. Binary J6 has 1,483. They share 1,479 byte-identical modules, stored once. The only module present in both variants with different bytes is `NativeProbeRing`. `manifest.json` selects the correct source layer for each variant and pins every source by SHA-256. It also records imports, ordered named axiom queries, endpoint declarations and the binary same-run checks.
+The directories below contain the complete source bytes of both verified Lean variants and their official endpoint audit sources. Main has 3,136 project modules. Binary J6 has 1,483. They share 1,479 byte-identical modules, stored once. The only module present in both variants with different bytes is `NativeProbeRing`. `manifest.json` selects the correct source layer for each variant and pins every source by SHA-256. It also records imports, ordered named axiom queries, endpoint declarations and the binary same-run checks.
+
+[Browse all modules by name](module-index/README.md) · [Shared sources](sources/shared/) · [Main sources](sources/main/) · [Binary sources](sources/binary/) · [Main endpoint checks](checks/main/R119ReplayEndpointAudit.lean) · [Binary endpoint checks](checks/binary/R119ReplayEndpointAudit.lean)
 
 ## Verify and reconstruct
 
-Extract the ZIP and run these commands from its root with Python 3.11 or later. On Windows, `py -3 -B replay.py` is equivalent.
+Run these commands from this directory with Python 3.11 or later. A stand-alone copy is also available in the [downloadable archive](Paper6_R119_Lean.zip). On Windows, `py -3 -B replay.py` is equivalent.
 
 ```sh
 python3 -B replay.py verify

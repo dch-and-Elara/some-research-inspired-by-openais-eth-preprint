@@ -1,0 +1,4 @@
+'FiniteWeightedQueryTree.randomized_query_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiniteWeightedQueryTree.zeroCover_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiniteWeightedQueryTree.score_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiniteWeightedQueryTree.mixed_actual_path' depends on axioms: [propext, Classical.choice, Quot.sound]

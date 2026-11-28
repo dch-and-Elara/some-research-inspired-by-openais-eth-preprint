@@ -1,0 +1,7 @@
+'J2R47Expected.markov_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J2R47Expected.clipped_agrees_on_actual_path' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J2R47Expected.clipped_success' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J2R47Expected.weighted_capacity_seven' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J2R47Expected.capacity_at_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J2R47Expected.mean_to_cutoff' depends on axioms: [propext, Quot.sound]
+'J2R47Expected.mean_bound_from_cutoff' depends on axioms: [propext]

@@ -1,0 +1,37 @@
+{
+  "complete_source_and_history_verifier_passed": true,
+  "external_dependencies": "existing pinned package objects",
+  "mode": "fresh project objects for selected dependency closures",
+  "platform": "Windows x86-64",
+  "variants": {
+    "binary": {
+      "logs_sha256": {
+        "NativeInterpolation": "154219cdc91a32df54725656be1a80784733936e2348344c68c9e3022c942290",
+        "NativeProbeRing": "54cfe33b51e3b12bbc6871df267645ed52639db9a4be3e9f8da6916d07038d01"
+      },
+      "module_axiom_reports": 28,
+      "modules": 2,
+      "passed": true,
+      "project_objects_reused": 0,
+      "targets": [
+        "NativeProbeRing"
+      ]
+    },
+    "main": {
+      "logs_sha256": {
+        "FiniteWeightedQueryTree": "b14f0fc91526a6851ca7ccae40b482c129a4dc78ab2d3a4389016e114ef66d55",
+        "J2R119ProbabilityBridge": "3bfab39ed9ce01ca8adf0ed2d728075af6de43f8d9cacf569c1773f803055096",
+        "J2R45BoundedErrorFree": "b698312f51e44c976e96b02a71706b3f84a852dd0145b063128aa4f956456466",
+        "J2R47ExpectedMarkov": "2ad8f95c8ced7c3aaec87801bb387377aa2bc8665ef12a3cf090b621ce5ee6e2",
+        "QueryBounds": "1901b6bd90a7e0fb3a92226f77c2166f596e3094e1218ce4e402909087d5c3e7"
+      },
+      "module_axiom_reports": 25,
+      "modules": 5,
+      "passed": true,
+      "project_objects_reused": 0,
+      "targets": [
+        "J2R119ProbabilityBridge"
+      ]
+    }
+  }
+}

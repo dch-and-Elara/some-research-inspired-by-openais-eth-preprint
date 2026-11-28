@@ -1,0 +1,1103 @@
+J2R119Probability.ExpectedGuarantee.{u, u_4, u_5, u_6} {Q : Type u_4} {R : Type u_5} {W : Type u_6}
+  (oracle : W → Bool → Q → R) (counted : Q → Bool) (target : W → Bool → Bool) (exponent : ℕ) : Prop
+'J2R119Probability.ExpectedGuarantee' depends on axioms: [propext, Classical.choice, Quot.sound]
+J2R119Probability.words_expected.{u, u_1, u_2} {Q : Type u_1} {R : Type u_2} {k exponent : ℕ} (hexp : exponent ≤ k)
+  (zero : R) (oracle : (Fin k → Bool) → Bool → Q → R) (counted : Q → Bool) (target : (Fin k → Bool) → Bool → Bool)
+  (target_eq : ∀ (w : Fin k → Bool) (b : Bool), target w b = b) (support : Q → Finset (Fin k → Bool))
+  (off : ∀ (w : Fin k → Bool) (b : Bool) (q : Q), w ∉ support q → oracle w b q = zero)
+  (freeConstant : ∀ (w : Fin k → Bool) (b : Bool) (q : Q), counted q = Bool.false → oracle w b q = zero)
+  (cap : ∀ (q : Q), (support q).card ≤ 2 ^ (k - exponent)) :
+  J2R119Probability.ExpectedGuarantee oracle counted target exponent
+'J2R119Probability.words_expected' depends on axioms: [propext, Classical.choice, Quot.sound]
+J2R119Probability.complete_words_expected.{u, u_1, u_2} {Q : Type u_1} {R : Type u_2} {k : ℕ} (zero : R)
+  (oracle : (Fin k → Bool) → Bool → Q → R) (counted : Q → Bool) (target : (Fin k → Bool) → Bool → Bool)
+  (target_eq : ∀ (w : Fin k → Bool) (b : Bool), target w b = b) (support : Q → Finset (Fin k → Bool))
+  (off : ∀ (w : Fin k → Bool) (b : Bool) (q : Q), w ∉ support q → oracle w b q = zero)
+  (freeConstant : ∀ (w : Fin k → Bool) (b : Bool) (q : Q), counted q = Bool.false → oracle w b q = zero)
+  (cap : ∀ (q : Q), (support q).card ≤ 1) : J2R119Probability.ExpectedGuarantee oracle counted target k
+'J2R119Probability.complete_words_expected' depends on axioms: [propext, Classical.choice, Quot.sound]
+J2R119Probability.words_expected_sup.{u, u_1, u_2} {Seed : Type u} [MeasurableSpace Seed] {Q : Type u_1} {R : Type u_2}
+  {k exponent : ℕ} (hexp : exponent ≤ k) (zero : R) (oracle : (Fin k → Bool) → Bool → Q → R) (counted : Q → Bool)
+  (target : (Fin k → Bool) → Bool → Bool) (target_eq : ∀ (w : Fin k → Bool) (b : Bool), target w b = b)
+  (support : Q → Finset (Fin k → Bool))
+  (off : ∀ (w : Fin k → Bool) (b : Bool) (q : Q), w ∉ support q → oracle w b q = zero)
+  (freeConstant : ∀ (w : Fin k → Bool) (b : Bool) (q : Q), counted q = Bool.false → oracle w b q = zero)
+  (cap : ∀ (q : Q), (support q).card ≤ 2 ^ (k - exponent)) (μ : MeasureTheory.Measure Seed)
+  [MeasureTheory.IsProbabilityMeasure μ] (trees : Seed → FiniteWeightedQueryTree.DecisionTree Q R)
+  (measCost :
+    ∀ (w : Fin k → Bool) (b : Bool),
+      AEMeasurable (fun i => ↑(J2R119Probability.paidCount counted (oracle w b) trees i)) μ)
+  (measSuccess :
+    ∀ (w : Fin k → Bool) (b : Bool),
+      MeasureTheory.NullMeasurableSet (J2R119Probability.goodSeeds (oracle w b) trees (target w b)) μ)
+  (success :
+    ∀ (w : Fin k → Bool) (b : Bool),
+      2 / 3 ≤ J2R119Probability.probability μ (J2R119Probability.goodSeeds (oracle w b) trees (target w b))) :
+  ENNReal.ofReal (2 ^ exponent / 72) ≤ ⨆ w, ⨆ b, J2R119Probability.expectedPaid μ counted (oracle w b) trees
+'J2R119Probability.words_expected_sup' depends on axioms: [propext, Classical.choice, Quot.sound]
+J2R119Probability.GroupedProbabilityGuarantee.{u} {B I G : Type} [Fintype B] [DecidableEq B] [Nonempty B] [Fintype I]
+  [DecidableEq I] [Fintype G] [DecidableEq G] (M : J1PhysicalHost.Match B) (b₀ : B) (special : I)
+  (label : J1PhysicalCertificate.ConfigKey M I → G) (H : Finset (J1PhysicalHost.Vertex B)) (f : Polynomial ℤ)
+  (Q : Paper5.D1Literal.RootPacking (J1PhysicalHost.edges M) ⋯ f)
+  (d : J2R43LiteralWholeMenu.SourceReady (J1PhysicalHost.edges M) ⋯ f fun x => Bool.false) (hf : f.Monic)
+  (width floor : ℕ) (node : I → ℚ) : Prop
+'J2R119Probability.GroupedProbabilityGuarantee' depends on axioms: [propext, Classical.choice, Quot.sound]
+J2R119Probability.CompleteOnlyProbabilityGuarantee.{u} {B I G : Type} [Fintype B] [DecidableEq B] [Nonempty B]
+  [Fintype I] [DecidableEq I] [Fintype G] [DecidableEq G] (M : J1PhysicalHost.Match B) (b₀ : B) (special : I)
+  (label : J1PhysicalCertificate.ConfigKey M I → G) (H : Finset (J1PhysicalHost.Vertex B)) (f : Polynomial ℤ)
+  (Q : Paper5.D1Literal.RootPacking (J1PhysicalHost.edges M) ⋯ f)
+  (d : J2R43LiteralWholeMenu.SourceReady (J1PhysicalHost.edges M) ⋯ f fun x => Bool.false) (hf : f.Monic) (width : ℕ)
+  (node : I → ℚ) : Prop
+'J2R119Probability.CompleteOnlyProbabilityGuarantee' depends on axioms: [propext, Classical.choice, Quot.sound]
+J2R119Probability.actual_grouped_probability.{u} {B I G : Type} [Fintype B] [DecidableEq B] [Nonempty B] [Fintype I]
+  [DecidableEq I] [Fintype G] [DecidableEq G] (M : J1PhysicalHost.Match B) (b₀ : B) (special : I)
+  (label : J1PhysicalCertificate.ConfigKey M I → G) (H : Finset (J1PhysicalHost.Vertex B)) (f : Polynomial ℤ)
+  (Q : Paper5.D1Literal.RootPacking (J1PhysicalHost.edges M) ⋯ f)
+  (d : J2R43LiteralWholeMenu.SourceReady (J1PhysicalHost.edges M) ⋯ f fun x => Bool.false) (hf : f.Monic)
+  (hH : H ⊆ J1PhysicalIndependent.available M b₀) (hI : J1PhysicalIndependent.Independent M H) (width floor : ℕ)
+  (node : I → ℚ) (hr : 2 ≤ Fintype.card G) (hR : 32 ≤ width) (hq : 6 * width ≤ Fintype.card I)
+  (hitsFloor :
+    ∀ (t : I) (g : G),
+      floor ≤
+        (J1MainSourcePlacement.hits (J1PhysicalCertificate.physicalData M special label)
+            (J1PhysicalCertificate.pinSubset M H) t g).card)
+  (erase :
+    ∀ (σ : J1PhysicalHost.Vertex B → Bool) (x : Paper5.D1Literal.PublicSlot (J1PhysicalHost.edges M) ⋯ f Q d),
+      J2R43LiteralWholeMenu.observedSlot Q d hf σ x = 0) :
+  J2R119Probability.GroupedProbabilityGuarantee M b₀ special label H f Q d hf width floor node
+'J2R119Probability.actual_grouped_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+J2R119Probability.actual_complete_only_probability.{u} {B I G : Type} [Fintype B] [DecidableEq B] [Nonempty B]
+  [Fintype I] [DecidableEq I] [Fintype G] [DecidableEq G] (M : J1PhysicalHost.Match B) (b₀ : B) (special : I)
+  (label : J1PhysicalCertificate.ConfigKey M I → G) (H : Finset (J1PhysicalHost.Vertex B)) (f : Polynomial ℤ)
+  (Q : Paper5.D1Literal.RootPacking (J1PhysicalHost.edges M) ⋯ f)
+  (d : J2R43LiteralWholeMenu.SourceReady (J1PhysicalHost.edges M) ⋯ f fun x => Bool.false) (hf : f.Monic)
+  (hH : H ⊆ J1PhysicalIndependent.available M b₀) (hI : J1PhysicalIndependent.Independent M H) (width : ℕ)
+  (node : I → ℚ) (hr : 2 ≤ Fintype.card G) (hR : 32 ≤ width) (hq : 6 * width ≤ Fintype.card I)
+  (erase :
+    ∀ (σ : J1PhysicalHost.Vertex B → Bool) (x : Paper5.D1Literal.PublicSlot (J1PhysicalHost.edges M) ⋯ f Q d),
+      J2R43LiteralWholeMenu.observedSlot Q d hf σ x = 0) :
+  J2R119Probability.CompleteOnlyProbabilityGuarantee M b₀ special label H f Q d hf width node
+'J2R119Probability.actual_complete_only_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+J2R119Probability.actual_J2_published_expected_probability.{u} {B I G : Type} [Fintype B] [DecidableEq B] [Nonempty B]
+  [Fintype I] [DecidableEq I] [Fintype G] [DecidableEq G] (M : J1PhysicalHost.Match B) (b₀ : B) (special : I)
+  (label : J1PhysicalCertificate.ConfigKey M I → G) (H : Finset (J1PhysicalHost.Vertex B)) (f : Polynomial ℤ)
+  (d : J2R43LiteralWholeMenu.SourceReady (J1PhysicalHost.edges M) ⋯ f fun x => Bool.false)
+  (cfg : J6R12Blueprint.RootBounds (Paper5.D1Literal.oldRowSize (J1PhysicalHost.edges M)) 3 f)
+  (hΔ : 3 ≤ J1PPrinted.sourceDelta (Paper5.D1Literal.oldRowSize (J1PhysicalHost.edges M))) (hf : f.Monic)
+  (hd : 0 < f.natDegree) [Fact (Irreducible (NativeProbeRing.residuePoly f))]
+  (size : 320 ^ 2 ≤ Paper5.D1Literal.oldRowSize (J1PhysicalHost.edges M))
+  (i : Fin ((J6R12Blueprint.printedParams (Paper5.D1Literal.oldRowSize (J1PhysicalHost.edges M))).levelWidth 0))
+  (hH : H ⊆ J1PhysicalIndependent.available M b₀) (hI : J1PhysicalIndependent.Independent M H) (width floor : ℕ)
+  (node : I → ℚ) (hr : 2 ≤ Fintype.card G) (hR : 32 ≤ width) (hq : 6 * width ≤ Fintype.card I)
+  (hitsFloor :
+    ∀ (t : I) (g : G),
+      floor ≤
+        (J1MainSourcePlacement.hits (J1PhysicalCertificate.physicalData M special label)
+            (J1PhysicalCertificate.pinSubset M H) t g).card) :
+  ∃ Q,
+    have j := Fin.castLE ⋯ i;
+    (∀ (p : J1PhysicalHost.Vertex B),
+        Q.rowLabel (Sum.inr (Sum.inl p)) j = Q.rowLabel (Sum.inr (Sum.inl (M.mate p))) j) ∧
+      Fintype.card (Paper5.HybridClosure.DWire (J1PhysicalHost.edges M)) ≤
+          8 * 2 ^ (J6R12Blueprint.printedParams (Paper5.D1Literal.oldRowSize (J1PhysicalHost.edges M))).levelBits 0 *
+            J2R43LiteralWholeMenu.sourceQ (J1PhysicalHost.edges M) f ∧
+        (∀ (σ : J1PhysicalHost.Vertex B → Bool) (x : Paper5.D1Literal.PublicSlot (J1PhysicalHost.edges M) ⋯ f Q d),
+            J2R43LiteralWholeMenu.observedSlot Q d hf σ x = 0) ∧
+          (∀ (σ : J1PhysicalHost.Vertex B → Bool) (x : Paper5.D1Literal.PublicAddress (J1PhysicalHost.edges M) ⋯ f Q d),
+              J2R43LiteralWholeMenu.IsActualHighReply Q d hf σ ⋯ x
+                (Paper5.D1Literal.publicReply (J1PhysicalHost.edges M) ⋯ f Q d hf σ x)) ∧
+            J2R45BoundedError.GroupedGuarantee M b₀ special label H f Q d hf width floor node ∧
+              J2R45BoundedError.CompleteOnlyGuarantee M b₀ special label H f Q d hf width node ∧
+                J2R119Probability.GroupedProbabilityGuarantee M b₀ special label H f Q d hf width floor node ∧
+                  J2R119Probability.CompleteOnlyProbabilityGuarantee M b₀ special label H f Q d hf width node
+'J2R119Probability.actual_J2_published_expected_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+J6R111FreshStartupBinding.literal_chosen_startup_uses_original_closed_input_rate {V : Type} [a : DecidableEq V]
+  [b : Fintype V] [Nonempty V] {F : Std.Sat.CNF V} {order : J6R51Ingress.DeclaredOrder V} {h d j r c e base ell kp : ℕ}
+  (A : J6R111FreshStartupBinding.RawStartup F order h d j r c e base ell kp) (w C : ℕ)
+  (width : ∀ (x : V), (A.code x).length = w)
+  (fit :
+    base ≤
+      C *
+        J6Mesh.physicalSize (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+          (Paper6SourceSize.sourceNativeSize F order))
+  (constant :
+    C ≤
+      J6Mesh.physicalSize (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+        (Paper6SourceSize.sourceNativeSize F order)) :
+  have fit0 := ⋯;
+  have K := J6R111FreshStartupBinding.initialPaidWords A fit0;
+  have I := J6R111FreshStartupBinding.originalInputsAtGeneratedWords A K.result;
+  have out := J6R111FreshStartupBinding.selectedStartup A fit0;
+  have f := (J6R52FreshShape.freshFieldResult F order).f;
+  out.steps ≤
+    J6R54PublicFamily.ordinalFee
+        (J6R110RootWidthChoice.chosenQ (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))) base +
+      (J6R109FreshLiteralBound.freshLiteralRoof h d j r c w 3 (List.length F) order.roster.length
+                        (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)) +
+                      (J6R108FreshFieldRate.searchConstant + 32 * C + 5188) *
+                        J6Mesh.physicalSize (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+                            (Paper6SourceSize.sourceNativeSize F order) ^
+                          8 +
+                    J6R52FreshExterior.precisionFromBaseFee
+                      (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+                      (J6R110RootWidthChoice.chosenQ (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))) +
+                  J6R52FreshExterior.exteriorRegistersFee
+                    (J6R110RootWidthChoice.chosenQ (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+                    (J6R110RootWidthChoice.chosenQ (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+                    (J6R110RootWidthChoice.chosenPrec
+                      (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))) +
+                J6R54PublicFamily.ordinalFee
+                  (J6R110RootWidthChoice.chosenBW (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+                  I.code +
+              15 +
+            J6R110RequestImageRate.commonRootClock (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+              (Paper6SourceSize.sourceNativeSize F order) f.natDegree
+              (J6R110RootWidthChoice.chosenQ (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+              (J6SourcePrecision.printed (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)) base) r c d +
+          J6R110RequestImageRate.catalogueClock (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+            (Paper6SourceSize.sourceNativeSize F order) kp
+            (J6R110RequestWidthChoice.centreWidth (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+            (J6R110RequestWidthChoice.sampleWidth (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+            (J6R110RequestWidthChoice.magnitudeWidth (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))) +
+        8)
+'J6R111FreshStartupBinding.literal_chosen_startup_uses_original_closed_input_rate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+J6R114PrescribedReceipts.fresh_physical_execution_counts_the_original_CNF_and_pays_actual_startup {V : Type}
+  [DecidableEq V] [Fintype V] [Nonempty V] {F : Std.Sat.CNF V} {order : J6R51Ingress.DeclaredOrder V}
+  {h d j r c e base ell kp : ℕ} (A : J6R111FreshStartupBinding.RawStartup F order h d j r c e base ell kp)
+  (fit :
+    base ≤
+      J6Mesh.physicalSize (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+          (Paper6SourceSize.sourceNativeSize F order) ^
+        2)
+  (groups : J6R114PrescribedReceipts.ActualPhysicalStartupPlan A fit)
+  (bytes :
+    (J6R109CanonicalProbeTable.canonicalTable (J6R52FreshShape.freshFieldResult F order).f.natDegree
+          (J6R110CanonicalCoverage.fullProbeDegree (J6R52FreshShape.freshFieldResult F order).f.natDegree + 1)).result =
+      J6R110CanonicalMount.OldOrderedBytes (J6R52FreshShape.freshFieldResult F order).f.natDegree
+        (J6R110CanonicalCoverage.fullProbeDegree (J6R52FreshShape.freshFieldResult F order).f.natDegree) ⋯)
+  (positiveBase : 0 < base) :
+  let boot := J6R111FreshStartupBinding.selectedStartup A fit;
+  have count :=
+    J6R114PrescribedReceipts.runPhysicalRetainedCountAtImage boot.result
+      (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup boot.result groups bytes);
+  AOracleMachineTime.bitsValue ↑(J6R114PrescribedReceipts.runFreshPhysicallyRetainedCount A fit groups bytes).result =
+      PinnedCNF.modelCount F ∧
+    (J6R114PrescribedReceipts.runFreshPhysicallyRetainedCount A fit groups bytes).steps = boot.steps + count.steps + 5
+'J6R114PrescribedReceipts.fresh_physical_execution_counts_the_original_CNF_and_pays_actual_startup' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+J6R114PrescribedReceipts.freshPhysicalPlanFromHeldSource {V : Type} [DecidableEq V] [Fintype V] [Nonempty V]
+  {F : Std.Sat.CNF V} {order : J6R51Ingress.DeclaredOrder V} {h d j r c e base ell kp : ℕ}
+  (A : J6R111FreshStartupBinding.RawStartup F order h d j r c e base ell kp)
+  (fit :
+    base ≤
+      J6Mesh.physicalSize (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+          (Paper6SourceSize.sourceNativeSize F order) ^
+        2)
+  (pad : ℕ)
+  (prior :
+    J6R33StatefulArithmeticPage.PageBank (J6R52FreshShape.freshFieldResult F order).f ell
+      (J6R54PublicFamily.KeyWidth kp
+        (J6R110RequestWidthChoice.centreWidth (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+        (J6R110RequestWidthChoice.sampleWidth (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))))
+      (J6R110RootWidthChoice.chosenPrec (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+      (J6R110RequestWidthChoice.magnitudeWidth (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+      (J6R110RootWidthChoice.chosenBW (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+      (J6R31RootResidentTables.pageKeyWidth (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)) + pad))
+  (synced : J6R30ProducedGateRegistry.Ledger.synced prior)
+  (reserved :
+    ∀ header ∈ prior.headers,
+      List.take kp header.id.bits ≠ (J6R111FreshStartupBinding.selectedStartup A fit).result.compiled.mark.bits)
+  (held :
+    (i : J6Recovery.Addr (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))) →
+      (j_1 :
+          Fin
+            (J6R14ZeroMode.literalDegree (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+                (Paper6SourceSize.sourceNativeSize F order) +
+              1)) →
+        (g : Fin 64) →
+          J6R117HeldPhysicalImage.HeldConfigurationAt (J6R111FreshStartupBinding.selectedStartup A fit).result pad i j_1
+            g) :
+  J6R114PrescribedReceipts.ActualPhysicalStartupPlan A fit
+'J6R114PrescribedReceipts.freshPhysicalPlanFromHeldSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+J6R114PrescribedReceipts.fresh_posted_and_mounted_payload_has_literal_source_scale {V : Type} [DecidableEq V]
+  [Fintype V] [Nonempty V] {F : Std.Sat.CNF V} {order : J6R51Ingress.DeclaredOrder V} {h d j r c e base ell kp : ℕ}
+  (A : J6R111FreshStartupBinding.RawStartup F order h d j r c e base ell kp)
+  (fit :
+    base ≤
+      J6Mesh.physicalSize (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+          (Paper6SourceSize.sourceNativeSize F order) ^
+        2)
+  (groups : J6R114PrescribedReceipts.ActualPhysicalStartupPlan A fit)
+  (bytes :
+    (J6R109CanonicalProbeTable.canonicalTable (J6R52FreshShape.freshFieldResult F order).f.natDegree
+          (J6R110CanonicalCoverage.fullProbeDegree (J6R52FreshShape.freshFieldResult F order).f.natDegree + 1)).result =
+      J6R110CanonicalMount.OldOrderedBytes (J6R52FreshShape.freshFieldResult F order).f.natDegree
+        (J6R110CanonicalCoverage.fullProbeDegree (J6R52FreshShape.freshFieldResult F order).f.natDegree) ⋯)
+  (i : J6Recovery.Addr (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+  (j✝ :
+    Fin
+      (J6R14ZeroMode.literalDegree (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+          (Paper6SourceSize.sourceNativeSize F order) +
+        1))
+  (g : Fin 64) :
+  let image := (J6R111FreshStartupBinding.selectedStartup A fit).result;
+  have P := J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes;
+  have W := ⋯;
+  let row := J6R75OuterTime.sourceRow image.compiled i j✝ g;
+  have posted := J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables P.pad P.prior ⋯ ⋯ i j✝ g row ⋯;
+  have actual := (P.acquire i j✝ g row ⋯ posted.result).result;
+  actual.size =
+      J6Mesh.physicalSize (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+        (Paper6SourceSize.sourceNativeSize F order) ∧
+    actual.constant = 2 ∧ actual.selector ≍ ⋯.selector ell
+'J6R114PrescribedReceipts.fresh_posted_and_mounted_payload_has_literal_source_scale' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+J6R116ReadyFromHeld.actual_held_retained_payload_has_source_scale {V : Type} [Fintype V] {m n base native : ℕ}
+  {f : Polynomial ℤ} {P : J6OrientedHost.Plant V m n}
+  {G :
+    J6R26StablePreparedRoot.RootShape f m (J6R24LegalLayout.printedHalf m) base native
+      (J6R24LegalLayout.printedRankWidth m) P (J6R28GeneratedRootFrame.constantRootWord m)}
+  {ell q rr cc dd prec kp bw tc tj tw edgew : ℕ} {W : J6R54PublicFamily.Widths m native tc tj tw edgew}
+  [Fact (Irreducible (NativeProbeRing.residuePoly f))] (D : J6R54PublicFamily.Compiled G ell q rr cc dd prec kp bw)
+  (pad : ℕ) {rate : ℕ} (i : J6Recovery.Addr m) (j : Fin (J6R14ZeroMode.literalDegree m native + 1)) (g : Fin 64)
+  {T : J6R24MeteredRecursion.Prepared ⋯ (G.selector ell) (J6R32RootGeneratedRegistryInputs.exteriorChild G ell i j g) ⋯}
+  {ownerWidth : ℕ} {rootName : J6R35RootOrigins.SourceVertex P → J6R15ModeCost.Word ownerWidth}
+  (gate : J6R26DescriptorTree.Stamp (J6R54PublicFamily.KeyWidth kp tc tj) prec)
+  (root : J6R54ExteriorOwner.RootRoster gate pad rootName) (rootInj : Function.Injective rootName)
+  (R : J6R114SelectedOperands.PublicOperandReceipt D pad i j g gate root T rate)
+  (A : J6R111KeptOwnerFlow.ResidentAdmissionCarry D pad) (siteSame : R.observed = A.site)
+  (bankSame : R.bank = A.receipt.1)
+  (inputs : J6R116ReadyFromHeld.RemainingRetainedInputs D pad i j g gate root rootInj R) :
+  have actual :=
+    J6R116ReadyFromHeld.readyFromActualHeldOperands D pad i j g gate root rootInj R A siteSame bankSame inputs;
+  actual.size = J6Mesh.physicalSize m native ∧ actual.constant = 2 ∧ actual.selector ≍ G.selector ell
+'J6R116ReadyFromHeld.actual_held_retained_payload_has_source_scale' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+J6R116ReadyFromHeld.the_actual_preparer_returns_source_scale {V : Type} [Fintype V] {m n base native : ℕ}
+  {f : Polynomial ℤ} {P : J6OrientedHost.Plant V m n}
+  {G :
+    J6R26StablePreparedRoot.RootShape f m (J6R24LegalLayout.printedHalf m) base native
+      (J6R24LegalLayout.printedRankWidth m) P (J6R28GeneratedRootFrame.constantRootWord m)}
+  {ell q rr cc dd prec kp bw tc tj tw edgew : ℕ} {W : J6R54PublicFamily.Widths m native tc tj tw edgew}
+  [Fact (Irreducible (NativeProbeRing.residuePoly f))] (D : J6R54PublicFamily.Compiled G ell q rr cc dd prec kp bw)
+  (S : J6R57PublicRequest.InstalledRequestInputs W D) (pad : ℕ)
+  (prior :
+    J6R33StatefulArithmeticPage.PageBank f ell (J6R54PublicFamily.KeyWidth kp tc tj) prec tw bw
+      (J6R31RootResidentTables.pageKeyWidth m + pad))
+  {rate : ℕ} (i : J6Recovery.Addr m) (j : Fin (J6R14ZeroMode.literalDegree m native + 1)) (g : Fin 64)
+  {T : J6R24MeteredRecursion.Prepared ⋯ (G.selector ell) (J6R32RootGeneratedRegistryInputs.exteriorChild G ell i j g) ⋯}
+  {ownerWidth : ℕ} {rootName : J6R35RootOrigins.SourceVertex P → J6R15ModeCost.Word ownerWidth}
+  (gate : J6R26DescriptorTree.Stamp (J6R54PublicFamily.KeyWidth kp tc tj) prec)
+  (root : J6R54ExteriorOwner.RootRoster gate pad rootName) (rootInj : Function.Injective rootName)
+  (sync : J6R30ProducedGateRegistry.Ledger.synced prior)
+  (reserved : ∀ x ∈ prior.headers, List.take kp x.id.bits ≠ D.mark.bits)
+  (A : J6R111KeptOwnerFlow.ResidentAdmissionCarry D pad)
+  (readFrom :
+    (B : J6R111KeptOwnerFlow.ResidentAdmissionCarry D pad) →
+      (same : B.site = J6R55Public.literalSite W D i j g) →
+        (b :
+            J6R33StatefulArithmeticPage.PageBank f ell (J6R54PublicFamily.KeyWidth kp tc tj) prec tw bw
+              (J6R31RootResidentTables.pageKeyWidth m + pad)) →
+          J6R64Active.OwnsHeader B.site.header.result b →
+            AOracleMachineTime.Meter
+              (J6R114SelectedOperands.RawSelectedSources pad gate root B.site
+                (J6R114SelectedOperands.preparedAtOtherSource B.site (J6R55Public.literalSite W D i j g) same T) rate))
+  (returned :
+    (J6R111KeptOwnerFlow.submitResidentRowKeepingSite D S pad prior (J6R75OuterTime.sourceRow D i j g)).result =
+      Option.some A)
+  (checkRemaining :
+    (Z : J6R114SelectedOperands.PublicOperandReceipt D pad i j g gate root T rate) →
+      AOracleMachineTime.Meter (J6R116ReadyFromHeld.RemainingRetainedInputs D pad i j g gate root rootInj Z)) :
+  have actual :=
+    J6R116ReadyFromHeld.prepareReadyFromTheActualReturnedAdmission D S pad prior i j g gate root rootInj sync reserved A
+      readFrom returned checkRemaining;
+  actual.result.size = J6Mesh.physicalSize m native ∧
+    actual.result.constant = 2 ∧ actual.result.selector ≍ G.selector ell
+'J6R116ReadyFromHeld.the_actual_preparer_returns_source_scale' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+J6R116RetainedExteriorPeak.actual_paid_chart_and_retained_exterior_path_take_one_named_maximum {V : Type} [Fintype V]
+  {m n base native : ℕ} {f : Polynomial ℤ} {P : J6OrientedHost.Plant V m n}
+  {G :
+    J6R26StablePreparedRoot.RootShape f m (J6R24LegalLayout.printedHalf m) base native
+      (J6R24LegalLayout.printedRankWidth m) P (J6R28GeneratedRootFrame.constantRootWord m)}
+  {ell q ro co de edgew tc tj kp prec tw bw : ℕ} {W : J6R54PublicFamily.Widths m native tc tj tw edgew}
+  [Fact (Irreducible (NativeProbeRing.residuePoly f))] {Cpt : J6R54PublicFamily.Compiled G ell q ro co de prec kp bw}
+  {pad : ℕ} (admitted : J6R111KeptOwnerFlow.ResidentAdmissionCarry Cpt pad)
+  (preparation : AOracleMachineTime.Meter (J6R111KeptOwnerFlow.ReadyRetainedPayload admitted))
+  (bytes :
+    (J6R109CanonicalProbeTable.canonicalTable f.natDegree
+          (J6R110CanonicalCoverage.fullProbeDegree f.natDegree + 1)).result =
+      J6R110CanonicalMount.OldOrderedBytes f.natDegree (J6R110CanonicalCoverage.fullProbeDegree f.natDegree) ⋯)
+  (on :
+    (J6R12Blueprint.printedParams
+          (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.size).cutoff <
+      (J6R32RootGeneratedRegistryInputs.exteriorChild G ell admitted.site.centre admitted.site.sample
+          admitted.site.group).edges)
+  (w :
+    (J6R12Blueprint.Plan
+          (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.selector).Slot
+      (J6R32RootGeneratedRegistryInputs.exteriorChild G ell admitted.site.centre admitted.site.sample
+        admitted.site.group))
+  {x :
+    J6R111KeptOwnerFlow.KeptInvocation admitted.site
+      (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.machine}
+  (reach :
+    J6R10Reachable.NativeReach
+      (J6R111KeptOwnerFlow.retainedOccurrencePlan admitted.site
+        (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.machine
+        (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.drivers)
+      (J6R116RetainedExteriorPeak.firstOfOnePaidChart admitted preparation bytes on w) x)
+  (ambient entryRoof frameRoof built : ℕ)
+  (cut : J6R110CanonicalAllPeak.CanonicalBootCut preparation.result.prepared bytes built)
+  (held :
+    ∀
+      {y :
+        J6R111KeptOwnerFlow.KeptInvocation admitted.site
+          (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.machine},
+      J6R10Reachable.NativeReach
+          (J6R111KeptOwnerFlow.retainedOccurrencePlan admitted.site
+            (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.machine
+            (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.drivers)
+          (J6R116RetainedExteriorPeak.firstOfOnePaidChart admitted preparation bytes on w) y →
+        (J6R12Blueprint.printedParams
+                (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.size).cutoff <
+            (J6R111KeptOwnerFlow.KeptInvocation.call admitted.site
+                (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.machine y).edges →
+          J6R115RetainedPeakPath.suspendedParentBits admitted.site
+              (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.machine y ≤
+            frameRoof)
+  (entry :
+    ∀
+      {y :
+        J6R111KeptOwnerFlow.KeptInvocation admitted.site
+          (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.machine},
+      J6R10Reachable.NativeReach
+          (J6R111KeptOwnerFlow.retainedOccurrencePlan admitted.site
+            (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.machine
+            (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.drivers)
+          (J6R116RetainedExteriorPeak.firstOfOnePaidChart admitted preparation bytes on w) y →
+        J6R115RetainedPeakPath.invocationEntryBits admitted.site
+            (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.machine y
+            (J6R115RetainedPeakPath.chartAndAmbient admitted.site
+              (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.machine
+              (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result.drivers
+              (ambient + J6R116RetainedExteriorPeak.descriptorBits admitted.site)) ≤
+          entryRoof) :
+  let A := (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).result;
+  have shared :=
+    J6R115RetainedPeakPath.chartAndAmbient admitted.site A.machine A.drivers
+      (ambient + J6R116RetainedExteriorPeak.descriptorBits admitted.site);
+  have startup := J6R116RetainedExteriorPeak.chartStartupAmbient admitted ambient;
+  have pre :=
+    J6R116RetainedExteriorPeak.exteriorBeforeFirstBits admitted.site A.machine admitted.receipt.1 A.first A.exterior on
+      A.drivers ambient;
+  A.drivers.masks = (J6R110CanonicalCoverage.mountFullChart preparation.result.prepared bytes).result ∧
+    (J6R111KeptOwnerFlow.prepareWithPaidOriginalOrder admitted preparation bytes).steps =
+        preparation.steps + (J6R110CanonicalCoverage.mountFullChart preparation.result.prepared bytes).steps + 4 ∧
+      ∃ path,
+        Max.max (startup + built)
+            (Max.max pre (J6R115RetainedPeakPath.visitedEntryPeak admitted.site A.machine A.drivers shared path)) ≤
+          Max.max (startup + 264 * A.size ^ 5) (entryRoof + J6R16ModeCost.pathLimit A.size A.constant * frameRoof)
+'J6R116RetainedExteriorPeak.actual_paid_chart_and_retained_exterior_path_take_one_named_maximum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+J6R117HeldPhysicalImage.useTheActualHeldConfiguration {V : Type} [Fintype V] {m n base native : ℕ} {f : Polynomial ℤ}
+  {P : J6OrientedHost.Plant V m n}
+  {G :
+    J6R26StablePreparedRoot.RootShape f m (J6R24LegalLayout.printedHalf m) base native
+      (J6R24LegalLayout.printedRankWidth m) P (J6R28GeneratedRootFrame.constantRootWord m)}
+  {ell q rr cc dd prec kp bw tc tj tw edgew : ℕ} {W : J6R54PublicFamily.Widths m native tc tj tw edgew}
+  [Fact (Irreducible (NativeProbeRing.residuePoly f))] {I : J6R54PublicFamily.SharedInputs G ell q rr cc dd prec kp bw}
+  (image : J6R57PublicRequest.RequestImage W I) (pad : ℕ)
+  (B :
+    J6R33StatefulArithmeticPage.PageBank f ell (J6R54PublicFamily.KeyWidth kp tc tj) prec tw bw
+      (J6R31RootResidentTables.pageKeyWidth m + pad))
+  (sync : J6R30ProducedGateRegistry.Ledger.synced B)
+  (reserved : ∀ h ∈ B.headers, List.take kp h.id.bits ≠ image.compiled.mark.bits)
+  (all :
+    (i : J6Recovery.Addr m) →
+      (j : Fin (J6R14ZeroMode.literalDegree m native + 1)) →
+        (g : Fin 64) → J6R117HeldPhysicalImage.HeldConfigurationAt image pad i j g) :
+  J6R114PrescribedReceipts.PhysicalRetainedImagePlan image
+'J6R117HeldPhysicalImage.useTheActualHeldConfiguration' depends on axioms: [propext, Classical.choice, Quot.sound]
+J6R117RetainedExteriorClock.actual_prescribed_exterior_clock_with_real_first_and_retained_subtrees {V : Type}
+  [Fintype V] {m n base native : ℕ} {f : Polynomial ℤ} {P : J6OrientedHost.Plant V m n}
+  {G :
+    J6R26StablePreparedRoot.RootShape f m (J6R24LegalLayout.printedHalf m) base native
+      (J6R24LegalLayout.printedRankWidth m) P (J6R28GeneratedRootFrame.constantRootWord m)}
+  {ell q ro co de edgew tc tj key prec tw bw : ℕ}
+  (X : J6R34RootAtlas.StableExterior G ell q ro co de edgew tc tj key prec tw bw) {pad s C rate rank : ℕ}
+  {cfg : J6R12Blueprint.RootBounds s C f}
+  {sel : J6R12Blueprint.Selector (J6R12Blueprint.printedParams s) (J1PPrinted.sourceDelta s)}
+  {T :
+    J6R24MeteredRecursion.Prepared cfg sel
+      (J6R32RootGeneratedRegistryInputs.exteriorChild G ell X.centre X.sample X.group) ⋯}
+  (M : J6R51Online.OnlineMachine T key prec tw bw (J6R31RootResidentTables.pageKeyWidth m + pad) rate)
+  [Fact (Irreducible (NativeProbeRing.residuePoly f))]
+  (initial : J6R33StatefulArithmeticPage.PageBank f ell key prec tw bw (J6R31RootResidentTables.pageKeyWidth m + pad))
+  (boot : J6R111KeptOwnerFlow.FirstSource X M) (E : J6R111KeptOwnerFlow.ExteriorLabels X M boot rank)
+  (on :
+    (J6R12Blueprint.printedParams s).cutoff <
+      (J6R32RootGeneratedRegistryInputs.exteriorChild G ell X.centre X.sample X.group).edges)
+  (head : J6R64Active.OwnsHeader X.header.result initial) (D : J6R111KeptOwnerFlow.KeptDrivers X M rank) {ptr : ℕ}
+  (tails : J6R57ScopeFee.SavedDirectoryTails ptr) (score : J6R67UnifiedRate.MeasuredScopeInputs M initial)
+  (valid : J6R48DFS.ReadyOnStack (fun {c} => J6R51Online.borns M) initial)
+  (seed :
+    J6R68AbsolutePrescribed.AbsoluteSeed s C
+      (J6R32RootGeneratedRegistryInputs.exteriorChild G ell X.centre X.sample X.group))
+  (extFixed extUnit fixed address : ℕ)
+  (rootPrefixCap :
+    (J6R117RetainedExteriorClock.exteriorSchedule X M initial boot E on head D).steps +
+        J6R57ActiveFee.fixedActive
+          (J6R117RetainedExteriorClock.exteriorSchedule X M initial boot E on head D).result.proofView ⋯ ⋯ ≤
+      extFixed)
+  (unit :
+    ∀ t ∈ (J6R117RetainedExteriorClock.exteriorSchedule X M initial boot E on head D).result.proofView.centres,
+      J6R57ActiveFee.unitMode
+          ((J6R117RetainedExteriorClock.exteriorSchedule X M initial boot E on head D).result.proofView.tape t).low
+          ((J6R117RetainedExteriorClock.exteriorSchedule X M initial boot E on head D).result.proofView.tape
+                t).tape.result ≤
+        64 * extUnit)
+  (localCap :
+    ∀
+      (w :
+        (J6R12Blueprint.Plan sel).Slot (J6R32RootGeneratedRegistryInputs.exteriorChild G ell X.centre X.sample X.group))
+      (j : ℕ),
+      ∀
+        y ∈
+          J6R16ModeCost.occurrences (J6R111KeptOwnerFlow.retainedOccurrencePlan X M D)
+            (J6R116RetainedExteriorPeak.firstInvocation X M initial boot E on w) j,
+        y.entry.bank = J6R48DFS.stackBank (fun {c} => J6R51Online.borns M) initial (y.path.step y.slot) →
+          J6R111KeptOwnerFlow.retainedOwnTariff X M D (J6R57ScopeFee.retireSavedDirectory tails) y initial ≤
+            fixed +
+              address * Nat.card ((J6R12Blueprint.Plan sel).Slot (J6R111KeptOwnerFlow.KeptInvocation.call X M y))) :
+  (J6R111KeptOwnerFlow.runRetainedExterior X M initial head boot D E (J6R57ScopeFee.retireSavedDirectory tails)).steps ≤
+    extFixed +
+        extUnit *
+          Nat.card
+            ((J6R12Blueprint.Plan sel).Slot
+              (J6R32RootGeneratedRegistryInputs.exteriorChild G ell X.centre X.sample X.group)) +
+      Nat.card
+          ((J6R12Blueprint.Plan sel).Slot
+            (J6R32RootGeneratedRegistryInputs.exteriorChild G ell X.centre X.sample X.group)) *
+        (J6R67UnifiedRate.measuredPerScope score ptr +
+          (J6R16ModeCost.pathLimit s C -
+                (J6R32RootGeneratedRegistryInputs.exteriorChild G ell X.centre X.sample X.group).depth) *
+              (fixed + address) *
+            2 ^ (J6R56PrintedExponent.fullPrefixConstant C * J9PrintedSchedule.leafThreshold s (Nat.clog 2 s)))
+'J6R117RetainedExteriorClock.actual_prescribed_exterior_clock_with_real_first_and_retained_subtrees' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+J6R114PrescribedReceipts.original_ready_fresh_run_counts_and_pays_the_source_clock {V : Type} [DecidableEq V]
+  [Fintype V] [Nonempty V] {F : Std.Sat.CNF V} {order : J6R51Ingress.DeclaredOrder V} {h d j r c e base ell kp : ℕ}
+  (A : J6R111FreshStartupBinding.RawStartup F order h d j r c e base ell kp)
+  (fit :
+    base ≤
+      J6Mesh.physicalSize (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+          (Paper6SourceSize.sourceNativeSize F order) ^
+        2)
+  (groups : J6R114PrescribedReceipts.ActualPhysicalStartupPlan A fit)
+  (bytes :
+    (J6R109CanonicalProbeTable.canonicalTable (J6R52FreshShape.freshFieldResult F order).f.natDegree
+          (J6R110CanonicalCoverage.fullProbeDegree (J6R52FreshShape.freshFieldResult F order).f.natDegree + 1)).result =
+      J6R110CanonicalMount.OldOrderedBytes (J6R52FreshShape.freshFieldResult F order).f.natDegree
+        (J6R110CanonicalCoverage.fullProbeDegree (J6R52FreshShape.freshFieldResult F order).f.natDegree) ⋯)
+  (prepCap rootCap : ℕ)
+  (data : J6R114PrescribedReceipts.FreshSourcePreparationAndRoots A fit groups bytes prepCap rootCap)
+  (basePositive : 0 < base) :
+  have boot := J6R111FreshStartupBinding.selectedStartup A fit;
+  have D := boot.result.compiled;
+  have frame := D.frame;
+  have fd := (J6R52FreshShape.freshFieldResult F order).f.natDegree;
+  let p := J6SourcePrecision.printed (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)) base;
+  have out := J6R114PrescribedReceipts.runFreshPhysicallyRetainedCount A fit groups bytes;
+  have caps := J6R114PrescribedReceipts.phaseCapsOnTheFreshOriginalInputs A fit groups bytes prepCap rootCap data;
+  have slots :=
+    J6R114PrescribedReceipts.actualReceiptSlotRoof
+      (J6R114PrescribedReceipts.literalFreshGroupRoof A fit groups bytes caps);
+  have pads :=
+    (J6R25StableCensus.exactPadOrder (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+        (J6Mesh.K (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+        (J6R24LegalLayout.printedHalf (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+        (J6R28GeneratedRootFrame.constantRootWord
+          (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))).length;
+  have site :=
+    J6R33OriginalJ6.rootSiteFee fd (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+        (J6R14ZeroMode.literalDegree (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+          (Paper6SourceSize.sourceNativeSize F order))
+        ell p ⋯ +
+      (J6R14ZeroMode.literalDegree (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+            (Paper6SourceSize.sourceNativeSize F order) +
+          1) *
+        slots;
+  AOracleMachineTime.bitsValue ↑out.result = PinnedCNF.modelCount F ∧
+    out.steps ≤
+      boot.steps +
+          (J6R25StableCensus.stablePadBudget (J6Mesh.a (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+                  (J6Mesh.K (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+                  (J6R24LegalLayout.printedHalf (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+                  (J6R24LegalLayout.printedRankWidth (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))) +
+                J6R25StableCensus.legalRootBudget p
+                  (J6R28GeneratedRootFrame.printedFactorWidth
+                    (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+                    (J7R10Plant.nSubdiv (J6R51Ingress.guardedInOrder F order.roster)))
+                  (J6R28GeneratedRootFrame.printedAnswerWidth
+                    (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)) base)
+                  ell frame.words.length
+                  (J6R24LegalLayout.printedRankWidth (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)) -
+                      J6Mesh.a (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)) +
+                    13 * J6Mesh.a (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+                  (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)) pads +
+              8 +
+            J6R33OriginalJ6.gatheredOracleFee (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+              frame.words.length ell p site) +
+        5
+'J6R114PrescribedReceipts.original_ready_fresh_run_counts_and_pays_the_source_clock' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+J6R118ReadyRootClock.actual_posted_ready_root_has_its_source_seed {V : Type} [Fintype V] {m n base native : ℕ}
+  {f : Polynomial ℤ} {P : J6OrientedHost.Plant V m n}
+  {G :
+    J6R26StablePreparedRoot.RootShape f m (J6R24LegalLayout.printedHalf m) base native
+      (J6R24LegalLayout.printedRankWidth m) P (J6R28GeneratedRootFrame.constantRootWord m)}
+  {ell q rr cc dd prec kp bw tc tj tw edgew : ℕ} {W : J6R54PublicFamily.Widths m native tc tj tw edgew}
+  {I : J6R54PublicFamily.SharedInputs G ell q rr cc dd prec kp bw} [Fact (Irreducible (NativeProbeRing.residuePoly f))]
+  (image : J6R57PublicRequest.RequestImage W I) (Q : J6R114PrescribedReceipts.PhysicalRetainedImagePlan image)
+  (i : J6Recovery.Addr m) (j : Fin (J6R14ZeroMode.literalDegree m native + 1)) (g : Fin 64)
+  (baseFit : base ≤ 2 * J6Mesh.physicalSize m native) :
+  let row := J6R75OuterTime.sourceRow image.compiled i j g;
+  have posted := J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables Q.pad Q.prior ⋯ ⋯ i j g row ⋯;
+  have a := posted.result.payload;
+  have actual := (Q.acquire i j g row ⋯ posted.result).result;
+  J6R68AbsolutePrescribed.AbsoluteSeed actual.size actual.constant
+    (J6R32RootGeneratedRegistryInputs.exteriorChild G ell a.site.centre a.site.sample a.site.group)
+'J6R118ReadyRootClock.actual_posted_ready_root_has_its_source_seed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+J6R52FreshShape.generated_fresh_root_uses_literal_source_cutoff {V : Type} [DecidableEq V] [Fintype V] [Nonempty V]
+  (F : Std.Sat.CNF V) (order : J6R51Ingress.DeclaredOrder V) (base ell : ℕ) (three : ∀ row ∈ F, List.length row ≤ 3)
+  (large :
+    J6R52FreshShape.printedGuard (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+      (Paper6SourceSize.sourceNativeSize F order)) :
+  have f := (J6R52FreshShape.freshFieldResult F order).f;
+  have Ssrc :=
+    J6Mesh.physicalSize (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+      (Paper6SourceSize.sourceNativeSize F order);
+  have R :=
+    J6R11Repack.physicalRootCall f ell base (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+      (J6R24LegalLayout.printedHalf (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+      (J7R10Plant.nSubdiv (J6R51Ingress.guardedInOrder F order.roster))
+      (J6R51Ingress.freshPlant (J6R51Ingress.guardedInOrder F order.roster) (J6R51Ingress.guardRoster order))
+      (J6R28GeneratedRootFrame.constantRootWord (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)));
+  (J6R12Repack.rootParams f ell (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+          (Paper6SourceSize.sourceNativeSize F order)).cutoff =
+      J9PrintedSchedule.leafThreshold Ssrc (Nat.clog 2 Ssrc) ∧
+    J9PrintedSchedule.leafThreshold Ssrc (Nat.clog 2 Ssrc) < R.edges
+'J6R52FreshShape.generated_fresh_root_uses_literal_source_cutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+J6R52FreshShape.generated_fresh_odd_precision {V : Type} [DecidableEq V] [Fintype V] [Nonempty V] (F : Std.Sat.CNF V)
+  (order : J6R51Ingress.DeclaredOrder V) (base : ℕ) (three : ∀ row ∈ F, List.length row ≤ 3)
+  (large :
+    J6R52FreshShape.printedGuard (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+      (Paper6SourceSize.sourceNativeSize F order))
+  (ell : ℕ) (i : J6Recovery.Addr (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))) :
+  have R := ⋯;
+  let f := (J6R52FreshShape.freshFieldResult F order).f;
+  J6ActiveRun.registerPrecision
+      (J6R12Repack.rootParams f ell (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+        (Paper6SourceSize.sourceNativeSize F order))
+      (J6R11Repack.physicalRootCall f ell base (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+        (J6R24LegalLayout.printedHalf (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+        (J7R10Plant.nSubdiv (J6R51Ingress.guardedInOrder F order.roster))
+        (J6R51Ingress.freshPlant (J6R51Ingress.guardedInOrder F order.roster) (J6R51Ingress.guardRoster order))
+        (J6R28GeneratedRootFrame.constantRootWord (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))))
+      (R.centre ell i) =
+    J6SourcePrecision.printed (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)) base
+'J6R52FreshShape.generated_fresh_odd_precision' depends on axioms: [propext, Classical.choice, Quot.sound]
+J6R114PrescribedReceipts.runAtLiteralSourcePrecision {V : Type} [DecidableEq V] [Fintype V] [Nonempty V]
+  {F : Std.Sat.CNF V} {order : J6R51Ingress.DeclaredOrder V} {h d j r c e kp : ℕ}
+  (A : J6R111FreshStartupBinding.RawStartup F order h d j r c e (Paper6SourceSize.sourceInitialPrecision F order) 1 kp)
+  (groups : J6R114PrescribedReceipts.ActualPhysicalStartupPlan A ⋯)
+  (bytes :
+    (J6R109CanonicalProbeTable.canonicalTable (J6R52FreshShape.freshFieldResult F order).f.natDegree
+          (J6R110CanonicalCoverage.fullProbeDegree (J6R52FreshShape.freshFieldResult F order).f.natDegree + 1)).result =
+      J6R110CanonicalMount.OldOrderedBytes (J6R52FreshShape.freshFieldResult F order).f.natDegree
+        (J6R110CanonicalCoverage.fullProbeDegree (J6R52FreshShape.freshFieldResult F order).f.natDegree) ⋯) :
+  AOracleMachineTime.Meter
+    (A1R10.Word
+      (J6R28GeneratedRootFrame.printedAnswerWidth (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+        (Paper6SourceSize.sourceInitialPrecision F order)))
+'J6R114PrescribedReceipts.runAtLiteralSourcePrecision' depends on axioms: [propext, Classical.choice, Quot.sound]
+J6R114PrescribedReceipts.literal_source_startup_emits_the_padded_source_ordinal {V : Type} [DecidableEq V] [Fintype V]
+  [Nonempty V] {F : Std.Sat.CNF V} {order : J6R51Ingress.DeclaredOrder V} {h d j r c e kp : ℕ}
+  (A :
+    J6R111FreshStartupBinding.RawStartup F order h d j r c e (Paper6SourceSize.sourceInitialPrecision F order) 1 kp) :
+  (J6R111FreshStartupBinding.initialPaidWords A ⋯).result.baseWord.val =
+    Fintype.card
+        (Paper6SourceSize.PaddedVariable F order
+          (J6R28GeneratedRootFrame.constantRootWord (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))) +
+      1
+'J6R114PrescribedReceipts.literal_source_startup_emits_the_padded_source_ordinal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+J6R114PrescribedReceipts.literal_source_run_counts_and_pays_the_same_clock {V : Type} [DecidableEq V] [Fintype V]
+  [Nonempty V] {F : Std.Sat.CNF V} {order : J6R51Ingress.DeclaredOrder V} {h d j r c e kp : ℕ}
+  (A : J6R111FreshStartupBinding.RawStartup F order h d j r c e (Paper6SourceSize.sourceInitialPrecision F order) 1 kp)
+  (groups : J6R114PrescribedReceipts.ActualPhysicalStartupPlan A ⋯)
+  (bytes :
+    (J6R109CanonicalProbeTable.canonicalTable (J6R52FreshShape.freshFieldResult F order).f.natDegree
+          (J6R110CanonicalCoverage.fullProbeDegree (J6R52FreshShape.freshFieldResult F order).f.natDegree + 1)).result =
+      J6R110CanonicalMount.OldOrderedBytes (J6R52FreshShape.freshFieldResult F order).f.natDegree
+        (J6R110CanonicalCoverage.fullProbeDegree (J6R52FreshShape.freshFieldResult F order).f.natDegree) ⋯)
+  (prepCap rootCap : ℕ)
+  (data : J6R114PrescribedReceipts.FreshSourcePreparationAndRoots A ⋯ groups bytes prepCap rootCap) :
+  have boot := J6R111FreshStartupBinding.selectedStartup A ⋯;
+  have D := boot.result.compiled;
+  have frame := D.frame;
+  have fd := (J6R52FreshShape.freshFieldResult F order).f.natDegree;
+  let p :=
+    J6SourcePrecision.printed (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+      (Paper6SourceSize.sourceInitialPrecision F order);
+  have out := J6R114PrescribedReceipts.runAtLiteralSourcePrecision A groups bytes;
+  have caps := J6R114PrescribedReceipts.phaseCapsOnTheFreshOriginalInputs A ⋯ groups bytes prepCap rootCap data;
+  have slots :=
+    J6R114PrescribedReceipts.actualReceiptSlotRoof
+      (J6R114PrescribedReceipts.literalFreshGroupRoof A ⋯ groups bytes caps);
+  have pads :=
+    (J6R25StableCensus.exactPadOrder (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+        (J6Mesh.K (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+        (J6R24LegalLayout.printedHalf (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+        (J6R28GeneratedRootFrame.constantRootWord
+          (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))).length;
+  have site :=
+    J6R33OriginalJ6.rootSiteFee fd (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+        (J6R14ZeroMode.literalDegree (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+          (Paper6SourceSize.sourceNativeSize F order))
+        1 p ⋯ +
+      (J6R14ZeroMode.literalDegree (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+            (Paper6SourceSize.sourceNativeSize F order) +
+          1) *
+        slots;
+  AOracleMachineTime.bitsValue ↑out.result = PinnedCNF.modelCount F ∧
+    out.steps ≤
+      boot.steps +
+          (J6R25StableCensus.stablePadBudget (J6Mesh.a (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+                  (J6Mesh.K (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+                  (J6R24LegalLayout.printedHalf (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+                  (J6R24LegalLayout.printedRankWidth (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))) +
+                J6R25StableCensus.legalRootBudget p
+                  (J6R28GeneratedRootFrame.printedFactorWidth
+                    (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+                    (J7R10Plant.nSubdiv (J6R51Ingress.guardedInOrder F order.roster)))
+                  (J6R28GeneratedRootFrame.printedAnswerWidth
+                    (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+                    (Paper6SourceSize.sourceInitialPrecision F order))
+                  1 frame.words.length
+                  (J6R24LegalLayout.printedRankWidth (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)) -
+                      J6Mesh.a (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)) +
+                    13 * J6Mesh.a (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)))
+                  (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)) pads +
+              8 +
+            J6R33OriginalJ6.gatheredOracleFee (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+              frame.words.length 1 p site) +
+        5
+'J6R114PrescribedReceipts.literal_source_run_counts_and_pays_the_same_clock' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+J6R114PrescribedReceipts.posted_row_workspace_uses_source_size {V : Type} [Fintype V] {m n base native : ℕ}
+  {f : Polynomial ℤ} {P : J6OrientedHost.Plant V m n}
+  {G :
+    J6R26StablePreparedRoot.RootShape f m (J6R24LegalLayout.printedHalf m) base native
+      (J6R24LegalLayout.printedRankWidth m) P (J6R28GeneratedRootFrame.constantRootWord m)}
+  {ell q rr cc dd prec kp bw tc tj tw edgew : ℕ} {W : J6R54PublicFamily.Widths m native tc tj tw edgew}
+  {I : J6R54PublicFamily.SharedInputs G ell q rr cc dd prec kp bw} [Fact (Irreducible (NativeProbeRing.residuePoly f))]
+  (image : J6R57PublicRequest.RequestImage W I) (groups : J6R114PrescribedReceipts.PhysicalRetainedImagePlan image)
+  (bytes :
+    (J6R109CanonicalProbeTable.canonicalTable f.natDegree
+          (J6R110CanonicalCoverage.fullProbeDegree f.natDegree + 1)).result =
+      J6R110CanonicalMount.OldOrderedBytes f.natDegree (J6R110CanonicalCoverage.fullProbeDegree f.natDegree) ⋯)
+  (i : J6Recovery.Addr m) (j : Fin (J6R14ZeroMode.literalDegree m native + 1)) (g : Fin 64)
+  (on :
+    (J6R12Blueprint.printedParams
+          ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+                (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                    (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.size).cutoff <
+      (J6R32RootGeneratedRegistryInputs.exteriorChild G ell
+          (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                    (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site.centre
+          (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                    (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site.sample
+          (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                    (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site.group).edges)
+  (w :
+    (J6R12Blueprint.Plan
+          ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+                (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                    (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.selector).Slot
+      (J6R32RootGeneratedRegistryInputs.exteriorChild G ell
+        (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site.centre
+        (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site.sample
+        (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site.group))
+  {x :
+    J6R111KeptOwnerFlow.KeptInvocation
+      (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+              (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+              (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+              (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site
+      ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+            (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+            (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.machine}
+  (reach :
+    J6R10Reachable.NativeReach
+      (J6R111KeptOwnerFlow.retainedOccurrencePlan
+        (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site
+        ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+              (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+              (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.machine
+        ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+              (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+              (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.drivers)
+      (J6R116RetainedExteriorPeak.firstOfOnePaidChart
+        (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+              (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+              (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+              (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload
+        (groups.acquire i j g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+          (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+              (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+              (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+              (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result)
+        bytes on w)
+      x)
+  (ambient entryRoof frameRoof built : ℕ)
+  (cut :
+    J6R110CanonicalAllPeak.CanonicalBootCut
+      (groups.acquire i j g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+            (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.prepared
+      bytes built)
+  (held :
+    ∀
+      {y :
+        J6R111KeptOwnerFlow.KeptInvocation
+          (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site
+          ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+                (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                    (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.machine},
+      J6R10Reachable.NativeReach
+          (J6R111KeptOwnerFlow.retainedOccurrencePlan
+            (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                    (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site
+            ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                  (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                      (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                      (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j
+                      g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.machine
+            ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                  (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                      (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                      (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j
+                      g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.drivers)
+          (J6R116RetainedExteriorPeak.firstOfOnePaidChart
+            (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload
+            (groups.acquire i j g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+              (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result)
+            bytes on w)
+          y →
+        (J6R12Blueprint.printedParams
+                ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+                      (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                      (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                          (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                          (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯
+                          i j g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.size).cutoff <
+            (J6R111KeptOwnerFlow.KeptInvocation.call
+                (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                        (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                        (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i
+                        j g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site
+                ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+                      (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                      (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                          (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                          (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯
+                          i j g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.machine
+                y).edges →
+          J6R115RetainedPeakPath.suspendedParentBits
+              (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                      (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                      (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j
+                      g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site
+              ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+                    (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                    (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                        (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                        (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i
+                        j g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.machine
+              y ≤
+            frameRoof)
+  (entry :
+    ∀
+      {y :
+        J6R111KeptOwnerFlow.KeptInvocation
+          (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site
+          ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+                (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                    (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.machine},
+      J6R10Reachable.NativeReach
+          (J6R111KeptOwnerFlow.retainedOccurrencePlan
+            (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                    (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site
+            ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                  (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                      (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                      (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j
+                      g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.machine
+            ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                  (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                      (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                      (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j
+                      g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.drivers)
+          (J6R116RetainedExteriorPeak.firstOfOnePaidChart
+            (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload
+            (groups.acquire i j g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+              (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result)
+            bytes on w)
+          y →
+        J6R115RetainedPeakPath.invocationEntryBits
+            (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                    (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site
+            ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                  (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                      (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                      (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j
+                      g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.machine
+            y
+            (J6R115RetainedPeakPath.chartAndAmbient
+              (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                      (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                      (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j
+                      g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site
+              ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+                    (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                    (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                        (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                        (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i
+                        j g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.machine
+              ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+                    (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                    (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                        (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                        (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i
+                        j g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.drivers
+              (ambient +
+                J6R116RetainedExteriorPeak.descriptorBits
+                  (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                          (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                          (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯
+                          i j g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site)) ≤
+          entryRoof) :
+  let A :=
+    ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+        (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+        (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+            (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+            (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+            (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result;
+  have shared :=
+    J6R115RetainedPeakPath.chartAndAmbient
+      (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+              (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+              (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+              (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site
+      A.machine A.drivers
+      (ambient +
+        J6R116RetainedExteriorPeak.descriptorBits
+          (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                  (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                  (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site);
+  have startup :=
+    J6R116RetainedExteriorPeak.chartStartupAmbient
+      (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+            (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+            (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+            (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload
+      ambient;
+  have pre :=
+    J6R116RetainedExteriorPeak.exteriorBeforeFirstBits
+      (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+              (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+              (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+              (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site
+      A.machine
+      (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.receipt.1
+      A.first A.exterior on A.drivers ambient;
+  A.drivers.masks =
+      (J6R110CanonicalCoverage.mountFullChart
+          (groups.acquire i j g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                    (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.prepared
+          bytes).result ∧
+    ((J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).acquire i j g
+            (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+            (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).steps =
+        (groups.acquire i j g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                    (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i j g
+                    (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).steps +
+            (J6R110CanonicalCoverage.mountFullChart
+                (groups.acquire i j g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯
+                      (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                          (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                          (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯
+                          i j g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result).result.prepared
+                bytes).steps +
+          4 ∧
+      ∃ path,
+        Max.max (startup + built)
+            (Max.max pre
+              (J6R115RetainedPeakPath.visitedEntryPeak
+                (J6R114PrescribedReceipts.admitTheEmittedRow image.compiled image.tables
+                        (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).pad
+                        (J6R114PrescribedReceipts.mountTheChartOnEveryChosenActualGroup image groups bytes).prior ⋯ ⋯ i
+                        j g (J6R75OuterTime.sourceRow image.compiled i j g) ⋯).result.payload.site
+                A.machine A.drivers shared path)) ≤
+          Max.max (startup + 264 * J6Mesh.physicalSize m native ^ 5)
+            (entryRoof + J6R16ModeCost.pathLimit (J6Mesh.physicalSize m native) 2 * frameRoof)
+'J6R114PrescribedReceipts.posted_row_workspace_uses_source_size' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Paper6SourceSize.sourceNativeSize {V : Type} [DecidableEq V] [Fintype V] (F : Std.Sat.CNF V)
+  (order : J6R51Ingress.DeclaredOrder V) : ℕ
+'Paper6SourceSize.sourceNativeSize' depends on axioms: [propext, Classical.choice, Quot.sound]
+Paper6SourceSize.sourceNativeSize_le_wires {V : Type} [DecidableEq V] [Fintype V] (F : Std.Sat.CNF V)
+  (order : J6R51Ingress.DeclaredOrder V) [Nonempty V] (three : ∀ row ∈ F, List.length row ≤ 3) :
+  Paper6SourceSize.sourceNativeSize F order ≤ J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)
+'Paper6SourceSize.sourceNativeSize_le_wires' depends on axioms: [propext, Classical.choice, Quot.sound]
+Paper6SourceSize.sourcePaddedSize {V : Type} [DecidableEq V] [Fintype V] (F : Std.Sat.CNF V)
+  (order : J6R51Ingress.DeclaredOrder V) : ℕ
+'Paper6SourceSize.sourcePaddedSize' depends on axioms: [propext, Classical.choice, Quot.sound]
+Paper6SourceSize.padded_size_eq {V : Type} [DecidableEq V] [Fintype V] (F : Std.Sat.CNF V)
+  (order : J6R51Ingress.DeclaredOrder V)
+  (w : Fin (J6Mesh.a (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))) → Fin 64) :
+  Fintype.card (Paper6SourceSize.PaddedVariable F order w) + List.length (Paper6SourceSize.paddedFormula F order w) =
+    Paper6SourceSize.sourcePaddedSize F order
+'Paper6SourceSize.padded_size_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+Paper6SourceSize.sourceInitialPrecision {V : Type} [DecidableEq V] [Fintype V] (F : Std.Sat.CNF V)
+  (order : J6R51Ingress.DeclaredOrder V) : ℕ
+'Paper6SourceSize.sourceInitialPrecision' depends on axioms: [propext, Classical.choice, Quot.sound]
+Paper6SourceSize.sourceInitialPrecision_eq {V : Type} [DecidableEq V] [Fintype V] (F : Std.Sat.CNF V)
+  (order : J6R51Ingress.DeclaredOrder V)
+  (w : Fin (J6Mesh.a (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))) → Fin 64) :
+  Paper6SourceSize.sourceInitialPrecision F order = Fintype.card (Paper6SourceSize.PaddedVariable F order w) + 1
+'Paper6SourceSize.sourceInitialPrecision_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+Paper6SourceSize.sourceInitialPrecision_pos {V : Type} [DecidableEq V] [Fintype V] (F : Std.Sat.CNF V)
+  (order : J6R51Ingress.DeclaredOrder V) : 0 < Paper6SourceSize.sourceInitialPrecision F order
+'Paper6SourceSize.sourceInitialPrecision_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+Paper6SourceSize.sourceInitialPrecision_le_sq {V : Type} [DecidableEq V] [Fintype V] (F : Std.Sat.CNF V)
+  (order : J6R51Ingress.DeclaredOrder V) :
+  Paper6SourceSize.sourceInitialPrecision F order ≤ Paper6SourceSize.sourcePaddedSize F order ^ 2
+'Paper6SourceSize.sourceInitialPrecision_le_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+Paper6SourceSize.sourcePaddedSize_ceiling {V : Type} [DecidableEq V] [Fintype V] (F : Std.Sat.CNF V)
+  (order : J6R51Ingress.DeclaredOrder V) [Nonempty V] (three : ∀ row ∈ F, List.length row ≤ 3) :
+  2 ^ (J6Mesh.lambda (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)) - 1) <
+      Paper6SourceSize.sourcePaddedSize F order ∧
+    Paper6SourceSize.sourcePaddedSize F order ≤
+        J6Mesh.M (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster)) ∧
+      Nat.clog 2 (Paper6SourceSize.sourcePaddedSize F order) =
+        J6Mesh.lambda (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+'Paper6SourceSize.sourcePaddedSize_ceiling' depends on axioms: [propext, Classical.choice, Quot.sound]
+Paper6SourceSize.subdivision_clog_eq {V : Type} [DecidableEq V] [Fintype V] (F : Std.Sat.CNF V)
+  (order : J6R51Ingress.DeclaredOrder V) [Nonempty V] (three : ∀ row ∈ F, List.length row ≤ 3) :
+  Nat.clog 2
+      (J6Mesh.physicalSize (J7R10Plant.nWires (J6R51Ingress.guardedInOrder F order.roster))
+        (J7R10Plant.nSubdiv (J6R51Ingress.guardedInOrder F order.roster))) =
+    Nat.clog 2 (Paper6SourceSize.sourcePaddedSize F order)
+'Paper6SourceSize.subdivision_clog_eq' depends on axioms: [propext, Classical.choice, Quot.sound]

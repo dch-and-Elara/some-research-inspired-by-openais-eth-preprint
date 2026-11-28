@@ -1,0 +1,10 @@
+'J2R119Probability.exponent_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J2R119Probability.bad_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J2R119Probability.kept_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J2R119Probability.capacity_at_probability_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J2R119Probability.words_expected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J2R119Probability.complete_words_expected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J2R119Probability.words_expected_sup' depends on axioms: [propext, Classical.choice, Quot.sound]
+@ExpectedGuarantee.{u_4, u_5, u_6,
+    u_7} : {Q : Type u_5} →
+  {R : Type u_6} → {W : Type u_7} → (W → Bool → Q → R) → (Q → Bool) → (W → Bool → Bool) → Nat → Prop

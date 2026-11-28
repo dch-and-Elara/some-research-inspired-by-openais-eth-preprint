@@ -1,0 +1,4 @@
+'FiniteWeightedQueryTree.actual_path_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiniteWeightedQueryTree.actual_query_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiniteWeightedQueryTree.binary_cylinder_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiniteWeightedQueryTree.bit_pattern_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]

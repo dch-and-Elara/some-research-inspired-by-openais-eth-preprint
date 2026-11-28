@@ -76,7 +76,7 @@ The Section 8 update independently recompiled 29 Lean modules and checked 125 na
 
 Which information survives finite-precision interpolation, and how much does it cost to acquire the registers used for counting? The paper gives exact capacity results for specified decoder interfaces. For two prescribed probe orders, it also connects the returned value to the original CNF model count and bounds the measured steps of that same execution under explicit preparation, width and local cost assumptions.
 
-[Paper (PDF)](checked-retained-execution/paper/Paper6.pdf) · [LaTeX source](checked-retained-execution/paper/Paper6.tex) · [Lean sources and verification](checked-retained-execution/README.md)
+[Paper (PDF)](checked-retained-execution/paper/Paper6.pdf) · [LaTeX source](checked-retained-execution/paper/Paper6.tex) · [Browse all Lean modules](checked-retained-execution/formal/module-index/README.md) · [Verification](checked-retained-execution/VERIFICATION.md)
 
 ## Sharp sample bounds for sparse interpolation on prescribed arithmetic progressions
 

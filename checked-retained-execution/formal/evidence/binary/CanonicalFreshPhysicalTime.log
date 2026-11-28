@@ -1,0 +1,6 @@
+'J6R114PrescribedReceipts.binary_order_ready_fresh_count_and_time' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'J6R114PrescribedReceipts.binary_order_at_literal_source_precision_counts_and_time' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

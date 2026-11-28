@@ -6,7 +6,7 @@ Appendix O connects a guarded CNF instance to the original model count. The stop
 
 * [Full manuscript (PDF)](paper/Paper6.pdf) and [LaTeX source](paper/Paper6.tex)
 * [Theorem index](THEOREMS.md) and [formal verification](VERIFICATION.md)
-* [Complete Lean sources, pinned versions and replay instructions](formal/Paper6_R119_Lean.zip)
+* [Browse all Lean modules](formal/module-index/README.md) · [Replay instructions](formal/README.md) · [Download ZIP](formal/Paper6_R119_Lean.zip)
 * [Historical evidence cited in the paper](paper/EVIDENCE_CATALOG.md) and [release checksums](SHA256SUMS.txt)
 
 The manuscript records the use of AI in the research, proof development and review. It retains the authorship status of the supplied research manuscript.
