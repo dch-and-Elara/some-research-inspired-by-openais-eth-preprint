@@ -2,23 +2,25 @@
 
 These papers study local polynomial reconstruction, shared measurements, rank bounds for interpolation algorithms that count satisfying assignments, and sample bounds for sparse interpolation. The starting point is the interpolation method in OpenAI’s [preprint on the Exponential Time Hypothesis](https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026).
 
-**Author:** Chuhang Ding (Peking University). The seven papers below include six studies of interpolation-based counting and local reconstruction, and one study of sparse interpolation on arithmetic progressions.
+**Author:** Chuhang Ding (Peking University). [AI contribution disclosure](AI_DISCLOSURE.md).
 
-| Paper | Lean verification |
-| --- | --- |
-| [Optimal Degrees for Local Polynomial Reconstruction on the Boolean Cube](paper/paper.pdf) | [Theorem index](FORMALIZATION_SCOPE.md) · [Verification record](VERIFICATION.md) |
-| [Rank lower bounds for node-dependent polynomial reconstruction in SAT counting](reconstruction-studies/papers/paper_polynomial_recovery.pdf) | [Theorem index](reconstruction-studies/THEOREMS.md#rank-lower-bounds-for-node-dependent-polynomial-reconstruction) · [Verification record](reconstruction-studies/verification/result.txt) |
-| [Ternary Measurements for Paired Local Recovery](reconstruction-studies/papers/paper_ternary_codes.pdf) | [Theorem index](reconstruction-studies/THEOREMS.md#ternary-measurements-for-paired-local-recovery) · [Verification record](reconstruction-studies/verification/result.txt) |
-| [A Root-Separation Barrier for Tensor-Interpolation SAT Algorithms](root-separation/paper/root_separation.pdf) | [Theorem index](root-separation/THEOREMS.md) · [Verification record](root-separation/verification/result.txt) |
-| [Rank-Budget Barriers for Interpolation Algorithms](rank-budget-barriers/paper/rank_budget_barriers.pdf) | [Theorem index](rank-budget-barriers/THEOREMS.md) · [Kernel audit](rank-budget-barriers/verification/joint-kernel.txt) |
-| [Native Information and Nonlinear Reconstruction in Interpolation Counting](checked-retained-execution/paper/Paper6.pdf) | [Theorem index](checked-retained-execution/THEOREMS.md) · [Verification record](checked-retained-execution/VERIFICATION.md) |
-| [Sharp Sample Bounds for Sparse Interpolation on Prescribed Arithmetic Progressions](sparse-interpolation/paper/Grenet.pdf) | [Theorem index](sparse-interpolation/COVERAGE.md) · [Verification record](sparse-interpolation/VERIFICATION.md) |
+Each paper has its own directory. Papers 2 and 3 share a [Lean project](shared/reconstruction/README.md). [Cross-paper audit records](shared/README.md) are kept separately. [Previous repository layout](https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/8e4dc6406471869332fa103c5f4339baa26d8ae6).
+
+| Paper (PDF) | Directory | Lean verification |
+| --- | --- | --- |
+| [Optimal Degrees for Local Polynomial Reconstruction on the Boolean Cube](boolean-cube/paper/paper.pdf) | [Paper 1](boolean-cube/README.md) | [Theorem index](boolean-cube/FORMALIZATION_SCOPE.md) · [Verification record](boolean-cube/VERIFICATION.md) |
+| [Rank lower bounds for node-dependent polynomial reconstruction in SAT counting](node-dependent-reconstruction/paper/paper_polynomial_recovery.pdf) | [Paper 2](node-dependent-reconstruction/README.md) | [Theorem index](shared/reconstruction/THEOREMS.md#rank-lower-bounds-for-node-dependent-polynomial-reconstruction) · [Verification record](shared/reconstruction/verification/result.txt) |
+| [Ternary Measurements for Paired Local Recovery](ternary-local-recovery/paper/paper_ternary_codes.pdf) | [Paper 3](ternary-local-recovery/README.md) | [Theorem index](shared/reconstruction/THEOREMS.md#ternary-measurements-for-paired-local-recovery) · [Verification record](shared/reconstruction/verification/result.txt) |
+| [A Root-Separation Barrier for Tensor-Interpolation SAT Algorithms](root-separation/paper/root_separation.pdf) | [Paper 4](root-separation/README.md) | [Theorem index](root-separation/THEOREMS.md) · [Verification record](root-separation/verification/result.txt) |
+| [Rank-Budget Barriers for Interpolation Algorithms](rank-budget-barriers/paper/rank_budget_barriers.pdf) | [Paper 5](rank-budget-barriers/README.md) | [Theorem index](rank-budget-barriers/THEOREMS.md) · [Kernel audit](rank-budget-barriers/verification/joint-kernel.txt) |
+| [Native Information and Nonlinear Reconstruction in Interpolation Counting](checked-retained-execution/paper/Paper6.pdf) | [Paper 6](checked-retained-execution/README.md) | [Theorem index](checked-retained-execution/THEOREMS.md) · [Verification record](checked-retained-execution/VERIFICATION.md) |
+| [Sharp Sample Bounds for Sparse Interpolation on Prescribed Arithmetic Progressions](sparse-interpolation/paper/Grenet.pdf) | [Sparse interpolation](sparse-interpolation/README.md) | [Theorem index](sparse-interpolation/COVERAGE.md) · [Verification record](sparse-interpolation/VERIFICATION.md) |
 
 ## Optimal Degrees for Local Polynomial Reconstruction on the Boolean Cube
 
 How much can arbitrary shared linear measurements reduce the degree needed to reconstruct data on the Boolean cube? The symmetric ternary construction achieves the optimal leading constant even among all rational measurement matrices.
 
-[Read the paper (PDF)](paper/paper.pdf) · [LaTeX source](paper/paper.tex) · [Theorem index](FORMALIZATION_SCOPE.md)
+[Read the paper (PDF)](boolean-cube/paper/paper.pdf) · [LaTeX source](boolean-cube/paper/paper.tex) · [Theorem index](boolean-cube/FORMALIZATION_SCOPE.md)
 
 For a cube of dimension $q$, the budget is $2^q/q^\gamma$ shared measurements. Write $d_{q,\gamma}$ for the minimum under bit flips and coordinate permutations, $\delta_{q,\gamma}$ under bit flips alone, and $\eta_{q,\gamma}$ with unrestricted ternary measurements. Write $\eta^{\mathbb Q}_{q,\gamma}$ when arbitrary rational entries are allowed.
 
@@ -35,12 +37,13 @@ For a cube of dimension $q$, the budget is $2^q/q^\gamma$ shared measurements. W
 The project pins Lean 4.28.0 and its Mathlib revision. From the repository root, run
 
 ```sh
+cd boolean-cube
 lake exe cache get
 lake build
 lake env lean Audit.lean
 ```
 
-The default build imports all proof modules. The last command prints the axioms used by the audited declarations. [Verification record](VERIFICATION.md) · [AI disclosure](AI_DISCLOSURE.md)
+The default build imports all proof modules. The last command prints the axioms used by the audited declarations. [Verification record](boolean-cube/VERIFICATION.md) · [AI disclosure](AI_DISCLOSURE.md)
 
 ## Rank lower bounds for node-dependent polynomial reconstruction in SAT counting
 
@@ -48,7 +51,7 @@ At each interpolation point, a factor can read its own group of variables and sh
 
 On an infinite family of positive 2-CNF formulas in which each variable occurs at most three times, one call with a balanced layout requires $2^{\Omega(n^{2/3})}$ visits, for any number of interpolation points. The bound applies to a routine that enumerates all Boolean-reachable measurement tuples, visits the prescribed Taylor subsets, and scans the assignments of a largest group. Here $n$ is the number of variables.
 
-[Paper (PDF)](reconstruction-studies/papers/paper_polynomial_recovery.pdf) · [LaTeX source](reconstruction-studies/papers/paper_polynomial_recovery.tex) · [Lean theorem index](reconstruction-studies/THEOREMS.md#rank-lower-bounds-for-node-dependent-polynomial-reconstruction)
+[Paper (PDF)](node-dependent-reconstruction/paper/paper_polynomial_recovery.pdf) · [LaTeX source](node-dependent-reconstruction/paper/paper_polynomial_recovery.tex) · [Lean theorem index](shared/reconstruction/THEOREMS.md#rank-lower-bounds-for-node-dependent-polynomial-reconstruction)
 
 ## Ternary Measurements for Paired Local Recovery
 
@@ -56,7 +59,7 @@ Each array entry is indexed by a pair of length-$q$ words. A receiver sees part 
 
 For a binary indexing alphabet over the rationals, the minimum rank at degree zero is $(4^q-1)/3$ for $q\ge 1$. At degree $q-2$ it is $q+\lceil q/2\rceil+2$ for $q\ge 2$. Both optima are attained using coefficients in $\{-1,0,1\}$. For example, at $q=3$, allowing degree one reduces the optimum from 21 measurements to 7.
 
-[Paper (PDF)](reconstruction-studies/papers/paper_ternary_codes.pdf) · [LaTeX source](reconstruction-studies/papers/paper_ternary_codes.tex) · [Lean theorem index](reconstruction-studies/THEOREMS.md#ternary-measurements-for-paired-local-recovery)
+[Paper (PDF)](ternary-local-recovery/paper/paper_ternary_codes.pdf) · [LaTeX source](ternary-local-recovery/paper/paper_ternary_codes.tex) · [Lean theorem index](shared/reconstruction/THEOREMS.md#ternary-measurements-for-paired-local-recovery)
 
 ## A Root-Separation Barrier for Tensor-Interpolation SAT Algorithms
 

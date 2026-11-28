@@ -26,12 +26,12 @@
 
 Each numbered folder is a separate overlay, not a replacement for an existing
 Lake project. First build the corresponding baseline from this repository
-using its committed toolchain and dependency pins. The original project roots
-are the repository root (Paper 1), reconstruction-studies/formal (Papers 2–3),
-root-separation/formal (Paper 4) and rank-budget-barriers/formal (Paper 5).
+using its committed toolchain and dependency pins. The current project roots are [boolean-cube](../../boolean-cube/) for Paper 1, [shared/reconstruction/formal](../reconstruction/formal/) for Papers 2–3, [root-separation/formal](../../root-separation/formal/) for Paper 4 and [rank-budget-barriers/formal](../../rank-budget-barriers/formal/) for Paper 5. Supplements live in each paper directory.
 In a new output directory on Lean's module search path, compile the overlay
 files in their local import order, treating warnings as errors. Paper 5's
 P5OverlayPinnedSqZeroLib is a vendored support module from the pinned Mathlib;
 its license is included, and it is not in the authored-module count. The
 existing PDF and TeX files have not changed. SHA256SUMS.txt lists the exact
 published Lean source bytes.
+
+SHA256SUMS.txt is the historical receipt for the original supplement bundle, using its original paths. The Lean sources themselves live in their respective paper directories today.

@@ -26,3 +26,5 @@ The verifier checks all 643 Lean source digests, the nine dependency revisions a
 [Named axiom output](verification/axioms.txt) · [Module hashes](verification/modules.sha256) · [Dependency pins](verification/dependency-pins.json) · [C17 compilation results](verification/c17-replay.json) · [Section 8 compilation results](verification/section8-replay.json) · [Uncloned register precision](verification/UnclonedPrecision.lean)
 
 The project owner supplied the research direction and the earlier model. AI systems contributed to the mathematical proofs, formalization and review. This is a public research draft.
+
+[Additional formalization and scope](supplements/P5_CLOSEOUT_CROSSWALK_zh.md) · [AI disclosure](../AI_DISCLOSURE.md)

@@ -27,3 +27,5 @@ The finite checker verifies [the release manifest](SOURCE_MANIFEST.json) before 
 ## Research status and attribution
 
 This research preprint grew out of a project studying local reconstruction in OpenAI’s October 25, 2026 ETH preprint. The project initiator directed the research question and release. AI assistants contributed to proof development, Lean implementation, mathematical review and preparation of the manuscript. The repository documents kernel checks and finite examples. Independent human peer review and a determination of publication priority remain outstanding.
+
+[Additional formalization and scope](supplements/APPENDIX_AB_PROOF_ROUTE_INVENTORY.md) · [AI disclosure](../AI_DISCLOSURE.md)
