@@ -1,0 +1,339 @@
+{
+  "scalar": {
+    "grids": [
+      {
+        "q": 2,
+        "precision": 4,
+        "grid": [
+          8
+        ],
+        "congruence_orders": [
+          0
+        ],
+        "valuation_counts": {
+          "0": 2,
+          "1": 2,
+          "3": 2
+        }
+      },
+      {
+        "q": 2,
+        "precision": 5,
+        "grid": [
+          4,
+          5
+        ],
+        "congruence_orders": [
+          0,
+          0
+        ],
+        "valuation_counts": {
+          "0": 4,
+          "1": 8,
+          "2": 4,
+          "3": 2,
+          "4": 2
+        }
+      },
+      {
+        "q": 2,
+        "precision": 5,
+        "grid": [
+          5,
+          3
+        ],
+        "congruence_orders": [
+          1,
+          0
+        ],
+        "valuation_counts": {
+          "0": 2,
+          "1": 3,
+          "2": 1,
+          "3": 2,
+          "4": 3
+        }
+      },
+      {
+        "q": 3,
+        "precision": 3,
+        "grid": [
+          7
+        ],
+        "congruence_orders": [
+          0
+        ],
+        "valuation_counts": {
+          "0": 3,
+          "1": 3,
+          "2": 1
+        }
+      },
+      {
+        "q": 5,
+        "precision": 2,
+        "grid": [
+          6,
+          3
+        ],
+        "congruence_orders": [
+          0,
+          0
+        ],
+        "valuation_counts": {
+          "0": 15,
+          "1": 3
+        }
+      }
+    ],
+    "correlated_registers_checked": true,
+    "exhaustive": [
+      {
+        "loss": 0,
+        "distinct_residue_columns": 2
+      },
+      {
+        "loss": 1,
+        "distinct_residue_columns": 8
+      },
+      {
+        "loss": 2,
+        "distinct_residue_columns": 16
+      }
+    ]
+  },
+  "jets": [
+    {
+      "q": 2,
+      "precision": 1,
+      "k": 2,
+      "messages": 2,
+      "row_domain": "full",
+      "raw_matrix_shape": [
+        16,
+        32
+      ],
+      "measured_valuation_counts": {
+        "0": 12
+      },
+      "predicted_bound_by_valuation": {
+        "0": 12
+      }
+    },
+    {
+      "q": 3,
+      "precision": 1,
+      "k": 3,
+      "messages": 2,
+      "row_domain": "full",
+      "raw_matrix_shape": [
+        729,
+        243
+      ],
+      "measured_valuation_counts": {
+        "0": 72
+      },
+      "predicted_bound_by_valuation": {
+        "0": 72
+      }
+    },
+    {
+      "q": 4,
+      "precision": 1,
+      "k": 4,
+      "messages": 1,
+      "row_domain": "full",
+      "raw_matrix_shape": [
+        256,
+        64
+      ],
+      "measured_valuation_counts": {
+        "0": 24
+      },
+      "predicted_bound_by_valuation": {
+        "0": 24
+      }
+    },
+    {
+      "q": 3,
+      "precision": 2,
+      "k": 2,
+      "messages": 2,
+      "row_domain": "full",
+      "raw_matrix_shape": [
+        6561,
+        162
+      ],
+      "measured_valuation_counts": {
+        "0": 27,
+        "1": 45
+      },
+      "predicted_bound_by_valuation": {
+        "0": 27,
+        "1": 45
+      }
+    },
+    {
+      "q": 4,
+      "precision": 2,
+      "k": 3,
+      "messages": 1,
+      "row_domain": "full",
+      "raw_matrix_shape": [
+        4096,
+        48
+      ],
+      "measured_valuation_counts": {
+        "0": 16,
+        "1": 8
+      },
+      "predicted_bound_by_valuation": {
+        "0": 16,
+        "1": 8
+      }
+    },
+    {
+      "q": 4,
+      "precision": 3,
+      "k": 2,
+      "messages": 1,
+      "row_domain": "full",
+      "raw_matrix_shape": [
+        4096,
+        32
+      ],
+      "measured_valuation_counts": {
+        "0": 8,
+        "1": 4,
+        "2": 12
+      },
+      "predicted_bound_by_valuation": {
+        "0": 8,
+        "1": 4,
+        "2": 12
+      }
+    },
+    {
+      "q": 5,
+      "precision": 2,
+      "k": 3,
+      "messages": 1,
+      "row_domain": "single higher-coefficient digit",
+      "raw_matrix_shape": [
+        625,
+        60
+      ],
+      "measured_valuation_counts": {
+        "0": 20,
+        "1": 15
+      },
+      "predicted_bound_by_valuation": {
+        "0": 20,
+        "1": 15
+      }
+    },
+    {
+      "q": 2,
+      "precision": 1,
+      "k": 3,
+      "messages": 1,
+      "row_domain": "full",
+      "raw_matrix_shape": [
+        8,
+        18
+      ],
+      "measured_valuation_counts": {
+        "0": 6
+      },
+      "predicted_bound_by_valuation": {
+        "0": 8
+      }
+    }
+  ],
+  "packed_integer_equality": [
+    {
+      "sender_bits": 1,
+      "full_residue_rank": 2,
+      "least_loss": 0
+    },
+    {
+      "sender_bits": 2,
+      "full_residue_rank": 4,
+      "least_loss": 1
+    },
+    {
+      "sender_bits": 3,
+      "full_residue_rank": 8,
+      "least_loss": 4
+    },
+    {
+      "sender_bits": 4,
+      "full_residue_rank": 16,
+      "least_loss": 11
+    },
+    {
+      "sender_bits": 5,
+      "full_residue_rank": 32,
+      "least_loss": 26
+    },
+    {
+      "sender_bits": 6,
+      "full_residue_rank": 64,
+      "least_loss": 57
+    }
+  ],
+  "coordinate_extractors": {
+    "high_binary_digits": [
+      {
+        "bit_index": 0,
+        "least_loss": 0
+      },
+      {
+        "bit_index": 1,
+        "least_loss": 1
+      },
+      {
+        "bit_index": 2,
+        "least_loss": 3
+      },
+      {
+        "bit_index": 3,
+        "least_loss": 7
+      },
+      {
+        "bit_index": 4,
+        "least_loss": 15
+      },
+      {
+        "bit_index": 5,
+        "least_loss": 31
+      },
+      {
+        "bit_index": 6,
+        "least_loss": 63
+      }
+    ],
+    "quadratic_unramified_trace": [
+      {
+        "precision": 1,
+        "all_input_scalars": 4,
+        "scalar_outputs_exactly_zero_or_one": 8
+      },
+      {
+        "precision": 2,
+        "all_input_scalars": 16,
+        "scalar_outputs_exactly_zero_or_one": 32
+      },
+      {
+        "precision": 3,
+        "all_input_scalars": 64,
+        "scalar_outputs_exactly_zero_or_one": 128
+      },
+      {
+        "precision": 4,
+        "all_input_scalars": 256,
+        "scalar_outputs_exactly_zero_or_one": 512
+      }
+    ]
+  }
+}

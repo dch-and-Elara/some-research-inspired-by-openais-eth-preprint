@@ -9,6 +9,7 @@ These papers study local polynomial reconstruction, shared measurements, rank bo
 | [Ternary Measurements for Paired Local Recovery](reconstruction-studies/papers/paper_ternary_codes.pdf) | [Theorem index](reconstruction-studies/THEOREMS.md#ternary-measurements-for-paired-local-recovery) · [Verification record](reconstruction-studies/verification/result.txt) |
 | [A Root-Separation Barrier for Tensor-Interpolation SAT Algorithms](root-separation/paper/root_separation.pdf) | [Theorem index](root-separation/THEOREMS.md) · [Verification record](root-separation/verification/result.txt) |
 | [Rank-Budget Barriers for Interpolation Algorithms](rank-budget-barriers/paper/rank_budget_barriers.pdf) | [Theorem index](rank-budget-barriers/THEOREMS.md) · [Kernel audit](rank-budget-barriers/verification/joint-kernel.txt) |
+| [Native Information and Nonlinear Reconstruction in Interpolation Counting](checked-retained-execution/paper/Paper6.pdf) | [Theorem index](checked-retained-execution/THEOREMS.md) · [Verification record](checked-retained-execution/VERIFICATION.md) |
 | [Sharp Sample Bounds for Sparse Interpolation on Prescribed Arithmetic Progressions](sparse-interpolation/paper/Grenet.pdf) | [Theorem index](sparse-interpolation/COVERAGE.md) · [Verification record](sparse-interpolation/VERIFICATION.md) |
 
 ## Optimal Degrees for Local Polynomial Reconstruction on the Boolean Cube
@@ -70,6 +71,12 @@ This paper asks how much rank local interpolation data can retain when an algori
 Section 8 shows how one multiplication can recover the exact SAT count from two products of local functions. On the cloned input, both coordinates can come from one MAIN layout, both from one Appendix D packing, or one from each method. On the original uncloned input, levels 0 and 1 of a single Appendix D root suffice. Each local function reads only the signs in its assigned group. The linear evaluation cost applies to the terminal scan after preprocessing.
 
 The Section 8 update independently recompiled 29 Lean modules and checked 125 named declarations for axiom dependencies. The combined audit imported all 643 modules of this paper and found no project-defined axioms. [Section 8 replay](rank-budget-barriers/verification/section8-replay.json) · [LaTeX source](rank-budget-barriers/paper/rank_budget_barriers.tex) · [Reproduction instructions](rank-budget-barriers/README.md#reproduction)
+
+## Native Information and Nonlinear Reconstruction in Interpolation Counting
+
+Which information survives finite-precision interpolation, and how much does it cost to acquire the registers used for counting? The paper gives exact capacity results for specified decoder interfaces. For two prescribed probe orders, it also connects the returned value to the original CNF model count and bounds the measured steps of that same execution under explicit preparation, width and local cost assumptions.
+
+[Paper (PDF)](checked-retained-execution/paper/Paper6.pdf) · [LaTeX source](checked-retained-execution/paper/Paper6.tex) · [Lean sources and verification](checked-retained-execution/README.md)
 
 ## Sharp sample bounds for sparse interpolation on prescribed arithmetic progressions
 

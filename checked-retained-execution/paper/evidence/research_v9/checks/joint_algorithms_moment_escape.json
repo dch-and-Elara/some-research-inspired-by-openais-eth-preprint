@@ -1,0 +1,41 @@
+{
+  "J7": {
+    "actual_nonpin_marginal": "1/2",
+    "actual_shifted_pairs": 35,
+    "child_moments_per_word": 12,
+    "eligible_pins": 12,
+    "exact_sign_words_recovered": 4096,
+    "four_clone_wires": 288,
+    "tiles": 4,
+    "vertex_covers": 163
+  },
+  "J8": {
+    "distinct_actual_probes": 42,
+    "dyadic_precision": 40,
+    "extension_degree": 6,
+    "interpolation_points_per_set": 41,
+    "irreducible_residue_units_checked": 63,
+    "largest_cleared_numerator_bits": 24,
+    "literal_target_full_assignment_comparisons": 10,
+    "physical_CNF_wires": 8,
+    "prescribed_probe_sets": [
+      "contains_zero",
+      "omits_zero"
+    ],
+    "signword_probe_set_decodings": 8,
+    "toy_L": 4,
+    "two_graph_only_target_coefficients": [
+      "209216/3",
+      "1895936/45"
+    ]
+  },
+  "symbol_balance": {
+    "analytic_alphabets_checked": [
+      2,
+      4,
+      8,
+      64
+    ],
+    "exhaustive_alphabet": 4
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "cauchy": {
+    "kernels": 258,
+    "coefficients": 3720
+  },
+  "unit_shift": {
+    "layouts_both_orientations": 16,
+    "sign_evaluations": 128,
+    "different_integer_supports": 4,
+    "parity_OR_witness": {
+      "trial": 1207,
+      "packets": [
+        [
+          7,
+          4,
+          6,
+          2
+        ],
+        [
+          5,
+          15,
+          0,
+          12
+        ],
+        [
+          14,
+          9,
+          16,
+          19
+        ],
+        [
+          10,
+          13,
+          3,
+          8
+        ],
+        [
+          18,
+          17,
+          11,
+          1
+        ]
+      ],
+      "integer_values_order_00_01_10_11": [
+        -421038,
+        184437,
+        165807,
+        -72657
+      ]
+    }
+  }
+}

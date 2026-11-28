@@ -1,0 +1,91 @@
+{
+  "source": [
+    {
+      "logical_vertices": 2,
+      "edges": 1,
+      "triples": 0,
+      "physical_variables": 11,
+      "source_words": 8,
+      "counts": [
+        0,
+        3,
+        6,
+        9
+      ]
+    },
+    {
+      "logical_vertices": 3,
+      "edges": 3,
+      "triples": 1,
+      "physical_variables": 33,
+      "source_words": 128,
+      "counts": [
+        0,
+        3,
+        6,
+        9,
+        12
+      ]
+    },
+    {
+      "logical_vertices": 4,
+      "edges": 3,
+      "triples": 1,
+      "physical_variables": 35,
+      "source_words": 256,
+      "counts": [
+        0,
+        3,
+        6,
+        9,
+        12,
+        15,
+        18,
+        24
+      ]
+    },
+    {
+      "logical_vertices": 4,
+      "edges": 2,
+      "triples": 0,
+      "physical_variables": 20,
+      "source_words": 64,
+      "counts": [
+        0,
+        3,
+        6,
+        9,
+        12,
+        18,
+        27
+      ]
+    }
+  ],
+  "source_words_total": 456,
+  "terminal_ranks_count_decision_inactive": [
+    [
+      2,
+      2,
+      2
+    ],
+    [
+      4,
+      4,
+      4
+    ],
+    [
+      8,
+      8,
+      8
+    ]
+  ],
+  "support": {
+    "vertices": 6,
+    "expansion": "5/3",
+    "max_degree": 3,
+    "no_cross_pairs": 225,
+    "overlapping_no_cross_pairs": 74,
+    "subcube_supports": 729,
+    "conditional_avoidance_checks": 729
+  }
+}

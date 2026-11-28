@@ -1,0 +1,141 @@
+{
+  "D_contraction": {
+    "high_precision_mixed_moments": 729,
+    "literal_root_sums": 84,
+    "matched_columns": 2,
+    "nonzero_high_precision_profiles": 144,
+    "nonzero_parity_moments": 17,
+    "parity_moments_verified": 32
+  },
+  "main_source_rows_and_derivatives": {
+    "auxiliary_orbits_rows": 336,
+    "diagonal_cells": 28,
+    "exact_derivative_decodings": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "test_theta": "3/2"
+  },
+  "nonconstant_outer_register": {
+    "actual_four_clone_wires": 288,
+    "distinct_native_positive_values": 4,
+    "independently_varied_matched_pins": 3,
+    "shift_pairs": 9,
+    "tested_sign_words": 8,
+    "toy_packet_L": 32,
+    "value_bit_lengths_by_weight": [
+      505,
+      565,
+      624,
+      684
+    ]
+  },
+  "physical_uniform_reduction": {
+    "actual_shifted_clause_networks": [
+      {
+        "L": 4,
+        "actual_wires": 320,
+        "balanced_toy": true,
+        "clause_set": [
+          [
+            -1,
+            -2
+          ]
+        ],
+        "full_interpolation": false,
+        "max_bits_in_exact_fraction": 514,
+        "max_component": 2,
+        "negative_samples": 1,
+        "odd_grid_nodes": 2,
+        "target_models": 3
+      },
+      {
+        "L": 16,
+        "actual_wires": 96,
+        "balanced_toy": false,
+        "clause_set": [
+          [
+            -1,
+            -2
+          ]
+        ],
+        "full_interpolation": true,
+        "max_bits_in_exact_fraction": 381,
+        "max_component": 2,
+        "negative_samples": 4,
+        "odd_grid_nodes": 5,
+        "target_models": 3
+      },
+      {
+        "L": 32,
+        "actual_wires": 320,
+        "balanced_toy": false,
+        "clause_set": [
+          [
+            -1,
+            2
+          ],
+          [
+            -1,
+            -2
+          ]
+        ],
+        "full_interpolation": true,
+        "max_bits_in_exact_fraction": 4751,
+        "max_component": 4,
+        "negative_samples": 8,
+        "odd_grid_nodes": 9,
+        "target_models": 2
+      }
+    ],
+    "exact_odd_root_sign_tests": 9,
+    "guarded_formula_comparisons": 60,
+    "printed_parameter_arithmetic": [
+      {
+        "L": 16777216,
+        "lambda": 1572864,
+        "native_bit_bound": true,
+        "planted_wires": 4
+      },
+      {
+        "L": 1099511627776,
+        "lambda": 2621440,
+        "native_bit_bound": true,
+        "planted_wires": 16
+      },
+      {
+        "L": 72057594037927936,
+        "lambda": 3670016,
+        "native_bit_bound": true,
+        "planted_wires": 70
+      },
+      {
+        "L": 4722366482869645213696,
+        "lambda": 4718592,
+        "native_bit_bound": true,
+        "planted_wires": 508
+      }
+    ]
+  },
+  "support_and_witnesses": {
+    "binomial_mean": "1/4",
+    "binomial_variance": "7/32",
+    "graph_vertices": 12,
+    "independent_candidate_vertices": 3,
+    "support_cylinder_unions": 1351
+  }
+}

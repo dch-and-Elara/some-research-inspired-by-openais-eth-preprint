@@ -1,0 +1,196 @@
+[
+  {
+    "residue_size": 2,
+    "jet_length": 3,
+    "messages": 1,
+    "loss": 0,
+    "output_precision": 1,
+    "full_raw_matrix_shape": [
+      8,
+      18
+    ],
+    "raw_smith_orders_all_fibers": {
+      "0": 6
+    },
+    "weighted_newton_orders_per_fiber": {
+      "0": 3
+    },
+    "coefficient_minima_per_fiber": {
+      "0": 4
+    },
+    "attainable_cyclic_lengths_all_fibers": {
+      "1": 6
+    },
+    "exact_width": 6,
+    "coefficient_upper_bound": 8
+  },
+  {
+    "residue_size": 2,
+    "jet_length": 3,
+    "messages": 1,
+    "loss": 1,
+    "output_precision": 1,
+    "full_raw_matrix_shape": [
+      64,
+      24
+    ],
+    "raw_smith_orders_all_fibers": {
+      "0": 6,
+      "1": 6
+    },
+    "weighted_newton_orders_per_fiber": {
+      "0": 3,
+      "1": 3
+    },
+    "coefficient_minima_per_fiber": {
+      "0": 4,
+      "1": 2
+    },
+    "attainable_cyclic_lengths_all_fibers": {
+      "1": 12
+    },
+    "exact_width": 12,
+    "coefficient_upper_bound": 12
+  },
+  {
+    "residue_size": 2,
+    "jet_length": 4,
+    "messages": 1,
+    "loss": 1,
+    "output_precision": 1,
+    "full_raw_matrix_shape": [
+      256,
+      40
+    ],
+    "raw_smith_orders_all_fibers": {
+      "0": 8,
+      "1": 10
+    },
+    "weighted_newton_orders_per_fiber": {
+      "0": 4,
+      "1": 5
+    },
+    "coefficient_minima_per_fiber": {
+      "0": 6,
+      "1": 3
+    },
+    "attainable_cyclic_lengths_all_fibers": {
+      "1": 18
+    },
+    "exact_width": 18,
+    "coefficient_upper_bound": 18
+  },
+  {
+    "residue_size": 2,
+    "jet_length": 5,
+    "messages": 1,
+    "loss": 1,
+    "output_precision": 1,
+    "full_raw_matrix_shape": [
+      1024,
+      60
+    ],
+    "raw_smith_orders_all_fibers": {
+      "0": 12,
+      "1": 10
+    },
+    "weighted_newton_orders_per_fiber": {
+      "0": 6,
+      "1": 5
+    },
+    "coefficient_minima_per_fiber": {
+      "0": 10,
+      "1": 4
+    },
+    "attainable_cyclic_lengths_all_fibers": {
+      "1": 22
+    },
+    "exact_width": 22,
+    "coefficient_upper_bound": 28
+  },
+  {
+    "residue_size": 2,
+    "jet_length": 3,
+    "messages": 1,
+    "loss": 1,
+    "output_precision": 2,
+    "full_raw_matrix_shape": [
+      512,
+      30
+    ],
+    "raw_smith_orders_all_fibers": {
+      "0": 6,
+      "1": 6
+    },
+    "weighted_newton_orders_per_fiber": {
+      "0": 3,
+      "1": 3
+    },
+    "coefficient_minima_per_fiber": {
+      "0": 4,
+      "1": 2,
+      "2": 3
+    },
+    "attainable_cyclic_lengths_all_fibers": {
+      "2": 12
+    },
+    "exact_width": 12,
+    "coefficient_upper_bound": 18
+  },
+  {
+    "residue_size": 2,
+    "jet_length": 2,
+    "messages": 2,
+    "loss": 1,
+    "output_precision": 1,
+    "full_raw_matrix_shape": [
+      256,
+      72
+    ],
+    "raw_smith_orders_all_fibers": {
+      "0": 12,
+      "1": 12
+    },
+    "weighted_newton_orders_per_fiber": {
+      "0": 3,
+      "1": 3
+    },
+    "coefficient_minima_per_fiber": {
+      "0": 3,
+      "1": 3
+    },
+    "attainable_cyclic_lengths_all_fibers": {
+      "1": 24
+    },
+    "exact_width": 24,
+    "coefficient_upper_bound": 24
+  },
+  {
+    "residue_size": 3,
+    "jet_length": 2,
+    "messages": 1,
+    "loss": 1,
+    "output_precision": 1,
+    "full_raw_matrix_shape": [
+      81,
+      18
+    ],
+    "raw_smith_orders_all_fibers": {
+      "0": 6,
+      "1": 6
+    },
+    "weighted_newton_orders_per_fiber": {
+      "0": 2,
+      "1": 2
+    },
+    "coefficient_minima_per_fiber": {
+      "0": 2,
+      "1": 2
+    },
+    "attainable_cyclic_lengths_all_fibers": {
+      "1": 12
+    },
+    "exact_width": 12,
+    "coefficient_upper_bound": 12
+  }
+]

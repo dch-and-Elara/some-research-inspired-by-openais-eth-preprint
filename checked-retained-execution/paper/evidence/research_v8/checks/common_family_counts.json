@@ -1,0 +1,58 @@
+{
+  "tests": [
+    {
+      "k": 1,
+      "cubic_vertices": 16,
+      "distinct_count_pairs": 2,
+      "distinct_counts_on_tested_words": 4,
+      "physical_formula_evaluations": 4
+    },
+    {
+      "k": 2,
+      "cubic_vertices": 22,
+      "distinct_count_pairs": 4,
+      "distinct_counts_on_tested_words": 7,
+      "physical_formula_evaluations": 8
+    },
+    {
+      "k": 3,
+      "cubic_vertices": 28,
+      "distinct_count_pairs": 8,
+      "distinct_counts_on_tested_words": 13,
+      "physical_formula_evaluations": 16
+    },
+    {
+      "k": 4,
+      "cubic_vertices": 34,
+      "distinct_count_pairs": 16,
+      "distinct_counts_on_tested_words": 24,
+      "physical_formula_evaluations": 0
+    },
+    {
+      "k": 5,
+      "cubic_vertices": 40,
+      "distinct_count_pairs": 32,
+      "distinct_counts_on_tested_words": 40,
+      "physical_formula_evaluations": 0
+    },
+    {
+      "k": 6,
+      "cubic_vertices": 46,
+      "distinct_count_pairs": 64,
+      "distinct_counts_on_tested_words": 77,
+      "physical_formula_evaluations": 0
+    },
+    {
+      "k": 7,
+      "cubic_vertices": 52,
+      "distinct_count_pairs": 128,
+      "distinct_counts_on_tested_words": 146,
+      "physical_formula_evaluations": 0
+    }
+  ],
+  "finite_expansion": {
+    "core": "5/3",
+    "cubic_completion": "5/7",
+    "proved_general_lower_bound_for_this_core": "5/68"
+  }
+}

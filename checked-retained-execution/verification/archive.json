@@ -1,0 +1,47 @@
+{
+  "archive_bytes": 7661920,
+  "archive_crc_and_unique_entries_verified": true,
+  "archive_sha256": "8ceca87d49d8bcecfc1fc2b3ee11ef4a6ff979a4e532f69c526aa1b1f2c2869d",
+  "export_comparison": {
+    "binary": {
+      "endpoint_audit_sources": 1,
+      "project_sources": 1483,
+      "sha256_mismatches": 0
+    },
+    "main": {
+      "endpoint_audit_sources": 1,
+      "project_sources": 3136,
+      "sha256_mismatches": 0
+    }
+  },
+  "real_replay_entry_from_extracted_zip": {
+    "binary": {
+      "attempted": 2,
+      "endpoints": null,
+      "failed_modules": [],
+      "module_axiom_reports": 28,
+      "modules": 2,
+      "passed": true,
+      "project_objects_reused": 0,
+      "scope": "target closure",
+      "targets": [
+        "NativeProbeRing"
+      ],
+      "variant": "binary"
+    },
+    "main": {
+      "attempted": 5,
+      "endpoints": null,
+      "failed_modules": [],
+      "module_axiom_reports": 25,
+      "modules": 5,
+      "passed": true,
+      "project_objects_reused": 0,
+      "scope": "target closure",
+      "targets": [
+        "J2R119ProbabilityBridge"
+      ],
+      "variant": "main"
+    }
+  }
+}

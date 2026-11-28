@@ -1,0 +1,49 @@
+{
+  "both_variants_passed": true,
+  "mode": "incremental leaf verification and complete endpoint audit",
+  "original_joint_receipt_sha256": "5d1215cbe3ecd36d845a7bdec3a43179efd4fa64712f751af7161ca8ea75b88f",
+  "original_overlay_sha256": "0d9c234a58d68abd271b1804ad819e580d1a04fc4dec20eda234279c5193a7a7",
+  "variants": {
+    "binary": {
+      "endpoint_axiom_reports": 35,
+      "endpoint_log_sha256": "61ebb8a7507bb22450bad2cf08ccb83dc2afb171987e9bb721139fd861638dec",
+      "module_axiom_reports": 5505,
+      "modules": 1483,
+      "origin_run_module_counts": {
+        "release-run-j6-shape-03": 1479,
+        "release-run-literal-06": 2,
+        "release-run-space-count-04": 2
+      },
+      "original_environment_sha256": "181398b523f5f14e6458bbb1173cbe1d2a40558ac30a177f818c3a9e72679a17",
+      "original_plan_sha256": "02ced7321e73d133486cd44a0524183b2a35cb0ba2fe964c6afc6c123ba43b3b",
+      "original_summary_sha256": "c5e493db4967a95c67ca0b3396652b0d91cd0e65df0064dcc077c5878ec2c9f7",
+      "original_verified_parent_manifest_sha256": "53e5767ce831d2f64b46ebbce8142715420af080b06d9e30bce30cec3ce6e6ff",
+      "recompiled_in_final_pass": [
+        "CanonicalFreshPhysicalTime",
+        "Paper6R119LiteralSourceRun"
+      ],
+      "same_run_checks": 2,
+      "verified_prior_modules": 1481
+    },
+    "main": {
+      "endpoint_axiom_reports": 36,
+      "endpoint_log_sha256": "f9e88f83f81db701331d8e949336ecb52e4ff76f9180b485c633a3d022a60577",
+      "module_axiom_reports": 11810,
+      "modules": 3136,
+      "origin_run_module_counts": {
+        "release-run-j2-02": 2703,
+        "release-run-literal-06": 1,
+        "release-run-space-count-04": 432
+      },
+      "original_environment_sha256": "7122c86f1636ba395662b306c0b77f9e9e2c09605ee9932808b4cdef92ceb9cb",
+      "original_plan_sha256": "e5a21de79ea20b031ed191a97a9afa32781c879532b0c2ed07888e3b9b5903ec",
+      "original_summary_sha256": "70ccd674a476012f6da973b8bbc5ebd81ef9c5ac183e786867bec5e216243766",
+      "original_verified_parent_manifest_sha256": "7134ca674a2f188a5ff975049592873173724e6831c417cf08a620b687ade6bd",
+      "recompiled_in_final_pass": [
+        "Paper6R119LiteralSourceRun"
+      ],
+      "same_run_checks": 0,
+      "verified_prior_modules": 3135
+    }
+  }
+}

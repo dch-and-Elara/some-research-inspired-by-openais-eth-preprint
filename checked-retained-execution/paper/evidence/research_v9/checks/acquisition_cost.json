@@ -1,0 +1,105 @@
+{
+  "cauchy_displacements": 56,
+  "exhaustively_checked_truth_table_inputs": 2120,
+  "fixed_public_host": {
+    "fixed_physical_wires": 512,
+    "load_per_ordered_cell": 8,
+    "origin": 64,
+    "shifted_counts": [
+      8,
+      6,
+      6,
+      5,
+      6,
+      5,
+      5,
+      4
+    ],
+    "switched_graphs": 8,
+    "vertices": 3
+  },
+  "packed_cubic_graphs": {
+    "K3_3": {
+      "full_origin": 64,
+      "full_shifted_count": 15,
+      "load_per_ordered_cell": 8,
+      "masks": 4,
+      "physical_wires": 512
+    },
+    "K4": {
+      "full_origin": 16,
+      "full_shifted_count": 5,
+      "load_per_ordered_cell": 8,
+      "masks": 64,
+      "physical_wires": 512
+    },
+    "triangular_prism": {
+      "full_origin": 64,
+      "full_shifted_count": 13,
+      "load_per_ordered_cell": 8,
+      "masks": 4,
+      "physical_wires": 512
+    }
+  },
+  "physical_read_once_CNFs": {
+    "three_vertex_path": [
+      {
+        "factor_bit_length": 289,
+        "physical_origin": 27,
+        "physical_wires": 384,
+        "planted_physical_wires": 24,
+        "recovered_exact_edge_covers": 1,
+        "shifted_bit_length": 289
+      },
+      {
+        "factor_bit_length": 251,
+        "physical_origin": 27,
+        "physical_wires": 384,
+        "planted_physical_wires": 24,
+        "recovered_exact_edge_covers": 1,
+        "shifted_bit_length": 251
+      }
+    ],
+    "triangle": [
+      {
+        "factor_bit_length": 242,
+        "physical_origin": 27,
+        "physical_wires": 320,
+        "planted_physical_wires": 18,
+        "recovered_exact_edge_covers": 4,
+        "shifted_bit_length": 244
+      },
+      {
+        "factor_bit_length": 210,
+        "physical_origin": 27,
+        "physical_wires": 320,
+        "planted_physical_wires": 18,
+        "recovered_exact_edge_covers": 4,
+        "shifted_bit_length": 212
+      }
+    ],
+    "two_by_three": [
+      {
+        "factor_bit_length": 578,
+        "physical_origin": 6075,
+        "physical_wires": 768,
+        "planted_physical_wires": 48,
+        "recovered_exact_edge_covers": 25,
+        "shifted_bit_length": 582
+      },
+      {
+        "factor_bit_length": 501,
+        "physical_origin": 6075,
+        "physical_wires": 768,
+        "planted_physical_wires": 48,
+        "recovered_exact_edge_covers": 25,
+        "shifted_bit_length": 505
+      }
+    ]
+  },
+  "scope": "Toy packings have r=2, a=3, L=8. The written proof gives the active r=64 parameters.",
+  "weighted_oracle_exercise": {
+    "coefficient_checks": 240,
+    "modular_accepting_paths": 13729
+  }
+}
