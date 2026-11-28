@@ -1,0 +1,3 @@
+'P6Joint.normalized_tail_term_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.anchored_product_expand' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.anchored_coeff_small' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,2 @@
+'P6Joint.PartitionPlan.exact_value_and_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.PhysicalGroupPlan.correct' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,4 @@
+'Paper6JointSeating.uniform_joint_potential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper6JointSeating.centered_cell' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper6JointSeating.centered_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper6JointSeating.squareDeviation_le_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,20 @@
+[
+  "P6Joint",
+  "P6JointActual",
+  "P6JointReceiver",
+  "P6JointFactors",
+  "P6JointPartition",
+  "P6JointActualPartitions",
+  "P6JointReceiverPartitions",
+  "P6JointBaseAgnostic",
+  "P6SeparatorCost",
+  "P6JointDP",
+  "P6JointPool",
+  "P6JointPhysicalPool",
+  "P6JetPrimitive",
+  "P6ScopePrimitive",
+  "P6ActualCauchy",
+  "P6ActualDiagonal",
+  "P6ActualDiagonalScope",
+  "P6ActualDiagonalSource"
+]

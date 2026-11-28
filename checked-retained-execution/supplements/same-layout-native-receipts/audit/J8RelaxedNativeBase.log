@@ -1,0 +1,3 @@
+'J8Physical.Relaxed.physical_base_at_original_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J8Physical.Relaxed.genuine_base_is_own_divX' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J8Physical.Relaxed.genuine_samepage_box' depends on axioms: [propext, Classical.choice, Quot.sound]

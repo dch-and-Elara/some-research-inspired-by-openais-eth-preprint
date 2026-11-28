@@ -1,0 +1,3 @@
+'Paper6JointSeating.cloneWires_nonpin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper6JointSeating.clone_port_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper6JointSeating.match_clone_cap' depends on axioms: [propext, Classical.choice, Quot.sound]

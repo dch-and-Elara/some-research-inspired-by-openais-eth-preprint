@@ -1,0 +1,2 @@
+'J8Physical.Relaxed.chart_first_equals_physical_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J8Physical.Relaxed.same_public_high_decodes_all_signs' depends on axioms: [propext, Classical.choice, Quot.sound]

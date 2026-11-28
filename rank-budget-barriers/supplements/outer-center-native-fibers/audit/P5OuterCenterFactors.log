@@ -1,0 +1,8 @@
+'Paper5.OuterCenters.Factors.innerMate_exact_graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.Factors.factor_all_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.Factors.exterior_flip_isolates_exterior_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Paper5.OuterCenters.Factors.triangle_flip_isolates_triangle_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

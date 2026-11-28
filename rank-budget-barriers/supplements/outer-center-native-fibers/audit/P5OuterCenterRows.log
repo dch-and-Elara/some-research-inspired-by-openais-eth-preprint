@@ -1,0 +1,4 @@
+'Paper5.OuterCenters.outer_slot_unmatched' depends on axioms: [propext, Quot.sound]
+'Paper5.OuterCenters.crossNorm_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.localValue_zero_of_unmatched' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.sentry_actual_row_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

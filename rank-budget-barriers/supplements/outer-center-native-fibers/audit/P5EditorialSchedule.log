@@ -1,0 +1,1 @@
+'P5Editorial.eventual_printed_log_ambient_box' depends on axioms: [propext, Classical.choice, Quot.sound]

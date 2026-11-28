@@ -1,0 +1,5 @@
+'P6Joint.diagonal_load_from_source_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.dense_of_rounded_deviation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.diagonal_packet_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.diagonal_cell_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.exists_dense_actual_diagonal_page' depends on axioms: [propext, Classical.choice, Quot.sound]

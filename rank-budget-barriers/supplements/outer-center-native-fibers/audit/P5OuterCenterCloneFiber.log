@@ -1,0 +1,3 @@
+'Paper5.OuterCenters.Cloned.nativeRead_eq_of_group' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.Cloned.nativeRead_zero_of_robust' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.Cloned.genuine_outer_child_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]

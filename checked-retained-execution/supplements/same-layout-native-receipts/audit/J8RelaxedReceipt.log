@@ -1,0 +1,3 @@
+'J8Physical.Relaxed.chart_one_hit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J8Physical.Relaxed.read_chart_from_same_children' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J8Physical.Relaxed.signed_first_from_verified_receipts' depends on axioms: [propext, Classical.choice, Quot.sound]

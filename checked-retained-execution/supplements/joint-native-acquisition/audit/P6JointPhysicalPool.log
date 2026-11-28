@@ -1,0 +1,3 @@
+'P6Joint.physicalPool_same_native_receipt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.physicalPool_same_10M_receipt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.slotFromPool_exact' depends on axioms: [propext, Classical.choice, Quot.sound]

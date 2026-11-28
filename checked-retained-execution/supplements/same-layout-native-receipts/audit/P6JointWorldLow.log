@@ -1,0 +1,4 @@
+'Paper6JointSeating.actualCloneCert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper6JointSeating.joint_atlas_same_geometry_all_nonzero_erases' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

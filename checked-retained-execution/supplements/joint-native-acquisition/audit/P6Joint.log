@@ -1,0 +1,5 @@
+'P6Joint.integralChild_linear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.integralChild_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.jointSource_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.jointObservation_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.jointObservation_reduce' depends on axioms: [propext, Classical.choice, Quot.sound]

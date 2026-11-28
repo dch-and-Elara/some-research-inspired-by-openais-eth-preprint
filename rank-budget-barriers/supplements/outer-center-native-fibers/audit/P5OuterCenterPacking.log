@@ -1,0 +1,3 @@
+'Paper5.OuterCenters.exceptions_packet_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.budget_from_printed_packets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.exteriorMate_edge' depends on axioms: [propext, Classical.choice, Quot.sound]

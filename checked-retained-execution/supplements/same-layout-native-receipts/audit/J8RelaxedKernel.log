@@ -1,0 +1,2 @@
+'J8Physical.Relaxed.physicalArgument_pin_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J8Physical.Relaxed.center_to_compiled_argument' depends on axioms: [propext, Classical.choice, Quot.sound]

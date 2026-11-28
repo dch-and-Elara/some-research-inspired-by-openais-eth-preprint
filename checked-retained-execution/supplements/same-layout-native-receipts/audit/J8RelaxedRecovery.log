@@ -1,0 +1,4 @@
+'J8Physical.Relaxed.physicalMarked_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J8Physical.Relaxed.physicalMarked_sign_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J8Physical.Relaxed.publicSiblings_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J8Physical.Relaxed.recover_physical_tile_exact' depends on axioms: [propext, Classical.choice, Quot.sound]

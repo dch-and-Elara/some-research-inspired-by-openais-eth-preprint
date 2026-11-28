@@ -1,0 +1,2 @@
+'Paper5.OuterCenters.outer_fraction_window' depends on axioms: [propext, Quot.sound]
+'Paper5.OuterCenters.positive_outer_active' depends on axioms: [propext, Classical.choice, Quot.sound]

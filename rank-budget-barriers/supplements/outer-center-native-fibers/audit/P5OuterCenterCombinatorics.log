@@ -1,0 +1,3 @@
+'Paper5.OuterCenters.bad_card_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.exterior_avoids_bad' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.good_has_sentry' depends on axioms: [propext, Classical.choice, Quot.sound]

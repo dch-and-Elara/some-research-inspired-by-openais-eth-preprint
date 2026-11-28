@@ -1,0 +1,2 @@
+'Paper5.OuterCenters.fiber_no_decoder' depends on axioms: [Quot.sound]
+'Paper5.OuterCenters.child_fiber_implies_product_fiber' depends on axioms: [propext, Quot.sound]

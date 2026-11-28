@@ -1,0 +1,1 @@
+'Paper6JointSeating.matching_from_cell_quota' depends on axioms: [propext, Classical.choice, Quot.sound]

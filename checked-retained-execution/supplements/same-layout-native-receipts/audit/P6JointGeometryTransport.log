@@ -1,0 +1,2 @@
+'Paper6JointSeating.relaxed_endpoint_of_raw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper6JointSeating.off_of_raw_label' depends on axioms: [propext, Classical.choice, Quot.sound]

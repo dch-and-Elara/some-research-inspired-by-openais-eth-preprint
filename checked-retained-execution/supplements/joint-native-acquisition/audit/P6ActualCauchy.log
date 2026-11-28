@@ -1,0 +1,3 @@
+'P6Joint.nonzero_binary_probe_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.unit_actual_normFactor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.actual_cauchy_survives_unit' depends on axioms: [propext, Classical.choice, Quot.sound]

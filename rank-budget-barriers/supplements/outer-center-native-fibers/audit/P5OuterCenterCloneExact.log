@@ -1,0 +1,2 @@
+'Paper5.OuterCenters.Cloned.rootBits_small_for_cloned' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.Cloned.actual_cloned_count_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]

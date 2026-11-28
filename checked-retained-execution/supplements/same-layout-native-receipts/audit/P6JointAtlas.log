@@ -1,0 +1,6 @@
+'Paper6JointSeating.clone_wire_is_clone' does not depend on any axioms
+'Paper6JointSeating.clone_wire_same_row' does not depend on any axioms
+'Paper6JointSeating.clone_wire_of_injOn' depends on axioms: [propext]
+'Paper6JointSeating.associatedClone_eq_of_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper6JointSeating.clone_port_owner_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper6JointSeating.clone_port_owner_reverse' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,2 @@
+'Paper5.OuterCenters.actualPacket_zero_of_sentry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.actualChild_zero_of_sentry' depends on axioms: [propext, Classical.choice, Quot.sound]

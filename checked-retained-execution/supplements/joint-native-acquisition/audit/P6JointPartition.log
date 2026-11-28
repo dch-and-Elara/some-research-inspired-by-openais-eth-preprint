@@ -1,0 +1,2 @@
+'P6Joint.liftedGroup_eval_partition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.jointObservation_as_partitions' depends on axioms: [propext, Classical.choice, Quot.sound]

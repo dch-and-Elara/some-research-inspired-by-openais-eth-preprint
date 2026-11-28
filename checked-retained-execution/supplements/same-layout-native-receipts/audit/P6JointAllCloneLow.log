@@ -1,0 +1,2 @@
+'Paper6JointSeating.all_clone_guard_card_le_kept' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper6JointSeating.actual_all_clone_nonzero_menu_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

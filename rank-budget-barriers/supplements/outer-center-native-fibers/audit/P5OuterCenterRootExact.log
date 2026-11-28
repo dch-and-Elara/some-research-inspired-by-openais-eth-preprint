@@ -1,0 +1,3 @@
+'Paper5.OuterCenters.every_source_outer_zero_child' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.rootBits_small_for_uncloned' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.positive_outer_active' depends on axioms: [propext, Classical.choice, Quot.sound]

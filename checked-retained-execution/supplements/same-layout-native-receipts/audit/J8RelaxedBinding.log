@@ -1,0 +1,2 @@
+'J8Physical.Relaxed.scalar_high_is_compiled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J8Physical.Relaxed.seated_actual_children_high_observation' depends on axioms: [propext, Classical.choice, Quot.sound]

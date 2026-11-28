@@ -1,0 +1,1 @@
+'Paper6JointSeating.printed_all_nonzero_center_erasure' depends on axioms: [propext, Classical.choice, Quot.sound]

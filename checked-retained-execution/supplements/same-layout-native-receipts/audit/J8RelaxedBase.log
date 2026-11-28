@@ -1,0 +1,3 @@
+'J8Physical.Relaxed.constructed_base_agrees' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J8Physical.Relaxed.liftedGroup_matches' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J8Physical.Relaxed.liftedPublic_matches' depends on axioms: [propext, Classical.choice, Quot.sound]

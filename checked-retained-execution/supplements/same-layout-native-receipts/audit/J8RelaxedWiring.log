@@ -1,0 +1,3 @@
+'J8Physical.Relaxed.localHit_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J8Physical.Relaxed.localHit_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J8Physical.Relaxed.no_repeated_shift_port' depends on axioms: [propext, Classical.choice, Quot.sound]

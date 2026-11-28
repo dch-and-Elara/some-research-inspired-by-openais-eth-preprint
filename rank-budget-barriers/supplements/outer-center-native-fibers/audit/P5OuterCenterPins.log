@@ -1,0 +1,4 @@
+'Paper5.OuterCenters.pin_owner_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.canonicalLift_zero_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.pinOldState_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Paper5.OuterCenters.pinOldState_eq_of_group' depends on axioms: [propext, Classical.choice, Quot.sound]

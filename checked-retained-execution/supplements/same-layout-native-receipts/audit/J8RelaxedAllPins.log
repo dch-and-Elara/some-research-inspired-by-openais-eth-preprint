@@ -1,0 +1,3 @@
+'J8Physical.Relaxed.tile_decoder_public' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J8Physical.Relaxed.exact_physical_tile_from_receipts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'J8Physical.Relaxed.publicAllPinDecoder_exact' depends on axioms: [propext, Classical.choice, Quot.sound]

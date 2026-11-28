@@ -1,0 +1,6 @@
+'Paper5.OuterCenters.Factors.uncloned_both_isolated_native_fibers' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Paper5.OuterCenters.Factors.cloned_both_isolated_native_fibers' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

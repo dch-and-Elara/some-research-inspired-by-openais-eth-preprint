@@ -1,0 +1,6 @@
+'P6Joint.cutContraction_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.substitute_at_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.BoundaryPlan.tableOps_le' depends on axioms: [propext, Quot.sound]
+'P6Joint.BoundaryPlan.from_padded_assignment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.BoundaryPlan.pooled_table_arithmetic_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+'P6Joint.BoundaryPlan.denotation_eq_partition_of_witness' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,3 @@
+'P6Joint.SlotRequests.assemble_pool_correct' depends on axioms: [propext, Quot.sound]
+'P6Joint.SlotRequests.assemblyOps_le' depends on axioms: [propext, Quot.sound]
+'P6Joint.capped_pool_and_assembly_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
