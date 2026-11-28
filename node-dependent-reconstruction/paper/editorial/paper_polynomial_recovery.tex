@@ -1,0 +1,777 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  10pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  % Use the default Latin Modern fonts supplied with TeX.
+
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=24mm]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{microtype}
+\setlength{\emergencystretch}{3em}
+\widowpenalty=10000
+\clubpenalty=10000
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Rank lower bounds for node-dependent polynomial reconstruction in SAT counting},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Rank lower bounds for node-dependent polynomial reconstruction in
+SAT counting}
+\author{Chuhang Ding (Peking University)}
+\date{25 November 2026}
+
+\begin{document}
+\maketitle
+
+\subsection{Abstract}\label{abstract}
+
+Polynomial interpolation algorithms for counting satisfying assignments
+partition the Boolean variables into groups at each interpolation point.
+A factor reads its own group and linear measurements of the other
+groups. We prove two rank inequalities for this interface when the
+groups, measurements and factor assignments can all vary with the point.
+The first bounds the total rank of measurements on a set of actual
+variables by the imbalance between source and target group counts on
+that set, less the degree budget of a principal determinant. A random
+choice of the set gives a rank cost of order \(n/\sqrt G\) on expanding
+instances when the relative degree is small, where \(G\) is the maximum
+group size. The second inequality uses a tensor-valued polynomial test
+and depends on how often each selected incidence crosses groups. With
+balanced groups and a linear pre-substitution degree charge
+\(d_0\ge c_0n\), consider the rational counting routine that visits each
+Boolean-reachable measurement tuple, enumerates its prescribed Taylor
+subsets and scans assignments of a largest group. The first inequality
+gives a \(2^{\Omega(n^{2/3})}\) lower bound for this routine with
+arbitrarily many interpolation points. The instances can be graph 2-CNFs
+with at most three occurrences per variable. Under the
+polynomial-dimensional schedule range of the original construction the
+second inequality gives \(2^{\Omega(n\log\log n/\sqrt{\log n})}\). This
+last exponent was already known for a static reconstruction template.
+Here it holds for arbitrary node-dependent polynomial layouts under the
+stated schedule and visit hypotheses.
+
+\subsection{1. Introduction}\label{introduction}
+
+Consider the task of summing a product of local constraint functions
+over the Boolean cube. If each factor reads variables from just one
+group, the sum factors into a product of group sums. The rational
+interpolation algorithm of OpenAI {[}1{]} allows factors to cross
+groups. At a nonzero interpolation point each factor reads its assigned
+group and a few linear measurements from the other groups. Fixing the
+vector of measurements again separates the sum. At the origin the
+original factors must be recovered. A low-degree polynomial row for each
+factor-variable incidence connects these requirements across points.
+
+What cost is intrinsic to these measurements? The construction in
+{[}1{]} begins with a much larger set of auxiliary coordinates. Its
+placement map subsequently replaces several of those coordinates by the
+same Boolean variable and fixes others to zero. Measuring all auxiliary
+rows in every group can create zero rows, repeated rows, and integer
+tuples that no Boolean assignment realizes. A rank bound before
+placement need not survive these operations. A count of every point of a
+bounding box can also exceed the size of the reachable image. We study
+the matrices on the variables of a single interpolation call after all
+identifications. The factor assigned to a group and the row space
+available from another group may be chosen independently at every point.
+
+\textbf{Contributions.} For one chosen output incidence per variable,
+the row polynomials form a square matrix with identity constant term. We
+derive two finite estimates from this matrix. A principal minor bounds
+the imbalance of its input and output group counts over any set of nodes
+(Theorem 1). Averaging over a random half of the variables gives a lower
+bound on actual measurement rank (Corollary 2). A different argument
+uses two-dimensional test spaces at the selected nodes. It yields a rank
+bound in terms of each variable's number of source-target mismatches
+(Theorem 4), and a rank of order \(n/(R+1)\) on some node when the
+number of nodes is large compared with the square of the row degree
+\(R\) (Corollary 5).
+
+We apply these estimates to explicit operations of a counting routine.
+For infinitely many bounded-occurrence graph formulas, enumerating every
+Boolean-reachable measurement tuple, visiting the Taylor subsets
+prescribed by a linear pre-substitution degree bound, and scanning a
+largest group takes \(2^{\Omega(n^{2/3})}\) visits for all numbers of
+interpolation points (Theorem 3). If the source schedule satisfies
+\(r^{2Q}\le n^A\), where \(r\) is the number of groups, \(Q\) the number
+of points and \(A\) a fixed constant, the bound strengthens to
+\(2^{\Omega(n\log\log n/\sqrt{\log n})}\) (Theorem 6). A parsimonious
+extension carries an arbitrary input formula into an instance with the
+required expanding scopes.
+
+\textbf{How the bounds fit together.} Section 2 separates the linear
+recovery interface from the three charged operations. Sections 3 and 4
+prove the two rank estimates by different arguments. The arbitrary-node
+visit bound uses the principal-minor estimate; Section 5 uses the
+mismatch estimate on the large-node side of the restricted-schedule
+argument. Appendix A supplies the graph family and the parsimonious
+extension with the scope structure used by these arguments.
+
+\textbf{Previous barriers.} Dias and Lima {[}2, Lemma 6.2 and Theorems
+7.1 and 8.1{]} use a product of the own coefficients of incidences to
+constrain the structure of a formula at an interpolation point. Among
+their bounds is \(2^{\Omega(\sqrt{\operatorname{tw}})}\) for the
+clause-product scheme in a model that also treats interaction-graph
+dynamic programming. Our principal determinants include all entries of a
+selected square submatrix. Their root multiplicities control rank
+deficiencies, which can be bounded using the imbalance of source and
+target counts.
+
+Tulsyan {[}3, Theorem 5.1 and Proposition 5.2{]} proves a rank lower
+bound using a triangular submatrix of \(I-M_0\), where a single matrix
+\(M_0\) satisfies a Hamming-distance support constraint. With the
+Arora--Rao--Vazirani structure theorem, his result gives the exponent
+\(n\log\log n/\sqrt{\log n}\) on linked bounded-occurrence formulas
+across arbitrary schedules in that template. His companion {[}4,
+Sections 5--7{]} distinguishes the static template from the more
+permissive point-dependent reconstruction condition. Our
+restricted-schedule theorem attains this exponent for the latter
+condition on physical variable groups. Its numerical schedule
+restriction remains essential to the proof. The arbitrary-schedule
+theorem gives the exponent \(n^{2/3}\) under explicit visits.
+
+The main theorem of {[}1{]} uses a separate tensor contraction in
+Appendix D. Its computation does not enumerate the Taylor subsets or
+rational measurement images considered here. All runtime bounds below
+concern the stated interpolation routine.
+
+\subsection{2. Actual-variable layouts and the work
+measure}\label{actual-variable-layouts-and-the-work-measure}
+
+Let there be \(N\) Boolean variables and a finite list of factors with
+specified scopes. Let \(\lambda_1,\ldots,\lambda_Q\) be distinct nonzero
+rational numbers. At point \(t\) let \(S_{t,1},\ldots,S_{t,r}\)
+partition the variables, allowing empty groups. Write \(a_v(t)\) for the
+group of variable \(v\), and \(b_f(t)\) for the group assigned to factor
+\(f\). Group \(g\) has a rational measurement matrix \(C_{t,g}\) with
+columns indexed by \(S_{t,g}\). An incidence \((f,v)\) has a polynomial
+row \(P_{f,v}(X)\) of degree at most \(R\) such that
+
+\[
+ P_{f,v}(0)=e_v^\top,\qquad
+ P_{f,v}(\lambda_t)|_{S_{t,g}}\in\operatorname{rowspan}C_{t,g}
+             \quad\text{whenever } g\ne b_f(t).                       \tag{1}
+\]
+
+This is the linear part of Definition 3.1 of {[}1{]}. The source
+additionally bounds coefficient heights for bit complexity. The two rank
+inequalities allow arbitrary rational coefficients. Their hypotheses
+impose no relation between the measurement matrices at different nodes.
+
+Fix a nonempty set \(V\) of variables and an incident factor \(f(v)\)
+for each \(v\in V\). With rows \(P_{f(v),v}\) and input columns \(V\),
+form \(P(X)\in\mathbb Q[X]^{V\times V}\). Write \(b_v(t)=b_{f(v)}(t)\).
+For \(U\subseteq V\) let
+
+\[
+ m_t(U)=\sum_{g=1}^{r}\operatorname{rank}\!\left(
+                  C_{t,g}|_{U\cap S_{t,g}}\right).
+\]
+
+The restriction always means retaining all rows and the indicated
+columns. With \(C_t\) the block-diagonal matrix of the group maps
+restricted to \(V\), (1) gives
+
+\[
+ P(0)=I_V,\qquad P(\lambda_t)=D_t C_t+L_t,\qquad
+ L_t[u,v]=0\quad\text{if }a_v(t)\ne b_u(t).                          \tag{2}
+\]
+
+To see this, represent the restricted coefficients of each output on
+each foreign group as a linear combination of that group's measurement
+rows. Subtracting these combinations leaves an output supported on its
+assigned group. Further restriction of inputs and outputs to \(U\)
+preserves the decomposition.
+
+Here \(N\) is the total number of physical Boolean variables, whereas
+\(|V|\) is the size of the square test matrix. The parameters \(Q\) and
+\(r\) count nodes and groups, respectively, and \(R\) bounds the degree
+of each incidence row, not the degree of the composed counting
+polynomial. The rank \(m_t(U)\) concerns the measurement maps restricted
+to the selected inputs; it is not the number of rows read by the
+routine.
+
+The jointly reachable measurement image at \(t\) is
+
+\[
+  \mathcal Y_t=\{(C_{t,g}x|_{S_{t,g}})_{g=1}^{r}:x\in\{0,1\}^N\}.
+\]
+
+For each \(U\subseteq V\), its cardinality is at least \(2^{m_t(U)}\).
+Indeed, choose independent columns of maximal number in each restricted
+group matrix. Their Boolean subset sums are distinct, and choices in
+disjoint groups multiply. One may fix all other bits to zero.
+
+We state the cost assumptions separately from the algebraic model. Let
+\(T_{\rm run}\) count elementary record visits, or operations that
+charge at least a constant for each visit. In the balanced model
+\(|S_{t,g}|\le2N/r\). The three operations charged are as follows.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  At every node the routine visits each member of \(\mathcal Y_t\) at
+  least once. A tuple is reachable if some Boolean input produces it,
+  even when the final weighted sum on its fiber is zero.
+\item
+  At some node the routine visits each subset of \([N]\) of size at most
+  \(s=\min(N,\lfloor d_0R/Q\rfloor)\), where \(d_0\ge c_0N\) for fixed
+  \(c_0>0\).
+\item
+  At some partition it scans all Boolean assignments on a largest group.
+\end{enumerate}
+
+These hypotheses turn algebraic bounds into visit bounds: the rank
+controls the number of distinct reachable tuples, the Taylor cutoff
+controls the number of subset records, and the largest group controls
+the number of scanned assignments. This accounting does not charge
+merely for an object admitting a large representation. Nor does an
+elementary record visit specify the bit cost of rational arithmetic.
+
+The first operation can cost substantially less than enumerating the
+full integer box used in the source. The second is the subset visit of a
+fixed-substitution Taylor evaluator. For the product of separate binary
+clause indicators, \(d_0\) can be taken as the product degree in
+independent incidence indeterminates. We assume the indicated
+enumeration even if the final univariate polynomial for a particular
+input happens to have smaller degree. The third operation costs at least
+\(2^{N/r}\) visits. The nodes witnessing the three costs may differ.
+
+\subsection{3. Principal determinants and group
+imbalance}\label{principal-determinants-and-group-imbalance}
+
+For fixed outputs \(f(v)\), let \(A_g^U(t)\) count \(v\in U\) with
+source \(a_v(t)=g\), and let \(B_g^U(t)\) count \(v\in U\) with target
+\(b_v(t)=g\).
+
+\textbf{Theorem 1 (principal-subset imbalance).} For every
+\(U\subseteq V\) and every set \(T\) of nodes,
+
+\[
+ \sum_{t\in T}m_t(U)+R|U|
+ \ \ge\ \frac12\sum_{t\in T}\sum_g|A_g^U(t)-B_g^U(t)|.             \tag{3}
+\]
+
+\textbf{Proof.} The principal submatrix \(P_{U,U}(X)\) has identity
+constant term. Its determinant is nonzero and has degree at most
+\(R|U|\). At node \(\lambda_t\) its order of vanishing is at least the
+nullity of \(P_{U,U}(\lambda_t)\). To verify this, apply invertible
+constant row operations that make as many evaluated rows zero as the
+nullity. Every such polynomial row contributes a factor \(X-\lambda_t\)
+to the determinant. Distinct nodes contribute relatively prime factors,
+giving
+
+\[
+ \sum_{t\in T}\operatorname{nullity}P_{U,U}(\lambda_t)\le R|U|.      \tag{4}
+\]
+
+After grouping the rows of \(L_{t;U,U}\) by target and the columns by
+source, the remaining blocks at group \(g\) are \(B_g^U(t)\) by
+\(A_g^U(t)\). Its rank is at most \(\sum_g\min(A_g^U(t),B_g^U(t))\).
+Both group-count sequences sum to \(|U|\), so this rank bound equals
+\(|U|-\tfrac12\sum_g|A_g^U(t)-B_g^U(t)|\). The measured part of (2) on
+\(U\) has rank at most \(m_t(U)\). Adding the two rank bounds,
+rearranging and using (4) proves (3). The empty principal set gives zero
+on both sides. \(\square\)
+
+For a graph application, we choose \(f(v)\) using a bounded set of
+candidate incidences. Say that \(V\), of size \(n\), has a collection of
+candidate factors with parameters \(\delta,\Delta\) if each \(v\) has a
+nonempty list of at most \(\Delta\) incident factors and at every node
+at least \(\delta n\) pairs on these lists have \(a_v(t)\ne b_f(t)\).
+Write \(\beta=\delta/\Delta\).
+
+\textbf{Corollary 2 (rank after restricting a principal set).} If no
+group contains more than \(G\) variables of \(V\), then
+
+\[
+ \frac1Q\sum_t m_t(V)+\frac{nR}{2Q}
+    \ \ge\ \frac{\beta n}{48\sqrt{2G}} .                            \tag{5}
+\]
+
+\textbf{Proof.} For each variable, select the factor on its list that
+maximizes its number of mismatches over all nodes. Comparing this
+maximum with its list average gives at least \(\beta nQ\) mismatches,
+summed over selected variables and nodes. Now choose \(U\) by keeping
+each variable independently with probability \(1/2\).
+
+Fix one node and group. Among the selected incidences on \(V\), let
+\(x\) count those starting in that group and ending elsewhere, and \(y\)
+those ending there and starting elsewhere. The two collections involve
+disjoint variables. Matched incidences cancel from the group-count
+difference. Consequently
+
+\[
+ A_g^U(t)-B_g^U(t)\ \stackrel{\rm law}{=}\ (x-y+S_{x+y})/2 ,
+\]
+
+where \(S_h\) is the sum of \(h\) independent fair signs. Symmetry and
+the triangle inequality give \(\mathbb E|z+S_h|\ge\mathbb E|S_h|\) for
+every \(z\). For \(h\ge1\), \(\mathbb E S_h^2=h\) and
+\(\mathbb E S_h^4=3h^2-2h\le3h^2\). On the event \(E=\{S_h^2\ge h/2\}\)
+one has \(\mathbb E[S_h^2{\bf1}_E]\ge h/2\). Cauchy--Schwarz gives
+\(\Pr(E)\ge1/12\). It follows that
+
+\[
+ \mathbb E|A_g^U(t)-B_g^U(t)|
+     \ge\frac{\sqrt{x+y}}{24\sqrt2}
+     \ge\frac{x}{24\sqrt{2G}} ,
+\]
+
+also when \(x+y=0\). The last step uses \(x\le G\). Summing over all
+groups counts each mismatch once in \(\sum x\). Apply (3), take
+expectations, and use \(\mathbb E|U|=n/2\) and \(m_t(U)\le m_t(V)\).
+This yields (5). \(\square\)
+
+\textbf{Theorem 3 (work for arbitrary node counts).} There is a sequence
+of positive 2-CNF formulas on \(n\) variables, each variable occurring
+at most three times, for which any balanced layout satisfying the three
+visit assumptions has
+
+\[
+                        T_{\rm run}\ge 2^{\Omega_{c_0}(n^{2/3})}.       \tag{6}
+\]
+
+The number of interpolation points, the row heights and the auxiliary
+dimension are unrestricted.
+
+\textbf{Proof.} Appendix A gives a family of simple graphs of degrees
+two or three such that every cut with smaller side size between \(n/4\)
+and \(n/2\) has at least \(\kappa n\) edges, for fixed \(\kappa>0\).
+Introduce the factor \(x_u\lor x_v\) for every graph edge \(uv\). If
+\(r<4\), a group scan costs \(2^{\Omega(n)}\). Otherwise each group has
+at most \(n/2\) variables. At each node some union of groups has size in
+\([n/4,n/2]\). If no individual group has such a size, accumulate groups
+of size below \(n/4\) until the lower endpoint is reached. The endpoints
+of each edge crossing this cut belong to different groups. No matter
+where its clause is assigned, at least one endpoint mismatches its
+target. Using all incident graph edges as lists gives
+\(\delta=\kappa,\Delta=3\).
+
+Put \(G=2n/r\), and fix \(c_*=1/(48\sqrt2)\). If \(G\ge n^{2/3}\), any
+largest group has at least \(G/2\) variables, which proves (6). Suppose
+\(G<n^{2/3}\). If \(R/Q\le c_*\beta/\sqrt G\), (5) gives a node with
+\(m_t(V)\ge c_*\beta n/(2\sqrt G)=\Omega(n^{2/3})\). The visit to its
+reachable image proves (6). Finally, if \(R/Q>c_*\beta/\sqrt G\), then
+\(d_0R/Q=\Omega_{c_0}(n^{2/3})\). The prescribed Taylor cutoff contains
+\(s=\Omega_{c_0}(n^{2/3})\) variables even after the cap at \(n\) and
+rounding. All subsets of any \(s\) variables are visited, giving at
+least \(2^s\) visits. \(\square\)
+
+For these formulas the pre-substitution degree in separate incidence
+variables is exactly \(2|E(G)|\ge2n\). The quadratic term of each clause
+indicator has nonzero coefficient and involves two variables that belong
+to no other factor. The layout argument also holds for arbitrary literal
+signs on the same scopes. The positive formulas alone have a trivial
+affirmative SAT answer. Theorem 3 concerns their counting routine under
+the stated visits.
+
+\subsection{4. A polynomial test on selected
+nodes}\label{a-polynomial-test-on-selected-nodes}
+
+For a set \(T\) of \(k\) nodes and a chosen output incidence at \(v\),
+write \(h_v=\#\{t\in T:a_v(t)\ne b_v(t)\}\). Define
+
+\[
+ \phi_R(h)=2^{-h}\sum_{i=0}^h\binom hi(h-R-2i)_+,\qquad
+ (z)_+=\max(z,0).
+\]
+
+\textbf{Theorem 4 (mismatch rank bound).} Whenever \(k>R\),
+
+\[
+                 \sum_{t\in T}m_t(V)\ \ge\ 2\sum_{v\in V}\phi_R(h_v).
+                                                                         \tag{7}
+\]
+
+The chosen incidence per variable may depend on \(T\). At \(k=1,R=0\),
+the right side is exactly the number of variables whose selected
+incidence is foreign. Their constant rows demand all of those
+coordinates from their source groups.
+
+\textbf{Proof.} Let \(E=\mathbb Q^2\) and \(W=E^{\otimes k}\), with one
+factor per \(t\in T\). Write \(M=2^k\), and choose distinct rational
+lines \(\ell_g\subset E\) indexed by group labels. Let \(\ell^\circ\)
+denote the line of covectors annihilating \(\ell\). Each physical
+variable \(v\) is given two bases, one of \(W\) and one of \(W^*\), by
+making these choices at every \(t\).
+
+\begin{itemize}
+\tightlist
+\item
+  When \(a=a_v(t)\ne b=b_v(t)\), take input low and high lines
+  \(\ell_a,\ell_b\) and output low and high lines
+  \(\ell_b^\circ,\ell_a^\circ\). A local input pairs only with the
+  output of the same index.
+\item
+  When \(a=b\), choose a complement \(\ell'\) to \(\ell_a\). Take input
+  lines \(\ell_a,\ell'\) and output lines
+  \(\ell_a^\circ,(\ell')^\circ\). In this case it is the opposite
+  indices that pair.
+\end{itemize}
+
+Choose basis vectors and scale covectors so the nonzero pairings equal
+one. In the tensor bases let \(e_{v,S}\) and \(f_{v,B}\) denote the
+elements with high sites \(S\) and \(B\). The unique output dual to
+\(e_{v,S}\) has index
+
+\[
+ B_v(S)=S\mathbin{\triangle}\{t\in T:a_v(t)=b_v(t)\}.                \tag{8}
+\]
+
+The bases can depend on \(v\) because every occurrence of a physical
+operator \(P,C_t,L_t\) below is its tensor product with the identity on
+the same ambient \(W\).
+
+Write \(\pi_S(X)=\prod_{t\in S}(X-\lambda_t)\). For \(j\ge0\), let
+\(H_j\) consist of tuples of \(W\)-valued polynomials \(h_v(X)\) of
+degree at most \(j\), whose scalar coordinate along \(e_{v,S}\) is
+divisible by \(\pi_S\). Define
+
+\[
+ I_j=\{h\in H_j:(C_t\otimes I_W)h(\lambda_t)=0\text{ for each }t\in T\},
+ \qquad I_{-1}=H_{-1}=0 .
+\]
+
+At the evaluation point \(\lambda_t\), \(h_v(\lambda_t)\) only has terms
+whose \(t\)-factor is on the input low line \(\ell_{a_v(t)}\). For all
+variables in group \(g\) this is a common subspace \(W_{t,g}\) of
+dimension \(M/2\). The contribution of that group to the evaluated
+measurement factors through
+\(C_{t,g}|_{V\cap S_{t,g}}\otimes I_{W_{t,g}}\), of rank
+\((M/2)\operatorname{rank} C_{t,g}|_{V\cap S_{t,g}}\). Stacking these
+constraints takes at most the sum of their ranks over all groups and
+nodes. Hence
+
+\[
+               \dim H_j-\dim I_j\le (M/2)\sum_{t\in T}m_t(V).          \tag{9}
+\]
+
+We next obtain a lower bound on this codimension. Let \(J=k-R-1\),
+\(0\le j\le J\), and \(h\in I_j\). For each \(v,B\), form the scalar
+polynomial
+
+\[
+      \pi_B(X)f_{v,B}\!\left(((P(X)\otimes I_W)h(X))_v\right).
+\]
+
+It vanishes at every \(\lambda_t\). If \(t\in B\) this follows from
+\(\pi_B\). If \(t\notin B\), the measured part of (2) vanishes by
+\(h\in I_j\). In the remaining terms \(L_t[v,w]\ne0\) requires
+\(a_w(t)=b_v(t)\). Their input factor at \(t\) therefore lies on the
+line annihilated by the output low covector. When \(|B|\le J-j\), the
+scalar polynomial has degree at most \(|B|+R+j<k\) and is identically
+zero. Evaluating at the origin and using \(P(0)=I\) and \(\pi_B(0)\ne0\)
+shows that the \((v,S)\) coordinate of \(h(0)\) vanishes whenever
+\(|B_v(S)|\le J-j\). Divisibility also eliminates all coordinates with
+\(|S|>j\).
+
+Evaluation at zero on \(I_j\) has kernel \(XI_{j-1}\). Dividing by \(X\)
+preserves the divisibility by each \(\pi_S\) and the nodal kernel
+constraints because every interpolation point is nonzero. Thus the
+increment \(\dim I_j-\dim I_{j-1}\) is at most
+
+\[
+ \#\{(v,S):|S|\le j\}
+ -\#\{(v,S):|S|\le j,\ |B_v(S)|\le J-j\}.
+\]
+
+For \(H_j\) its dimension increment is exactly the first count. Each
+scalar coordinate along \(e_{v,S}\) contributes \((j-|S|+1)_+\)
+dimensions to \(H_j\). Summing the increment inequality through \(J\)
+and using (9) yields
+
+\[
+ (M/2)\sum_{t\in T}m_t(V)
+      \ge \sum_{v,S}(k-R-|S|-|B_v(S)|)_+ .
+\]
+
+For a uniform \(S\), the \(k-h_v\) matched sites each contribute one to
+\(|S|+|B_v(S)|\) by (8). The remaining sites contribute twice a
+\(\operatorname{Bin}(h_v,1/2)\) random variable. Divide by \(M/2\) to
+obtain (7). \(\square\)
+
+\textbf{Corollary 5 (many nodes with large rank).} Under the
+candidate-factor hypothesis with \(\beta>0\), there are constants
+\(c_\beta,C_\beta>0\) such that for
+\(k=\lceil C_\beta(R+1)^2\rceil\le Q\), every set \(T\) of \(k\) nodes
+satisfies
+
+\[
+                    \frac1k\sum_{t\in T}m_t(V)
+                      \ge c_\beta\frac{n}{R+1}.                       \tag{10}
+\]
+
+At least \(Q-k+1\) nodes meet this rank lower bound individually.
+
+\textbf{Proof.} Select \(f(v)\) to maximize mismatches on this
+particular \(T\), giving \(\sum_v h_v\ge\beta nk\). At least
+\(\beta n/2\) variables have \(h_v\ge\beta k/2\), since otherwise their
+total falls below this bound even with \(h_v\le k\). With
+\(C_\beta=16/\beta\), those \(h_v\) satisfy \(h_v\ge8(R+1)^2\). The
+fourth-moment computation in Corollary 2 and symmetry give
+\(\Pr(S_h\ge\sqrt{h/2})\ge1/24\) for \(h\ge1\). Thus
+
+\[
+        \phi_R(h)=\mathbb E(S_h-R)_+\ge \sqrt h/(48\sqrt2)
+         \quad\text{when }h\ge8(R+1)^2.
+\]
+
+Equation (7) now bounds \(\sum_{t\in T}m_t(V)\) below by a constant
+depending only on \(\beta\) times \(n\sqrt{k}\). Since
+\(k\le(C_\beta+1)(R+1)^2\), this proves (10). If \(k\) nodes strictly
+violated the individual bound, their average would contradict (10).
+\(\square\)
+
+\subsection{5. The polynomial-dimensional
+schedule}\label{the-polynomial-dimensional-schedule}
+
+The source's full auxiliary schedule has \(r^{2Q}\) positions. Its
+polynomial-dimensional parameter choice imposes a numerical condition on
+\(r,Q\). The next result needs the condition only; all ranks in its
+proof remain on physical variables.
+
+\textbf{Theorem 6.} On the graph formula family of Theorem 3, assume a
+balanced layout, so that \(|S_{t,g}|\le 2n/r\) at every node \(t\) and
+group \(g\), and the same three explicit visit assumptions. If
+\(r^{2Q}\le n^A\) for fixed \(A>0\), then
+
+\[
+       \log T_{\rm run}=\Omega_{A,c_0}\!\left(
+                       n\frac{\log\log n}{\sqrt{\log n}}\right).        \tag{11}
+\]
+
+\textbf{Proof.} Use natural logarithms and put \(L=\ln n,\ l=\ln L\).
+For \(r\le\sqrt L/l\), the group scan costs at least \(2^{n/r}\), giving
+(11). Otherwise, for large \(n\), \(r\ge4,\ \ln r\ge l/3\), and
+\(Q\le(3A/2)L/l\). The balanced-cut argument supplies a fixed
+\(\beta>0\).
+
+For sufficiently large \(Q\), set \(u=\sqrt{Q/\ln(eQ)}\). If
+\(R+1\le u\), then \(\lceil C_\beta(R+1)^2\rceil\le Q\) for all
+sufficiently large \(Q\). By Corollary 5 and the reachable-image bound,
+\(\ln T_{\rm run}\ge c n/(R+1)\ge c n/u\) for a fixed \(c>0\). If
+\(R+1>u\), then \(R\ge u/2\). Fix \(a>0\) sufficiently small in terms of
+\(c_0\) and put \(s_0=\lfloor an/\sqrt{Q\ln(eQ)}\rfloor\). The Taylor
+cutoff is at least \(s_0\). Also \(s_0\le n/2\) and \(s_0\) tends to
+infinity uniformly for \(Q=O(\ln n)\). Therefore
+
+\[
+       \ln T_{\rm run}\ge\ln\binom n{s_0}
+        \ge s_0\ln(n/s_0)=\Omega\!\left(n\sqrt{\ln(eQ)/Q}\right).
+\]
+
+For \(Q\) below the fixed threshold and \(R\ge1\), the Taylor subsets
+already give a linear exponent. For \(R=0\) all selected incidence rows
+are constant coordinate rows. Every variable with some mismatched
+incidence must have its coordinate row in the measurement row space of
+its source group. There are at least \(\delta n/\Delta\) such variables
+at each node, giving a linear rank and hence a linear exponent. Finally
+\(x\mapsto\sqrt{\ln(ex)/x}\) decreases on \(x\ge1\). Substituting the
+upper bound \((3A/2)L/l\) proves (11). \(\square\)
+
+\subsection{6. Scope and verification}\label{scope-and-verification}
+
+The rank inequalities (3) and (7) concern linear recovery on the actual
+rational variable space. They are unaffected by deleting dependent
+measurement rows or by the construction procedure for the final layout.
+The time corollaries need the three operations of Section 2. A procedure
+can avoid the charged work by aggregating many measurement images in one
+operation, by using additional knowledge that particular fibers have
+zero contribution, or by recovering Taylor data without the prescribed
+subset enumeration. An unrestricted solver can also avoid the
+interpolation call entirely. Theorems 3 and 6 do not address those
+procedures or imply a general SAT lower bound.
+
+For Theorem 3 the balance condition can be dispensed with if a largest
+group is fully scanned at every node. If a group ever contains
+\(n^{2/3}\) variables, its scan suffices. Otherwise every group is
+smaller than \(n^{2/3}\le n/2\) for large \(n\), so expansion works at
+every node. Applying (5) with \(G=n^{2/3}\) gives the same
+rank-or-Taylor dichotomy.
+
+The unrestricted-node analogue of (11) remains open here. Another
+question is whether a lower bound on the measured row spaces can be
+converted into a lower bound on joint evaluation when a single operation
+can sum many fibers. Such a statement requires a cost model specifying
+the joint operation.
+
+The supplemental checker constructs feasible polynomial matrices first
+and derives the minimal measurement row spaces containing their
+foreign-group restrictions. Using exact integer elimination, it verified
+61,824 mismatch inequalities on node and variable subsets and 120,864
+principal-minor and imbalance comparisons. It also checked 38 explicit
+tensor filtration levels, 44,352 restricted Boolean images, and 1,096
+unique gate extensions. The 160 sampled layouts have up to five
+variables and six nodes. The accompanying Lean development formalizes the principal-subset and
+mismatch rank inequalities, their probabilistic corollaries, the graph
+family, and the visit bounds in Theorems 3 and 6. The repository
+provides the theorem index, the pinned build and the axiom reports.
+The finite layout checker is included as
+\texttt{tests/actual\_layout\_check.py}.
+
+\textbf{Contributions and review status.} Chuhang Ding set the research questions and direction and proposed conjectures. AI assistants and agents contributed to proofs, tests, Lean formalization, review, and writing. This is an unsubmitted working manuscript pending
+independent human mathematical review.
+
+\subsection{Appendix A. Bounded-degree graphs and a parsimonious
+extension}\label{appendix-a.-bounded-degree-graphs-and-a-parsimonious-extension}
+
+\textbf{Lemma A.1.} There is a fixed \(\kappa>0\) and, for every
+positive \(n\) divisible by \(128\), a simple graph on \(n\) vertices of
+degrees two or three for which each cut with smaller side in
+\([n/4,n/2]\) has at least \(\kappa n\) crossing edges.
+
+\textbf{Proof.} Put \(m=n/32\), so \(4\mid m\). Choose sixteen
+independent uniform permutations of \(m\) vertices. For \(B\) of size
+\(m/4\le b\le m/2\), the probability that a permutation sends at most
+\(b/8\) elements of \(B\) outside \(B\) is at most
+
+\[
+ \binom b{\lfloor b/8\rfloor}(b/m)^{\lceil7b/8\rceil}
+       \le 2^{-(7/8-H_2(1/8))b},
+\]
+
+where \(H_2\) is binary entropy. Some subset of \(\lceil7b/8\rceil\)
+specified vertices would all have to land in \(B\). Each candidate
+subset has probability at most \((b/m)^{\lceil7b/8\rceil}\) by sampling
+without replacement. Since \(7/8-H_2(1/8)>1/4\), taking the sixteenth
+power and summing over at most \(2^m\) choices gives total probability
+less than one. Thus for every such \(B\) one permutation sends more than
+\(b/8\) elements outside. Convert all permutation arcs to undirected
+edges and discard loops and duplicates. The outward arcs of the
+particular permutation have distinct inside endpoints, so represent
+distinct crossing edges. The graph has maximum degree \(32\) and at
+least \(m/32\) edges crossing each required cut.
+
+Replace each old vertex by a cycle of length \(D=32\), attaching each
+old incident edge at a different vertex on the cycle. The resulting
+simple graph has \(Dm=n\) vertices of degrees two or three. For a side
+\(\mathcal U\) of size in \([n/4,n/2]\), denote by \(p\) the number of
+cycles split by it. If \(p\ge m/(64D)\), cycle edges supply at least
+\(2p\ge m/(32D)\) crossings. Otherwise round the side to an old vertex
+subset \(B\) containing the full cycles and contained in the full plus
+split cycles, of size between \(m/4\) and \(m/2\). Such a count exists
+because \(|\mathcal U|/D\) lies between the two integral cycle counts
+and in the interval with integral endpoints. At most \(Dp\) incident old
+edges can change their crossing status in the rounding. The original cut
+in the new graph therefore has at least \(m/32-Dp>m/64\) crossings. Both
+cases allow \(\kappa=1/(32D^2)\). \(\square\)
+
+\textbf{Proposition A.2.} The rank and visit conclusions can be imposed
+on a parsimonious extension of any CNF, with a linear number of added
+variables and clauses.
+
+\textbf{Proof.} For a formula \(F\) on a supported number \(n\) of
+original variables \(V\), choose the graph of Lemma A.1 and add a
+variable \(y_{uv}\) for each edge \(uv\). With \(y=y_{uv}\), add
+
+\[
+      (\neg y\lor x_u),\qquad(\neg y\lor x_v),\qquad
+      (y\lor\neg x_u\lor\neg x_v).
+\]
+
+Each original assignment has the unique extension \(y_{uv}=x_ux_v\). The
+extended formula has exactly the same number of satisfying assignments.
+It has \(N=n+|E|\le5n/2\) variables and \(O(n)\) additional clauses.
+Each old variable gains at most six occurrences and each new variable
+has three. Width increases to at most
+\(\max(3,\operatorname{width}(F))\). Other original sizes can be padded
+to a multiple of \(128\) using at most \(127\) extra variables pinned by
+unit clauses. The construction takes linear time when the graph is
+supplied. Lemma A.1 itself is an existence proof.
+
+When \(r\ge10\), a group contains at most \(2N/r\le n/2\) original
+variables. Find a balanced union of groups on \(V\) alone, and use the
+ternary clause of each graph edge as the candidate factor for its two
+original variables. Every crossing edge gives a mismatch at an original
+endpoint, and an original variable has at most three such candidate
+factors. Thus \(V\) satisfies the same fixed list parameters. Use
+\(G=2N/r\), with \(n=\Theta(N)\), in the proof of Theorem 3 and use
+Corollary 5 on \(V\) in Theorem 6. Ranks restricted to \(V\) bound the
+reachable image from below even with all fresh bits fixed to zero. If
+\(r<10\), the group scan already has a linear exponent. The runtime
+conclusions follow in the total variable count \(N\) under their
+respective visit and schedule assumptions. A solver that removes the
+defining gate clauses by preprocessing need not encounter this layout.
+\(\square\)
+
+\subsection{References}\label{references}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  OpenAI. \emph{The Exponential Time Hypothesis is False}. Revised
+  October 25, 2026. Sections 3--4 describe the rational counting routine
+  and the incidence layout. Appendix D gives the tensor-contraction
+  algorithm.
+  \href{https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026}{Manuscript
+  and source}
+\item
+  Fabio Dias and Yvens Lima. \emph{Limits and Constants of OpenAI's
+  Claimed ETH Refutation}. arXiv:2611.00517v1, 2026.
+  \href{https://arxiv.org/html/2611.00517v1}{Full text}
+\item
+  Vaibhav Tulsyan. \emph{What the ETH Refutations Do Not Give: Barriers
+  for the Counting Engines, with Machine-Checked Lemmas}. Hexagon
+  2611.00149v1, 2026.
+  \href{https://hexagonmath.org/pdf/2611.00149v1}{Paper}
+\item
+  Vaibhav Tulsyan. \emph{The parity barrier in OpenAI's Engine I: exact
+  constraints, a lower bound for every \(M_0\), and what is left open}.
+  Companion research note for {[}3{]}, Sections 5--7, repository
+  revision 946c49993b78aa163fcac3f8cb78ce351dd5dcc6.
+  \href{https://github.com/xennygrimmato/eth-hamiltonicity/blob/946c49993b78aa163fcac3f8cb78ce351dd5dcc6/research/permanent/parity-barrier.md}{Pinned
+  source}
+\end{enumerate}
+
+\end{document}

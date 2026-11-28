@@ -1,0 +1,485 @@
+\documentclass[10pt]{article}
+\usepackage[margin=24mm]{geometry}
+\usepackage{amsmath,amsthm}
+\usepackage{unicode-math}
+\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf]
+\setmathfont{latinmodern-math.otf}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Fp}{\mathbb F}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\ann}{\operatorname{Ann}}
+\title{Sharp sample bounds for sparse interpolation\\on prescribed arithmetic progressions}
+\author{Chuhang Ding (Peking University)}
+\date{}
+\DeclareFontShape{OML}{cmm}{m}{it}{<->cmmi10}{}
+\DeclareFontShape{OMS}{cmsy}{m}{n}{<->cmsy10}{}
+\DeclareFontShape{OT1}{cmr}{m}{n}{<->cmr10}{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We determine the uniform worst-case prefix length for unique identification
+of a formal univariate polynomial with at most $t$ terms on a prescribed
+arithmetic progression. Over a nonzero commutative unital ring with no
+additive integer torsion, any $4t$ consecutive samples with regular step
+suffice, and every such ring and step admit a starting point where $4t-1$
+samples fail. We also give the exact minimum for each progression with
+rational normalized start. Away from integral and half-integral starts
+the minimum is $2t$. On integral and half-integral grids it is the first
+prefix containing $2t$ strictly same-sign normalized nodes.
+The determinant proof uses forward differences, reduction modulo $2$,
+and the factors forced by opposite pairs of nodes. A determinantal ideal
+argument gives an exact criterion for bounded-degree sparse inputs on
+arbitrary sample lists over commutative rings.
+\end{abstract}
+
+\section{Model and results}
+Grenet's Open Problem 10.2 asks for unique sparse reconstruction from an
+arithmetic progression. Open Problem 10.3 asks for conditions on a fixed
+sample list in the presence of a degree constraint \cite{grenet}. We take
+all samples exactly in the original coefficient ring and identify formal
+polynomials. Write $D_{R,t}(a,b;s)$ for the assertion that evaluation on
+$a+ib$, $0\le i<s$, is injective on $\{f\in R[X]: |\supp f|\le t\}$.
+There is no exponent bound in this notation. The step $b$ is regular when
+multiplication by $b$ on $R$ is injective.
+
+\begin{theorem}\label{thm:main}
+Let $R$ be a nonzero commutative unital ring with no additive integer
+torsion, $b$ a regular element of $R$, and $t\ge1$. For every $a\in R$,
+$D_{R,t}(a,b;4t)$ holds. For this same $R$ and $b$, the start
+$a=-(2t-1)b$ fails at every prefix of length $s<4t$.
+\end{theorem}
+
+\begin{theorem}\label{thm:rat}
+Under the same ring and step assumptions, suppose $Ba=Ab$ for integers
+$A,B$ with $B>0$ and $\gcd(A,B)=1$. Put $z=A/B$ and $k=2t$.
+If $2z\notin\Z$, the least $s$ with $D_{R,t}(a,b;s)$ is $k$.
+If $2z\in\Z$, let $q=\max(0,\lceil-z\rceil)$ and
+$p=\max(0,\lfloor-z\rfloor+1)$. The least $s$ is
+\[
+  \begin{cases}
+  k,&q\ge k,\\
+  k+p,&q<k .
+  \end{cases}
+\]
+Equivalently, in this second case the least prefix contains $k$ strictly
+positive or $k$ strictly negative nodes in the normalized grid $z+i$.
+\end{theorem}
+
+These are injectivity results for prescribed prefixes. A chosen progression
+with positive rational normalized start already attains the lower bound
+$2t$. The worst-case assertion concerns the quantifier over starts and
+does not supply a time bound for decoding unknown exponents. Positive
+characteristic and integer torsion can cause polynomial-function
+collisions, and regularity of the step is essential for the transfer used
+here.
+
+\section{Support matrices and descent}\label{sec:descent}
+For a list $x=(x_i)$ and a finite exponent set $E$, write
+$M_E(x)=(x_i^e)_{i,e}$, with $x_i^0=1$ also at $x_i=0$. Evaluation
+on a difference of two inputs is multiplication by this matrix on the
+coefficient vector of their difference. Conversely, every polynomial with
+at most $2t$ terms can be written as such a difference by partitioning its
+support into two parts of size at most $t$ and negating the second part.
+We may pad any smaller support with zeros up to $k=2t$.
+
+We use the following transfer for each fixed $E$ and integer offsets $i$.
+If all full-column minors of $M_E((Z+i)_i)$ have no common root over an
+algebraic closure of $\Q$, they generate $1$ in $\Q[Z]$. Indeed a proper
+nonzero ideal of the PID $\Q[Z]$ has a nonconstant generator with a root
+there. The zero ideal would make every specialization singular.
+
+Form the localization $S$ of $R$ at products of powers of $b$ and
+nonzero integers. Integer-torsion freeness and step regularity make each
+denominator regular, so $R\hookrightarrow S$ and $\Q\hookrightarrow S$.
+Specialize the B\'ezout identity at $Z=a/b$. Multiplying column $e$ by the
+unit $b^e$ gives the original sample matrix in $S$. For every full minor,
+the square adjugate identity shows that the minor annihilates a purported
+kernel vector. Their ideal is the unit ideal, so the vector is zero.
+The embedding gives zero kernel in $R$. This argument allows zero
+divisors in $R$. For a rational normalized start, a single nonzero
+rational full minor suffices, since it specializes to a unit in $S$.
+
+\begin{lemma}\label{lem:sign}
+For $k$ distinct positive rational nodes, the square evaluation matrix on
+any $k$ distinct nonnegative exponents is nonsingular over $\Q$.
+The same holds for $k$ distinct negative rational nodes.
+\end{lemma}
+\begin{proof}
+A nonzero real polynomial with $r$ terms has at most $r-1$ distinct
+positive roots. To see this, divide by its lowest monomial so that the
+constant term is nonzero. An application of Rolle's theorem between
+consecutive positive roots reduces the claim to a derivative with
+$r-1$ terms. Start the induction with a nonzero monomial.
+For negative nodes multiply each column by its parity sign. The
+determinants are rational, so the conclusions persist in characteristic
+zero extensions of $\Q$.
+\end{proof}
+
+\section{The half-block determinant}\label{sec:half}
+Put $k=2t$, $K=\binom{k}{2}$ and $E=(e_0<\cdots<e_{k-1})$.
+Let $V(E)=\prod_{i<j}(e_j-e_i)$, $o$ be the number of odd exponents, and
+$m=|o-t|$. Use $D=\Z_{(2)}$ for the localization at odd integers, with
+residue field $\Fp_2$. Define
+\[
+ N_E(U)=
+ \frac{\det[(1+2jU)^{e_\ell}]_{0\le j,\ell<k}}{(2U)^K V(E)} .
+\]
+
+\subsection{Integral division before specializing the exponents}
+For any $M\ge\max E$ and $c=2U$, replace row $j$ by the $j$-th
+forward difference at $0$. This is a lower triangular row operation with
+diagonal $1$. Dividing each resulting row by $c^j$ leaves entries
+$P_j(e_\ell)$, where
+\begin{equation}\label{eq:fd}
+ P_j(T)=\sum_{r=j}^{M} T^{\underline r}
+ [W^r]\left(\frac{\exp(cW)-1}{c}\right)^j .
+\end{equation}
+Here $T^{\underline r}=\prod_{h=0}^{r-1}(T-h)$.
+Expand $(1+ci)^e$ by the binomial formula, using
+$\binom er=e^{\underline r}/r!$. Taking the $j$-th difference of
+$\exp(ciW)$ gives $(\exp(cW)-1)^j$ by the finite binomial identity for
+the difference operator. All series manipulations are coefficientwise
+through degree $M$. The case $j=0$ uses the constant series $1$.
+
+For $r\ge1$, $\ord_2(r!)\le r-1$, so every coefficient
+$2^{r-1} U^{r-1}/r!$ of the series before raising it to the $j$-th
+power lies in $D[U]$. Thus the determinant in independent
+indeterminates $T_\ell$ is alternating over $D[U]$. It vanishes when
+$T_b=T_a$, so the prime monic factors $T_b-T_a$ each divide it.
+The factors for different unordered pairs are nonassociate, hence
+their product divides it. The quotient is symmetric, by cancellation
+in the domain. Its specialization at $E$ is $N_E\in D[U]$.
+Reducing this quotient modulo $2$ and then evaluating the exponents
+shows that the residue of $N_E$ depends only on $o$. Each comparison
+uses one common $M$ for both exponent lists. At $U=0$, the polynomials
+$P_j(T)$ are just $T^{\underline j}$, a monic triangular change of
+basis from $T^j$. Thus $N_E(0)=1$.
+
+\subsection{Factors from opposite nodes}
+For $1\le s\le 2k-3$ write
+\[
+ p_s=\#\{(i,j):0\le i<j<k,\ i+j=s\},\qquad
+ d_s=\max(0,p_s-\min(o,k-o)).
+\]
+At $U=-1/s$ the paired nodes $1+2iU$ and $1+2jU$ are negatives of
+one another. The pairs are disjoint. Replacing one row of each pair
+by its difference with the other row restricts the resulting rows to
+the odd columns. Using their sum instead restricts them to the even
+columns. Use the smaller parity class to obtain rank deficiency at
+least $d_s$ at this rational specialization. Choose $d_s$ independent
+constant row combinations which vanish there and extend them to a
+constant invertible change of rows. A factor $U+1/s$ divides every
+entry of each of the $d_s$ rows. The denominator $(2U)^K V(E)$ is
+nonzero at $-1/s$, so distinctness of these roots gives
+\begin{equation}\label{eq:forced}
+ \prod_{s=1}^{2k-3}(1+sU)^{d_s}\mid N_E(U)\quad\text{in }\Q[U].
+\end{equation}
+
+For $s=2j+1$ with $0\le j\le 2t-2$, the count is
+$p_s=\min(j+1,2t-1-j)$, by ranging the smaller index through the
+allowed pairs. For $s=2j$ with $1\le j\le 2t-2$ it is
+$p_s=\min(j,2t-1-j)$.
+The first list rises by one from $1$ to $t$ and falls back to $1$.
+The second has two copies of each height $1,\ldots,t-1$.
+These statements include the empty even list for $t=1$.
+Since the minority size is $t-m$, the odd and even sums of $d_s$
+are respectively $m+2\sum_{j=1}^{m-1}j=m^2$ and
+$2\sum_{j=1}^{m-1}j=m(m-1)$ for $m>0$, and both are zero for $m=0$.
+
+\subsection{Minimal representatives determine the residue}
+For $o=t-m$, choose the $t+m$ smallest nonnegative even exponents and
+$t-m$ smallest positive odd exponents. Their sum is
+$(t+m)(t+m-1)+(t-m)^2$. Subtracting $K=t(2t-1)$ gives $2m^2-m$,
+an upper bound on the normalized determinant degree. The product
+in \eqref{eq:forced} has exactly this degree, so it equals this
+representative's normalized determinant by the normalization at zero.
+Its reduction is $(1+U)^{m^2}$, because the even-$s$ factors reduce
+to $1$. For $o=t+m$ shift this representative by $1$,
+multiplying the determinant by $\prod_j(1+2jU)$ and leaving $V(E)$
+fixed. This does not change the residue. The symmetry argument in
+Section~\ref{sec:half} therefore gives, for every $E$,
+\[
+ \overline{N_E}(U)=(1+U)^{m^2},\qquad
+ N_E(U)=F_E(U)A_E(U),\qquad \overline{A_E}=1,\qquad
+ F_E(U)=\prod_{s\ {\rm odd}}(1+sU)^{d_s}.
+\]
+The product only uses the range in \eqref{eq:forced}. Its leading
+coefficient is a unit in $D$. Long division by $F_E$ over $D$
+has the same zero remainder as division over $\Q$, yielding
+$A_E\in D[U]$. The quotient reduction follows by cancellation
+in $\Fp_2[U]$.
+
+\section{Full rank and sharpness}\label{sec:full}
+Let $D_0=\sum_\ell e_\ell-K$. The unnormalized half-block determinant
+has degree at most $\sum_\ell e_\ell$, so division by $(2U)^K V(E)$
+gives $\deg N_E\le D_0$. Choosing the smallest exponents of each
+parity minimizes the sum, with the odd-majority case obtained by
+shifting the even-majority representative by $1$. Thus
+$D_0\ge 2m^2-m\ge m^2$. Reversing the normalized polynomial gives
+\[
+ B_E(Z)=\frac{\det[(Z+2j)^{e_\ell}]_{j,\ell}}{2^K V(E)}
+       = Z^{D_0}N_E(1/Z).
+\]
+This is a polynomial identity, including at $Z=0$.
+The bound $\deg N_E\le D_0$ and $N_E(0)=1$ make $B_E$ monic.
+We have
+\[
+ B_E(Z)=\prod_{s\ {\rm odd}}(Z+s)^{d_s}R_E(Z),
+ \qquad
+ R_E(Z)=Z^{D_0-m^2}A_E(1/Z),
+ \qquad \overline{R_E}(Z)=Z^{D_0-m^2}.
+\]
+Here $\deg A_E\le D_0-m^2$, and $R_E$ is monic because $A_E(0)=1$.
+The odd-row half has determinant $2^K V(E)B_E(Z+1)$.
+The residual polynomials $R_E(Z)$ and $R_E(Z+1)$ are coprime over
+$\Q$. A monic common divisor over $\Q$ descends to a monic common
+divisor over $D$. Indeed the roots of a monic divisor of either
+polynomial are integral over $D$. Its coefficients are integral
+over $D$ and lie in $\Q$, so they lie in the integrally closed
+valuation ring $D$. Exact division by the monic divisor over $D$
+then follows by long division. Reduction retains its degree, while
+the two reductions are powers of $Z$ and $Z+1$ and are coprime.
+The common divisor must have degree zero. Consequently any
+simultaneous zero of the two
+half-block determinants over an algebraic closure of $\Q$ is one
+of the rational integers $-s$ or $-s-1$ from the displayed factors.
+
+For an integer start, a prefix of $2k$ consecutive nodes contains
+at most one zero. It therefore contains at least $k$ strictly positive
+or at least $k$ strictly negative nodes. Lemma~\ref{lem:sign} supplies
+a nonzero full minor there. All $2k$ rows thus have full column rank
+at every algebraic start. By Section~\ref{sec:descent} the same
+prefix identifies the sparse polynomial in the original ring.
+In fact the same unit-ideal certificate gives full rank after every
+specialization into a field containing $\Q$.
+
+For the matching lower bound fix the ring and regular step $b$, and put
+$n=2t-1$. For unit step the witness is
+\[
+ W(X)=X\prod_{\nu=1}^{n}(X^2-\nu^2)\in\Z[X].
+\]
+The coefficient in each of the $n+1=2t$ odd powers in degrees $1$ to
+$2n+1$ is an elementary symmetric function of $1^2,\ldots,n^2$ up to
+sign, and is nonzero. Its distinct roots are precisely the integers
+from $-n$ to $n$, and these exhaust its degree. Over $R$ use
+\[
+ W_b(X)=X\prod_{\nu=1}^{n}(X^2-\nu^2 b^2)
+       =\sum_e [X^e]W \, b^{2n+1-e}X^e.
+\]
+Each coefficient remains nonzero since $R$ is nonzero and
+integer-torsion-free and $b$ is regular. At the start $-nb$, the first
+$2n+1=4t-1$ samples vanish. At $(n+1)b$ the value is
+$b^{2n+1}W(n+1)$ and is nonzero. Partition the support into
+two sets of size $t$ and negate the second summand to obtain two
+distinct inputs of exactly $t$ terms agreeing on all shorter prefixes.
+This completes Theorem~\ref{thm:main}.
+
+\section{The exact length for each rational start}\label{sec:rationals}
+Let $z=A/B$ as in Theorem~\ref{thm:rat}. Any prefix with fewer than
+$k$ rows has a nonzero rational kernel vector, for example using
+exponents $0,\ldots,k-1$. To transfer any rational kernel polynomial
+$H$ to $R$, choose a nonzero integer $L$ clearing denominators and
+use the coefficient expression of $L b^{\deg H} H(X/b)$ in $R[X]$.
+Its leading coefficient is a nonzero integer in $R$, its support
+has at most $k$ elements, and evaluation at the prescribed samples is
+zero in $S$ and hence in $R$. The support split gives the collision.
+
+For completeness, the transfer can also be verified one support at a
+time without dividing in $R$. If $s$ is regular and $d=\max E$, the
+matrices on $x_i$ and $s x_i$ have equivalent injectivity tests. A kernel
+on the scaled nodes gives a kernel on the original nodes by multiplying
+coefficient $e$ by $s^e$. In the other direction use $s^{d-e}$, which
+multiplies every observation by $s^d$. These coefficient operations
+preserve nonzero vectors. In the ratio setting,
+\[
+ B(a+ib)=b(A+Bi),\qquad B(z+i)=A+Bi.
+\]
+The matrices on the integer nodes $A+Bi$ therefore mediate both
+directions of the transfer. A nonzero integer full minor stays regular
+over every admissible $R$, whereas vanishing of all integer full minors
+gives a nonzero kernel by McCoy's criterion. Thus each fixed support has
+the same injectivity answer over $R$ and over the normalized rational
+grid.
+
+Suppose $2z\notin\Z$. Either $B$ has an odd prime divisor $p$, or
+$4\mid B$. In the latter case take $p=2$. Then $z\ne0$ and
+$\ord_p(1/z)>1/(p-1)$. More generally for rational $c$ with this
+strict inequality, the determinant at $1+cj$, $0\le j<k$, divided
+by $c^K V(E)$ is a unit in $\Z_{(p)}$ reducing to $1$.
+To see this, use \eqref{eq:fd} with that $c$. For every $r\ge2$,
+\[
+ \ord_p(c^{r-1}/r!)\ \ge\
+ (r-1)(\ord_p(c)-1/(p-1))>0,
+\]
+where the factorial bound follows by summing $\lfloor r/p^j\rfloor$
+or using the base-$p$ digit sum. The series in \eqref{eq:fd}
+reduces to $W$ and the row polynomials reduce to $T^{\underline j}$.
+Divide the formal alternating determinant by the Vandermonde
+before reducing, as in Section~\ref{sec:half}. Its reduction after
+division is $1$ by the ordinary Vandermonde identity and cancellation
+in the polynomial ring over $\Fp_p$. Now set $c=1/z$.
+Scaling the columns converts $1+cj$ to $z+j$ and proves the
+$k$-row rational determinant nonzero for every support.
+Together with the dimension lower bound this gives exactly $k$.
+
+Suppose $2z\in\Z$. The strictly same-sign condition suffices by
+Lemma~\ref{lem:sign}. For a shorter prefix, if all nonzero nodes
+have one sign, their number of distinct magnitudes is that sign count.
+If both signs occur, each side's list of magnitudes begins at $1$
+for an integer grid or at $1/2$ for a strict half-integer grid,
+and increases by $1$. The smaller list is an initial segment of
+the larger one. Thus in either case the set $T$ of nonzero magnitudes
+has cardinality $\max(n_+,n_-)$, where the two counts refer to the
+given prefix. If both counts are below $k$, then
+$X\prod_{r\in T}(X^2-r^2)$ is nonzero, vanishes at every sample,
+and has at most $k$ terms. Apply the same denominator clearing
+and support split. The total number of negative nodes available is
+$q$, so the negative sign can reach $k$ at length $k$ exactly
+when $q\ge k$. The first positive index is $p$, which proves
+the formula in all cases, including the zero node.
+
+For $t=1$, all rational starts need two samples except
+$0,-1/2,-1$, which need respectively $3,3,4$. For $t=2$,
+starts $-7/3,-5/4,-5/2,-3$ need respectively $4,4,7,8$.
+The samples in the first example include both signs. For a
+negative actual step the criterion uses the normalized signs of
+$z+i$, so the same classification applies.
+
+\section{Context and scope}
+Generalized Vandermonde expansions and their $2$-adic divisibility
+are studied by Spie\.z, Urbanowicz and van Wamelen \cite{vandermonde}.
+Our determinant argument uses the consecutive offsets to change to
+finite differences before the symmetric division. At the boundary
+$c=2U$, the residue of the normalized determinant is controlled by
+multiplicities of explicit opposite-node factors. The strict-valuation
+argument in Section~\ref{sec:rationals} addresses a different regime.
+Lenstra studies related local root bounds for lacunary polynomials
+\cite{lenstra}. The paper makes a prescribed-prefix identifiability
+claim. For individual nonrational normalized starts, it gives the
+uniform bound without a shortest-prefix classification.
+
+\appendix
+\section{Bounded-degree exact criteria}\label{app:degree}
+Let $R$ now be any commutative unital ring, and fix arbitrary finite
+sample nodes $x_i\in R$, allowing repetitions. For each candidate
+support $E$, let $I_E$ be the ideal generated by the full-column
+minors of $M_E(x)$. With zero columns the empty determinant is $1$.
+With more columns than rows, the ideal is zero.
+
+\begin{lemma}[McCoy's criterion]\label{lem:mccoy}
+A finite matrix over a commutative ring has zero kernel exactly when
+the annihilator of its full-column minor ideal is zero.
+\end{lemma}
+\begin{proof}
+If a nonzero vector is in the kernel, every full minor annihilates
+each component by the adjugate identity. A nonzero component
+annihilates the ideal. For the converse choose $c\ne0$ annihilating
+all full minors. If there are $n$ columns, choose a square minor of
+maximal size $r$ whose determinant is not killed by $c$. The empty
+minor qualifies and $r<n$. Add a column and take the signed
+$r$-cofactors of the chosen $r$ rows and $r+1$ columns, weighted by
+$c$, as vector entries on those columns. The entry for the added
+column is nonzero. The dot product with any row is $c$ times the
+determinant obtained by adding that row, up to an overall sign.
+It vanishes by maximality or by the repeated-row identity. This
+constructs a nonzero kernel vector. For $n=0$ the map has trivial
+kernel and the empty-minor ideal is the unit ideal.
+\end{proof}
+
+For degree at most $d$ and sparsity at most $t$, injectivity is
+equivalent to $\ann(I_E)=0$ for each $E\subseteq\{0,\ldots,d\}$ of
+size $\min(2t,d+1)$, by padding smaller supports and splitting a
+difference. This is the same-ring criterion, including zero divisors.
+The underlying matrix result is classical \cite{mccoy}.
+
+For degree exactly $d$ and at most $t$ terms with $t\ge1$, let
+$k_0=\min(2(t-1),d)$. With a fixed nonzero leading coefficient,
+the candidate supports are the $k_0$-element subsets of
+$\{0,\ldots,d-1\}$. If the leading coefficient can vary and
+$R$ has a third element distinct from $0,1$, append the exponent $d$
+to each such support. In fact every desired top difference $v$ is
+the difference of two nonzero values by choosing the second outside
+$\{0,-v\}$. Every low-order difference with at most $2(t-1)$
+terms can be split independently. Thus the indicated sets give
+both directions of the criterion. Over $\Fp_2$ the nonzero top
+coefficient is fixed, so the low-order-only criterion applies.
+
+For the exactly-$t$ rather than at-most-$t$ convention, let $N$
+be the number of allowed exponent positions. If $N<t$, the class
+is empty and identification holds vacuously. Assume $N\ge t$.
+Over a ring with a third element one can realize every difference
+supported on the allowed positions of size at most $2t$.
+If its support has size $u$ and $t\le u\le2t$, make $2t-u$
+positions shared and $u-t$ exclusive to each side. Every nonzero
+difference on a shared position is realized by two nonzero
+coefficients. If $u<t$, use all $u$ positions on both sides
+and give both sides identical nonzero coefficients on $t-u$
+unused positions. For exact degree, apply this construction at
+low exponents with $t-1$ slots. Over $\Fp_2$ two exact-size
+supports in a universe of size $N$ have a symmetric difference of
+even size at most $2\min(t,N-t)$, and every such support occurs:
+split it into two equal parts and fill both with the same unused
+positions. Thus binary identification holds exactly when, for every allowed
+column set of size $2\min(t,N-t)$, the evaluation matrix with an
+all-ones row appended has trivial kernel. This row enforces even
+support, and any smaller eligible support fits in such a column set.
+Equivalently, apply Lemma~\ref{lem:mccoy} to the augmented matrices.
+For exact degree $d$ and $t\ge 1$, the $d$ low exponents are the
+allowed positions and $t-1$ is the required number of low terms.
+If $d<t-1$ the exact-degree class is empty; otherwise apply the
+construction to these low positions and account separately for
+the top coefficient (which is fixed over $\Fp_2$).
+
+\clearpage
+\section{Formal verification and disclosure}
+The local companion Lake project records the Lean 4.24.0 and
+Mathlib pins, the declaration index, and the observed warning-clean
+replay scope and axiom audit in \texttt{VERIFICATION.md}.
+It includes same-ring support criteria, the transfer through a
+rational maximal-minor identity, the exact integer and rational
+collisions, and the scaling of the witness over each admissible ring.
+The upper-bound declaration
+\verb|GrenetPaper.four_t_samples| composes the normalized residue,
+field-side full rank, and the ring transfer. The combined endpoint
+\verb|GrenetPaper.four_t_worst_case| states both quantifiers for
+each fixed ring and step. The matching lower
+bound for each fixed regular step is
+\verb|GrenetPaper.regular_step_prefix_not_determining|.
+For rational starts, the upper and lower directions of the exact threshold
+are combined in \verb|GrenetRational.rational_ratio_exact_manuscript|.
+The normalized pointwise result uses the strict local determinant and
+the half-grid reflection and counting arguments. The general-ring
+statement uses a bidirectional per-support transfer, and
+\verb|GrenetRational.rational_ratio_least| states minimality directly.
+The declaration-level audit for the text and appendices is supplied in
+\texttt{COVERAGE.md}.
+
+The proof uses forward differences, a technique also used in the
+Newton calculations of the separate manuscript
+\emph{The Complexity of Native Finite-Precision Computation}.
+No result from that manuscript is needed here. The present
+determinant argument and arbitrary-degree identification claims are
+given here in full. Chuhang Ding set the research questions and direction and proposed conjectures. AI assistants and agents contributed to proofs, tests, Lean formalization, review, and writing. Machine checks and internal reviews do not constitute independent human peer review.
+
+\begin{thebibliography}{9}
+\bibitem{grenet} B. Grenet. \emph{Fast polynomial computations with space
+constraints}. Habilitation thesis, arXiv:2511.11267v3, 2026,
+Section 10.1, Open Problems 10.2 and 10.3.\par\url{https://arxiv.org/html/2511.11267v3#S10.SS1}.
+\bibitem{vandermonde} S. Spie\.z, J. Urbanowicz and P. van Wamelen.
+Divisibility properties of generalized Vandermonde determinants.
+\emph{Acta Arithmetica} 110 (2003), 361--379.
+\href{https://doi.org/10.4064/aa110-4-4}{doi:10.4064/aa110-4-4}.
+\bibitem{lenstra} H. W. Lenstra Jr. On the factorization of lacunary
+polynomials. In \emph{Number Theory in Progress}, Vol. 1, 277--291, 1999.
+\href{https://pub.math.leidenuniv.nl/~lenstrahw/PUBLICATIONS/1999b/art.pdf}{Author's copy}.
+\bibitem{mccoy} N. H. McCoy. Remarks on divisors of zero.
+\emph{American Mathematical Monthly} 49 (1942), 286--295.
+\href{https://doi.org/10.1080/00029890.1942.11991226}{doi:10.1080/00029890.1942.11991226}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,698 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=24mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Optimal Degrees for Local Polynomial Reconstruction on the Boolean Cube},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Optimal Degrees for Local Polynomial Reconstruction on the Boolean Cube}
+\author{Chuhang Ding (Peking University)}
+\date{Formalized results, 25 November 2026}
+
+\begin{document}
+\maketitle
+
+\section{Abstract}\label{abstract}
+
+We study polynomial reconstruction on the Boolean cube with a restricted set of shared linear measurements. The reconstruction matrix equals the identity at zero, and at each of \(q\) prescribed nonzero arguments each output can be determined using the shared measurements and a specified half-cube of the input. For a fixed budget exponent \(\gamma>1/2\), at most \(2^q/q^\gamma\) shared measurements are allowed. Under bit-flip and coordinate-permutation invariance of the measurement row space, we obtain an exact finite-dimensional characterization as a weighted integer-layer deletion problem and establish the sharp expansion \(d_{q,\gamma}^2/q=(2\gamma-1)\ln q+\ln(8/\pi)+o(1)\). We also determine the leading constant \(2\gamma-1\) for arbitrary rational shared linear measurements. The lower bound follows directly from the half-cube support condition in the input coordinates. A bilinear refinement bounds the squared degree divided by \(q\) to within an interval of width \(2\ln\ln q+O_\gamma(1)\). The exact second-order term without measurement symmetry remains open.
+
+\section{1. Problem and main results}\label{problem-and-main-results}
+
+Write \([q]=\{1,\ldots,q\}\), \(\Omega=\{0,1\}^q\), and \(D=2^q\), where \(q\ge2\). Throughout, \(\ln\) denotes the natural logarithm, and \(\gamma>1/2\) is fixed as \(q\to\infty\).
+
+A reconstruction scheme of degree at most \(d\) consists of
+
+\begin{itemize}
+\tightlist
+\item
+  a matrix \(C\in\{-1,0,1\}^{m\times D}\) with \(m\le D/q^\gamma\), where \(m=0\) is allowed;
+\item
+  a matrix \(P(X)\in\mathbb Q[X]^{D\times D}\) with \(P(0)=I_D\) and every entry of degree at most \(d\).
+\end{itemize}
+
+For each \(u\in\Omega\), \(t\in[q]\), and \(h\in\mathbb Q^\Omega\), require
+
+\[
+ Ch=0,\qquad h_v=0\quad(v_t\ne u_t)
+ \quad\Longrightarrow\quad [P(t)h]_u=0.\tag{1}
+\]
+
+This is equivalent to the original formulation using two input vectors with identical shared measurements and identical coordinates on the complementary half-cube, by taking their difference.
+
+Let \(d_{q,\gamma}\) be the minimum degree of such a scheme when \(\operatorname{Row}_{\mathbb Q}(C)\) is invariant under every single-coordinate bit flip and every coordinate permutation. Let \(\delta_{q,\gamma}\) be the minimum degree when only bit-flip invariance is imposed. With no invariance imposed, write \(\eta_{q,\gamma}\) for the minimum with ternary measurements and \(\eta^{\mathbb Q}_{q,\gamma}\) for the minimum with arbitrary \(C\in\mathbb Q^{m\times D}\). All four models use the same polynomial matrices and condition (1).
+
+All four minima exist. Take \(m=0\) and \(P(X)=I_D\prod_{t=1}^q(1-X/t)\). In particular,
+
+\[
+ 0\le\eta^{\mathbb Q}_{q,\gamma}\le\eta_{q,\gamma}\le\delta_{q,\gamma}\le d_{q,\gamma}\le q.
+\]
+
+\textbf{Theorem A (exact symmetric optimum).} For \(K\subseteq\{0,\ldots,q\}\) let \(M(K)\) be the largest endpoint difference \(U-L\) of a nonempty consecutive integer interval \([L,U]\cap\mathbb Z\) contained in \(\{0,\ldots,q\}\mathbin{\backslash} K\). Then
+
+\[
+ \boxed{d_{q,\gamma}=
+ \min_{\substack{K\subseteq\{0,\ldots,q\}\\
+ \sum_{k\in K}\binom qk\le 2^q/q^\gamma}}M(K).}\tag{2}
+\]
+
+Equivalently, if \(K=\{k_1<\cdots<k_s\}\) and \(k_0=-1,\ k_{s+1}=q+1\), then \(M(K)=\max_{0\le i\le s}(k_{i+1}-k_i)-2\).
+
+\textbf{Theorem B (sharp symmetric asymptotics).}
+
+\[
+ \boxed{\frac{d_{q,\gamma}^2}{q}
+ =(2\gamma-1)\ln q+\ln(8/\pi)+o(1).}\tag{3}
+\]
+
+\textbf{Theorem C (universal leading-order optimum).} Let \(b_{q,\gamma}\) denote any of \(\delta_{q,\gamma},\eta_{q,\gamma},\eta^{\mathbb Q}_{q,\gamma}\). Then
+
+\[
+ \boxed{\lim_{q\to\infty}\frac{b_{q,\gamma}^2}{q\ln q}=2\gamma-1.}\tag{4}
+\]
+
+The symmetric ternary construction attains the optimal leading constant even among arbitrary rational shared measurements. Sections 5 and 6 give the Fourier-coordinate argument for the bit-flip model. Section 7 proves the unrestricted result directly from (1).
+
+Each choice of \(b_{q,\gamma}\) also satisfies the following second-order bound. With \(c=2\gamma-1\),
+
+\[
+ c\ln q-2\ln\ln q+\ln\frac{2}{\pi c^2}+o(1)
+ \ \le\ \frac{b_{q,\gamma}^2}{q}
+ \ \le\ c\ln q+\ln\frac8\pi+o(1).\tag{5}
+\]
+
+The upper and lower errors may differ. Matching the endpoints through the constant term remains open for each of the three minima in Theorem C.
+
+\section{2. An exact Fourier reduction}\label{an-exact-fourier-reduction}
+
+For \(S\subseteq[q]\), define the Walsh vector
+
+\[
+ \chi_S(v)=(-1)^{\sum_{i\in S}v_i},\qquad v\in\Omega.
+\]
+
+The \(D\) vectors form an orthogonal basis over \(\mathbb Q\):
+
+\[
+ \chi_S^{\mathsf T}\chi_T=D\,\mathbf1_{S=T}.
+\]
+
+Write \(T_i\) for the permutation operator that flips bit \(i\). Then
+
+\[
+ T_i\chi_S=(-1)^{\mathbf1_{i\in S}}\chi_S.
+\]
+
+\subsection{Lemma 1 (measurement spaces are selected Walsh vertices)}\label{lemma-1-measurement-spaces-are-selected-walsh-vertices}
+
+Every bit-flip-invariant rational row space \(W=\operatorname{Row}_{\mathbb Q}(C)\) has the form
+
+\[
+ W=\operatorname{span}_{\mathbb Q}\{\chi_S:S\in\mathcal A\}
+\]
+
+for some \(\mathcal A\subseteq 2^{[q]}\) with \(|\mathcal A|\le D/q^\gamma\). Conversely, every such family is realizable by taking the vectors \(\chi_S^{\mathsf T}\), \(S\in\mathcal A\), as the rows of \(C\). Coordinate-permutation invariance holds precisely when \(\mathcal A\) is a union of complete Hamming-weight layers.
+
+\textbf{Proof.} The operator
+
+\[
+ \Pi_S=\prod_{i\in S}\frac{I-T_i}{2}
+        \prod_{i\notin S}\frac{I+T_i}{2}
+\]
+
+is the projection onto \(\mathbb Q\chi_S\). Invariance under every \(T_i\) implies invariance under every \(\Pi_S\). Thus \(W\) is a direct sum of some of these one-dimensional spaces. Its dimension is \(|\mathcal A|\), which is at most the number of rows of \(C\). The converse construction uses only entries \(\pm1\), so it also satisfies the ternary-entry restriction. Coordinate permutations act transitively on subsets of each fixed cardinality, proving the last assertion. \(\square\)
+
+We refer to \(\mathcal A\) as the \emph{deleted} Fourier vertices, meaning that their components are measured by the shared information. The remaining vertices are \(\mathcal B=2^{[q]}\mathbin{\backslash}\mathcal A\).
+
+\subsection{Lemma 2 (edge-polynomial formulation)}\label{lemma-2-edge-polynomial-formulation}
+
+For a fixed admissible deleted family \(\mathcal A\) and a nonnegative integer \(d\), a degree-\(d\) scheme with \(\operatorname{Row}_{\mathbb Q}(C)=\operatorname{span}_{\mathbb Q}\{\chi_S:S\in\mathcal A\}\) exists if and only if there are polynomials \(p_S\in\mathbb Q[X]\), one for each \(S\subseteq[q]\), satisfying
+
+\[
+ \deg p_S\le d,\qquad p_S(0)=1,\tag{6}
+\]
+
+and
+
+\[
+ p_S(t)+p_{S\triangle\{t\}}(t)=0
+ \quad\text{whenever } S,S\triangle\{t\}\in\mathcal B.\tag{7}
+\]
+
+\textbf{Proof (necessity).} For an arbitrary feasible \(P\), define
+
+\[
+ p_S(X)=[P(X)\chi_S]_{\mathbf0}.
+\]
+
+These satisfy (6) because \(P(0)=I_D\) and \(\chi_S(\mathbf0)=1\). For a retained pair \(S,T=S\triangle\{t\}\), take \(h=\chi_S+\chi_T\). Orthogonality gives \(Ch=0\), and \(h_v=\chi_S(v)(1+(-1)^{v_t})\) vanishes when \(v_t=1\). Applying (1) with \(u=\mathbf0\) yields (7). In particular, the lower bounds obtained from this scalar model do not assume symmetry or Fourier diagonality of the original \(P\).
+
+\textbf{Proof (sufficiency).} Choose the Walsh rows from Lemma 1 and set
+
+\[
+ P(X)=\frac1D\sum_{S\subseteq[q]}p_S(X)\chi_S\chi_S^{\mathsf T}.\tag{8}
+\]
+
+This is rational, has degree at most \(d\), and satisfies \(P(0)=I_D\). Suppose \(h\) satisfies the hypotheses in (1), and write \(h=\sum_S\widehat h_S\chi_S\). Then \(\widehat h_S=0\) for \(S\in\mathcal A\). Since \(h\) is supported on \(v_t=u_t\),
+
+\[
+ \widehat h_{S\triangle\{t\}}=(-1)^{u_t}\widehat h_S.
+\]
+
+Also \(\chi_{S\triangle\{t\}}(u)=(-1)^{u_t}\chi_S(u)\). Grouping the Fourier expansion of \([P(t)h]_u\) into pairs \(\{S,S\triangle\{t\}\}\), a pair containing a deleted vertex contributes zero because both Fourier coefficients vanish. Every other pair contributes
+
+\[
+ \widehat h_S\chi_S(u)\bigl(p_S(t)+p_{S\triangle\{t\}}(t)\bigr)=0.
+\]
+
+This proves (1). \(\square\)
+
+The scalar formulation is a vertex-deletion problem on the Boolean cube, with each edge labelled by the coordinate in which its endpoints differ. No averaging over permutations is used. Indeed, necessity only uses one row of the original matrix, and sufficiency reconstructs a Fourier-diagonal representative.
+
+\section{3. Proof of Theorem A}\label{proof-of-theorem-a}
+
+By Lemma 1, a permutation-invariant deleted family is specified by an integer set \(K\subseteq\{0,\ldots,q\}\) of deleted weights. Its exact measurement cost is
+
+\[
+ \sum_{k\in K}\binom qk.
+\]
+
+Since the allowed cost is strictly less than \(D\), there is at least one retained layer.
+
+\textbf{Integer budgets.} For a budget of \(b\) rows with \(0\le b<2^q\) integer, the same formula holds with \(\sum_{k\in K}\binom{q}{k}\le b\); the proof below uses just this inequality. If \(b\ge2^q\), measuring every Walsh vertex gives degree zero. The real budget in the original problem means \(b=\lfloor 2^q/q^\gamma\rfloor\) exactly.
+
+\subsection{3.1. Lower bound for each retained interval}\label{lower-bound-for-each-retained-interval}
+
+Fix a consecutive interval \([L,U]\cap\mathbb Z\) of retained weights. Choose disjoint coordinate sets \(F,J\subseteq[q]\) with \(|F|=L\) and \(|J|=U-L\). Consider
+
+\[
+ H(X)=\sum_{R\subseteq J}p_{F\cup R}(X).
+\]
+
+All indexed vertices are retained. By (6), \(H(0)=2^{U-L}>0\), and \(\deg H\le d\). For any \(t\in J\), pair the terms indexed by \(R\) and \(R\cup\{t\}\), with \(R\subseteq J\mathbin{\backslash}\{t\}\). By (7), their contributions cancel at \(X=t\). Hence \(H(t)=0\) at \(U-L\) distinct nonzero arguments. A nonzero polynomial with these roots has degree at least \(U-L\). Therefore \(d\ge M(K)\).
+
+\subsection{3.2. Matching construction}\label{matching-construction}
+
+For each maximal nonempty retained interval \([L,U]\cap\mathbb Z\), let \(R_{L,U}(Y)\) be the rational interpolation polynomial
+
+\[
+ R_{L,U}(Y)=\sum_{j=L}^U(-1)^j
+ \prod_{\substack{\ell=L\\\ell\ne j}}^U\frac{Y-\ell}{j-\ell}.
+\]
+
+It has degree at most \(U-L\), and \(R_{L,U}(j)=(-1)^j\) for \(L\le j\le U\). Use the empty-product convention when \(L=U\). Define
+
+\[
+ p_S(X)=
+ \begin{cases}
+ 1,& |S|\in K,\\[2mm]
+ (-1)^{|S|}R_{L,U}\!\left(\displaystyle\sum_{i\in S}(1-X/i)\right),
+ & |S|\in[L,U]\text{, a maximal retained interval}.
+ \end{cases}\tag{9}
+\]
+
+Every polynomial has degree at most \(M(K)\), and \(p_S(0)=1\). For a retained edge in direction \(t\), take the endpoint not containing \(t\) to be \(S\). The two weights \(|S|,|S|+1\) are in the same retained interval. At \(X=t\), the additional summand \(1-X/t\) is zero, and the parity prefactors in (9) are opposite. This establishes (7).
+
+The matrices are explicitly given by the Walsh rows in Lemma 1 and the spectral sum (8). They obey every original requirement. Consequently, the minimum degree for fixed \(K\) equals \(M(K)\); minimizing over admissible \(K\) proves (2).
+
+Between successive deleted weights \(k_i,k_{i+1}\), the retained interval, when nonempty, is \([k_i+1,k_{i+1}-1]\). Its endpoint difference is \(k_{i+1}-k_i-2\). The same description works at the edges using virtual endpoints \(-1,q+1\). Empty intervals give \(-1\), which does not affect the maximum because some retained layer exists. This proves the equivalent gap formula, including \(K=\varnothing\), for which \(M(K)=q\). \(\square\)
+
+\section{4. Proof of Theorem B}\label{proof-of-theorem-b}
+
+Put
+
+\[
+ c=2\gamma-1>0,\qquad B=\ln(8/\pi),\qquad
+ w_q(k)=2^{-q}\binom qk.
+\]
+
+The admissible deletion budget is \(\sum_{k\in K}w_q(k)\le q^{-\gamma}\).
+
+\subsection{4.1. Uniform local binomial estimate}\label{uniform-local-binomial-estimate}
+
+For any fixed \(M>0\), uniformly over integers \(k=q/2+x\) with \(|x|\le M\sqrt{q\ln q}\),
+
+\[
+ \ln w_q(k)=-\frac12\ln q+\frac12\ln\frac2\pi
+               -\frac{2x^2}{q}
+               +O_M\!\left(\frac{(\ln q)^2}{q}\right).\tag{10}
+\]
+
+To verify this, put \(p=k/q\), so that \(p=1/2+x/q\) stays uniformly away from 0 and 1 for large \(q\). Stirling\textquotesingle s formula with logarithmic remainder \(O(1/n)\) gives
+
+\[
+ \ln w_q(k)=-qI(p)-\tfrac12\ln(2\pi qp(1-p))+O(q^{-1}),
+\]
+
+where \(I(p)=p\ln(2p)+(1-p)\ln(2(1-p))\). Taylor expansion at \(1/2\) yields \(I(1/2+y)=2y^2+O(y^4)\) and
+
+\[
+ -\tfrac12\ln(2\pi qp(1-p))
+ =-\tfrac12\ln q+\tfrac12\ln(2/\pi)+O(y^2).
+\]
+
+Thus the error in (10) is \(O(x^4/q^3+x^2/q^2+1/q)\), which implies the claimed uniform estimate. In particular, the error is \(o(1/\ln q)\). This covers odd \(q\) as well, when \(x\) may be a half-integer.
+
+\subsection{4.2. Upper bound: periodic layer deletion}\label{upper-bound-periodic-layer-deletion}
+
+For sufficiently large \(q\), define
+
+\[
+ x_q=\tfrac12\sqrt{q\bigl(c\ln q+B+2/\ln q\bigr)},\qquad
+ \ell=\lfloor q/2-x_q\rfloor,
+ \qquad a=q/2-\ell,
+ \qquad h=2a.
+\]
+
+Here \(a=x_q+O(1)\), \(a\ge x_q\), and \(h\) is a positive integer. Both \(\ell\) and \(q-\ell=\ell+h\) lie in \(\{0,\ldots,q\}\) for sufficiently large \(q\). Delete the layers
+
+\[
+ K_q=\{\ell+jh:j\in\mathbb Z\}\cap\{0,\ldots,q\}.\tag{11}
+\]
+
+The two closest deleted layers to the center are \(\ell,q-\ell\), at distances \(a\). Formula (10) and \(a\ge x_q\) give
+
+\[
+ \begin{aligned}
+ 2w_q(\ell)
+ &\le 2\sqrt{\frac{2}{\pi q}}
+      \exp\left(-\frac{2x_q^2}{q}+o(1/\ln q)\right)\\
+ &=q^{-\gamma}\exp\left(-\frac1{\ln q}+o(1/\ln q)\right)\\
+ &\le q^{-\gamma}\left(1-\frac1{2\ln q}\right)
+ \end{aligned}\tag{12}
+\]
+
+for sufficiently large \(q\). The identity in the second line uses \(B=\ln(8/\pi)\) and \(\gamma=(c+1)/2\).
+
+We must also pay for all the outer deletion layers. For this purpose, use the successive binomial ratios, rather than multiplying a single outer-layer estimate by the number of all layers. For large \(q\), put \(\rho=\ell/(q-\ell+1)\in(0,1)\). For \(1\le k\le\ell\),
+
+\[
+ \frac{w_q(k-1)}{w_q(k)}=\frac{k}{q-k+1}\le\rho.
+\]
+
+By iteration and symmetry, the total cost of the deleted layers other than the central pair is bounded by
+
+\[
+ 2w_q(\ell)\sum_{j\ge1}\rho^{jh}
+ =2w_q(\ell)\frac{\rho^h}{1-\rho^h}.
+\]
+
+Since \(1-\rho=(2a+1)/(q-\ell+1)\ge 2a/(q+1)\),
+
+\[
+ \rho^h\le e^{-h(1-\rho)}
+          \le e^{-4a^2/(q+1)}
+          \le q^{-c/2}
+\]
+
+for all sufficiently large \(q\) (with fixed \(c>0\)). Consequently the outer cost is \(o(q^{-\gamma}/\ln q)\). Combined with (12), this proves that (11) respects the budget. This geometric estimate is valid even when \(\gamma\) is arbitrarily close to \(1/2\) from above.
+
+All internal gaps between deleted layers have size \(h\). The initial and terminal virtual-endpoint gaps have size at most \(h\), since the deletion set is a full residue class intersected with \([0,q]\). Theorem A therefore gives
+
+\[
+ d_{q,\gamma}\le h-2=2x_q+O(1).
+\]
+
+As \(x_q=O(\sqrt{q\ln q})\), squaring and dividing by \(q\) yields
+
+\[
+ \frac{d_{q,\gamma}^2}{q}\le c\ln q+B+o(1).\tag{13}
+\]
+
+This also gives \(d_{q,\gamma}=O(\sqrt{q\ln q})=o(q)\).
+
+\subsection{4.3. Matching lower bound: central pair and convexity}\label{matching-lower-bound-central-pair-and-convexity}
+
+Let \(K\) be an optimal set in Theorem A. For sufficiently large \(q\), the central weight layer (or the two central layers when \(q\) is odd) cannot be deleted: its weight is asymptotic to \(\sqrt{2/(\pi q)}\), which exceeds the budget because \(\gamma>1/2\). There must be a deleted layer on each side of \(q/2\); otherwise the contiguous retained interval from the center to one endpoint has endpoint difference \(q/2-O(1)\), contradicting (13).
+
+Let \(\ell_*<q/2<r_*\) be the nearest deleted layers to the center on their respective sides. Put \(a=q/2-\ell_*\), \(b=r_*-q/2\). The retained interval between these layers gives
+
+\[
+ d_{q,\gamma}\ge a+b-2.\tag{14}
+\]
+
+It follows from the upper bound that \(a,b=O(\sqrt{q\ln q})\). The budget and the uniform estimate (10) imply
+
+\[
+ e^{-2a^2/q}+e^{-2b^2/q}
+ \le \sqrt{\pi/2}\,q^{-c/2}(1+o(1)).\tag{15}
+\]
+
+Each term individually satisfies this bound, so both \(a,b\) are at least \(\sqrt q/2\) for sufficiently large \(q\). On that interval the function \(g(x)=e^{-2x^2/q}\) is convex, since
+
+\[
+ g''(x)=\left(\frac{16x^2}{q^2}-\frac4q\right)e^{-2x^2/q}\ge0.
+\]
+
+Jensen\textquotesingle s inequality in (15) gives
+
+\[
+ 2e^{-(a+b)^2/(2q)}\le \sqrt{\pi/2}\,q^{-c/2}(1+o(1)).
+\]
+
+Taking logarithms and rearranging,
+
+\[
+ \frac{(a+b)^2}{q}\ge c\ln q+\ln(8/\pi)+o(1).
+\]
+
+Because \(a+b=O(\sqrt{q\ln q})\), replacing \(a+b\) by \(a+b-2\) changes its square divided by \(q\) by \(o(1)\). Combining (14) with the upper bound (13) proves (3). \(\square\)
+
+The construction is fully explicit: use the deletion set (11), the corresponding Walsh rows, and the interpolation polynomials (9) in the matrix formula (8).
+
+\section{5. The bit-flip case of Theorem C}\label{proof-of-theorem-c}
+
+We now permit an arbitrary deleted family \(\mathcal A\subseteq2^{[q]}\), subject only to the budget. The goal is a lower bound independent of its shape.
+
+\subsection{5.1. A polynomial space with equal edge evaluations}\label{a-polynomial-space-with-equal-edge-evaluations}
+
+For \(k\ge0\), let \(\mathcal H_k\) be the rational vector space of polynomial families \(h=(h_S)_{S\subseteq[q]}\) satisfying
+
+\[
+ \deg h_S\le k,\qquad
+ h_S(t)=h_{S\triangle\{t\}}(t)\quad(S\subseteq[q],\ t\in[q]).\tag{16}
+\]
+
+These edge equalities hold on the full cube, including deleted vertices. Define characters in the \emph{vertex index} \(S\) by \(\psi_R(S)=(-1)^{|R\cap S|}\). Expanding
+
+\[
+ h_S(X)=\sum_{R\subseteq[q]}a_R(X)\psi_R(S),
+\]
+
+condition (16) for direction \(t\) is equivalent, by linear independence of these characters, to \(a_R(t)=0\) whenever \(t\in R\). Hence \(a_R\) is divisible by \(\prod_{t\in R}(X-t)\). Its remaining factor has degree at most \(k-|R|\), or the coefficient is zero if \(|R|>k\). Conversely, every choice with these divisibility and degree properties satisfies (16).
+
+We obtain the exact dimension
+
+\[
+ N_q(k):=\dim\mathcal H_k
+ =\sum_{j=0}^{\min(k,q)}(k-j+1)\binom qj.\tag{17}
+\]
+
+\subsection{5.2. A universal degree obstruction}\label{a-universal-degree-obstruction}
+
+Let
+
+\[
+ \mathcal I_k=\{h\in\mathcal H_k:h_S\equiv0\text{ for all }S\in\mathcal A\}.
+\]
+
+Restriction to the deleted vertices is a linear map into a space of dimension \((k+1)|\mathcal A|\). Therefore
+
+\[
+ \dim\mathcal I_k\ge N_q(k)-(k+1)|\mathcal A|.\tag{18}
+\]
+
+Suppose degree \(d\) is feasible. We claim that \(\mathcal I_k=\{0\}\) whenever \(d+2k\le q-1\).
+
+Indeed, take a nonzero \(h\in\mathcal I_k\) if one exists. If all its coordinates vanish at zero, divide all coordinate polynomials by their common power of \(X\) until some value at zero is nonzero. This preserves (16), since all edge labels \(1,\ldots,q\) are nonzero; it also preserves the deleted-vertex vanishing condition and cannot increase the degree. Thus we may assume \(h(0)\ne0\).
+
+Take feasible polynomials \(p_S\) from Lemma 2 and form
+
+\[
+ F(X)=\sum_{S\subseteq[q]}p_S(X)h_S(X)^2.
+\]
+
+Its degree is at most \(d+2k\). At \(X=t\), pair vertices \(S,S\triangle\{t\}\). If a vertex in the pair is deleted, its \(h\)-value is zero, and so is that of its partner by (16). If both vertices are retained, (7) and (16) imply cancellation. Thus \(F(t)=0\) for every \(t\in[q]\). But \(F(0)=\sum_Sh_S(0)^2>0\) by (6), a contradiction to \(\deg F<q\). The claim follows.
+
+Combining with (18) gives the finite necessary condition
+
+\[
+ \boxed{
+ |\mathcal A|\ge \frac{N_q(k)}{k+1}
+ \quad\text{for every integer }k\ge0\text{ with }d+2k\le q-1.
+ }\tag{19}
+\]
+
+In particular, whenever \(0\le d\le q-1\), taking \(k=\lfloor(q-d-1)/2\rfloor\) yields
+
+\[
+ \frac{N_q(k)}{(k+1)2^q}\le q^{-\gamma}.\tag{20}
+\]
+
+\subsection{5.3. Weighted binomial tail estimate}\label{weighted-binomial-tail-estimate}
+
+We record the asymptotic estimate needed to exploit (20). Suppose \(k=k(q)\) is an integer with \(a=q-2k\asymp\sqrt{q\ln q}\). Then
+
+\[
+ \boxed{
+ \frac{N_q(k)}{(k+1)2^q}
+ =(1+o(1))\frac{e^{-a^2/(2q)}}{\sqrt{2\pi q}\,(a^2/q)}.
+ }\tag{21}
+\]
+
+Here \(\asymp\) means that the ratio is bounded above and below by positive constants for all sufficiently large \(q\).
+
+To prove (21), set \(\rho=k/(q-k+1)\). Since \(k\sim q/2\),
+
+\[
+ 1-\rho=\frac{a+1}{q-k+1}\sim\frac{2a}{q}.
+\]
+
+Reindex (17):
+
+\[
+ N_q(k)=\sum_{\ell=0}^k(\ell+1)\binom q{k-\ell}.
+\]
+
+The exact ratio formula gives, for \(0\le\ell\le k\),
+
+\[
+ \frac{\binom q{k-\ell}}{\binom qk}
+ =\rho^\ell\prod_{i=0}^{\ell-1}
+      \frac{1-i/k}{1+i/(q-k+1)}\le \rho^\ell.
+\]
+
+Let \(L=\lfloor(\ln q)^{1/4}/(1-\rho)\rfloor\). We have \(L=o(q)\), and \(L^2/q=O((\ln q)^{-1/2})=o(1)\). For \(\ell\le L\), the logarithm of the product above is \(O(\ell^2/q)=o(1)\) uniformly, by the elementary bounds for \(\ln(1\pm y)\) at small \(y\). Thus the product is \(1+o(1)\) uniformly on this range.
+
+The weighted geometric sum has value \(\sum_{\ell\ge0}(\ell+1)\rho^\ell=(1-\rho)^{-2}\). The relative tail beyond \(L\) equals
+
+\[
+ \rho^{L+1}\bigl(1+(L+1)(1-\rho)\bigr)=o(1),
+\]
+
+because \(L(1-\rho)\to\infty\). These upper and lower estimates imply
+
+\[
+ N_q(k)=(1+o(1))\frac{\binom qk}{(1-\rho)^2}
+       =(1+o(1))\binom qk\frac{q^2}{4a^2}.\tag{22}
+\]
+
+Now apply (10) at \(x=-a/2\) and use \(k+1\sim q/2\). This gives (21).
+
+\subsection{5.4. Determination of the leading constant}\label{determination-of-the-leading-constant}
+
+Fix \(0<\varepsilon<c=2\gamma-1\). Suppose there were feasible constructions, for arbitrarily large \(q\), of degree at most
+
+\[
+ d=\left\lfloor\sqrt{(c-\varepsilon)q\ln q}\right\rfloor.
+\]
+
+For these values of \(q\) choose \(k=\lfloor(q-d-1)/2\rfloor\), so that \(a=q-2k=d+O(1)\). In particular, \(a^2/q=(c-\varepsilon)\ln q+o(1)\). Applying (21),
+
+\[
+ \frac{N_q(k)}{(k+1)2^q}
+ =(1+o(1))\frac{q^{-\gamma+\varepsilon/2}}
+                  {\sqrt{2\pi}(c-\varepsilon)\ln q}.
+\]
+
+The ratio of the right side to the budget \(q^{-\gamma}\) tends to infinity, contradicting (20). The contradiction rules out every fixed positive improvement of the leading constant. Thus
+
+\[
+ \liminf_{q\to\infty}\frac{\delta_{q,\gamma}^2}{q\ln q}\ge c.
+\]
+
+The permutation-invariant construction remains admissible in the more general model, so \(\delta_{q,\gamma}\le d_{q,\gamma}\). Theorem B gives the matching limsup bound. This establishes (4) for the bit-flip model. \(\square\)
+
+\section{6. Bilinear refinement in the bit-flip model}\label{supplementary-result-a-bilinear-refinement-and-second-order-bounds}
+
+We derive the finite bilinear inequality for measured Walsh vertices, then estimate its two binomial tails. Section 7 reuses the tail calculation for unrestricted measurements.
+
+\subsection{6.1. Finite bilinear bound}\label{finite-bilinear-bound}
+
+For a feasible degree \(d\le q-1\), write \(r=q-d-1\), and put \(B_j=\sum_{i=0}^j\binom qi\) for \(0\le j\le q\). We show that for every integer \(0\le K\le r\),
+
+\[
+ \boxed{
+ |\mathcal A|\ge\frac1{K+1}\sum_{j=0}^K B_{\min(j,r-j)}.
+ }\tag{23}
+\]
+
+Take \(h\in\mathcal I_j\) and \(g\in\mathcal H_\ell\) with \(j+\ell\le r\). The polynomial \(\sum_Sp_S(X)h_S(X)g_S(X)\) has degree at most \(q-1\), and the same pairwise cancellation as in Section 5.2 makes it vanish at every label \(t\). Crucially, only \(h\) needs to vanish on the deleted vertices; (16) propagates its zero to the corresponding partner at that label. Consequently
+
+\[
+ \sum_Sh_S(0)g_S(0)=0.\tag{24}
+\]
+
+The evaluation image of \(\mathcal H_\ell\) at zero is exactly the space spanned by \(\psi_R\) with \(|R|\le\ell\). One inclusion follows from the divisibility description in Section 5.1. For the other, take \(g_S(X)=\psi_R(S)\prod_{t\in R}(1-X/t)\), which realizes \(\psi_R\) at zero. Define \(V_j=\{h(0):h\in\mathcal I_j\}\). With \(\ell=r-j\), equation (24) therefore yields
+
+\[
+ V_j\subseteq\operatorname{span}\{\psi_R:r-j<|R|\le j\}.
+\]
+
+In particular, \(\dim V_j\le B_j-B_{\min(j,r-j)}\). The kernel of evaluation on \(\mathcal I_j\) is exactly \(X\mathcal I_{j-1}\), with \(\mathcal I_{-1}=\{0\}\), by the same division argument as before. Rank-nullity and iteration imply
+
+\[
+ \dim\mathcal I_K=\sum_{j=0}^K\dim V_j
+ \le\sum_{j=0}^K(B_j-B_{\min(j,r-j)}).
+\]
+
+As \(\sum_{j=0}^K B_j=N_q(K)\), combining with (18) gives (23).
+
+\subsection{6.2. Asymptotic use of the bound}\label{asymptotic-use-of-the-bound}
+
+Now take \(d=\delta_{q,\gamma}\). For sufficiently large \(q\), Theorem C gives \(d=o(q)\), so \(r\ge0\). Set
+
+\[
+ k=\lfloor r/2\rfloor,\qquad a=q-2k,\qquad s=d^2/q.
+\]
+
+We have \(s\sim c\ln q\) and \(a^2/q=s+o(1)\). Let \(\rho=k/(q-k+1)\) and choose \(L=\lfloor(\ln q)^{1/4}/(1-\rho)\rfloor\) as in Section 5.3. For all sufficiently large \(q\), \(K=k+L\le r\) and \(K+1\sim k+1\).
+
+In (23), the contribution from \(0\le j\le k\) is \(N_q(k)\). The contribution from \(k+1\le j\le k+L\) is the sum of \(B_i\) with indices from \(k-L\) through \(k-1\) when \(r=2k\), or from \(k-L+1\) through \(k\) when \(r=2k+1\). Both sums are \((1+o(1))N_q(k)\): first, \(B_k\le\binom qk/(1-\rho)=o(N_q(k))\); second, the contribution of indices at most \(k-L\) is bounded by
+
+\[
+ \sum_{i=0}^{k-L}B_i
+ =\sum_{\ell=L}^{k}(\ell-L+1)\binom q{k-\ell}
+ \le\binom qk\sum_{\ell\ge L}(\ell+1)\rho^\ell
+ =o(N_q(k)),
+\]
+
+using (22) and the same relative geometric-tail bound. Thus (23) improves (20) by an asymptotic factor of two:
+
+\[
+ q^{-\gamma}\ge\frac{|\mathcal A|}{2^q}
+ \ge(2+o(1))\frac{N_q(k)}{(k+1)2^q}
+ =(2+o(1))\frac{e^{-s/2}}{\sqrt{2\pi q}\,s}.
+\]
+
+Taking logarithms,
+
+\[
+ s+2\ln s\ge c\ln q+\ln(2/\pi)+o(1).
+\]
+
+Since \(s\sim c\ln q\), we have \(\ln s=\ln\ln q+\ln c+o(1)\). Substitution proves the lower bound in (5). Its upper bound is Theorem B together with \(\delta_{q,\gamma}\le d_{q,\gamma}\). \(\square\)
+
+
+\section{7. Arbitrary shared linear measurements}
+
+Fix \(C\in\mathbb Q^{m\times D}\) and \(P\) satisfying (1) with entry degrees at most a nonnegative integer \(d\) and \(P(0)=I_D\).
+Write \(|v|=\sum_t v_t\), and let \(e_v\) be the coordinate unit vector in the original input space. Put
+\[
+ Q_v(X)=\prod_{t:v_t=1}(1-X/t),\qquad
+ H_j=\{h\in(\mathbb Q[X]_{\le j})^\Omega: Q_v\mid h_v \text{ for every }v\}.
+\]
+A component at \(v\) has \(\max(j-|v|+1,0)\) free coefficients. Thus \(\dim H_j=N_q(j)\) from (17).
+For every \(t\), each \(h(t)\) is supported on the half-cube \(v_t=0\). The finite argument also applies to distinct nonzero rational labels \(a_t\), using factors \(1-X/a_t\) and evaluating at \(a_t\).
+
+\subsection{7.1. Square and bilinear certificates in input coordinates}
+
+For nonnegative integers \(j,\ell\), take \(h\in H_j\) with \(Ch(X)\equiv0\), and \(g\in H_\ell\). Form
+\[
+ F(X)=g(X)^{\mathsf T}P(X)h(X).
+\]
+At label \(t\), condition (1) applied to \(h(t)\) gives \([P(t)h(t)]_u=0\) for every \(u_t=0\). For every \(u_t=1\), the factor \(g_u(t)\) vanishes. Hence \(F(t)=0\). If \(d+j+\ell<q\), root counting gives \(F\equiv0\). Evaluating at zero yields
+\[
+ \sum_{v\in\Omega}g_v(0)h_v(0)=0. \tag{25}
+\]
+Only the right input \(h\) must satisfy the measurement equations.
+
+For a nonnegative integer \(k\) with \(d+2k<q\), suppose a nonzero \(h\in H_k\) satisfies \(Ch\equiv0\).
+Divide all components by their common maximal power of \(X\). This preserves \(Ch\equiv0\), and \(Q_v(0)=1\) ensures that every \(Q_v\) still divides its component. Now \(h(0)\ne0\), and (25) with \(g=h\) contradicts positivity of the sum of squares. The measurement map from \(H_k\) to \(m\) polynomials of degree at most \(k\) is therefore injective, giving
+\[
+ N_q(k)\le (k+1)m. \tag{26}
+\]
+
+\subsection{7.2. Finite bilinear bound and asymptotics}
+
+For nonnegative integers \(d,r,K\) with \(d+r<q\) and \(K\le r\), put \(B_i=\sum_{s=0}^i\binom qs\).
+For \(0\le j\le K\) and \(|v|\le\min(j,r-j)\), form the input vectors
+\[
+ X^{K-j} Q_v(X)e_v\in H_K.
+\]
+Their measured images are linearly independent. Indeed, in a nontrivial rational relation among these images, choose the largest \(J\) with a nonzero coefficient \(c_{J,w}\). Divide the input combination by \(X^{K-J}\) and call the resulting vector \(h\). Each summand now has degree at most \(J\), and \(Ch\equiv0\) by cancellation of the common power of \(X\). At zero \(h_w(0)=c_{J,w}\). The test \(g=Q_w e_w\) has degree at most \(r-J\) and \(g(0)=e_w\), so (25) gives \(c_{J,w}=0\), a contradiction. Counting these independent images gives
+\[
+ \sum_{j=0}^K B_{\min(j,r-j)}\le(K+1)m. \tag{27}
+\]
+Both (26) and (27) apply to arbitrary rational measurement matrices, including \(m=0\).
+
+To obtain (4), use \(m/2^q\le q^{-\gamma}\) in (26). The calculation in Sections 5.3--5.4 gives the lower limit bound \(2\gamma-1\) for \(\eta^{\mathbb Q}_{q,\gamma}\). The symmetric ternary construction of Theorem B gives the matching upper limit bound for all three minima in Theorem C. Next apply (27) with \(r=q-d-1\) and the same cutoff \(K\) as in Section 6.2. The left side equals the binomial sum in (23), so the reflection and tail estimates there give the lower endpoint of (5) for \(\eta^{\mathbb Q}_{q,\gamma}\). Theorem B supplies the upper endpoint. The order of the minima in Section 1 gives the same interval for unrestricted ternary measurements. \(\square\)
+
+\section{8. The original budget and remaining questions}
+Setting \(\gamma=10\) gives \(c=2\gamma-1=19\). By Theorem B,
+\[
+ \frac{d_{q,10}^2}{q}=19\ln q+\ln(8/\pi)+o(1).
+\]
+For each \(b\) in \(\{\delta,\eta,\eta^{\mathbb Q}\}\), Theorem C gives
+\(b_{q,10}\sim\sqrt{19q\ln q}\). Substitution into (5), including
+\(c^2=361\) in the logarithmic constant, yields
+\[
+ 19\ln q-2\ln\ln q+\ln\frac{2}{361\pi}+o(1)
+ \ \le\ \frac{b_{q,10}^2}{q}
+ \ \le\ 19\ln q+\ln\frac8\pi+o(1).
+\]
+Thus the same explicit interval applies when every row and every rational
+measurement coefficient can be chosen freely. Determining the second-order
+optimum in each of these larger classes remains open. The gap is on the
+scale of \(\ln\ln q\) in squared degree divided by dimension. A further
+question is whether the lower-bound argument transfers to the two-sequence
+coordinate-swap problem underlying the motivating construction.
+
+\section*{Formal verification and provenance}
+The repository accompanying this paper contains Lean 4 proofs of Theorems A, B and C and the two-sided bound (5). The integer-budget version of Theorem A permits any nonnegative integer budget. Its real-budget specialization uses the exact floor of the shared-measurement bound. The asymptotic assertions quantify over every fixed real \(\gamma>1/2\).
+The definitions of all four minimum degrees use the matrix conditions of Section 1.
+The power of \(q\) in the budget is fixed before taking the limit as \(q\) tends to infinity.
+
+The auxiliary space in Section 5.1 is the bounded-degree part of the generalized graph splines of Gilbert, Tymoczko and Viel, with edge ideal \((X-t)\) in direction \(t\) (\href{https://doi.org/10.2140/pjm.2016.281.333}{\emph{Pacific J. Math.} 281 (2016), 333--364}). The input-coordinate certificate in Section 7 was proposed in the project owner's review of the earlier bit-flip theorem.
+
+Chuhang Ding set the research questions and direction and proposed conjectures. AI assistants and agents contributed to proofs, tests, Lean formalization, review, and writing. The original project outline cites OpenAI's \emph{The Exponential Time Hypothesis is False} (\href{https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026}{25 October 2026 revision}) as motivation for studying local reconstruction. The formal results in this paper concern the Boolean-cube model defined in Section 1.
+
+\end{document}

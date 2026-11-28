@@ -1,0 +1,70 @@
+{
+  "base_commit": "ebab675ea9d4330e8f62db9c83e8e3692f77dc0e",
+  "papers": [
+    {
+      "paper": "boolean-cube/paper/editorial/paper",
+      "pages": 12,
+      "sha256": "6cc58418c03ebaa09ddf8a715028cb353cf0229d5290b96565e4acc4793b1928",
+      "tex_sha256": "cf13ee891e3dc573d5c675756a65ae99696e0dcef79e0d4b0dbeb9b6d465dba1",
+      "compiler": "Tectonic XeTeX/XDVIPDFMX",
+      "undefined_references_or_citations": false,
+      "flags": "edited standard source"
+    },
+    {
+      "paper": "node-dependent-reconstruction/paper/editorial/paper_polynomial_recovery",
+      "pages": 9,
+      "sha256": "44245c25f9e5554d985a4474f8042a3228c0ec47bf1be2aa07168d517e5fa40d",
+      "tex_sha256": "66148a11e1dc7f46503c2278bcd78a984f1e2e167b990d9b5d9d84f101ddbb6c",
+      "compiler": "Tectonic XeTeX/XDVIPDFMX",
+      "undefined_references_or_citations": false,
+      "flags": "edited standard source"
+    },
+    {
+      "paper": "ternary-local-recovery/paper/editorial/paper_ternary_codes",
+      "pages": 7,
+      "sha256": "5d121ef4d5fc5535766c7adb42700a334ca3c6e80124046990ed73a8a360207d",
+      "tex_sha256": "ceb720ff42b2d89e3e9a33477e0a83c72f6fa2b14e016e983a7844d9370e6afb",
+      "compiler": "Tectonic XeTeX/XDVIPDFMX",
+      "undefined_references_or_citations": false,
+      "flags": "edited standard source"
+    },
+    {
+      "paper": "root-separation/paper/editorial/root_separation",
+      "pages": 21,
+      "sha256": "a2d051edc6284a9a9278d941d6ab535d15f9d4b1ce02555e616e0be0efb81b1c",
+      "tex_sha256": "220105f361bf8a024a74db1fd3645b63bdd48c8eccaf3d248120f6e9195f9f71",
+      "compiler": "Tectonic XeTeX/XDVIPDFMX",
+      "undefined_references_or_citations": false,
+      "flags": "edited standard source"
+    },
+    {
+      "paper": "rank-budget-barriers/paper/editorial/rank_budget_barriers",
+      "pages": 45,
+      "sha256": "9d29478ee2bed3c8d22ec0a22332cd55152853d3ed676610aff1c62479057802",
+      "tex_sha256": "377f1429f157e2006f2ec12b8b9700ce857f993be6df4ddf9cf1ba36806fb378",
+      "compiler": "Tectonic XeTeX/XDVIPDFMX",
+      "undefined_references_or_citations": false,
+      "flags": "edited standard source"
+    },
+    {
+      "paper": "checked-retained-execution/paper/Paper6_Reading",
+      "pages": 80,
+      "sha256": "a1e56968623afda3a3792e4b4069d4a5544419b52539ae38650145f279adc2f5",
+      "tex_sha256": "b45e97c2dca339ff2036aec707b9d4d6f708d800cd8a1929f5e7db00fdc69398",
+      "compiler": "Tectonic XeTeX/XDVIPDFMX",
+      "undefined_references_or_citations": false,
+      "flags": "offline public font setup"
+    },
+    {
+      "paper": "sparse-interpolation/paper/editorial/Grenet",
+      "pages": 7,
+      "sha256": "6c9b9e874c686cbfd137bf7e4633c3052367aba608c011898e7c640f000d72dd",
+      "tex_sha256": "c4bb6d6e8bed7ff4aee8945ebee4bc9fa1f87fb7d483672a813e03d1bab759ad",
+      "compiler": "Tectonic XeTeX/XDVIPDFMX",
+      "undefined_references_or_citations": false,
+      "flags": "edited standard source"
+    }
+  ],
+  "lean": "Published Lean sources and replay evidence were not modified or recompiled.",
+  "notes": "Compilation detects TeX/reference errors; it is not a new mathematical or Lean audit."
+}

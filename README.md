@@ -6,6 +6,8 @@ These papers study local polynomial reconstruction, shared measurements, rank bo
 
 Each paper has its own directory. Papers 2 and 3 share a [Lean project](shared/reconstruction/README.md). [Cross-paper audit records](shared/README.md) are kept separately. [Previous repository layout](https://github.com/dch-and-Elara/some-research-inspired-by-openais-eth-preprint/tree/8e4dc6406471869332fa103c5f4339baa26d8ae6).
 
+[Editorial editions (PDF and LaTeX)](EDITORIAL_EDITIONS.md) are available alongside the original verification editions and reuse the same Lean projects.
+
 | Paper (PDF) | Directory | Lean verification |
 | --- | --- | --- |
 | [Optimal Degrees for Local Polynomial Reconstruction on the Boolean Cube](boolean-cube/paper/paper.pdf) | [Paper 1](boolean-cube/README.md) | [Theorem index](boolean-cube/FORMALIZATION_SCOPE.md) · [Verification record](boolean-cube/VERIFICATION.md) |

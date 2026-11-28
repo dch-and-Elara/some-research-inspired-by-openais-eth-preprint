@@ -4,7 +4,8 @@ The paper studies which outputs can be recovered from specified finite-precision
 
 Appendix O connects a guarded CNF instance to the original model count. The stopping rule uses the number of variables plus clauses in the padded formula. A separate subdivision count controls the interpolation factor and its width. The count and time bound refer to the same run, subject to the legal layout, widths, actual preparation charge and local cost certificates specified in the theorem. The space bound concerns the named active buffers under its entry and frame assumptions. The two verified probe orders have separate proofs.
 
-* [Full manuscript (PDF)](paper/Paper6.pdf) and [LaTeX source](paper/Paper6.tex)
+* [Reading edition (80-page PDF)](paper/Paper6_Reading.pdf) and [LaTeX source](paper/Paper6_Reading.tex). This edition retains Sections 1–16 and Appendices M–O; the historical Appendices A–L remain in the full manuscript.
+* [Full verification edition (105-page PDF)](paper/Paper6.pdf) and [LaTeX source](paper/Paper6.tex)
 * [Theorem index](THEOREMS.md) and [formal verification](VERIFICATION.md)
 * [Browse all Lean modules](formal/module-index/README.md) · [Replay instructions](formal/README.md) · [Download ZIP](formal/Paper6_R119_Lean.zip)
 * [Historical evidence cited in the paper](paper/EVIDENCE_CATALOG.md) and [release checksums](SHA256SUMS.txt)

@@ -7,3 +7,5 @@ tectonic Paper6_working.tex
 ```
 
 The font SHA-256 is `f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5`. The local build ran the XeTeX and XDV-to-PDF stages through Tectonic. Engine, package and metadata differences can affect the resulting PDF hash. Keep the [evidence catalogue](../EVIDENCE_CATALOG.md) beside the distributed PDF for its relative links.
+
+To reproduce the separate [reading edition](../Paper6_Reading.pdf), place the same font next to `Paper6_Reading_Offline.tex` and run `tectonic Paper6_Reading_Offline.tex`.
