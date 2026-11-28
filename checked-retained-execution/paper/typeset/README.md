@@ -1,6 +1,6 @@
 # Rebuilding the published layout
 
-This directory contains the exact XeTeX input used for the published PDF. The [editable manuscript](../Paper6.tex) uses the standard LaTeX packages. The published layout uses an offline font setup. Place [KaTeX Math Bold Italic, version 0.16.22](https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/fonts/KaTeX_Math-BoldItalic.ttf) beside the typesetting input, then run:
+This directory contains the XeTeX source for reproducing the published layout. The public PDF also received local byline and contribution-statement edits to preserve its existing pagination. The [editable manuscript](../Paper6.tex) uses the standard LaTeX packages. The published layout uses an offline font setup. Place [KaTeX Math Bold Italic, version 0.16.22](https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/fonts/KaTeX_Math-BoldItalic.ttf) beside the typesetting input, then run:
 
 ```sh
 tectonic Paper6_working.tex
