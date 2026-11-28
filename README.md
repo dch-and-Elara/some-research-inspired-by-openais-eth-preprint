@@ -2,6 +2,8 @@
 
 These papers study local polynomial reconstruction, shared measurements, rank bounds for interpolation algorithms that count satisfying assignments, and sample bounds for sparse interpolation. The starting point is the interpolation method in OpenAI’s [preprint on the Exponential Time Hypothesis](https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026).
 
+**Author:** Chuhang Ding (Peking University). The seven papers below include six studies of interpolation-based counting and local reconstruction, and one study of sparse interpolation on arithmetic progressions.
+
 | Paper | Lean verification |
 | --- | --- |
 | [Optimal Degrees for Local Polynomial Reconstruction on the Boolean Cube](paper/paper.pdf) | [Theorem index](FORMALIZATION_SCOPE.md) · [Verification record](VERIFICATION.md) |
